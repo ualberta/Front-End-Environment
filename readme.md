@@ -31,6 +31,8 @@ For example, here is how the UAlberta.ca homepage could by dynamicly created:
 
     page.build();
 
+*Documentation of the json data format is in process for the various modules.  For now, you can browse the [data folder](https://github.com/ualberta/front-end-framework/tree/master/src/assets/data) for some sample json files.*
+
 
 ## Contributing
 
@@ -73,7 +75,6 @@ Run the "stop" command that corresponds to your Operating System to stop the dev
 A module consists of three pieces:
 
   - `/src/templates/components/{{COMPONENT_NAME}}.hbs`: The handlebars template file for the markup
-  - `/src/less/framework/components/_{{COMPONENT_NAME.less}}: The less file containing the styling for the component (you need to reference this file in `components.less` to include it in framework.css)
+  - `/src/less/framework/components/_{{COMPONENT_NAME.less}}`: The less file containing the styling for the component (you need to reference this file in `components.less` to include it in framework.css)
   - `/src/js/UAlberta.FrontEnd.js`: A function in the Modules namespace that specified the template to use.
 
-  
