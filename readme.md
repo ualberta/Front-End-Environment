@@ -5,7 +5,7 @@ The UAlberta front-end framework allows dynamic creation of the Framework module
 
 ## Usage
 
-Add main.min.js (requires jQuery, and Handlebars Runtime) and framework.css to your page.  You will then be able to access the pages and modules through `UAlberta.FrontEnd.Pages` and `UAlberta.FrontEnd.Modules` namespaces.
+Add `/build/js/main.min.js` (requires jQuery, and Handlebars Runtime) and `/build/css/framework.css` to your page.  You will then be able to access the pages and modules through `UAlberta.FrontEnd.Pages` and `UAlberta.FrontEnd.Modules` namespaces.
 
 For example, here is how the UAlberta.ca homepage could by dynamicly created:
 

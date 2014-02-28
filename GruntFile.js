@@ -92,7 +92,7 @@ module.exports = function(grunt) {
           }
         },
         files: {
-          'build/js/templates.js': "src/templates/**/*.hbs"
+          'src/js/2-templates.js': "src/templates/**/*.hbs"
         }
       }
     }
