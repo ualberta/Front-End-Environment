@@ -38,6 +38,9 @@ For example, you could build a replica of the UAlberta home page with:
 
 ### `Page(baseData)`
 
+  - [View Institutional Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_institutional.json)
+  - [View Faculty Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_faculty.json)
+
 Creates a page with the base data provided.  The base data contains: 
 
   - blade logo (if any)
@@ -51,9 +54,6 @@ Creates a page with the base data provided.  The base data contains:
   - ualberta footer links
 
 The base page does not have a layout and does not automatically build when created.
-
-[View Institutional Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_institutional.json)
-[View Faculty Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_faculty.json)
 
 #### `Page.setLayout(layoutName)`
 
