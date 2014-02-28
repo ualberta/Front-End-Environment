@@ -9,7 +9,7 @@ Add `/build/js/main.min.js` (requires jQuery, and Handlebars Runtime) and `/buil
 
 For example, this would create an institutional home page with a feature:
 
-    // create an institutional home page
+    // see sample page json in /src/assets/data
     var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data);
 
     // feature JSON data

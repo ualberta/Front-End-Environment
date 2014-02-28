@@ -13,10 +13,162 @@ var UAlberta = UAlberta || {};
       function Page(baseData) {
         this.baseData = baseData;
 
+        this.modules = new Array();
+
+        var self = this;
+
+        // Public
+
+        // Sets the layout of the content area, called after build()
+        this.setLayout = function(layoutName) {
+          switch(layoutName) {
+            case "ualberta-home":
+              var template = UAlberta.FrontEnd.templates["ualberta-home.hbs"];
+              $("#content-wrapper").html(template({}));
+              break;
+            default:
+              console.log("error: invalid layout");
+          }
+        };
+
+        // Creates a base page with no layout
         this.build = function() {
 
-          // create base
-          createBase(this.baseData);
+          if(self.baseData.blade)
+            addBlade();
+
+          if(self.baseData.banner)
+            addBanner();
+
+          if(self.baseData.navigation) {
+            addGlobalNavigation();
+            addMobileNavigation();
+          }
+          
+          if(self.baseData.secondaryFooter)
+            addSecondaryFooter();
+          
+          if(self.baseData.ualbertaFooter)
+            addInstitutionalFooter();
+
+        };
+
+        // Private 
+
+        function addBlade() {
+
+          var template = UAlberta.FrontEnd.templates["blade.hbs"];
+
+          self.modules.push(
+            UAlberta.FrontEnd.Modules.addModule(
+              'blade', 
+              'blade', 
+              template, 
+              self.baseData.blade, 
+              'header', 
+              {}
+            )
+          );
+
+          // close any open overlays when clicking the "body" element
+          $('body').on('click',function(e) {
+            if($('#ql').hasClass('open')) {
+              $('#ql').removeClass('open');
+              e.stopPropagation();
+            }
+          });
+          
+          // toggle the quick links dropdown
+          $('#ql-toggle').on('click', function(e) {
+            $('#ql').toggleClass('open');
+            e.stopPropagation();
+          });
+
+        };
+
+        function addBanner() {
+
+          var template = UAlberta.FrontEnd.templates["banner.hbs"];
+
+          self.modules.push(
+            UAlberta.FrontEnd.Modules.addModule(
+              'banner', 
+              'banner', 
+              template, 
+              self.baseData.banner, 
+              'header', 
+              {}
+            )
+          );
+
+        };
+
+        function addGlobalNavigation() {
+
+          var template = UAlberta.FrontEnd.templates["global-navigation.hbs"];
+
+          self.modules.push(
+            UAlberta.FrontEnd.Modules.addModule(
+              'global-nav', 
+              'global-nav', 
+              template, 
+              self.baseData.navigation, 
+              'header', 
+              {}
+            )
+          );
+
+        };
+
+        function addMobileNavigation() {
+        
+          var template = UAlberta.FrontEnd.templates["mobile-navigation.hbs"];
+            
+          self.modules.push(
+            UAlberta.FrontEnd.Modules.addModule(
+              'mobile-nav', 
+              'mobile-nav', 
+              template, 
+              self.baseData.navigation, 
+              'header', 
+              {}
+            )
+          );
+
+          // close any open overlays when clicking the "body" element
+          $('body').on('click',function(e) {
+            if($('.nav-wrapper').hasClass('on')) {
+              $('.nav-wrapper').removeClass('on');
+              e.stopPropagation();
+            }
+          });
+          
+          // toggle the navigations
+          $('.navigation-toggle').on('click', function(e) {
+            $('.nav-wrapper').toggleClass('on');
+            e.stopPropagation();
+          });
+
+        };
+
+        function addSecondaryFooter() {
+
+        };
+
+        function addInstitutionalFooter() {
+
+          var template = UAlberta.FrontEnd.templates["institutional-footer.hbs"];
+
+          self.modules.push(
+            UAlberta.FrontEnd.Modules.addModule(
+              'institutional-footer', 
+              'institutional-footer', 
+              template, 
+              self.baseData.ualbertaFooter, 
+              'footer', 
+              {}
+            )
+          );
 
         };
 
@@ -28,15 +180,18 @@ var UAlberta = UAlberta || {};
         this.base = Page;
         this.base(baseData);
 
+        this.baseData = baseData;
+
         this.addFeature = function(featureData) {
           UAlberta.FrontEnd.Modules.addSingleFeature(featureData, "#feature-area");
         };
 
         this.base_build = this.build;
         this.build = function() {
+
           this.base_build();
 
-          UAlberta.FrontEnd.Modules.addInstitutionalHomeLayout();
+          this.setLayout("ualberta-home");
 
         }
 
@@ -47,67 +202,19 @@ var UAlberta = UAlberta || {};
       }
       Pages.InstitutionalHome = InstitutionalHome;
 
-      // creates base page (header/footer) based on the data passed
-      function createBase(data) {
-        UAlberta.FrontEnd.Modules.addBlade(data.blade);
-        UAlberta.FrontEnd.Modules.addBanner(data.banner);
-        UAlberta.FrontEnd.Modules.addGlobalNavigation(data.navigation);
-        UAlberta.FrontEnd.Modules.addMobileNavigation(data.navigation);
-        if(data.secondaryFooter) {
-          UAlberta.FrontEnd.Modules.addInstitutionalFooter(data.secondaryFooter);
-        }
-        UAlberta.FrontEnd.Modules.addInstitutionalFooter(data.ualbertaFooter);
-      }
-
-      // loads default institutional base data, passes it to createBase
-      function createInstitutionalBase() {
-        $.getJSON( "assets/data/base_institutional.json", null, createBase)
-          .fail( function(d, textStatus, error) {
-            console.error("getJSON failed, status: " + textStatus + ", error: "+error)
-          });
-      };
-      Pages.createInstitutionalBase = createInstitutionalBase;
-
-      // loads default faculty base data, passes it to createBase
-      function createFacultyBase() {
-        $.getJSON( "assets/data/base_faculty.json", null, createBase)
-          .fail( function(d, textStatus, error) {
-            console.error("getJSON failed, status: " + textStatus + ", error: "+error)
-          });
-      };
-      Pages.createFacultyBase = createFacultyBase;
-
-      // create the base institutional homepage layout
-      function createInstitutionalHomePage() {
-
-        createInstitutionalBase();
-        UAlberta.FrontEnd.Modules.addInstitutionalHomeLayout();
-
-      };
-      Pages.createInstitutionalHomePage = createInstitutionalHomePage;
-
-      function createInstitutionalLandingPage() {
-
-      };
-
-      function createFacultyHomePage() {
-
-      };
-
-      function createFacultyLandingPage() {
-
-      };
-
-      function createContentPage() {
-
-      };
 
     })(FrontEnd.Pages || (FrontEnd.Pages = {}));
     var Pages = FrontEnd.Pages;
 
+
+
+    // MODULES
+    // ---------
+
     (function (Modules) {
 
       // TODO: removing items from this array could cause ID conflics. Fix that.
+      //       or keep the modules in the page.
       var pageModules = new Array(); 
 
       // creates a new module on the page, 
@@ -132,17 +239,17 @@ var UAlberta = UAlberta || {};
           this.el.remove();
         };
 
-        /* TODO: provide a method to update the component with new data
+
         this.update = function(newData) {
+          /* TODO: provide a method to update the component with new data
           var updateEl = this.el;
           updateEl.empty();
           $(template(data)).children().each(function() {
             updateEl.append($(this));
           });
+          */
         };
-        */
-
-
+        
         this.add();
 
       };
@@ -178,86 +285,11 @@ var UAlberta = UAlberta || {};
       }
 
       function addModule(id, type, template, data, placeholder, options) {
-        pageModules.push(new Module(id, type, template, data, placeholder, options));
+        var mod = new Module(id, type, template, data, placeholder, options);
+        pageModules.push(mod);
+        return mod;
       };
-
-      function addBlade(data, options) {
-
-        var placeholder = "header";
-        var template = UAlberta.FrontEnd.templates["blade.hbs"];
-        var data = data;
-
-        addModule('blade', 'blade', template, data, placeholder, options);
-
-        // close any open overlays when clicking the "body" element
-        $('body').on('click',function(e) {
-          if($('#ql').hasClass('open')) {
-            $('#ql').removeClass('open');
-            e.stopPropagation();
-          }
-        });
-        
-        // toggle the quick links dropdown
-        $('#ql-toggle').on('click', function(e) {
-          $('#ql').toggleClass('open');
-          e.stopPropagation();
-        });
-
-      };
-      Modules.addBlade = addBlade;
-
-      function addBanner(data, options) {
-
-        var placeholder = "header";
-        var template = UAlberta.FrontEnd.templates["banner.hbs"];
-        var data = data;
-
-        addModule('banner', 'banner', template, data, placeholder, options);
-
-      };
-      Modules.addBanner = addBanner;
-
-      function addGlobalNavigation(data, options) {
-
-        var placeholder = "header";
-        var template = UAlberta.FrontEnd.templates["global-navigation.hbs"];
-        var data = data;
-
-        addModule('global-nav', 'global-nav', template, data, placeholder, options);
-
-      };
-      Modules.addGlobalNavigation = addGlobalNavigation;
-
-      function addMobileNavigation(data, options) {
-
-        var placeholder = "header";
-        var template = UAlberta.FrontEnd.templates["mobile-navigation.hbs"];
-        var data = data;
-
-        addModule('mobile-nav', 'mobile-nav', template, data, placeholder, options);
-
-        // close any open overlays when clicking the "body" element
-        $('body').on('click',function(e) {
-          if($('.nav-wrapper').hasClass('on')) {
-            $('.nav-wrapper').removeClass('on');
-            e.stopPropagation();
-          }
-        });
-        
-        // toggle the navigations
-        $('.navigation-toggle').on('click', function(e) {
-          $('.nav-wrapper').toggleClass('on');
-          e.stopPropagation();
-        });
-
-      };
-      Modules.addMobileNavigation = addMobileNavigation;
-
-      function addInstitutionalHomeLayout() {
-        var template = UAlberta.FrontEnd.templates["ualberta-home.hbs"];
-        addModule('layout'+(pageModules.length+1), 'layout', template, {}, "#content-wrapper", {});
-      };
-      Modules.addInstitutionalHomeLayout = addInstitutionalHomeLayout;
+      Modules.addModule = addModule;
 
       function addExploreBar(parent) {
 
@@ -312,16 +344,6 @@ var UAlberta = UAlberta || {};
       }
       Modules.addSidebarSocialMedia = addSidebarSocialMedia;
 
-      function addInstitutionalFooter(data, options) {
-
-        var placeholder = "footer";
-        var template = UAlberta.FrontEnd.templates["institutional-footer.hbs"];
-        var data = data;
-
-        addModule('institutional-footer', 'institutional-footer', template, data, placeholder, options);
-
-      };
-      Modules.addInstitutionalFooter = addInstitutionalFooter;
 
     })(FrontEnd.Modules || (FrontEnd.Modules = {}));
     var Modules = FrontEnd.Modules;
