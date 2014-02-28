@@ -38,22 +38,6 @@ For example, this would create an institutional home page with a feature:
 
 ## Contributing
 
-this repository has a base vagrant box with npm and grunt tasks preconfigured that will:
-
-  - Serve files from the `/build` directory
-    - auto refresh when there are html, css, or js changes (via [reload](https://www.npmjs.org/package/reload))
-  - Watch `.less` files in `/src/less/` for changes 
-    - compile into `/build/css/framework.css` 
-  - Watch `*.js` files in `/src/js` for changes 
-    - concatenate vendor scripts in `/src/js/vendor`
-    - concatenate author scripts in `/src/js`
-    - uglify
-    - copy to `/build/js`
-  - Watch `.html` files in `/src/` for changes
-    - copy to `/build` when modified
-  - Watch `/src/templates/` for `.hbs` tempate changes 
-    - compiles the templates into `/build/js/templates.js`, which are accessible through `UAlberta.FrontEnd.templates`
-
 ### Getting Started
 
   - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -70,6 +54,22 @@ If you navigate to `http://localhost:3333/` you should see a "Hello World!" page
 Using the editor of your choice, you can modify the  less, js, or html files in the `/src` folder and see a live preview in your browser.
 
 Run the "stop" command that corresponds to your Operating System to stop the development environment.
+
+The development environment is preconfigured with npm and grunt tasks that will:
+
+  - Serve files from the `/build` directory
+    - auto refresh when there are html, css, or js changes (via [reload](https://www.npmjs.org/package/reload))
+  - Watch `.less` files in `/src/less/` for changes 
+    - compile into `/build/css/framework.css` 
+  - Watch `*.js` files in `/src/js` for changes 
+    - concatenate vendor scripts in `/src/js/vendor`
+    - concatenate author scripts in `/src/js`
+    - uglify
+    - copy to `/build/js`
+  - Watch `.html` files in `/src/` for changes
+    - copy to `/build` when modified
+  - Watch `/src/templates/` for `.hbs` tempate changes 
+    - compiles the templates into `/build/js/templates.js`, which are accessible through `UAlberta.FrontEnd.templates`
 
 
 ### Creating a Module
