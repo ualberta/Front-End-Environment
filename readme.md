@@ -31,7 +31,7 @@ For example, here is how the UAlberta.ca homepage could by dynamicly created:
 
     page.build();
 
-*Documentation of the json data format is in process for the various modules.  For now, you can browse the [data folder](https://github.com/ualberta/front-end-framework/tree/master/src/assets/data) for some sample json files.*
+**The JSON data format for each module is currently being documented.  For now, you can browse the [data folder](https://github.com/ualberta/front-end-framework/tree/master/src/assets/data) for some sample json files.**
 
 
 ## Contributing
