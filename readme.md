@@ -99,6 +99,9 @@ Creates a page with the base data provided.  The base data contains:
 
 The base page does not have a layout and does not automatically build when created.
 
+[View Institutional Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_institutional.json)
+[View Faculty Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_faculty.json)
+
 #### `Page.setLayout(layoutName)`
 
 Adds the specified layout to the page.  Currently `ualberta-home` is the only valid layout.
@@ -111,7 +114,17 @@ Extends `Page` and provides the following additional functions:
   - `addWhyUAlberta()`
   - `addExploreBar()`
   - `addToFirstColumn(moduleName, data)` - "data-list" is currently the only valid moduleName in the first column.
-  - `addToSecondColumn(moduleName, data)` - "data-list" is currently the only valid moduleName in the second column.
+  - `addToSecondColumn(moduleName, data)`
   - `addToSidebar(moduleName, data)`
+
+## Modules
+
+### addSingleFeature(data, parent, options)
+
+### addDataList(data, parent, options)
+
+### addSidebarContentItem(data, parent, options)
+
+### addSidebarSocialMedia(data, parent, options)
 
 
