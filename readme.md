@@ -1,7 +1,6 @@
 # UAlberta Front-End Framework
 
-The UAlberta front-end framework allows dynamic creation of the Framework modules through json data.
-
+The UAlberta front-end framework allows dynamic creation of pages and modules that adhere to the UAlberta Web Style Guide.
 
 ## Usage
 
