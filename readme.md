@@ -111,7 +111,7 @@ Running the start command will download the development environment and run it o
 
 Once the initial setup is complete, you will see a notification in the terminal window that it is watching files.
 
-If you navigate to `http://localhost:3333/` you should see a "Hello World!" page. 
+If you navigate to `http://localhost:3333/` you should be served the `/build/index.html` file. 
 
 Using the editor of your choice, you can modify the  less, js, or html files in the `/src` folder and see a live preview in your browser.
 
