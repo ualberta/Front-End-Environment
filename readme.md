@@ -119,12 +119,12 @@ Extends `Page` and provides the following additional functions:
 
 ## Modules
 
-### addSingleFeature(data, parent, options)
+### `addSingleFeature(data, parent, options)`
 
-### addDataList(data, parent, options)
+### `addDataList(data, parent, options)`
 
-### addSidebarContentItem(data, parent, options)
+### `addSidebarContentItem(data, parent, options)`
 
-### addSidebarSocialMedia(data, parent, options)
+### `addSidebarSocialMedia(data, parent, options)`
 
 
