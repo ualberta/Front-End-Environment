@@ -1,10 +1,44 @@
-# What is this?
+# UAlberta Front-End Framework
 
-This is a base vagrant box with npm and grunt tasks preconfigured that will:
+The UAlberta front-end framework allows dynamic creation of the Framework modules through json data.
+
+
+## Usage
+
+Add main.min.js (requires jQuery, and Handlebars Runtime) and framework.css to your page.  You will then be able to access the pages and modules through `UAlberta.FrontEnd.Pages` and `UAlberta.FrontEnd.Modules` namespaces.
+
+For example, here is how the UAlberta.ca homepage could by dynamicly created:
+
+    // Setup a new institutional homepage
+    var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data);
+
+    // Add a feature to the page
+    page.addFeature(data);
+
+    // Add the explore bar
+    page.addExploreBar();
+
+    // Add a module to the first column
+    page.addToFirstColumn('data-list', data);
+
+    // Add two modules to the second column
+    page.addToSecondColumn('data-list', data);
+    page.addToSecondColumn('data-list', data);
+
+    // add sidebar modules
+    page.addToSidebar('social-media', data);
+    page.addToSidebar('content', data);
+
+    page.build();
+
+
+## Contributing
+
+this repository has a base vagrant box with npm and grunt tasks preconfigured that will:
 
   - Serve files from the `/build` directory
     - auto refresh when there are html, css, or js changes (via [reload](https://www.npmjs.org/package/reload))
-  - Watch `/src/less/style.less` for changes 
+  - Watch `/src/less/framework.less` for changes 
     - compile into css file in `/build/css` 
   - Watch `.js` files for changes 
     - concatenate vendor scripts in `/src/js/vendor`
@@ -13,8 +47,10 @@ This is a base vagrant box with npm and grunt tasks preconfigured that will:
     - copy to `/build/js`
   - Watch `.html` files for changes
     - copy to `/build` when modified
+  - Watch `/src/templates/` for `.hbs` tempate changes 
+    - compiles the templates into `/build/js/templates.js`, which are accessible through `UAlberta.FrontEnd.templates`
 
-## Getting Started
+### Getting Started
 
   - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
   - Install [Vagrant](http://www.vagrantup.com/downloads.html)
@@ -29,26 +65,15 @@ If you navigate to `http://localhost:3333/` you should see a "Hello World!" page
 
 Using the editor of your choice, you can modify the  less, js, or html files in the `/src` folder and see a live preview in your browser.
 
+Run the "stop" command that corresponds to your Operating System to stop the development environment.
 
-## Usage
 
-You can start the development environment by opening one of the two files, depending on your OS:
+### Creating a Module
 
-  - `/tools/mac-start.command`: Mac and Linux
-  - `/tools/win-start.bat`: Windows
+A module consists of three pieces:
+
+  - `/src/templates/components/{{COMPONENT_NAME}}.hbs`: The handlebars template file for the markup
+  - `/src/less/framework/components/_{{COMPONENT_NAME.less}}: The less file containing the styling for the component (you need to reference this file in `components.less` to include it in framework.css)
+  - `/src/js/UAlberta.FrontEnd.js`: A function in the Modules namespace that specified the template to use.
+
   
-Leave the terminal window open while you do your development.
-
-When you're finished using the development environment, run one of these to shut it down:
-
-  - `/tools/mac-stop.command`: Mac and Linux
-  - `/tools/win-stop.bat`: Windows
-  
-### Command Line Usage
-
-If you prefer to use the command line to start up / shut down, go to the repository root directory and run one of these:
-
-  - `vagrant up --provision`: boots up the environment, installs any dependencies in package.json, start the web server, and run the default grunt task.
-  - `vagrant halt`: shuts down the development environment.
-  - `vagrant up`: boots up the machine, but doesn't start the dependency installation / web server / grunt task
-    - after running `vagrant up` without the `--provision` flag you can run `vagrant ssh` to get to the shell of the dev environment and install any additional software you may need.
