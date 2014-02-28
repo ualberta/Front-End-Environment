@@ -65,9 +65,9 @@ Adds the specified layout to the page.  Currently `ualberta-home` is the only va
 Extends `Page` and provides the following additional functions:
 
   - `addFeature(data)`
-  - `addWhyUAlberta()`
-  - `addExploreBar()`
-  - `addToFirstColumn(moduleName, data)` - "data-list" is currently the only valid moduleName in the first column.
+  - `addWhyUAlberta()`: static for now
+  - `addExploreBar()`: static for now
+  - `addToFirstColumn(moduleName, data)`: "data-list" is currently the only valid moduleName in the first column.
   - `addToSecondColumn(moduleName, data)`
   - `addToSidebar(moduleName, data)`
 
