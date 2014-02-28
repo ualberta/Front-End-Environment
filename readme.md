@@ -7,30 +7,30 @@ The UAlberta front-end framework allows dynamic creation of the Framework module
 
 Add `/build/js/main.min.js` (requires jQuery, and Handlebars Runtime) and `/build/css/framework.css` to your page.  You will then be able to access the pages and modules through `UAlberta.FrontEnd.Pages` and `UAlberta.FrontEnd.Modules` namespaces.
 
-For example, this would create an institutional home page with a feature:
+For example, you could build a replica of the UAlberta home page with:
 
-    // see sample page json in /src/assets/data
-    var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data);
+    // CREATE BASE PAGE
+    // see sample base page json in /src/assets/data
+    var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(pageData);
 
-    // feature JSON data
-    var feature = {
-      "image" : "http://www.placehold.it/1680x504",
-      "imageFocalPoint": "right",
-      "heading" : "This is a sample feature.",
-      "description" : "A sample description will follow the heading.",
-      "buttons": [
-        {
-          "url": "#",
-          "label": "Do Something!"
-        }
-      ],
-      "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
-      "boxClass": "dark",
-      "featureClass": "sample-feature"
-    };
+    // CREATE MODULES
+    // see sample base component json in /src/assets/data/components
 
-    // add the feature to the page.
-    page.addFeature(feature);
+    page.addFeature(featureData); // sample-feature.json
+
+    page.addWhyUAlberta(); // static template
+
+    page.addExploreBar(); // static template
+
+    page.addToFirstColumn('data-list', newsData); // sample-news-list.json
+
+    page.addToSecondColumn('data-list', campusNoticeData); // sample-link-list.json
+    page.addToSecondColumn('data-list', blogData);  
+
+    // add sidebar modules
+    page.addToSidebar('content', contentData);  // sample-sidebar-content.json
+    page.addToSidebar('social-media', socialMediaData); // sample-sidebar-social-media.json
+
 
 
 **The JSON data format for each module is currently being documented.  For now, you can browse the [data folder](https://github.com/ualberta/front-end-framework/tree/master/src/assets/data) for some sample json files.**

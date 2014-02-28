@@ -182,8 +182,59 @@ var UAlberta = UAlberta || {};
 
         this.baseData = baseData;
 
+        var self = this;
+
         this.addFeature = function(featureData) {
           UAlberta.FrontEnd.Modules.addSingleFeature(featureData, "#feature-area");
+        };
+
+        this.addExploreBar = function() {
+          UAlberta.FrontEnd.Modules.addExploreBar("#explore-row");
+        };
+
+        this.addWhyUAlberta = function() {
+          UAlberta.FrontEnd.Modules.addWhyUAlbertaRow("#why-ualberta");
+        };
+
+        this.addToFirstColumn = function(moduleName, data) {
+          switch(moduleName) {
+            case "data-list":
+              self.modules.push(
+                UAlberta.FrontEnd.Modules.addDataList(data, "#first-column")
+              );
+              break;
+            default:
+              console.log("error: invalid module name");
+          }
+        };
+
+        this.addToSecondColumn = function(moduleName, data) {
+          switch(moduleName) {
+            case "data-list":
+              self.modules.push(
+                UAlberta.FrontEnd.Modules.addDataList(data, "#second-column")
+              );
+              break;
+            default:
+              console.log("error: invalid module name");
+          }
+        };
+
+        this.addToSidebar = function(moduleName, data) {
+          switch(moduleName) {
+            case "content":
+              self.modules.push(
+                UAlberta.FrontEnd.Modules.addSidebarContentItem(data, "#sidebar")
+              );
+              break;
+            case "social-media":
+              self.modules.push(
+                UAlberta.FrontEnd.Modules.addSidebarSocialMedia(data, "#sidebar")
+              );
+              break;
+            default:
+              console.log("error: invalid module name");
+          }
         };
 
         this.base_build = this.build;
