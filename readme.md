@@ -80,3 +80,38 @@ A module consists of three pieces:
   - `/src/less/framework/components/_{{COMPONENT_NAME.less}}`: The less file containing the styling for the component (you need to reference this file in `components.less` to include it in framework.css)
   - `/src/js/UAlberta.FrontEnd.js`: A function in the Modules namespace that specified the template to use.
 
+
+## Pages
+
+### `Page(baseData)`
+
+Creates a page with the base data provided.  The base data contains: 
+
+  - blade logo (if any)
+  - quick links
+  - banner logo (if any)
+  - site title
+  - audience links (if any)
+  - global navigation
+  - mobile navigation
+  - secondary footer data (if any)
+  - ualberta footer links
+
+The base page does not have a layout and does not automatically build when created.
+
+#### `Page.setLayout(layoutName)`
+
+Adds the specified layout to the page.  Currently `ualberta-home` is the only valid layout.
+
+### `InstitutionalHome(baseData)`
+
+Extends `Page` and provides the following additional functions:
+
+  - `addFeature(data)`
+  - `addWhyUAlberta()`
+  - `addExploreBar()`
+  - `addToFirstColumn(moduleName, data)` - "data-list" is currently the only valid moduleName in the first column.
+  - `addToSecondColumn(moduleName, data)` - "data-list" is currently the only valid moduleName in the second column.
+  - `addToSidebar(moduleName, data)`
+
+
