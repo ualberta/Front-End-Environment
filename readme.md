@@ -7,29 +7,31 @@ The UAlberta front-end framework allows dynamic creation of the Framework module
 
 Add `/build/js/main.min.js` (requires jQuery, and Handlebars Runtime) and `/build/css/framework.css` to your page.  You will then be able to access the pages and modules through `UAlberta.FrontEnd.Pages` and `UAlberta.FrontEnd.Modules` namespaces.
 
-For example, here is how the UAlberta.ca homepage could by dynamicly created:
+For example, this would create an institutional home page with a feature:
 
-    // Setup a new institutional homepage
+    // create an institutional home page
     var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data);
 
-    // Add a feature to the page
-    page.addFeature(data);
+    // feature JSON data
+    var feature = {
+      "image" : "http://www.placehold.it/1680x504",
+      "imageFocalPoint": "right",
+      "heading" : "This is a sample feature.",
+      "description" : "A sample description will follow the heading.",
+      "buttons": [
+        {
+          "url": "#",
+          "label": "Do Something!"
+        }
+      ],
+      "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
+      "boxClass": "dark",
+      "featureClass": "sample-feature"
+    };
 
-    // Add the explore bar
-    page.addExploreBar();
+    // add the feature to the page.
+    page.addFeature(feature);
 
-    // Add a module to the first column
-    page.addToFirstColumn('data-list', data);
-
-    // Add two modules to the second column
-    page.addToSecondColumn('data-list', data);
-    page.addToSecondColumn('data-list', data);
-
-    // add sidebar modules
-    page.addToSidebar('social-media', data);
-    page.addToSidebar('content', data);
-
-    page.build();
 
 **The JSON data format for each module is currently being documented.  For now, you can browse the [data folder](https://github.com/ualberta/front-end-framework/tree/master/src/assets/data) for some sample json files.**
 
