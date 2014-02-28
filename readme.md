@@ -16,20 +16,20 @@ For example, you could build a replica of the UAlberta home page with:
     // CREATE MODULES
     // see sample base component json in /src/assets/data/components
 
-    page.addFeature(featureData); // sample-feature.json
+    page.addFeature(featureData); // featureData: sample-feature.json
 
     page.addWhyUAlberta(); // static template
 
     page.addExploreBar(); // static template
 
-    page.addToFirstColumn('data-list', newsData); // sample-news-list.json
+    page.addToFirstColumn('data-list', newsData); // newsData: sample-news-list.json
 
-    page.addToSecondColumn('data-list', campusNoticeData); // sample-link-list.json
+    page.addToSecondColumn('data-list', campusNoticeData); // campusNoticeData: sample-link-list.json
     page.addToSecondColumn('data-list', blogData);  
 
     // add sidebar modules
-    page.addToSidebar('content', contentData);  // sample-sidebar-content.json
-    page.addToSidebar('social-media', socialMediaData); // sample-sidebar-social-media.json
+    page.addToSidebar('content', contentData);  // contentData: sample-sidebar-content.json
+    page.addToSidebar('social-media', socialMediaData); // socialMediaData: sample-sidebar-social-media.json
 
 
 
