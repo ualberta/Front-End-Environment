@@ -42,14 +42,14 @@ this repository has a base vagrant box with npm and grunt tasks preconfigured th
 
   - Serve files from the `/build` directory
     - auto refresh when there are html, css, or js changes (via [reload](https://www.npmjs.org/package/reload))
-  - Watch `/src/less/framework.less` for changes 
-    - compile into css file in `/build/css` 
-  - Watch `.js` files for changes 
+  - Watch `.less` files in `/src/less/` for changes 
+    - compile into `/build/css/framework.css` 
+  - Watch `*.js` files in `/src/js` for changes 
     - concatenate vendor scripts in `/src/js/vendor`
     - concatenate author scripts in `/src/js`
     - uglify
     - copy to `/build/js`
-  - Watch `.html` files for changes
+  - Watch `.html` files in `/src/` for changes
     - copy to `/build` when modified
   - Watch `/src/templates/` for `.hbs` tempate changes 
     - compiles the templates into `/build/js/templates.js`, which are accessible through `UAlberta.FrontEnd.templates`
