@@ -72,13 +72,30 @@ Extends `Page` and provides the following additional functions:
 
 ## Modules
 
+To add a module to an existing page, you need the following three parameters:
+
+  - `data`: The JSON data for the module
+  - `parent`: a string containing a selector to append the markup to
+  - `options`: any additional options for the module
+
+So far, the following modules have been inplemented.
+
 ### `addSingleFeature(data, parent, options)`
+
+  - [View Sample Feature JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-feature.json)
 
 ### `addDataList(data, parent, options)`
 
+  - [View Sample News List JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-news-list.json)
+  - [View Sample Link List JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-link-list.json)
+
 ### `addSidebarContentItem(data, parent, options)`
 
+  - [View Sample Sidebar Content JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-sidebar-content.json)
+
 ### `addSidebarSocialMedia(data, parent, options)`
+
+  - [View Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-sidebar-social-media.json)
 
 ## Contributing
 
