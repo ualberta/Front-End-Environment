@@ -1,0 +1,176 @@
+{
+  "blade": {
+    "quickLinks": [
+      {
+        "url": "#",
+        "label": "Find a Person"
+      },
+      {
+        "url": "#",
+        "label": "ONEcard"
+      },
+      {
+        "url": "#",
+        "label": "Bear Tracks"
+      },
+      {
+        "url": "#",
+        "label": "Maps"
+      },
+      {
+        "url": "#",
+        "label": "Email & Apps"
+      },
+      {
+        "url": "#",
+        "label": "eClass"
+      },
+      {
+        "url": "#",
+        "label": "Libraries"
+      }
+    ]
+  },
+  "banner": {
+    "siteLogo": "http://ualberta.ca/~publicas/uofa/img/logo-reverse.svg",
+    "siteTitle": "University of Alberta",
+    "siteUrl": "http://www.ualberta.ca/",
+    "audienceLinks": [
+      {
+        "url": "#",
+        "label": "Faculty and Staff"
+      },
+      {
+        "url": "#",
+        "label": "Prospective Students"
+      },
+      {
+        "url": "#",
+        "label": "Current Students"
+      },
+      {
+        "url": "#",
+        "label": "Alumni and Friends"
+      }
+    ] 
+  },
+  "navigation" : {
+    "globalLinks": [
+      {
+        "url": "#",
+        "label": "Why UAlberta?"
+      },
+      {
+        "url": "#",
+        "label": "Faculties & Programs"
+      },
+      {
+        "url": "#",
+        "label": "Research"
+      },
+      {
+        "url": "#",
+        "label": "Admissions"
+      },
+      {
+        "url": "#",
+        "label": "Campus Life"
+      },
+      {
+        "url": "#",
+        "label": "News & Events"
+      }
+    ],
+    "mobileLinks": [
+      {
+        "url": "#",
+        "label": "Why UAlberta?",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Faculties and Programs",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Research",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Campus Life",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "News and Events",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Prospective Students",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Current Students",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Faculty and Staff",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Alumni and Friends",
+        "children": []
+      }
+    ]
+  },
+  "ualbertaFooter" : {
+    "footerLinks": [
+      {
+        "url": "#",
+        "label": "Contact Us"
+      },
+      {
+        "url": "#",
+        "label": "Feedback"
+      },
+      {
+        "url": "#",
+        "label": "University Calendar"
+      },
+      {
+        "url": "#",
+        "label": "Careers"
+      },
+      {
+        "url": "#",
+        "label": "Emergency"
+      },
+      {
+        "url": "#",
+        "label": "Policies"
+      },
+      {
+        "url": "#",
+        "label": "Weather"
+      },
+      {
+        "url": "#",
+        "label": "Edmonton"
+      },
+      {
+        "url": "#",
+        "label": "Privacy"
+      },
+      {
+        "url": "#",
+        "label": "Keep In Touch"
+      }
+    ]
+  }
+}

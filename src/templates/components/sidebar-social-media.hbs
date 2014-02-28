@@ -1,0 +1,30 @@
+<div class="sidebar-module extrude">
+  <h5 class="sidebar-title">{{title}}</h5>
+  <div class="sidebar-content">
+    <ul class="data-list social-media-list">
+      {{#if facebook}}
+        <li>
+          <a href="{{facebook}}" target="_blank">
+            <img src="assets/img/social-icons/webicon-facebook.png">
+            Facebook
+          </a>
+        </li>
+      {{/if}}
+      {{#if foursquare}}
+        <li><a href="{{foursquare}}" target="_blank"><img src="assets/img/social-icons/webicon-foursquare.png"> Foursquare</a></li>
+      {{/if}}
+      {{#if twitter}}
+        <li><a href="{{twitter}}" target="_blank"><img src="assets/img/social-icons/webicon-twitter.png"> Twitter</a></li>
+      {{/if}}
+      {{#if tumblr}}
+        <li><a href="{{tumblr}}" target="_blank"><img src="assets/img/social-icons/webicon-tumblr.png"> Tumblr</a></li>
+      {{/if}}
+      {{#if youtube}}
+        <li><a href="{{youtube}}" target="_blank"><img src="assets/img/social-icons/webicon-youtube.png"> YouTube</a></li>
+      {{/if}}
+    </ul>
+  </div>
+  {{#if moreLink}}
+    <a class="btn" href="{{moreLink.url}}">{{moreLink.label}}</a>
+  {{/if}}
+</div>

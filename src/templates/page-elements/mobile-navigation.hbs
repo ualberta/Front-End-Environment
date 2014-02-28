@@ -1,0 +1,40 @@
+{{#if mobileLinks}}
+<div class="nav-mobile">
+    <div class="nav-wrapper">
+        <ul class="level-0">
+            {{#each mobileLinks}}
+            <li>
+                <a href="{{this.url}}">{{this.label}}</a>
+                {{#if this.children}}
+                <ul class="level-1">
+                    {{#each this.children}}
+                    <li>
+                        <a href="{{this.url}}">{{this.label}}</a>
+                        {{#if this.children}}
+                        <ul class="level-2">
+                            {{#each this.children}}
+                            <li>
+                                <a href="{{this.url}}">{{this.label}}</a>
+                                {{#if this.children}}
+                                <ul class="level-3">
+                                    {{#each this.children}}
+                                    <li>
+                                        <a href="{{this.url}}">{{this.label}}</a>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                                {{/if}}
+                            </li>
+                            {{/each}}
+                        </ul>
+                        {{/if}}
+                    </li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
+{{/if}}

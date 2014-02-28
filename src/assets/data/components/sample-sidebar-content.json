@@ -1,0 +1,8 @@
+{
+  "title": "Content Sidebar",
+  "content": "<p>This sidebar only contains a paragraph, but you could put any content inside of these.</p>",
+  "moreLink": {
+    "url": "#",
+    "label": "Do Something!"
+  }
+}

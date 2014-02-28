@@ -1,0 +1,22 @@
+<div class="navigation-container">
+    <nav id="main-nav" class="navigation-inner">
+        <ul>
+            <li>
+                <a class="navigation-toggle">
+                    <span>Show Navigation</span>
+                    <i class="icon-toggle-nav"></i>
+                </a>
+                <ul id="nav-list" class="main-navigation collapse">
+
+                    {{#each_with_index globalLinks}}
+                        <li role="menuitem" class="nav{{index}}">
+                            <a href="{{this.url}}">{{this.label}}</a>
+                        </li>
+                    {{/each_with_index}}
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div> 
+ 

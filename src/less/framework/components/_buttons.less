@@ -1,0 +1,136 @@
+.btn {
+  .btn-base();
+}
+
+a.btn {
+  display: inline-block;
+  .ie7-inline-block();
+}
+
+.btn-green {
+  .standard-button-dark(#00AF5C, #007c41, #fff);
+}
+
+.btn-grey {
+  .btn-grey();
+}
+
+// base positioning for special buttons
+.btn-work, .btn-give, .btn-apply {
+  position: relative;
+  text-align: left;
+  padding-left: 0.8333em;
+  #em > .padding(right,40,16);
+  &:after {
+    position: absolute;
+    #em > .position(top,14,30);  
+    right: 0.5555em;
+    z-index: 1000;
+    display: inline-block;
+    font-family: FontAwesome;  
+    .ie7-inline-block();
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 1.5em;
+    top: 50%;
+    margin-top: -0.5em;
+    height: 1em;
+    line-height: 1em;
+    vertical-align: middle;
+    pointer-events: none;
+    content: "\e835";
+  }
+}
+
+// apply button coloring
+.btn-apply {
+  .btnLightShinyBackground(#ffdb05, #007c41, 1px 1px 1px #fed);
+  &:hover {
+    .btnLightShinyBackground(lighten(#ffdb05,15%), #007c41, 1px 1px 1px #fed);
+  }
+  &:active {
+    .btnLightShinyBackground(darken(#ffdb05,2%), #007c41, 1px 1px 1px #fed);
+    .box-shadow(inset 0px 0px 5px darken(#ffdb05, 15%), 0px 1px 2px #fff);
+    text-shadow: none;
+  }
+  &:after {
+    color: @linkColor;
+    text-shadow: 1px 1px 2px lighten(#ffdb05,35%);
+  }
+}
+
+// work + give button coloring
+.btn-work, .btn-give {
+  .btnLightShinyBackground(#E8EeEa, #007c41, 1px 1px 1px #fff);
+  &:after {
+    color: darken(#dfe9e3,25%);
+    text-shadow: 1px 1px 2px #fff;
+  }
+  &:hover {
+    .btnLightShinyBackground(lighten(#E8EeEa, 15%), #007c41, 1px 1px 1px #fff);
+    &:after {
+      color: @linkColor;
+    }
+  }
+  &:active {
+    .btnLightShinyBackground(darken(#E8EeEa,2%), #007c41, 1px 1px 1px #fff);
+    .box-shadow(inset 0px 0px 5px darken(#E8EeEa, 15%), 0px 1px 2px #fff);
+    text-shadow: none;
+  }
+}
+
+.btn-apply.btn-micro:after,
+.btn-give.btn-micro:after,
+.btn-work.btn-micro:after {
+  top: 48%;
+}
+
+.btn-large { font-size: 1.4em; }
+.btn-small { font-size: 1em; }
+.btn-micro { font-size: 0.815em; text-transform:uppercase; }
+
+
+// SIDEBAR BUTTONS
+// ---------------- 
+
+.sidebar .extrude {
+	.btn-apply, .btn-give, .btn-work{
+		box-shadow: none;
+		text-shadow: none;
+		padding-left:10px;
+	}
+}
+
+
+//
+// Close icons
+// --------------------------------------------------
+
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: @baseLineHeight;
+  color: @black;
+  text-shadow: 0 1px 0 rgba(255,255,255,1);
+  .opacity(20);
+  &:hover {
+    color: @black;
+    text-decoration: none;
+    cursor: pointer;
+    .opacity(40);
+  }
+}
+
+// Additional properties for button version
+// iOS requires the button element instead of an anchor tag.
+// If you want the anchor version, it requires `href="#"`.
+button.close {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+

@@ -1,0 +1,18 @@
+<ul class="slides">
+  <li class="ga_ualberta_fma {{featureClass}}">
+    <div class="feature-wrapper">
+      <div class="feature-image focus-{{imageFocalPoint}}">
+          <img src="{{image}}" />
+      </div>
+      <div class="feature-content {{boxPosition.horizontal}}-island {{boxPosition.vertical}}-island {{boxClass}}">
+        <h3>{{heading}}</h3>
+        <p>{{description}}</p>
+        <div class="feature-buttons">
+          {{#each buttons}}
+            <a class="btn btn-green btn-micro read" href="{{this.url}}">{{this.label}}</a>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>

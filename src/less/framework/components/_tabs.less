@@ -1,0 +1,245 @@
+
+.nav {
+  margin-left: 0;
+  margin-bottom: @baseLineHeight;
+  list-style: none;
+}
+
+// Make links block level
+.nav > li > a {
+  display: block;
+}
+.nav > li > a:hover {
+  text-decoration: none;
+  background-color: @grayLighter;
+  background-color: rgba(0,0,0,0.1);
+}
+
+// Redeclare pull classes because of specifity
+.nav > .pull-right {
+  float: right;
+}
+
+// Nav headers (for dropdowns and lists)
+.nav-header {
+  display: block;
+  padding: 3px 15px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: @baseLineHeight;
+  color: @grayLight;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  text-transform: uppercase;
+}
+// Space them out when they follow another list item (link)
+.nav li + .nav-header {
+  margin-top: 9px;
+}
+
+
+// TABS AND PILLS
+// -------------
+
+// Common styles
+.nav-tabs,
+.nav-pills {
+  .clearfix();
+}
+.nav-tabs > li,
+.nav-pills > li {
+  float: left;
+}
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  padding-right: 0.7778em;
+  padding-left: 0.7778em;
+  margin-right: 0;
+}
+
+// TABS
+// ----
+
+// Give the tabs something to sit on
+.nav-tabs {
+  border-bottom: none;
+  margin-bottom: 0px;
+  font-family: @heavyFontFamily;
+  font-weight: @heavyFontWeight;
+}
+// Make the list-items overlay the bottom border
+.nav-tabs > li {
+  margin-bottom: -1px;
+  margin-right: 2px;
+  border:  1px solid transparent;
+  margin-left: -1px;
+}
+// Actual tabs (as links)
+.nav-tabs > li > a {
+  padding: 0.475em.7778em;
+  position:relative;
+  line-height: @baseLineHeight;
+  border: none;
+  .border-radius(4px 4px 0 0);
+  &:hover {
+    
+  }
+}
+// Active state, and it's :hover to override normal :hover
+
+.nav-tabs > .active {
+
+  border: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  .border-radius(4px 4px 0 0);
+}
+
+.nav-tabs > .active > a,
+.nav-tabs > .active > a:hover {
+  color: @gray;
+  background-color: #fff;
+  background-color: rgba(255,255,255,0.95);
+  border: 0;
+  cursor: default;
+}
+
+
+
+.tab-content {
+  background-color:  #fff;
+  background-color: rgba(255,255,255,0.95);
+  .border-radius(0px 4px 4px 4px);
+  .box-shadow(0px 1px 4px rgba(0,0,0,0.2));
+  padding: 10px 10px 0 10px;
+}
+
+// PILLS
+// -----
+
+// Links rendered as pills
+.nav-pills > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  .border-radius(5px);
+}
+
+// Active state
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover {
+  color: @white;
+  background-color: @linkColor;
+}
+
+
+// TABBABLE
+// --------
+
+
+// COMMON STYLES
+// -------------
+
+// Clear any floats
+.tabbable {
+  .clearfix();
+}
+.tab-content {
+  overflow: auto; // prevent content from running below tabs
+}
+
+// Remove border on bottom, left, right
+.tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+// Show/hide tabbable areas
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+//
+// Tooltips
+// --------------------------------------------------
+
+// Tooltips and popovers
+// -------------------------
+@tooltipColor:            #fff;
+@tooltipBackground:       #000;
+@tooltipArrowWidth:       5px;
+@tooltipArrowColor:       @tooltipBackground;
+@zindexTooltip:           1030;
+
+
+// Base class
+.tooltip {
+  position: absolute;
+  z-index: @zindexTooltip;
+  display: block;
+  visibility: visible;
+  padding: 5px;
+  font-size: 11px;
+  .opacity(0);
+  &.in     { .opacity(80); }
+  &.top    { margin-top:  -3px; }
+  &.right  { margin-left:  3px; }
+  &.bottom { margin-top:   3px; }
+  &.left   { margin-left: -3px; }
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+  max-width: 200px;
+  padding: 3px 8px;
+  color: @tooltipColor;
+  text-align: center;
+  text-decoration: none;
+  background-color: @tooltipBackground;
+  .border-radius(4px);
+}
+
+// Arrows
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip {
+  &.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -@tooltipArrowWidth;
+    border-width: @tooltipArrowWidth @tooltipArrowWidth 0;
+    border-top-color: @tooltipArrowColor;
+  }
+  &.right .tooltip-arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -@tooltipArrowWidth;
+    border-width: @tooltipArrowWidth @tooltipArrowWidth @tooltipArrowWidth 0;
+    border-right-color: @tooltipArrowColor;
+  }
+  &.left .tooltip-arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -@tooltipArrowWidth;
+    border-width: @tooltipArrowWidth 0 @tooltipArrowWidth @tooltipArrowWidth;
+    border-left-color: @tooltipArrowColor;
+  }
+  &.bottom .tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -@tooltipArrowWidth;
+    border-width: 0 @tooltipArrowWidth @tooltipArrowWidth;
+    border-bottom-color: @tooltipArrowColor;
+  }
+}

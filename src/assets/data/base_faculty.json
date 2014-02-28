@@ -1,0 +1,143 @@
+{
+  "blade": {
+    "logo": "assets/img/logo2.svg",
+    "quickLinks": [
+      {
+        "url": "#",
+        "label": "Find a Person"
+      },
+      {
+        "url": "#",
+        "label": "ONEcard"
+      },
+      {
+        "url": "#",
+        "label": "Bear Tracks"
+      },
+      {
+        "url": "#",
+        "label": "Maps"
+      },
+      {
+        "url": "#",
+        "label": "Email & Apps"
+      },
+      {
+        "url": "#",
+        "label": "eClass"
+      },
+      {
+        "url": "#",
+        "label": "Libraries"
+      }
+    ]
+  },
+  "banner": {
+    "siteTitle": "Faculty of Development",
+    "siteUrl": "http://www.ualberta.ca/"
+  },
+  "navigation" : {
+    "globalLinks": [
+      {
+        "url": "#",
+        "label": "About Us"
+      },
+      {
+        "url": "#",
+        "label": "Programs"
+      },
+      {
+        "url": "#",
+        "label": "Departments"
+      },
+      {
+        "url": "#",
+        "label": "Research"
+      },
+      {
+        "url": "#",
+        "label": "Centers"
+      },
+      {
+        "url": "#",
+        "label": "Alumni"
+      }
+    ],
+    "mobileLinks": [
+      {
+        "url": "#",
+        "label": "About Us",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Programs",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Departments",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Research",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Centres",
+        "children": []
+      },
+      {
+        "url": "#",
+        "label": "Alumni",
+        "children": []
+      }
+    ]
+  },
+  "ualbertaFooter" : {
+    "footerLinks": [
+      {
+        "url": "#",
+        "label": "Contact Us"
+      },
+      {
+        "url": "#",
+        "label": "Feedback"
+      },
+      {
+        "url": "#",
+        "label": "University Calendar"
+      },
+      {
+        "url": "#",
+        "label": "Careers"
+      },
+      {
+        "url": "#",
+        "label": "Emergency"
+      },
+      {
+        "url": "#",
+        "label": "Policies"
+      },
+      {
+        "url": "#",
+        "label": "Weather"
+      },
+      {
+        "url": "#",
+        "label": "Edmonton"
+      },
+      {
+        "url": "#",
+        "label": "Privacy"
+      },
+      {
+        "url": "#",
+        "label": "Keep In Touch"
+      }
+    ]
+  }
+}

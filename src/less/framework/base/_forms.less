@@ -1,0 +1,775 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// GENERAL STYLES
+// --------------
+
+// Make all forms have space below them
+form {
+  margin: 0 0 @baseLineHeight;
+}
+
+fieldset {
+  padding: 0 0 5px 0;
+  margin: 0 0 8px 0;
+  border: 0;
+  border-bottom: 1px dotted #ddd;
+}
+
+// Groups of fields with labels on top (legends)
+legend {
+  display: block;
+  width: 100%;
+  padding: 0 0 5px 0;
+  margin-bottom: 0.75em;
+  font-size: 1em;
+  line-height: 1.57em;
+  color: @grayDark;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  float: left;
+  font-weight: bold;
+}
+
+legend + label {
+	clear: both;
+}
+
+// Set font for forms
+label,
+input,
+button,
+select,
+textarea {
+  #font > .shorthand(@baseFontSize,normal,@baseLineHeight); // Set size, weight, line-height here
+}
+input,
+button,
+select,
+textarea {
+  font-family: @baseFontFamily; // And only set font-family here for those that need it (note the missing label element)
+}
+
+// Identify controls by their labels
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+// Form controls
+// -------------------------
+
+// Shared size and type resets
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  display: inline-block;
+  height: @baseLineHeight;
+  #em > .padding(4, 6, 14);
+  #em > .margin(bottom, 9, 14);
+  #em > .font-size(14, 14);
+  line-height: 1em;
+  color: @gray;
+  .border-radius(@inputBorderRadius);
+}
+
+// Reset appearance properties for textual inputs and textarea
+// Declare width for legacy (can't be on input[type=*] selectors or it's too specific)
+input,
+textarea,
+.uneditable-input {
+  width: 14.7143em; // plus 12px padding and 2px border
+}
+// Everything else
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  background-color: @inputBackground;
+  border: 1px solid @inputBorder;
+  .box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  .transition(~"border linear .2s, box-shadow linear .2s");
+//  height:30px;
+  height: @baseLineHeight;
+  // Focus state
+  &:focus {
+    border-color: rgba(82,168,236,.8);
+    outline: 0;
+    outline: thin dotted \9; /* IE6-9 */
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6));
+  }
+}
+// Reset height since textareas have rows
+textarea {
+  height: auto;
+}
+div.scfMultipleLineGeneralPanel textarea{
+	height:auto;
+}
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+  margin: -4px 5px 0 0;
+  *margin-top: 0; /* IE7 */
+  margin-top: 1px \9; /* IE8-9 */
+  line-height: normal;
+  cursor: pointer;
+}
+
+// Reset width of input images, buttons, radios, checkboxes
+input[type="file"],
+input[type="image"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto; // Override of generic input selector
+}
+
+// Set the height of select and file controls to match text inputs
+select,
+input[type="file"] {
+  height: 30px; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+  *margin-top: 4px; /* For IE7, add top margin to align select with labels */
+  line-height: 30px;
+}
+
+// Make select elements obey height by applying a border
+select {
+  width: 220px; // default input width + 10px of padding that doesn't get applied
+  border: 1px solid @inputBorder;
+  background-color: @inputBackground; // Chrome on Linux and Mobile Safari need background-color
+}
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+  height: auto;
+}
+
+// Focus for select, file, radio, and checkbox
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+  .tab-focus();
+}
+
+
+// Placeholder
+// -------------------------
+
+// Placeholder text gets special styles because when browsers invalidate entire lines if it doesn’t understand a selector
+input,
+textarea {
+  .placeholder();
+}
+
+// INPUT SIZES
+// -----------
+
+// General classes for quick sizes
+.input-mini       { width: 60px; }
+.input-small      { width: 90px; }
+.input-medium     { width: 150px; }
+.input-large      { width: 210px; }
+.input-xlarge     { width: 270px; }
+.input-xxlarge    { width: 530px; }
+
+// Grid style input sizes
+input[class*="span"],
+select[class*="span"],
+textarea[class*="span"],
+.uneditable-input[class*="span"],
+// Redeclare since the fluid row class is more specific
+.row-fluid input[class*="span"],
+.row-fluid select[class*="span"],
+.row-fluid textarea[class*="span"],
+.row-fluid .uneditable-input[class*="span"] {
+  float: none;
+  margin-left: 0;
+}
+// Ensure input-prepend/append never wraps
+.input-append input[class*="span"],
+.input-append .uneditable-input[class*="span"],
+.input-prepend input[class*="span"],
+.input-prepend .uneditable-input[class*="span"],
+.row-fluid input[class*="span"],
+.row-fluid select[class*="span"],
+.row-fluid textarea[class*="span"],
+.row-fluid .uneditable-input[class*="span"],
+.row-fluid .input-prepend [class*="span"],
+.row-fluid .input-append [class*="span"] {
+  display: inline-block;
+}
+
+
+
+// GRID SIZING FOR INPUTS
+// ----------------------
+
+// Grid sizes
+#grid > .input(@gridColumnWidth, @gridGutterWidth);
+
+// Control row for multiple inputs per line
+.controls-row {
+  .clearfix(); // Clear the float from controls
+}
+.controls-row [class*="span"] {
+  float: left; // Float to collapse white-space for proper grid alignment
+}
+
+
+// INPUT GROUPS
+// ------------
+
+// Allow us to put symbols and text within the input field for a cleaner look
+.input-append,
+.input-prepend {
+  margin-bottom: 5px;
+  font-size: 0;
+  white-space: nowrap; // Prevent span and input from separating
+
+  input,
+  select,
+  .uneditable-input {
+    position: relative; // placed here by default so that on :focus we can place the input above the .add-on for full border and box-shadow goodness
+    margin-bottom: 0; // prevent bottom margin from screwing up alignment in stacked forms
+    *margin-left: 0;
+    font-size: @baseFontSize;
+    vertical-align: top;
+    .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+    // Make input on top when focused so blue border and shadow always show
+    &:focus {
+      z-index: 2;
+    }
+  }
+  .add-on {
+    display: inline-block;
+    width: auto;
+    height: @baseLineHeight;
+    min-width: 16px;
+    padding: 4px 5px;
+    font-size: @baseFontSize;
+    font-weight: normal;
+    line-height: @baseLineHeight;
+    text-align: center;
+    text-shadow: 0 1px 0 @white;
+    background-color: @grayLighter;
+    border: 1px solid #ccc;
+  }
+  .add-on,
+  .btn {
+    vertical-align: top;
+    .border-radius(0);
+  }
+  .active {
+    background-color: lighten(@green, 30);
+    border-color: @green;
+  }
+}
+.input-prepend {
+  .add-on,
+  .btn {
+    margin-right: -1px;
+  }
+  .add-on:first-child,
+  .btn:first-child {
+    .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
+  }
+}
+.input-append {
+  input,
+  select,
+  .uneditable-input {
+    .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
+  }
+  .add-on,
+  .btn {
+    margin-left: -1px;
+  }
+  .add-on:last-child,
+  .btn:last-child {
+    .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+  }
+}
+// Remove all border-radius for inputs with both prepend and append
+.input-prepend.input-append {
+  input,
+  select,
+  .uneditable-input {
+    .border-radius(0);
+  }
+  .add-on:first-child,
+  .btn:first-child {
+    margin-right: -1px;
+    .border-radius(@inputBorderRadius 0 0 @inputBorderRadius);
+  }
+  .add-on:last-child,
+  .btn:last-child {
+    margin-left: -1px;
+    .border-radius(0 @inputBorderRadius @inputBorderRadius 0);
+  }
+}
+
+
+// DATE PICKER based on https://github.com/eternicode/bootstrap-datepicker
+
+.datepicker {
+	/* Adds formatting to the input box */
+	
+	input[type="text"], .uneditable-input {
+	  display: inline-block;
+	  height: @baseLineHeight;
+	  margin-bottom: 9px;
+	  line-height: @baseLineHeight;
+	  color: #555555;
+	  width: auto;
+	}
+	.border-radius(4px);
+	&.dropdown-menu {
+		background-color: #fff;
+		border-color: #ccc;
+		padding: 4px;
+	}
+	&-inline {
+		width: 220px;
+	}
+	direction: ltr;
+	&&-rtl {
+		direction: rtl;
+		table tr td span {
+			float: right;
+		}
+	}
+	&-dropdown {
+		top: 0;
+		left: 0;
+		&:before {
+			content: '';
+			display: inline-block;
+			border-left:   7px solid transparent;
+			border-right:  7px solid transparent;
+			border-bottom: 7px solid #ccc;
+			border-bottom-color: rgba(0,0,0,.2);
+			position: absolute;
+			top: -7px;
+			left: 6px;
+		}
+		&:after {
+			content: '';
+			display: inline-block;
+			border-left:   6px solid transparent;
+			border-right:  6px solid transparent;
+			border-bottom: 6px solid @white;
+			position: absolute;
+			top: -6px;
+			left: 7px;
+		}
+	}
+	>div {
+		display: none;
+	}
+	&.days div.datepicker-days {
+		display: block;
+	}
+	&.months div.datepicker-months {
+		display: block;
+	}
+	&.years div.datepicker-years {
+		display: block;
+	}
+	table{
+		margin: 0;
+	}
+	td,
+	th{
+		text-align: center;
+		width: 20px;
+		height: 20px;
+		.border-radius(4px);
+
+		border: none;
+	}
+	// Inline display inside a table presents some problems with
+	// border and background colors.
+	.table-striped & table tr {
+		td, th {
+			background-color:transparent;
+		}
+	}
+	table tr td {
+		&.day:hover {
+			background: @grayLighter;
+			cursor: pointer;
+		}
+		&.old,
+		&.new {
+			color: @grayLight;
+		}
+		&.disabled,
+		&.disabled:hover {
+			background: none;
+			color: @grayLight;
+			cursor: default;
+		}
+		&.today,
+		&.today:hover,
+		&.today.disabled,
+		&.today.disabled:hover {
+			@todayBackground: lighten(@orange, 30%);
+			.buttonBackground(@todayBackground, spin(@todayBackground, 20));
+			color: #000 !important;
+		}
+		&.range,
+		&.range:hover,
+		&.range.disabled,
+		&.range.disabled:hover {
+			background:@grayLighter;
+			.border-radius(0);
+		}
+		&.range.today,
+		&.range.today:hover,
+		&.range.today.disabled,
+		&.range.today.disabled:hover {
+			@todayBackground: #ffdb05;
+			.buttonBackground(@todayBackground, spin(@todayBackground, 20));
+			.border-radius(0);
+		}
+		&.selected,
+		&.selected:hover,
+		&.selected.disabled,
+		&.selected.disabled:hover {
+			.buttonBackground(lighten(@grayLight, 10), darken(@grayLight, 10));
+			color: #fff;
+			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+		}
+		&.active,
+		&.active:hover,
+		&.active.disabled,
+		&.active.disabled:hover {
+			.buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 20));
+			color: #fff;
+			text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+		}
+		span {
+			display: block;
+			width: 23%;
+			height: 54px;
+			line-height: 54px;
+			float: left;
+			margin: 1%;
+			cursor: pointer;
+			.border-radius(4px);
+			&:hover {
+				background: @grayLighter;
+			}
+			&.disabled,
+			&.disabled:hover {
+				background:none;
+				color: @grayLight;
+				cursor: default;
+			}
+			&.active,
+			&.active:hover,
+			&.active.disabled,
+			&.active.disabled:hover {
+				.buttonBackground(@btnPrimaryBackground, spin(@btnPrimaryBackground, 20));
+				color: #fff;
+				text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+			}
+			&.old {
+				color: @grayLight;
+			}
+		}
+	}
+
+	th.datepicker-switch {
+		width: 145px;
+	}
+
+	thead tr:first-child th,
+	tfoot tr:first-child th {
+		cursor: pointer;
+		&:hover{
+			background: @grayLighter;
+		}
+	}
+	/*.dow {
+		border-top: 1px solid #ddd !important;
+	}*/
+
+	// Basic styling for calendar-week cells
+	.cw {
+		font-size: 10px;
+		width: 12px;
+		padding: 0 2px 0 5px;
+		vertical-align: middle;
+	}
+	thead tr:first-child th.cw {
+		cursor: default;
+		background-color: transparent;
+	}
+}
+.input-append,
+.input-prepend {
+	font-size: 1em;
+	.add-on {
+		height: @baseLineHeight;
+	}
+	&.date {
+		.add-on i {
+			display: block;
+			cursor: pointer;
+			width: 16px;
+			height: 16px;
+		}
+	}
+}
+.input-daterange {
+	input {
+		text-align:center;
+	}
+	input:first-child {
+		.border-radius(3px 0 0 3px);
+	}
+	input:last-child {
+		.border-radius(0 3px 3px 0);
+	}
+	.add-on {
+		display: inline-block;
+		width: auto;
+		min-width: 16px;
+		height: @baseLineHeight;
+		padding: 4px 5px;
+		font-weight: normal;
+		line-height: @baseLineHeight;
+		text-align: center;
+		text-shadow: 0 1px 0 @white;
+		vertical-align: middle;
+		background-color: @grayLighter;
+		border: 1px solid #ccc;
+		margin-left:-5px;
+		margin-right:-5px;
+	}
+}
+
+
+// SEARCH FORM
+// -----------
+
+input.search-query {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-bottom: 0; // Remove the default margin on all inputs
+}
+
+
+// HORIZONTAL & VERTICAL FORMS
+// ---------------------------
+
+// Common properties
+// -----------------
+
+.form-search,
+.form-inline,
+.form-horizontal {
+  input,
+  textarea,
+  select,
+  .input-prepend,
+  .input-append {
+    display: inline-block;
+    .ie7-inline-block();
+    margin-bottom: 0;
+    vertical-align: top;
+  }
+  // Re-hide hidden elements due to specifity
+  .hide {
+    display: none;
+  }
+}
+.form-search label,
+.form-inline label,
+.form-search .btn-group,
+.form-inline .btn-group {
+  display: inline-block;
+}
+// Remove margin for input-prepend/-append
+.form-search .input-append,
+.form-inline .input-append,
+.form-search .input-prepend,
+.form-inline .input-prepend {
+  margin-bottom: 0;
+}
+// Inline checkbox/radio labels (remove padding on left)
+.form-search .radio,
+.form-search .checkbox,
+.form-inline .radio,
+.form-inline .checkbox {
+  padding-left: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+// Remove float and margin, set to inline-block
+.form-search .radio input[type="radio"],
+.form-search .checkbox input[type="checkbox"],
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+  float: left;
+  margin-right: 3px;
+  margin-left: 0;
+}
+
+/* COMMENTED OUT NOV. 19 - Not in use 
+// Margin to space out fieldsets
+.control-group {
+  margin-bottom: @baseLineHeight / 2;
+}
+
+// Legend collapses margin, so next element is responsible for spacing
+legend + .control-group {
+  margin-top: @baseLineHeight;
+  -webkit-margin-top-collapse: separate;
+}
+*/
+
+
+.inline-search {
+  position: relative;
+  i.icon-search {
+    position: absolute;
+    color: #ccc;
+    left: 7px;
+    top: 7px;
+    font-size: 1.3em;
+  }
+  input {
+    padding-left: 27px;
+    width: 190px;
+    .border-radius(4px 0px 0px 4px);
+    height: 22px;
+  }
+  button {
+    .border-radius(0px 4px 4px 0px);
+    padding: 4px 10px;
+    height: 32px;
+    margin-top:-9px;
+    margin-left: -5px;
+    .box-shadow(none);
+  }
+}
+
+// Horizontal-specific styles
+// --------------------------
+
+.form-horizontal {
+  // Move over buttons in .form-actions to align with .controls
+  .form-actions {
+    padding-left: @horizontalComponentOffset;
+  }
+}
+
+
+// Sitecore forms
+div.scfForm {
+	font-family: @sansFontFamily;
+	div.scfSubmitButtonBorder input {
+		.btn-base();
+		.btn-grey();
+	}
+	.scfRequired {
+		float: left;
+	}
+	.scfRadioButtonListGeneralPanel, .scfCheckBoxListGeneralPanel {
+		padding: 3px 0 10px 0;
+		label {
+			margin-bottom: 0;
+		}
+	}
+	.scfMultipleLineTextBox {
+		margin-bottom: 10px;
+	}
+	.scfRadioButtonListGeneralPanel input {
+		float: left;
+		margin-top: 3px;
+	}
+	.scfCheckBoxListGeneralPanel input {
+		float: left;
+		margin-top: 3px;
+	}
+	.scfSectionLegend {
+		margin-left: 0;
+		padding-left: 0;
+	}
+	.scfSectionBorderAsFieldSet {
+		padding-left: 0;
+		margin-left: 0;
+		border-top-color: #ddd;
+	}
+	.scfDropListLabel, .scfEmailLabel, .scfMultipleLineTextLabel, .scfSingleLineTextLabel, .scfPasswordLabel, .scfNumberLabel, .scfDatePickerLabel, .scfDateLabel, .scfRadioButtonListLabel, .scfCheckBoxListLabel, .scfListBoxLabel, .scfFileUploadLabel, .scfDateSelectorLabel, .scfCreditCardLabel, .scfConfirmPasswordLabel, .scfCaptchaLabel, .scfTelephoneLabel, .scfSmsTelephoneLabel {
+		margin-right: 15px;
+	}
+}
+.sidebar div.scfForm {
+	.scfDropListLabel, .scfEmailLabel, .scfMultipleLineTextLabel, .scfSingleLineTextLabel, .scfPasswordLabel, .scfNumberLabel, .scfDatePickerLabel, .scfDateLabel, .scfRadioButtonListLabel, .scfCheckBoxListLabel, .scfListBoxLabel, .scfFileUploadLabel, .scfDateSelectorLabel, .scfCreditCardLabel, .scfConfirmPasswordLabel, .scfCaptchaLabel, .scfTelephoneLabel, .scfSmsTelephoneLabel {
+		width: 100%;
+	}
+	div.scfSubmitButtonBorder input {
+		.btn-base();
+		.btn-grey();
+		font-size:@base12px;
+		text-transform:uppercase;
+	}
+	fieldset.scfSectionBorderAsFieldSet {
+		padding: 0;
+		border: none;
+		margin: 0;
+	}
+}
+
+// IE 10 overrides for forms. Placed here because IE10 does not support conditional code for IE version filtering.
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)  {
+  div.scfForm {
+  	input {
+  		padding-top: 0;
+  		padding-bottom: 0;
+  	}
+  	.scfCheckBoxListGeneralPanel input {
+   		margin-top: 3px;
+  	}
+  	.scfRadioButtonListGeneralPanel input {
+  		margin-top: 2px;
+  	}
+  }
+}

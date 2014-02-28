@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
  
-  grunt.registerTask('watch',[
+  grunt.registerTask('default',[
     'watch'
   ]);
 
@@ -62,39 +62,24 @@ module.exports = function(grunt) {
     },
     watch: {
       js: {
-        files: ['**/*.js'],
-        tasks: ['concat:js', 'concat:libs', 'uglify:js'],
-        options: {
-          cwd: 'src/js/',
-        }
+        files: ['src/js/**/*.js'],
+        tasks: ['concat:js', 'concat:libs', 'uglify:js']
       },
       css: {
-        files: ['**/*.less'],
-        tasks: ['less:style'],
-        options: {
-          cwd: 'src/less/',
-        }
+        files: ['src/less/**/*.less'],
+        tasks: ['less:style']
       },
       templates: {
-        files: ['**/*.hbs'],
-        tasks: ['handlebars:compile'],
-        options: {
-          cwd: 'src/templates/',
-        }
+        files: ['src/templates/**/*.hbs'],
+        tasks: ['handlebars:compile']
       },
       assets: {
-        files: ['**/*'],
-        tasks: ['copy:assets'],
-        options: {
-          cwd: 'src/assets/',
-        }
+        files: ['src/assets/**/*'],
+        tasks: ['copy:assets']
       },
       html: {
-        files: ['*.html'],
-        tasks: ['copy:html'],
-        options: {
-          cwd: 'src/',
-        }
+        files: ['src/*.html'],
+        tasks: ['copy:html']
       }
     },
     handlebars: {

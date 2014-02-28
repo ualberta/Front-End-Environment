@@ -1,0 +1,17 @@
+{
+  "title": "Campus Notices",
+  "items": [
+    {
+      "url": "#",
+      "label": "First Sample Link"
+    },
+    {
+      "url": "#",
+      "label": "Second Sample Link"
+    },
+    {
+      "url": "#",
+      "label": "Third Sample Link"
+    }
+  ] 
+}

@@ -1,0 +1,12 @@
+{
+  "title": "Sample Social Media",
+  "facebook": "#",
+  "foursquare": "#",
+  "twitter": "#",
+  "tumblr": "#",
+  "youtube": "#",
+  "moreLink": {
+    "url": "#",
+    "label": "View all social media"
+  }
+}

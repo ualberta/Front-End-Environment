@@ -1,0 +1,447 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+
+// Body reset
+// -------------------------
+
+html {
+  font-size: @baseFontSizePercent;
+  width:100%;
+  height:100%; 
+}
+
+body {
+  margin: 0;
+  font-family: @baseFontFamily;
+  font-size: 100%;
+  line-height: @baseLineHeight;
+  color: @textColor;
+  background-color: @bodyBackground;
+  background: #f6f6f6 url(../assets/img/new-bg.gif) repeat top left;
+  -webkit-font-smoothing: antialiased;
+  width:100%;
+  height:100%;
+}
+
+@media screen and (min-width: 96em) {
+  body {
+    font-size: 1.14285714285714em;
+    line-height: 1.65em;
+  }
+}
+
+form#mainform {
+  margin: 0;
+}
+
+
+// Links
+// -------------------------
+
+a {
+  color: @linkColor;
+  text-decoration: none;
+}
+a:hover {
+  color: @linkColorHover;
+  text-decoration: underline;
+}
+
+// underline links in content areas so they stand out
+[class*="content"] p a {
+  text-decoration: underline;
+  &.btn, &.no-underline {
+    text-decoration: none;  
+  }
+}
+
+// Body text
+// -------------------------
+
+p {
+  margin: 0 0 @baseLineHeight / 2;
+}
+
+p.note {
+  color: #666;
+  font-size:  @base12px;
+};
+
+.lead {
+  margin-bottom: @baseLineHeight;
+  font-size: @baseFontSize * 1.5;
+  font-weight: 200;
+  line-height: @baseLineHeight * 1.5;
+}
+
+.intro-text {
+  font-size: 1.1428571428571428em; 
+  line-height: @baseLineHeight;
+  color: @lightText;
+}
+
+.secondary-text {
+  color: @lightText;
+}
+
+.smaller-text {
+  font-size: 0.85714285714286em; // 12px at base 14
+}
+
+.small-text {
+  font-size: 0.92857142857143em; // 13px at base 14
+}
+
+.large-text {
+  font-size: 1.07142857142857em; // 15px at base 14
+}
+
+.larger-text {
+  font-size: 1.14285714285714em; // 16px at base 14
+}
+
+// adds ellipsis at end of line
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -moz-binding: url('assets/xml/ellipsis.xml#ellipsis');
+}
+
+
+// Emphasis & misc
+// -------------------------
+
+small {
+  font-size: 85%; // Ex: 14px base font * 85% = about 12px
+}
+strong {
+  font-weight: bold;
+}
+em {
+  font-style: italic;
+}
+cite {
+  font-style: normal;
+}
+
+// Utility classes
+.muted {
+  color: @grayLight;
+}
+.text-warning {
+  color: @warningText;
+}
+.text-error {
+  color: @errorText;
+}
+.text-info {
+  color: @infoText;
+}
+.text-success {
+  color: @successText;
+}
+
+
+// Headings
+// -------------------------
+h1, h2, h3, h4, h5, h6, .site-title {
+  margin: 1em 0 0.3em;
+  font-family: @headingsFontFamily;
+  font-weight: @headingsFontWeight;
+  line-height: 1;
+  color: @headingsColor;
+  text-rendering: optimizelegibility; // Fix the character spacing for headings
+}
+
+h1 { font-size: 1.75em;line-height: 1.2em; }
+h2 { font-size: 1.6em;line-height: 1.2em; }
+h3 { font-size: 1.4em;line-height: 1.2em; }
+h4 { font-size: 1.15em; line-height: 1.2em;}
+h5 { font-size: 1em; line-height: 1.2em; font-family: sans-serif; font-weight: bold; }
+h6 { font-size: 0.9em; font-family: sans-serif; font-weight: bold; }
+
+h1.page-title,
+.intro h1,
+.section-heading {
+  margin: 0.1em auto 0 auto;
+  padding: 0 0 0.4em;
+  font-size: 1.8em;    
+  line-height: 1.2em;
+  border-bottom: 1px solid #ddd;
+  .box-shadow(0 1px 0 #fff);
+}
+
+.content h1.page-title {
+  .box-shadow(none);
+  padding:0;
+  margin: 0.1em 0 (@baseLineHeight / 4) 0;
+}
+
+small {
+  font-weight: normal;
+  line-height: 1;
+  color: @grayLight;
+}
+
+// Lists
+// --------------------------------------------------
+
+// Unordered and Ordered lists
+ul, ol {
+  padding: 0;
+  margin: 0 0 @baseLineHeight / 2 25px;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 0;
+}
+li {
+  line-height: @baseLineHeight;
+}
+ul.unstyled,
+ol.unstyled {
+  margin-left: 0;
+  list-style: none;
+}
+
+// Addresses
+address {
+  display: block;
+  margin-bottom: @baseLineHeight;
+  font-style: normal;
+  line-height: @baseLineHeight;
+}
+
+// MISC
+// ----
+
+// Horizontal rules
+hr {
+  margin: @baseLineHeight 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid @white;
+}
+hr.softline{
+  background: #ddd;
+  height: 1px;
+  margin: @baseLineHeight 0;
+  border: 0;
+}
+hr.module-separator {
+  margin-top: 0px;
+  border-top-color: #e0e0e0;
+}
+hr.soften {
+  height: 1px;
+  margin:1.57em 0;
+  background:#ddd;
+  border: 0;
+  .box-shadow(0px 1px 0px #fff);
+  clear: left;
+}
+
+
+// Images
+// -------------------------
+
+// image shadow gives inset appearance to image
+.image-shadow {
+  position: relative;
+  display: block;
+}
+
+.image-shadow::before
+{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    -moz-box-shadow:inset 0px 0px 3px 1px rgba(0,0,0,0.2);
+    -webkit-box-shadow:inset 0px 0px 3px 1px rgba(0,0,0,0.2);
+    box-shadow:inset 0px 0px 3px 1px rgba(0,0,0,0.2);
+}
+
+// add top margin to paragraph following an image
+.image-shadow + p {
+  margin-top: 5px;
+}
+
+// Perfect circle
+.img-circle {
+  .border-radius(500px); // crank the border-radius so it works with most reasonably sized images
+}
+
+
+// Patterns
+// ------------------------
+
+// white frame and shadow, draws element out from page
+.extrude {
+  .extrude();
+}
+
+// gives an element a sunken in appearance with inner shadow
+.inset {
+  .inset();
+}
+
+// frame is extrude with less padding, used for images
+.frame {
+  .extrude();
+  #em > .padding(5,14);
+  display:inline-block;
+  max-width:100%;
+}
+
+// add a top margin when a paragraph follows a frame
+.frame + p {
+  margin-top: 6px;
+}
+
+// default vertical gradient
+.gradient-default {
+	.default-gradient();
+}
+
+// hover state for gradient-default
+.gradient-highlight {
+	.highlight-gradient();
+}
+
+// active state for gradient-default
+.gradient-selected {
+	.selected-gradient();
+}
+
+// adds rounded corners to an element
+.rounded {
+	.border-radius(4px);
+	&.image-shadow:before {
+		.border-radius(4px);
+	}
+	&.image-shadow img {
+		.border-radius(4px);
+	}
+}
+
+// shows loading spinner
+[class^="loading"],
+[class*="loading"],
+.loading {
+  background:  url('http://www.ualberta.ca/~publicas/uofa/img/loading.gif') no-repeat center center;
+  min-height: 30px;
+}
+
+//
+// Tables
+// --------------------------------------------------
+
+
+// BASE TABLES
+// -----------------
+
+table {
+  max-width: 100%;
+  background-color: @tableBackground;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// BASELINE STYLES
+// ---------------
+
+.table {
+  width: 100%;
+  margin-bottom: @baseLineHeight;
+  // Cells
+  th,
+  td {
+    padding: 8px;
+    line-height: @baseLineHeight;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid @tableBorder;
+  }
+  th {
+    font-weight: bold;
+  }
+  // Bottom align for column headings
+  thead th {
+    vertical-align: bottom;
+  }
+  // Remove top border from thead by default
+  thead:first-child tr:first-child th,
+  thead:first-child tr:first-child td {
+    border-top: 0;
+  }
+  // Account for multiple tbody instances
+  tbody + tbody {
+    border-top: 1px solid @tableBorder;
+  }
+}
+
+
+// BORDERED VERSION
+// ----------------
+
+.table-bordered {
+  border: 1px solid @tableBorder;
+  *border-collapse: collapse; // IE7 can't round corners anyway
+  border-left: 0;
+  th,
+  td {
+    border-left: 1px solid @tableBorder;
+  }
+  // Prevent a double border
+  thead:first-child tr:first-child th,
+  tbody:first-child tr:first-child th,
+  tbody:first-child tr:first-child td {
+    border-top: 0;
+  }
+}
+
+
+// ZEBRA-STRIPING
+// --------------
+
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.table-striped {
+  tbody {
+    tr:nth-child(odd) td,
+    tr:nth-child(odd) th {
+      background-color: @tableBackgroundAccent;
+      background-color: rgba(249, 249, 249, 0.65);
+    }
+  }
+}
+
+
+// HOVER EFFECT
+// ------------
+// Placed here since it has to come after the potential zebra striping
+.table-hover {
+  tbody {
+    tr:hover td,
+    tr:hover th {
+      background-color: @tableBackgroundHover;
+      background-color: rgba(255, 245, 184, 0.15);
+      border-color: #E1D8A4;
+      border-bottom:  1px solid #E1D8A4;
+      margin-bottom: -1px;
+    }
+  }
+}
+
+// TABLE HEADINGS
+.table thead th h3{
+  margin: 0;
+  font-size: 1.2em;
+}
+
