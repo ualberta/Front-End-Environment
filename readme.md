@@ -23,6 +23,8 @@ Once you have VirtualBox and Vagrant installed, clone this repository.  Go into 
 
 Running the start command will download the development environment and run it on your machine.  The initial download / setup will only happen the first time.
 
-Once the initial setup is complete, you should be able to navigate to `http://localhost:3333/` and see a "Hello World!" message.
+Once the initial setup is complete, you will see a notification in the terminal window that it is watching files.
 
-You can now modify any of the less, js, or html files and see a live preview in your browser.
+If you navigate to `http://localhost:3333/` you should see a "Hello World!" page. 
+
+Using the editor of your choice, you can modify the  less, js, or html files in the `/src` folder and see a live preview in your browser.
