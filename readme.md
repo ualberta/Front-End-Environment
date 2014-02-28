@@ -6,29 +6,30 @@ The UAlberta front-end framework allows dynamic creation of pages and modules wi
 
 Add `/build/js/main.min.js` (requires jQuery, and Handlebars Runtime) and `/build/css/framework.css` to your page.  You will then be able to access the pages and modules through `UAlberta.FrontEnd.Pages` and `UAlberta.FrontEnd.Modules` namespaces.
 
-For example, you could build a replica of the UAlberta home page with:
+For example, you could build a replica of the [UAlberta home page](http://www.ualberta.ca/) with:
 
     // CREATE BASE PAGE
-    // see sample base page json in /src/assets/data
+
     var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(pageData);
 
-    // CREATE MODULES
-    // see sample base component json in /src/assets/data/components
 
-    page.addFeature(featureData); // featureData: sample-feature.json
+    // ADD MODULES
 
-    page.addWhyUAlberta(); // static template
+    page.addFeature(featureData); 
 
-    page.addExploreBar(); // static template
+    page.addWhyUAlberta();
 
-    page.addToFirstColumn('data-list', newsData); // newsData: sample-news-list.json
+    page.addExploreBar();
 
-    page.addToSecondColumn('data-list', campusNoticeData); // campusNoticeData: sample-link-list.json
+    page.addToFirstColumn('data-list', newsData);
+
+    page.addToSecondColumn('data-list', campusNoticeData); 
+
     page.addToSecondColumn('data-list', blogData);  
 
-    // add sidebar modules
-    page.addToSidebar('content', contentData);  // contentData: sample-sidebar-content.json
-    page.addToSidebar('social-media', socialMediaData); // socialMediaData: sample-sidebar-social-media.json
+    page.addToSidebar('content', contentData);
+
+    page.addToSidebar('social-media', socialMediaData);
 
 
 
