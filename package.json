@@ -1,0 +1,30 @@
+{
+  "name": "live-frontend-dev",
+  "description": "front-end development environment that live loads changes",
+  "version": "0.0.1",
+  "keywords": [
+    "less",
+    "uglifiy",
+    "watch"
+  ],
+  "homepage": "http://laneolson.ca",
+  "author": "Lane Olson",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lane/front-end-dev-environment.git"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "devDependencies": {
+    "grunt-cli": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-copy": "latest"
+  }
+}
