@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
  
-  grunt.registerTask('default',[
+  grunt.registerTask('watch',[
     'watch'
   ]);
 
@@ -44,7 +44,7 @@ module.exports = function(grunt) {
           cleancss: true
         },
         files: {
-          "build/css/style.css": "src/less/style.less"
+          "build/css/framework.css": "src/less/framework.less"
         }
       }
     },
@@ -75,6 +75,13 @@ module.exports = function(grunt) {
           cwd: 'src/less/',
         }
       },
+      templates: {
+        files: ['**/*.hbs'],
+        tasks: ['handlebars:compile'],
+        options: {
+          cwd: 'src/templates/',
+        }
+      },
       assets: {
         files: ['**/*'],
         tasks: ['copy:assets'],
@@ -89,6 +96,20 @@ module.exports = function(grunt) {
           cwd: 'src/',
         }
       }
+    },
+    handlebars: {
+      compile: {
+        options: {
+          namespace: 'UAlberta.FrontEnd.templates',
+          processName: function(filePath) { 
+            var pieces = filePath.split("/");
+            return pieces[pieces.length - 1];
+          }
+        },
+        files: {
+          'build/js/templates.js': "src/templates/**/*.hbs"
+        }
+      }
     }
   });
  
@@ -96,6 +117,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-copy');
  
 };

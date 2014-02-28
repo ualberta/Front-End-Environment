@@ -1,17 +1,16 @@
 {
-  "name": "live-frontend-dev",
-  "description": "front-end development environment that live loads changes",
+  "name": "ualberta-framework",
+  "description": "front-end framework for faster and easier web development.",
   "version": "0.0.1",
   "keywords": [
     "less",
-    "uglifiy",
-    "watch"
+    "handlebars"
   ],
-  "homepage": "http://laneolson.ca",
-  "author": "Lane Olson",
+  "homepage": "http://ualberta.ca/styleguide",
+  "author": "UAlberta",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Lane/front-end-dev-environment.git"
+    "url": "https://github.com/ualberta/institutional-framework.git"
   },
   "licenses": [
     {
@@ -25,6 +24,7 @@
     "grunt-contrib-uglify": "latest",
     "grunt-contrib-less": "latest",
     "grunt-contrib-watch": "latest",
-    "grunt-contrib-copy": "latest"
+    "grunt-contrib-handlebars": "^0.6.1",
+    "grunt-contrib-copy": "^0.5.0"
   }
 }
