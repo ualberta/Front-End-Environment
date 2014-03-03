@@ -7,7 +7,7 @@ The UAlberta front-end framework allows dynamic creation of pages and modules wi
 Add `/build/js/main.min.js` (requires jQuery, and Handlebars Runtime) and `/build/css/framework.css` to your page, then add modules to the page by passing the JSON data, and a selector string that represents the placeholder to insert the module into.
 
     // add a full width feature to a page
-    UAlberta.Modules.addSingleFeature(jsonData, '#feature-area');
+    UAlberta.Modules.addModule('single-feature', jsonData, '#feature-area');
     
 
 You can also build entire pages and layout from JSON data.  For example, you could build a replica of the [UAlberta home page](http://www.ualberta.ca/) with:
