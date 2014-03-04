@@ -1,0 +1,15 @@
+<li>
+  <a href="{{this.url}}">
+    {{this.label}}
+    {{#if this.children}}
+      <i class="nav-toggle"></i>
+    {{/if}}
+  </a>
+  {{#if this.children}}
+    <ul class="level-{{this.level}}">
+      {{#each this.children}}
+          {{> NavItem this}}
+      {{/each}}
+    </ul>
+  {{/if}}
+</li>

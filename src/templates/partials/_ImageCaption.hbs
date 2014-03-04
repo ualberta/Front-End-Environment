@@ -5,15 +5,18 @@
   ">
     <a 
     {{#if url}} 
-        href="{{this.url}}" 
+        href="{{url}}" 
     {{/if}}
     class="image-shadow">
         <img src="{{imageSrc}}" alt="{{imageAlt}}">
+        {{#if icon}}
+        <i class="icon-{{icon}}"></i>
+        {{/if}}
     </a>
     {{#if imageCaption}}
     <p class="caption">
         {{imageCaption}}
     </p>
     {{/if}}
-  </div>
-  
+</div>
+

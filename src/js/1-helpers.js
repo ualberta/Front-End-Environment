@@ -15,3 +15,28 @@ Handlebars.registerHelper("each_with_index", function(array, fn) {
   return buffer;
  
 });
+
+
+Handlebars.registerHelper("each_level", function(context, options) {
+
+  function assignLevels(object, lvl) {
+    if(object.children.length == 0)
+      return object;
+
+    object.level = lvl+1;
+    for(var i = 0; i < object.children.length; i++) {
+      object.children[i] = assignLevels(object.children[i], object.level);
+    }
+
+    return object;
+
+  };
+  
+  var buffer = "";
+  for (var i = 0, j = context.length; i < j; i++) {
+    var item = assignLevels(context[i],0);
+    buffer += options.fn(item);
+  }
+  return buffer;
+ 
+});
