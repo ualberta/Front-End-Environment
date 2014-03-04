@@ -40,9 +40,6 @@ module.exports = function(grunt) {
     },
     less: {
       style: {
-        options: {
-          cleancss: true
-        },
         files: {
           "build/css/framework.css": "src/less/framework.less"
         }
