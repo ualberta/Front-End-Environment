@@ -225,7 +225,7 @@
       UAlberta.FrontEnd.Modules.addAccordion(accordionList, '#first-column');
 
       var imageCaption = {
-        imageSrc: "http://www.placehold.it/500x250",
+        imageSrc: "http://www.placehold.it/250x250",
         imageAlt: "Placeholder image",
         imageCaption: "a sample image caption"
       };
@@ -233,8 +233,9 @@
       UAlberta.FrontEnd.Modules.addModule('image-caption', imageCaption, '#first-column');
 
       imageCaption.url = "#";
+      imageCaption.hoverCaption = true;
 
-      UAlberta.FrontEnd.Modules.addModule('hover-caption', imageCaption, '#first-column');
+      UAlberta.FrontEnd.Modules.addModule('image-caption', imageCaption, '#first-column');
 
 
        // page.addToSidebar('social-media', sidebarSocialMedia);

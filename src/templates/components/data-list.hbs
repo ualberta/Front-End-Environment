@@ -20,42 +20,5 @@
     {{/if}}
   </div>
   {{/if}}
-  <ul class="data-list">
-    {{#each items}}
-    <li>
-      <a href="{{this.url}}">
-      {{#if this.thumbnail}}
-      <div class="list-item-image frame">
-        <img src="{{this.thumbnail}}" alt="{{this.title}}" />
-      </div>
-      {{/if}}
-      {{#if this.label}}
-      {{this.label}}
-      {{else}}
-      <div class="list-item-content">
-        <h4>{{this.title}}</h4>
-        {{#if this.date}}
-        <p class="list-item-extra list-item-date"> {{this.date}} </p>
-        {{/if}}
-        {{#if this.source}}
-        <p class="list-item-extra list-item-source"> {{this.source}} </p>
-        {{/if}}
-        {{#if this.author}}
-        <p class="list-item-extra list-item-author"> {{this.author}} </p>
-        {{/if}}
-        {{#if this.description}}
-        <p class="list-item-description"> {{this.description}} </p>
-        {{/if}}
-        
-      </div>
-      {{/if}}
-      </a>
-    </li>
-    {{/each}}
-    {{#if moreLink}}
-      <li class="bottom-row">
-        <a href="{{moreLink.url}}">{{moreLink.label}}</a>
-      </li>
-    {{/if}}
-  </ul>
+  {{> DataList this}}
 </div>

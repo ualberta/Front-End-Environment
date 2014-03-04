@@ -1,0 +1,19 @@
+<div class="image-caption-container
+  {{#if hoverCaption}}
+  hover-caption-container
+  {{/if}}
+  ">
+    <a 
+    {{#if url}} 
+        href="{{this.url}}" 
+    {{/if}}
+    class="image-shadow">
+        <img src="{{imageSrc}}" alt="{{imageAlt}}">
+    </a>
+    {{#if imageCaption}}
+    <p class="caption">
+        {{imageCaption}}
+    </p>
+    {{/if}}
+  </div>
+  

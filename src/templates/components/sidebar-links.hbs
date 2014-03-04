@@ -1,13 +1,6 @@
 <div class="sidebar-module extrude">
   <h5 class="sidebar-title">{{title}}</h5>
   <div class="sidebar-content">
-    <ul class="data-list social-media-list">
-      {{#each items}}
-        <li><a href="{{this.url}}" target="_blank">{{this.label}}</a></li>
-      {{/each}}
-    </ul>
+    {{> DataList this}}
   </div>
-  {{#if moreLink}}
-    <a class="btn" href="{{moreLink.url}}">{{moreLink.label}}</a>
-  {{/if}}
 </div>

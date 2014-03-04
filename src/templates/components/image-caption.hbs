@@ -1,13 +1,4 @@
-
 <div class="frame">
-  <div class="image-caption-container">
-    <span class="image-shadow">
-        <img src="{{imageSrc}}" alt="{{imageAlt}}">
-    </span>
-    {{#if imageCaption}}
-    <p class="caption">
-        {{imageCaption}}
-    </p>
-    {{/if}}
-  </div>
+    {{> ImageCaption this}}
 </div>
+ 

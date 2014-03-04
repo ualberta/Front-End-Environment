@@ -1,0 +1,35 @@
+<article>
+    <header>
+        <h1 class="page-title">
+            {{title}}
+        </h1>
+        <p class="teaser">
+            {{teaser}}
+        </p>
+        <p class="date">
+            By
+            {{author}}
+            on
+            {{date}}
+        </p>
+    </header>
+    <div class="article-content">
+        <div class="story">
+            {{#if image}}
+                {{> ImageCaption image}}
+            {{/if}}
+            {{{story}}}
+        </div>
+        <aside>
+            <hr class="soften first">
+            <h3>Share this story</h3>
+            <div class="social-media-actions"></div>
+            <hr class="soften">
+            <h3>Related links</h3>
+            <ul id="related-links" class="data-list"></ul>
+            <hr class="soften">
+            <h3>Top stories</h3>
+            <ul id="top-stories" class="data-list"></ul>
+        </aside>
+    </div>    
+</article>
