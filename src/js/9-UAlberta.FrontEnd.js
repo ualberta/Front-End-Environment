@@ -53,17 +53,40 @@ var UAlberta = UAlberta || {};
 
         };
 
+        this.addModuleToPage = function(moduleName,data,parent) {
+          switch(moduleName) {
+            case "content":
+              self.modules.push(
+                UAlberta.FrontEnd.Modules.addSidebarContentItem(data, parent)
+              );
+              break;
+            case "social-media":
+              self.modules.push(
+                UAlberta.FrontEnd.Modules.addSidebarSocialMedia(data, parent)
+              );
+              break;
+            case "data-list":
+              self.modules.push(
+                UAlberta.FrontEnd.Modules.addDataList(data, parent)
+              );
+              break;
+            case "sb-data-list":
+              self.modules.push(
+                UAlberta.FrontEnd.Modules.addSidebarDataList(data, parent)
+              );
+              break;
+            default:
+              console.log("error: invalid module name");
+            }
+        };
+
         // Private 
 
         function addBlade() {
 
-          var template = UAlberta.FrontEnd.templates["blade.hbs"];
-
           self.modules.push(
             UAlberta.FrontEnd.Modules.addModule(
               'blade', 
-              'blade', 
-              template, 
               self.baseData.blade, 
               'header', 
               {}
@@ -88,13 +111,9 @@ var UAlberta = UAlberta || {};
 
         function addBanner() {
 
-          var template = UAlberta.FrontEnd.templates["banner.hbs"];
-
           self.modules.push(
             UAlberta.FrontEnd.Modules.addModule(
               'banner', 
-              'banner', 
-              template, 
               self.baseData.banner, 
               'header', 
               {}
@@ -105,13 +124,9 @@ var UAlberta = UAlberta || {};
 
         function addGlobalNavigation() {
 
-          var template = UAlberta.FrontEnd.templates["global-navigation.hbs"];
-
           self.modules.push(
             UAlberta.FrontEnd.Modules.addModule(
-              'global-nav', 
-              'global-nav', 
-              template, 
+              'global-navigation', 
               self.baseData.navigation, 
               'header', 
               {}
@@ -121,14 +136,10 @@ var UAlberta = UAlberta || {};
         };
 
         function addMobileNavigation() {
-        
-          var template = UAlberta.FrontEnd.templates["mobile-navigation.hbs"];
-            
+                    
           self.modules.push(
             UAlberta.FrontEnd.Modules.addModule(
-              'mobile-nav', 
-              'mobile-nav', 
-              template, 
+              'mobile-navigation', 
               self.baseData.navigation, 
               'header', 
               {}
@@ -157,13 +168,9 @@ var UAlberta = UAlberta || {};
 
         function addInstitutionalFooter() {
 
-          var template = UAlberta.FrontEnd.templates["institutional-footer.hbs"];
-
           self.modules.push(
             UAlberta.FrontEnd.Modules.addModule(
               'institutional-footer', 
-              'institutional-footer', 
-              template, 
               self.baseData.ualbertaFooter, 
               'footer', 
               {}
@@ -192,49 +199,16 @@ var UAlberta = UAlberta || {};
           UAlberta.FrontEnd.Modules.addExploreBar("#explore-row");
         };
 
-        this.addWhyUAlberta = function() {
-          UAlberta.FrontEnd.Modules.addWhyUAlbertaRow("#why-ualberta");
-        };
-
         this.addToFirstColumn = function(moduleName, data) {
-          switch(moduleName) {
-            case "data-list":
-              self.modules.push(
-                UAlberta.FrontEnd.Modules.addDataList(data, "#first-column")
-              );
-              break;
-            default:
-              console.log("error: invalid module name");
-          }
+          this.addModuleToPage(moduleName,data,"#first-column");
         };
 
         this.addToSecondColumn = function(moduleName, data) {
-          switch(moduleName) {
-            case "data-list":
-              self.modules.push(
-                UAlberta.FrontEnd.Modules.addDataList(data, "#second-column")
-              );
-              break;
-            default:
-              console.log("error: invalid module name");
-          }
+          this.addModuleToPage(moduleName,data,"#second-column");
         };
 
         this.addToSidebar = function(moduleName, data) {
-          switch(moduleName) {
-            case "content":
-              self.modules.push(
-                UAlberta.FrontEnd.Modules.addSidebarContentItem(data, "#sidebar")
-              );
-              break;
-            case "social-media":
-              self.modules.push(
-                UAlberta.FrontEnd.Modules.addSidebarSocialMedia(data, "#sidebar")
-              );
-              break;
-            default:
-              console.log("error: invalid module name");
-          }
+          this.addModuleToPage(moduleName,data,"#sidebar");
         };
 
         this.base_build = this.build;
@@ -263,10 +237,6 @@ var UAlberta = UAlberta || {};
     // ---------
 
     (function (Modules) {
-
-      // TODO: removing items from this array could cause ID conflics. Fix that.
-      //       or keep the modules in the page.
-      var pageModules = new Array(); 
 
       // creates a new module on the page, 
       // provided a template, data, and parent.
@@ -311,11 +281,13 @@ var UAlberta = UAlberta || {};
         this.base = Module;
         this.base(id, type, template, data, placeholder, options);
 
+        this.exploreBar = null;
+
         this.base_add = this.add; // store the add function so we can extend it
         this.add = function() {
           this.base_add();
 
-          $("#explore-bar").flexslider({
+          this.exploreBar = $("#explore-bar").flexslider({
             animation: "slide",
             itemWidth: 93,
             minItems: 3,
@@ -335,17 +307,10 @@ var UAlberta = UAlberta || {};
         this.prototype = new Module(id, type, template, data, placeholder, options);
       }
 
-      function addModule(id, type, template, data, placeholder, options) {
-        var mod = new Module(id, type, template, data, placeholder, options);
-        pageModules.push(mod);
-        return mod;
-      };
-      Modules.addModule = addModule;
 
       function addExploreBar(parent) {
 
-        var template = UAlberta.FrontEnd.templates["explore-bar.hbs"];
-        addModule('explore-bar'+(pageModules.length+1), 'explore-bar', template, {}, parent, {});
+        addModule('explore-bar', {}, parent, {});
 
         $("#explore-bar").flexslider({
           animation: "slide",
@@ -364,34 +329,66 @@ var UAlberta = UAlberta || {};
       };
       Modules.addExploreBar = addExploreBar;
 
-      function addWhyUAlbertaRow(parent) {
+      function addAccordion(data, parent) {
 
-        var template = UAlberta.FrontEnd.templates["why-ualberta-row.hbs"];
-        addModule('why'+(pageModules.length+1), 'why', template, {}, parent, {});
+        addModule('accordion', data, parent, {});
+
+        $('.accordion-toggle').on('click', function() { 
+          $(this).parent().toggleClass('expanded'); 
+          return false;
+        }); 
+
       };
-      Modules.addWhyUAlbertaRow = addWhyUAlbertaRow;
+      Modules.addAccordion = addAccordion;
+
+
+
+      function addModule(moduleName, data, parent, options) {
+
+        var template = UAlberta.FrontEnd.templates[moduleName+".hbs"];
+
+        // TODO append timestamp to id
+
+        console.log(moduleName, data, parent, template, options);
+
+        if(template) {
+          return new Module(
+            moduleName, 
+            moduleName, 
+            template, 
+            data, 
+            parent, 
+            options
+          );
+        } else {
+          console.log("error: template for " + moduleName + " not found.");
+        } 
+
+      };
+      Modules.addModule = addModule;
 
       function addSingleFeature(data, parent, options) {
-        var template = UAlberta.FrontEnd.templates["single-feature.hbs"];
-        addModule('single-feature-'+(pageModules.length+1), 'single-feature', template, data, parent, options);
+        addModule('single-feature', data, parent, options);
       }
       Modules.addSingleFeature = addSingleFeature;
 
       function addDataList(data, parent, options) {
-        var template = UAlberta.FrontEnd.templates["data-list.hbs"];
-        addModule('data-list-'+(pageModules.length+1), 'data-list', template, data, parent, options);
+        addModule('data-list', data, parent, options);
       }
       Modules.addDataList = addDataList;
 
+      function addSidebarDataList(data, parent, options) {
+        addModule('sidebar-links', data, parent, options);
+      }
+      Modules.addSidebarDataList = addSidebarDataList;
+
       function addSidebarContentItem(data, parent, options) {
-        var template = UAlberta.FrontEnd.templates["sidebar-content.hbs"];
-        addModule('sidebar-content-'+(pageModules.length+1), 'sidebar-content', template, data, parent, options);
+        addModule('sidebar-content', data, parent, options);
       }
       Modules.addSidebarContentItem = addSidebarContentItem;
 
       function addSidebarSocialMedia(data, parent, options) {
-        var template = UAlberta.FrontEnd.templates["sidebar-social-media.hbs"];
-        addModule('sidebar-social-media-'+(pageModules.length+1), 'sidebar-social-media', template, data, parent, options);
+        addModule('sidebar-social-media', data, parent, options);
       }
       Modules.addSidebarSocialMedia = addSidebarSocialMedia;
 

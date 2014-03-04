@@ -1,0 +1,62 @@
+<div class="top-footer-row">
+    <div class="footer-container container">
+        <div class="footer-inner row-fluid">
+            <div class="span6 footer-faculty-links">
+                <h3>{{secondaryFooter.title}}</h3>
+                <div class="row-fluid">
+                    <div class="span5">
+                    
+                        <ul class="faculty-links">
+                            {{#each secondaryFooter.links}}
+                                <li><a href="{{this.url}}">{{this.label}}</a></li>
+                            {{/each}}
+                        </ul>
+                        
+                    </div>
+                    <div class="span7">
+                        
+                        <ul class="unstyled social-media">
+                        
+                        {{#each secondaryFooter.socialMedia}}
+                        <li>
+                            <a class="btn-social-media {{this.icon}}-footer" href="{{this.link}}" target="_blank">
+                                <i class="icon-{{this.icon}}"></i>
+                                <span>{{this.label}}</span>
+                            </a>
+                        </li>
+                        {{/each}}
+                    
+                        </ul>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="span6 vcard">
+                <h3>Contact Information</h3>
+                <div class="row-fluid">
+                    <div class="span6">
+                        <p class="adr">
+                            <span class="street-address">{{secondaryFooter.streetAddress}}</span><br>
+                            <span class="locality">{{secondaryFooter.locality}}</span>, 
+                            <span class="region">{{secondaryFooter.region}}</span><br>
+                            <span class="country-name">{{secondaryFooter.country}}</span> 
+                            <span class="postal-code">{{secondaryFooter.postalCode}}</span><br>
+                        </p>
+                        
+                    </div>
+                    <div class="span6"> 
+                        <div>
+                            <strong><abbr title="Telephone">Tel:</abbr> </strong>
+                            <span>1-{{secondaryFooter.telephone}}</span>
+                        </div>
+                        <div>
+                            <strong>Fax: </strong>
+                            <span>{{secondaryFooter.fax}}</span>
+                        </div>
+                        <p><strong>Email: </strong><a href="mailto:{{secondaryFooter.email}}" class="email">{{secondaryFooter.email}}</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

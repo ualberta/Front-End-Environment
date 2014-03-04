@@ -1,0 +1,15 @@
+<ul class="accordion-list">
+    {{#each categories}}
+    <li>
+        <a href="{{this.url}}">{{this.label}}</a>
+        <a class="accordion-toggle icon-plus"></a>
+        <ul>
+            {{#each links}}              
+                <li>
+                    <a href="{{this.url}}">{{this.label}}</a>
+                </li>
+            {{/each}}
+        </ul>        
+    </li>
+    {{/each}}
+</ul>

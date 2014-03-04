@@ -11,6 +11,32 @@
                     {{#each_with_index globalLinks}}
                         <li role="menuitem" class="nav{{index}}">
                             <a href="{{this.url}}">{{this.label}}</a>
+
+                            {{#if this.subMenu}}
+                                <div class="sub-menu">
+                                    <div class="sub-menu-content">
+
+                                        {{#if this.subMenu.links}}
+
+                                            <ul class="section-navigation">
+                                                {{#each this.subMenu.links}}
+                                                <li>
+                                                    <a href="{{this.url}}">{{this.label}}</a>
+                                                </li>
+                                                {{/each}}
+                                            </ul>
+
+                                        {{/if}}
+
+                                        {{#if this.subMenu.content}}
+                                            <div id="phCustomContent" class="section-description">
+                                                {{{this.subMenu.content}}}
+                                            </div>
+                                        {{/if}}
+                                        
+                                    </div> 
+                                </div>
+                            {{/if}}
                         </li>
                     {{/each_with_index}}
 

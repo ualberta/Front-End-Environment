@@ -1,8 +1,9 @@
 // displays an image in a frame with a caption below
 .image-caption-container {
   position: relative;
+  .overlay.caption { position:absolute; }
   .caption {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
@@ -85,6 +86,7 @@
     pointer-events:none;
   }
   .caption {
+    position:absolute;
     color: #fff;
     background: rgba(0,0,0,0.75);
     text-shadow: 0px 1px 2px #000;

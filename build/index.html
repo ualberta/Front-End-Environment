@@ -54,7 +54,7 @@
         var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data);
 
         var feature = {
-          "image" : "http://www.placehold.it/1680x504",
+          "imageSrc" : "http://www.placehold.it/1680x504",
           "imageFocalPoint": "center",
           "heading" : "Sample Heading",
           "description" : "A sample description will follow the heading.",
@@ -70,8 +70,6 @@
         };
 
         page.addFeature(feature);
-
-        page.addWhyUAlberta();
 
         page.addExploreBar();
 
@@ -151,6 +149,9 @@
 
         page.addToSecondColumn('data-list', linkList);
 
+
+        page.addToSidebar('sb-data-list', linkList); 
+
         var sidebarContent = {
           "title": "Content Sidebar",
           "content": "<p>This sidebar only contains a paragraph, but you could put any content inside of these.</p>",
@@ -162,20 +163,81 @@
 
         page.addToSidebar('content', sidebarContent);
 
-        var sidebarSocialMedia = {
-          "title": "Sample Social Media",
-          "facebook": "#",
-          "foursquare": "#",
-          "twitter": "#",
-          "tumblr": "#",
-          "youtube": "#",
-          "moreLink": {
-            "url": "#",
-            "label": "View all social media"
-          }
+        var accordionList = {
+          categories : [
+            {
+              url: "#",
+              label: "Category One",
+              links: [
+                {
+                  url: "#",
+                  label : "Link One"
+                },
+                {
+                  url: "#",
+                  label : "Link Two"
+                },
+                {
+                  url: "#",
+                  label : "Link Three"
+                }
+              ]
+            },
+            {
+              url: "#",
+              label: "Category Two",
+              links: [
+                {
+                  url: "#",
+                  label : "Link One"
+                },
+                {
+                  url: "#",
+                  label : "Link Two"
+                },
+                {
+                  url: "#",
+                  label : "Link Three"
+                }
+              ]
+            },
+            {
+              url: "#",
+              label: "Category Three",
+              links: [
+                {
+                  url: "#",
+                  label : "Link One"
+                },
+                {
+                  url: "#",
+                  label : "Link Two"
+                },
+                {
+                  url: "#",
+                  label : "Link Three"
+                }
+              ]
+            }
+          ]
         };
 
-        page.addToSidebar('social-media', sidebarSocialMedia);
+      UAlberta.FrontEnd.Modules.addAccordion(accordionList, '#first-column');
+
+      var imageCaption = {
+        imageSrc: "http://www.placehold.it/500x250",
+        imageAlt: "Placeholder image",
+        imageCaption: "a sample image caption"
+      };
+
+      UAlberta.FrontEnd.Modules.addModule('image-caption', imageCaption, '#first-column');
+
+      imageCaption.url = "#";
+
+      UAlberta.FrontEnd.Modules.addModule('hover-caption', imageCaption, '#first-column');
+
+
+       // page.addToSidebar('social-media', sidebarSocialMedia);
 
       }).fail( function(d, textStatus, error) {
 

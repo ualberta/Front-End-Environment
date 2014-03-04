@@ -1,0 +1,20 @@
+<div>
+    <div class="fma-container">
+        {{#each tabFeature}}
+        <div class="fma-slide fma-active fma-hover">
+            {{this.content}}
+        </div>
+        {{/each}}
+    </div>
+    <div class="fma-tabs-container">
+        <div class="container">
+            <ul class="fma-tabs row-fluid">
+                {{#each tabFeature}}
+                <li class="fma-button-active fma-button-hover">
+                    <a>{{this.label}}</a>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
