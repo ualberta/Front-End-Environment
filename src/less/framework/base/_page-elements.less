@@ -703,10 +703,13 @@ nav.audience-navigation {
 // --------------------
 
 .nav-mobile { position:relative; }
-.nav-wrapper { display:none; }
+
+.nav-mobile .nav-wrapper {
+  display:none;
+}
 
 @media screen and (max-width: 43.0625em) {
-  .nav-wrapper {
+  .nav-mobile .nav-wrapper {
     position: absolute;
     top: 0;
     left:0;
@@ -738,35 +741,17 @@ nav.audience-navigation {
     -ms-transition: -ms-transform 0.4s cubic-bezier(0, 0, 0, 1);
     -o-transition: -o-transform 0.4s cubic-bezier(0, 0, 0, 1);
   }
-  .nav-wrapper.on {
+  .nav-mobile .nav-wrapper.on {
     -webkit-transform: translate(0, 0);
     -moz-transform: translate(0, 0);
     -o-transform: translate(0, 0);
     -ms-transform: translate(0, 0);
     transform: translate(0, 0);
   }
-  .nav-wrapper h2 {
-    color: #94a29d;
-    font-size: 1em;
-    margin: 0;
-    padding: 1.15em 1.5em 1em;
-    line-height: 1em;
-    border-top:1px solid rgba(255,255,255,0.1);
-    
-  }
-  ul.level-0 {
+  .nav-mobile ul.level-0 {
     border-bottom:4px solid rgba(0,0,0,0.35);
-
   }
-  .nav-wrapper .nav-close {
-    display: block;
-    position: absolute;
-    right: 1em;
-    margin-top: -2.65em;
-    font-size: 0.85em;
-    color: #fff;
-  }
-  .nav-wrapper ul li a {
+  .nav-mobile .nav-wrapper ul li a {
     color: #ffffff;
     border-left: 0.5em solid rgba(255, 219, 5, 0.85);
     padding: 1em;
@@ -776,7 +761,7 @@ nav.audience-navigation {
   .nav-wrapper ul li a:hover {
     text-decoration: none;
   }
-  .nav-wrapper ul.level-1 li a {
+  .nav-mobile .nav-wrapper ul.level-1 li a {
     border-left: 1.5em solid rgba(0, 0, 0, 0.15);
     background: rgba(0, 0, 0, 0);
   }

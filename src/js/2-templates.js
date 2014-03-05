@@ -2,6 +2,32 @@ this["UAlberta"] = this["UAlberta"] || {};
 this["UAlberta"]["FrontEnd"] = this["UAlberta"]["FrontEnd"] || {};
 this["UAlberta"]["FrontEnd"]["templates"] = this["UAlberta"]["FrontEnd"]["templates"] || {};
 
+Handlebars.registerPartial("Button", Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<a href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.url); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" class=\"btn btn-";
+  if (stack1 = helpers.type) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.type); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " btn-";
+  if (stack1 = helpers.size) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.size); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">";
+  if (stack1 = helpers.label) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.label); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a>\n";
+  return buffer;
+  }));
+
 Handlebars.registerPartial("CollapsibleNavigation", Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
@@ -165,6 +191,64 @@ function program20(depth0,data) {
   return buffer;
   }));
 
+Handlebars.registerPartial("Feature", Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, stack2, self=this, functionType="function", escapeExpression=this.escapeExpression;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n          ";
+  stack1 = self.invokePartial(partials.Button, 'Button', depth0, helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n        ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"ga_ualberta_fma slide push-";
+  if (stack1 = helpers.alignment) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.alignment); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " ";
+  if (stack1 = helpers.featureClass) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.featureClass); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n  <div class=\"feature-wrapper\">\n    <div class=\"feature-image focus-";
+  if (stack1 = helpers.imageFocalPoint) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.imageFocalPoint); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n        <img src=\"";
+  if (stack1 = helpers.imageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.imageSrc); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" alt=\"";
+  if (stack1 = helpers.imageAlt) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.imageAlt); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" />\n    </div>\n    <div class=\"feature-content "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.boxPosition)),stack1 == null || stack1 === false ? stack1 : stack1.horizontal)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "-island "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.boxPosition)),stack1 == null || stack1 === false ? stack1 : stack1.vertical)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "-island ";
+  if (stack2 = helpers.boxClass) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.boxClass); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "\">\n      <h3>";
+  if (stack2 = helpers.heading) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.heading); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</h3>\n      <p>";
+  if (stack2 = helpers.description) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = (depth0 && depth0.description); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
+  buffer += escapeExpression(stack2)
+    + "</p>\n      <div class=\"feature-buttons\">\n        ";
+  stack2 = helpers.each.call(depth0, (depth0 && depth0.buttons), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n      </div>\n    </div>\n  </div>\n</div>\n";
+  return buffer;
+  }));
+
 Handlebars.registerPartial("ImageCaption", Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -268,11 +352,10 @@ function program4(depth0,data) {
   buffer += "<li>\n  <a href=\""
     + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">\n    "
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\n    ";
+    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1));
   stack2 = helpers['if'].call(depth0, (depth0 && depth0.children), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n  </a>\n  ";
+  buffer += "</a>\n  ";
   stack2 = helpers['if'].call(depth0, (depth0 && depth0.children), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n</li>";
@@ -315,34 +398,40 @@ function program2(depth0,data) {
   return buffer;
   });
 
-this["UAlberta"]["FrontEnd"]["templates"]["carousel.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+this["UAlberta"]["FrontEnd"]["templates"]["carousel-feature.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, stack2, options, self=this, functionType="function", escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing;
 
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n        <div class=\"slide image-caption-container\">\n          <a href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" class=\"image-shadow\">\n            <img class=\"fma-background\" src=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.imageSrc)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" alt=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.imageAlt)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" />\n          </a>\n          <div class=\"feature-caption caption\">\n            <h3>\n              <a href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.heading)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>\n            </h3>\n            <p>"
-    + escapeExpression(((stack1 = (depth0 && depth0.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</p>\n          </div>\n        </div>\n      ";
+  buffer += "\n        ";
+  stack1 = self.invokePartial(partials.Feature, 'Feature', depth0, helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n      ";
   return buffer;
   }
 
-  buffer += "<div class=\"flexslider\">\n    <div class=\"slides\">\n      ";
+function program3(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n        <li>";
+  if (stack1 = helpers.index) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.index); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n      ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"feature-container carousel\">\n    <div class=\"slides\">\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.features), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </div>\n</div>\n";
+  buffer += "\n    </div>\n    <ul class=\"toggles\">\n      ";
+  options = {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data};
+  stack2 = ((stack1 = helpers.each_with_index || (depth0 && depth0.each_with_index)),stack1 ? stack1.call(depth0, (depth0 && depth0.features), options) : helperMissing.call(depth0, "each_with_index", (depth0 && depth0.features), options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n    </ul>\n</div>\n";
   return buffer;
   });
 
@@ -411,7 +500,7 @@ function program6(depth0,data) {
   buffer += "\n  ";
   stack1 = self.invokePartial(partials.DataList, 'DataList', depth0, helpers, partials, data);
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n</div>";
+  buffer += "\n</div>\n";
   return buffer;
   });
 
@@ -487,7 +576,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1, stack2;
-  buffer += "\n    <li class=\"link-mod-category link-mod-active\">\n      <h4><a>"
+  buffer += "\n    <li class=\"link-mod-category\">\n      <h4><a>"
     + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</a></h4>\n      <ul class=\"link-mod-items link-mod-searchable\">\n        ";
   stack2 = helpers.each.call(depth0, (depth0 && depth0.links), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
@@ -507,7 +596,7 @@ function program2(depth0,data) {
   }
 
   buffer += "<ul class=\"link-mod-container\">\n  ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.category), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.categories), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n</ul>\n";
   return buffer;
@@ -711,56 +800,14 @@ function program11(depth0,data) {
 
 this["UAlberta"]["FrontEnd"]["templates"]["single-feature.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, self=this;
 
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n            <a class=\"btn btn-green btn-micro read\" href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>\n          ";
-  return buffer;
-  }
 
-  buffer += "<ul class=\"slides\">\n  <li class=\"ga_ualberta_fma ";
-  if (stack1 = helpers.featureClass) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.featureClass); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n    <div class=\"feature-wrapper\">\n      <div class=\"feature-image focus-";
-  if (stack1 = helpers.imageFocalPoint) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.imageFocalPoint); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n          <img src=\"";
-  if (stack1 = helpers.imageSrc) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.imageSrc); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\" alt=\"";
-  if (stack1 = helpers.imageAlt) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.imageAlt); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\" />\n      </div>\n      <div class=\"feature-content "
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.boxPosition)),stack1 == null || stack1 === false ? stack1 : stack1.horizontal)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "-island "
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.boxPosition)),stack1 == null || stack1 === false ? stack1 : stack1.vertical)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "-island ";
-  if (stack2 = helpers.boxClass) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = (depth0 && depth0.boxClass); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "\">\n        <h3>";
-  if (stack2 = helpers.heading) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = (depth0 && depth0.heading); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "</h3>\n        <p>";
-  if (stack2 = helpers.description) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
-  else { stack2 = (depth0 && depth0.description); stack2 = typeof stack2 === functionType ? stack2.call(depth0, {hash:{},data:data}) : stack2; }
-  buffer += escapeExpression(stack2)
-    + "</p>\n        <div class=\"feature-buttons\">\n          ";
-  stack2 = helpers.each.call(depth0, (depth0 && depth0.buttons), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n        </div>\n      </div>\n    </div>\n  </li>\n</ul>";
+  buffer += "<div class=\"feature-container\">\n  <div class=\"slides\">\n    ";
+  stack1 = self.invokePartial(partials.Feature, 'Feature', depth0, helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </div>\n</div>\n";
   return buffer;
   });
 
@@ -915,7 +962,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div id=\"feature-area\" class=\"feature-container\"></div>\n\n<div id=\"why-ualberta\" class=\"why-container container\">\n  \n  <div class=\"inset\">\n    <div class=\"why-ualberta-row row-fluid ga_ualberta_why-ualberta\">\n      <div class=\"frame why-thumbnail\">\n        <a class=\"image-shadow\" href=\"http://news.ualberta.ca/newsarticles/2013/september/ualberta-alumni-founded-organizations-a-staggering-engine-of-albertas-prosperity\">\n        <img src=\"http://www.ualberta.ca/~publicas/uofa/img/alumni-impact-img.png\">\n        </a>\n      </div>\n      <div class=\"why-text\">\n        <h3>$348.5 Billion Engine</h3>\n        <p class=\"description\">Landmark study by Faculty of Business professors Tony Briggs and Jennifer Jennings highlights the economic and\n        social impact of UAlberta alumni. <br><a href=\"http://news.ualberta.ca/newsarticles/2013/september/ualberta-alumni-founded-organizations-a-staggering-engine-of-albertas-prosperity\">See the results.</a></p>\n      </div>\n      <div class=\"button-container\">\n        <a href=\"http://admission.ualberta.ca/\" class=\"btn btn-apply km_1000_ualberta\">Apply Now</a>\n        <a href=\"http://www.careers.ualberta.ca/\" class=\"btn btn-work km_1001_ualberta\">Careers</a>\n        <a href=\"http://www.giving.ualberta.ca/\" class=\"btn btn-give km_1002_ualberta\">Give to the U of A</a>\n      </div>\n    </div>\n  </div>\n\n</div>\n\n<div class=\"content-container container\">\n\n  <div class=\"content-inner row-fluid\">\n\n    <div class=\"main-content span\">\n    \n      <div id=\"explore-row\" class=\"row-fluid\"></div>\n\n      <hr class=\"soften explore-separator\">\n\n      <div class=\"row-fluid\">\n\n        <div id=\"first-column\" class=\"primary-content-area span\"></div> \n\n        <div id=\"second-column\" class=\"secondary-content-area span\"></div>\n\n      </div>\n\n    </div>\n\n    <div id=\"sidebar\" class=\"span sidebar\"></div>\n\n  </div>\n \n</div>\n";
+  return "<div id=\"feature-area\"></div>\n\n<div id=\"why-ualberta\" class=\"why-container container\">\n  \n  <div class=\"inset\">\n    <div class=\"why-ualberta-row row-fluid ga_ualberta_why-ualberta\">\n      <div class=\"frame why-thumbnail\">\n        <a class=\"image-shadow\" href=\"http://news.ualberta.ca/newsarticles/2013/september/ualberta-alumni-founded-organizations-a-staggering-engine-of-albertas-prosperity\">\n        <img src=\"http://www.ualberta.ca/~publicas/uofa/img/alumni-impact-img.png\">\n        </a>\n      </div>\n      <div class=\"why-text\">\n        <h3>$348.5 Billion Engine</h3>\n        <p class=\"description\">Landmark study by Faculty of Business professors Tony Briggs and Jennifer Jennings highlights the economic and\n        social impact of UAlberta alumni. <br><a href=\"http://news.ualberta.ca/newsarticles/2013/september/ualberta-alumni-founded-organizations-a-staggering-engine-of-albertas-prosperity\">See the results.</a></p>\n      </div>\n      <div class=\"button-container\">\n        <a href=\"http://admission.ualberta.ca/\" class=\"btn btn-apply km_1000_ualberta\">Apply Now</a>\n        <a href=\"http://www.careers.ualberta.ca/\" class=\"btn btn-work km_1001_ualberta\">Careers</a>\n        <a href=\"http://www.giving.ualberta.ca/\" class=\"btn btn-give km_1002_ualberta\">Give to the U of A</a>\n      </div>\n    </div>\n  </div>\n\n</div>\n\n<div class=\"content-container container\">\n\n  <div class=\"content-inner row-fluid\">\n\n    <div class=\"main-content span\">\n    \n      <div id=\"explore-row\" class=\"row-fluid\"></div>\n\n      <hr class=\"soften explore-separator\">\n\n      <div class=\"row-fluid\">\n\n        <div id=\"first-column\" class=\"primary-content-area span\"></div> \n\n        <div id=\"second-column\" class=\"secondary-content-area span\"></div>\n\n      </div>\n\n    </div>\n\n    <div id=\"sidebar\" class=\"span sidebar\"></div>\n\n  </div>\n \n</div>\n";
   });
 
 this["UAlberta"]["FrontEnd"]["templates"]["ualberta-landing.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1128,6 +1175,18 @@ function program1(depth0,data) {
   return buffer;
   });
 
+this["UAlberta"]["FrontEnd"]["templates"]["left-navigation.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, self=this;
+
+
+  stack1 = self.invokePartial(partials.CollapsibleNavigation, 'CollapsibleNavigation', depth0, helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+
 this["UAlberta"]["FrontEnd"]["templates"]["mobile-navigation.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
@@ -1145,7 +1204,7 @@ function program1(depth0,data) {
 
   stack1 = helpers['if'].call(depth0, (depth0 && depth0.mobileLinks), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " \n";
+  buffer += " \n ";
   return buffer;
   });
 

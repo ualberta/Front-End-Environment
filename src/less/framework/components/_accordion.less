@@ -8,12 +8,20 @@
   & > li {
     position: relative;
   }
+  // set border radius on first/last accordion items
+  & li:first-child .accordion-toggle {
+    .border-radius(0 4px 0 0);
+  }
   & li:first-child a:first-child {
     .border-radius(4px 4px 0 0);
   }
   & li:last-child a:first-child {
     .border-radius(0px 0px 4px 4px);
   }
+  & li:last-child .accordion-toggle {
+    .border-radius(0 0 4px 0);
+  }
+  // active state of accordion category
   & > li.expanded > a:first-child {
     color: #fff; 
     #gradient > .vertical(#00AF5C,#007C41);
@@ -26,6 +34,7 @@
     border-right-color: transparent;
     .border-radius(4px);
   }
+  // default accordion category
   & > li > a {
     display: block;
     .gradient-row();
@@ -87,6 +96,8 @@
   & li.expanded ul {
     display: block;
     border-bottom:3px solid #007c41;
+    margin: 0 0 2px 0;
+    .border-radius(0 0 4px 4px);
   }
   & li.expanded a.icon-plus::before {
     content: '\f068';

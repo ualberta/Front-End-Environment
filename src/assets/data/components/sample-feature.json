@@ -7,7 +7,9 @@
   "buttons": [
     {
       "url": "#",
-      "label": "Do Something!"
+      "label": "Do Something!",
+      "type": "green",
+      "size": "micro"
     }
   ],
   "boxPosition" : { "vertical": "bottom", "horizontal": "left" },

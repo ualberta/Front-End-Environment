@@ -1,14 +1,14 @@
 .link-mod-container {
   position: relative;
   list-style: none;
-  margin: 0;
+  margin: 0 0 1.57em;
   padding: 0;
-  border:  1px solid @linkModBorderColor;
-  border-bottom-color: darken(@linkModBorderColor,7%);
-  border-right-color: darken(@linkModBorderColor,5%);
+//  border:  1px solid @linkModBorderColor;
+//  border-bottom-color: darken(@linkModBorderColor,7%);
+//  border-right-color: darken(@linkModBorderColor,5%);
   background: lighten(#dfe9e3,5%);
-  min-height:  1em*(@linkModHeight/14);
   color: @grayDark;
+  .border-radius(4px);
   .box-shadow(0 1px 4px rgba(0, 30, 15, 0.2));
   h4 {
     font-size: 1em;
@@ -19,6 +19,7 @@
     font-weight: bold;
     a { 
       display: block; 
+      cursor:pointer;
       padding: 0.8333em;
       border-bottom: 1px solid @linkModBorderColor;
       #gradient > .vertical(#fff, lighten(#dfe9e3,5%));
@@ -46,8 +47,12 @@
     min-height: 1em*(@linkModHeight/@baseFontSizepx);
     overflow: auto;
     background: #fff;
+    .border-radius(0 4px 4px 0);
     .box-shadow(inset 2px 0px 6px #E0E6E0);
     border-left-color: desaturate(darken(@linkModBorderColor, 5%),50%);
+  }
+  &>li:first-child h4 a {
+    .border-radius(4px 0 0 0);
   }
   &>li.link-mod-active {  
     //color: #fff;
@@ -56,7 +61,7 @@
      #gradient > .vertical(#00AF5C,#007C41);
      margin:  -1px -1px 0px -5px;
      padding-left: 1em;
-     .border-radius(5px 0px 0px 5px);
+     .border-radius(4px 0px 0px 4px);
      border-left: 1px solid transparent;
      border-top: 1px solid #00AF5C;
      border-bottom: 1px solid #007C41;
@@ -182,6 +187,7 @@
 // Large MOBILE and up
 @media (min-width: 30em) {
   .link-mod-container {
+    min-height:  1em*(@linkModHeight/14);
     &>li.link-mod-active {  
       .link-mod-label {
         display: block;

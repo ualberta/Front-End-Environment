@@ -54,19 +54,68 @@
         var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data);
 
         var feature = {
-          "imageSrc" : "http://www.placehold.it/1680x504",
-          "imageFocalPoint": "center",
-          "heading" : "Sample Heading",
-          "description" : "A sample description will follow the heading.",
-          "buttons": [
+          features: [
             {
-              "url": "#",
-              "label": "Do Something!"
+              "imageSrc" : "http://www.placehold.it/1680x504",
+              "heading" : "Base Feature",
+              "description" : "This feature contains the minimal amound of data to create a feature.",
+              "buttons": [
+                {
+                  "url": "#",
+                  "label": "Wow",
+                  "type": "green",
+                  "size": "micro"
+                },
+                {
+                  "url": "#",
+                  "label": "Such nice",
+                  "type": "grey",
+                  "size": "micro"
+                }
+              ]            
+            },
+            {
+              "alignment" : "right",
+              "imageSrc" : "http://www.placehold.it/1680x504",
+              "imageFocalPoint": "center",
+              "heading" : "Sample Heading",
+              "description" : "A sample description will follow the heading.",
+              "buttons": [
+                {
+                  "url": "#",
+                  "label": "Do Something!",
+                  "type": "green",
+                  "size": "micro"
+                }
+              ],
+              "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
+              "boxClass": "dark",
+              "featureClass": "sample-feature"
+            },
+            {
+              "alignment" : "left",
+              "imageSrc" : "http://www.placehold.it/1680x504",
+              "imageFocalPoint": "left",
+              "heading" : "Sample Heading",
+              "description" : "A sample description will follow the heading.",
+              "buttons": [
+                {
+                  "url": "#",
+                  "label": "Do Something Else!",
+                  "type": "green",
+                  "size": "micro"
+                },
+                {
+                  "url": "#",
+                  "label": "Don't!",
+                  "type": "grey",
+                  "size": "micro"
+                }
+              ],
+              "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
+              "featureClass": "sample-feature"
             }
-          ],
-          "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
-          "boxClass": "dark",
-          "featureClass": "sample-feature"
+          ]
         };
 
         page.addFeature(feature);
@@ -171,15 +220,15 @@
               links: [
                 {
                   url: "#",
-                  label : "Link One"
+                  label : "C1 Link One"
                 },
                 {
                   url: "#",
-                  label : "Link Two"
+                  label : "C1 Link Two"
                 },
                 {
                   url: "#",
-                  label : "Link Three"
+                  label : "C1 Link Three"
                 }
               ]
             },
@@ -189,15 +238,15 @@
               links: [
                 {
                   url: "#",
-                  label : "Link One"
+                  label : "C2 Link One"
                 },
                 {
                   url: "#",
-                  label : "Link Two"
+                  label : "C2 Link Two"
                 },
                 {
                   url: "#",
-                  label : "Link Three"
+                  label : "C2 Link Three"
                 }
               ]
             },
@@ -207,15 +256,15 @@
               links: [
                 {
                   url: "#",
-                  label : "Link One"
+                  label : "C3 Link One"
                 },
                 {
                   url: "#",
-                  label : "Link Two"
+                  label : "C3 Link Two"
                 },
                 {
                   url: "#",
-                  label : "Link Three"
+                  label : "C3 Link Three"
                 }
               ]
             }
@@ -224,8 +273,11 @@
 
       UAlberta.FrontEnd.Modules.addAccordion(accordionList, '#first-column');
 
+      UAlberta.FrontEnd.Modules.addLinkFilter(accordionList, '#first-column');
+
+
       var imageCaption = {
-        imageSrc: "http://www.placehold.it/250x250",
+        imageSrc: "http://www.placehold.it/800x450",
         imageAlt: "Placeholder image",
         imageCaption: "a sample image caption"
       };
@@ -237,6 +289,140 @@
 
       UAlberta.FrontEnd.Modules.addModule('image-caption', imageCaption, '#first-column');
 
+      UAlberta.FrontEnd.Modules.addModule('non-existant-test', imageCaption, '#first-column');
+
+      var leftNav = [
+        {
+          url: "#",
+          label: "Page Name",
+          children: [
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            },
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            },
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            }
+          ]
+        },
+        {
+          url: "#",
+          label: "Page Name",
+          children: [
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            },
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            },
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+                {
+                  url: "#",
+                  label: "Page Name",
+                  children: [
+
+                  ]
+                },
+                {
+                  url: "#",
+                  label: "Page Name",
+                  children: [
+
+                  ]
+                },
+                {
+                  url: "#",
+                  label: "Page Name",
+                  children: [
+
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          url: "#",
+          label: "Page Name",
+          children: [
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            },
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            },
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            }
+          ]
+        },
+        {
+          url: "#",
+          label: "Page Name",
+          children: [
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            },
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            },
+            {
+              url: "#",
+              label: "Page Name",
+              children: [
+
+              ]
+            }
+          ]
+        }
+      ];
+ 
+      UAlberta.FrontEnd.Modules.addSectionNavigation( leftNav, '#first-column');
 
        // page.addToSidebar('social-media', sidebarSocialMedia);
 

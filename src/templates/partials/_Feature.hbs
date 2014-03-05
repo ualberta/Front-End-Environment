@@ -1,0 +1,16 @@
+<div class="ga_ualberta_fma slide push-{{alignment}} {{featureClass}}">
+  <div class="feature-wrapper">
+    <div class="feature-image focus-{{imageFocalPoint}}">
+        <img src="{{imageSrc}}" alt="{{imageAlt}}" />
+    </div>
+    <div class="feature-content {{boxPosition.horizontal}}-island {{boxPosition.vertical}}-island {{boxClass}}">
+      <h3>{{heading}}</h3>
+      <p>{{description}}</p>
+      <div class="feature-buttons">
+        {{#each buttons}}
+          {{> Button}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

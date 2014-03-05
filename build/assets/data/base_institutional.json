@@ -85,23 +85,7 @@
       {
         "url": "#",
         "label": "Why UAlberta?",
-        "children": [
-          {
-            "url": "#",
-            "label": "Third Level Page",
-            "children": []
-          },
-          {
-            "url": "#",
-            "label": "Sample",
-            "children": []
-          },
-          {
-            "url": "#",
-            "label": "SampleTwo",
-            "children": []
-          }
-        ]
+        "children": []
       },
       {
         "url": "#",

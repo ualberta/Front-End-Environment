@@ -1,0 +1,12 @@
+<div class="feature-container carousel">
+    <div class="slides">
+      {{#each features}}
+        {{> Feature}}
+      {{/each}}
+    </div>
+    <ul class="toggles">
+      {{#each_with_index features}}
+        <li>{{index}}</li>
+      {{/each_with_index}}
+    </ul>
+</div>
