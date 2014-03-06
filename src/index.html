@@ -199,7 +199,7 @@
         page.addToSecondColumn('data-list', linkList);
 
 
-        page.addToSidebar('sb-data-list', linkList); 
+        page.addToSidebar('sidebar-links', linkList); 
 
         var sidebarContent = {
           "title": "Content Sidebar",
@@ -210,7 +210,7 @@
           }
         };
 
-        page.addToSidebar('content', sidebarContent);
+        page.addToSidebar('sidebar-content', sidebarContent);
 
         var accordionList = {
           categories : [
@@ -271,9 +271,9 @@
           ]
         };
 
-      UAlberta.FrontEnd.Modules.addAccordion(accordionList, '#first-column');
+      UAlberta.FrontEnd.Modules.addModule('accordion', accordionList, '#first-column');
 
-      UAlberta.FrontEnd.Modules.addLinkFilter(accordionList, '#first-column');
+      UAlberta.FrontEnd.Modules.addModule('link-filter', accordionList, '#first-column');
 
 
       var imageCaption = {
@@ -422,7 +422,7 @@
         }
       ];
  
-      UAlberta.FrontEnd.Modules.addSectionNavigation( leftNav, '#first-column');
+      UAlberta.FrontEnd.Modules.addModule('left-navigation',leftNav, '#first-column');
 
        // page.addToSidebar('social-media', sidebarSocialMedia);
 

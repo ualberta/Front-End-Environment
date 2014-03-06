@@ -53,31 +53,8 @@ var UAlberta = UAlberta || {};
 
         };
 
-        this.addModuleToPage = function(moduleName,data,parent) {
-          switch(moduleName) {
-            case "content":
-              self.modules.push(
-                UAlberta.FrontEnd.Modules.addSidebarContentItem(data, parent)
-              );
-              break;
-            case "social-media":
-              self.modules.push(
-                UAlberta.FrontEnd.Modules.addSidebarSocialMedia(data, parent)
-              );
-              break;
-            case "data-list":
-              self.modules.push(
-                UAlberta.FrontEnd.Modules.addDataList(data, parent)
-              );
-              break;
-            case "sb-data-list":
-              self.modules.push(
-                UAlberta.FrontEnd.Modules.addSidebarDataList(data, parent)
-              );
-              break;
-            default:
-              console.log("error: invalid module name");
-            }
+        this.addModuleToPage = function(moduleName,data,parent,options) {
+          UAlberta.FrontEnd.Modules.addModule(moduleName,data,parent,options);
         };
 
         // Private 
@@ -193,13 +170,13 @@ var UAlberta = UAlberta || {};
 
         this.addFeature = function(featureData) {
           if(featureData.features.length == 1)
-            UAlberta.FrontEnd.Modules.addSingleFeature(featureData, "#feature-area");
+            UAlberta.FrontEnd.Modules.addModule('single-feature',featureData, "#feature-area");
           else
-            UAlberta.FrontEnd.Modules.addCarouselFeature(featureData, "#feature-area");
+            UAlberta.FrontEnd.Modules.addModule('carousel-feature',featureData, "#feature-area");
         };
 
         this.addExploreBar = function() {
-          UAlberta.FrontEnd.Modules.addExploreBar("#explore-row");
+          UAlberta.FrontEnd.Modules.addModule('explore-bar', null, "#explore-row");
         };
 
         this.addToFirstColumn = function(moduleName, data) {
@@ -216,11 +193,8 @@ var UAlberta = UAlberta || {};
 
         this.base_build = this.build;
         this.build = function() {
-
           this.base_build();
-
           this.setLayout("ualberta-home");
-
         }
 
         this.build();
@@ -317,8 +291,6 @@ var UAlberta = UAlberta || {};
         this.base_add = this.add; 
         this.add = function() {
           this.base_add();
-
-          console.log('acc', this);
 
           // expand / collapse functionality
           this.el.on({
@@ -429,6 +401,7 @@ var UAlberta = UAlberta || {};
 
       // module factory
       // returns a module as long as a valid moduleName is provided
+      // moduleName must match the hbs template file name
       function addModule(moduleName, data, parent, options) {
 
         var template = UAlberta.FrontEnd.templates[moduleName+".hbs"];
@@ -467,7 +440,10 @@ var UAlberta = UAlberta || {};
                 parent, 
                 options
           );
+
+          // run the module's add function
           module.add();
+
           return module;
 
         } else {
@@ -476,56 +452,6 @@ var UAlberta = UAlberta || {};
 
       };
       Modules.addModule = addModule;
-
-      function addExploreBar(parent) {
-        addModule('explore-bar', {}, parent, {});
-      };
-      Modules.addExploreBar = addExploreBar;
-
-      function addAccordion(data, parent) {
-        addModule('accordion', data, parent, {});
-      };
-      Modules.addAccordion = addAccordion;
-
-      function addSingleFeature(data, parent, options) {
-        addModule('single-feature', data, parent, options);
-      }
-      Modules.addSingleFeature = addSingleFeature;
-
-      function addSectionNavigation(data, parent, options) {
-        addModule('left-navigation', data, parent, options);
-      }
-      Modules.addSectionNavigation = addSectionNavigation;
-
-      function addLinkFilter(data, parent, options) {
-        addModule('link-filter', data, parent, options);
-      }
-      Modules.addLinkFilter = addLinkFilter;
-
-      function addCarouselFeature(data, parent, options) {
-        addModule('carousel-feature', data, parent, options);
-      }
-      Modules.addCarouselFeature = addCarouselFeature;
-
-      function addDataList(data, parent, options) {
-        addModule('data-list', data, parent, options);
-      }
-      Modules.addDataList = addDataList;
-
-      function addSidebarDataList(data, parent, options) {
-        addModule('sidebar-links', data, parent, options);
-      }
-      Modules.addSidebarDataList = addSidebarDataList;
-
-      function addSidebarContentItem(data, parent, options) {
-        addModule('sidebar-content', data, parent, options);
-      }
-      Modules.addSidebarContentItem = addSidebarContentItem;
-
-      function addSidebarSocialMedia(data, parent, options) {
-        addModule('sidebar-social-media', data, parent, options);
-      }
-      Modules.addSidebarSocialMedia = addSidebarSocialMedia;
 
 
     })(FrontEnd.Modules || (FrontEnd.Modules = {}));
