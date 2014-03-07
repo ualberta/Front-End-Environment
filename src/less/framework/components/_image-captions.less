@@ -4,7 +4,7 @@
   .overlay.caption { position:absolute; }
   .caption {
     position: relative;
-    text-shadow: 0px 1px 1px #fff;
+    text-shadow: 0px 1px 1px #ccc;
     padding: 0.5em 0.2571em 0.2571em;
     margin:0;
     color:#666;
@@ -19,26 +19,10 @@
       padding: 0;
       position: relative;
     }
-    h3 {
-      font-size: 1em;
-      margin-bottom: 0.1em;
-      line-height:1.2em;
-    }
+    h3 { text-shadow: 0px 1px 6px #5FC494; }
     p {
       font-weight: 500;
       color: @lightText;
-    }
-  }
-  &.dark {
-    .caption {
-      #gradient > .vertical(rgba(0,0,0,0.45), rgba(0,0,0,0.85));
-      color: #fff;
-      a {
-        color: #ffdb05;
-      }
-      p {
-        color:#fff;
-      }
     }
   }
 }
@@ -53,6 +37,7 @@
 // the caption over the image on hover
 .hover-caption-container {
   overflow: hidden;
+  position:relative;
   a, a:hover {
     text-decoration:  none;
   }
@@ -81,8 +66,8 @@
     bottom: -100%;
     left: 0;
     right:0;
-    width: 100%;
     pointer-events: none;
+    margin:0;
     padding: 0.2571em 0.8333em;
     .transition(all 0.1s ease-in-out);
     z-index: 19;
@@ -92,5 +77,29 @@
   }
   &:hover i {
     .opacity(100);
+  }
+}
+
+.slide.image-caption-container {
+  .caption {
+    padding: 0.8333em;
+    #gradient > .vertical(rgba(255,255,255,0.65), #fff);
+    h3 {
+      font-size: 1.2857em; // 18px
+      margin-bottom: 0.1em;
+      line-height:1.2em;
+    }
+  }
+  &.dark .caption {
+    #gradient > .vertical(rgba(0,0,0,0.45), rgba(0,0,0,0.85));
+    color: #fff;
+    text-shadow: 0px 1px 2px #000;
+    a {
+      color: #ffdb05;
+      text-shadow: 0px 1px 4px #000;
+    }
+    p {
+      color:#fff;
+    }
   }
 }

@@ -11,10 +11,9 @@
 
 .blade-inner {
   position:relative;
-  margin: 0 auto;
   text-align: right;
   width:  auto;
-  padding: 0 0.8333em;
+  margin: 0 0.8333em;
   nav, input, button.global-search-btn {
     font-size: 1em;
   }
@@ -102,18 +101,18 @@
 	// Mobile landscape, make quick links go beside each other
 	@media (max-height: 22em) and (max-width: 43.125em) {
 	  .blade-container {
-		ul.quick-links {
-		  left: -100px;
-		  height: 160px;
-		  min-width: 240px;
-		  li {
-		    display: inline-block;
-		    text-align: left;
-		    width: 120px;
-		    float: left;
-		  }
-		}
-	  }
+  		ul.quick-links {
+  		  left: -100px;
+  		  height: 160px;
+  		  min-width: 240px;
+  		  li {
+  		    display: inline-block;
+  		    text-align: left;
+  		    width: 120px;
+  		    float: left;
+  		  }
+  		}
+	  } 
 	}
 
 
@@ -341,9 +340,9 @@
 	  div.blade-search {
 	    width:  auto;
 	    position: absolute;
-	    right: 10px;
+	    right: 0;
 	  }
-
+ 
 	  .blade-search input[type=search] {
 	    font-family: inherit;
 	    font-size: 100%;
@@ -666,7 +665,7 @@ nav.audience-navigation {
 
 @media (min-width: 43.125em) {
   nav.audience-navigation {
-    right: 3%;
+    right: 0.8333em;
     top: 0;
     bottom: 0;
     height: 3em;
@@ -676,7 +675,7 @@ nav.audience-navigation {
       width: 44%;
       text-align: right;
       margin-bottom:  0.5em;
-    }
+    } 
     ul li:nth-child(3) {
       clear:left;
     }
@@ -686,7 +685,7 @@ nav.audience-navigation {
 @media (min-width: 61.25em) {
   nav.audience-navigation {
     width:auto;
-    right:5%;
+    right:0;
     height:2.6em;
     top:auto;
   }
@@ -1087,14 +1086,14 @@ div.content-inner hr.soften.double {
   }
 
   // increase left / right page margins to 3% at 980px
-  .content-top-row { padding:0 3%; }
+  .content-top-row { margin:0 3%; }
   .container, .blade-inner, .banner-inner, .navigation-inner {
-      padding:0 3%;
+      margin:0 3%;
       box-sizing: border-box;
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       -moz-box-sizing:border-box;
-      width:100%;
+      width:auto;
   }
   .banner-inner .site-title {
         left:auto;
@@ -1103,9 +1102,9 @@ div.content-inner hr.soften.double {
 
 // increase left / right page margins to 5% at 1200px
 @media screen and (min-width: 75em) {
-  .content-top-row { padding:0 5%; }
+  .content-top-row { margin:0 5%; }
   .container, .blade-inner, .banner-inner, .navigation-inner {
-      padding:0 5%;
+      margin:0 5%;
   }
 }
 

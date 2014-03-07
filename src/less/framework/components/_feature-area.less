@@ -1,14 +1,19 @@
-.feature-container {
+.slides { 
+  position:relative;
+  list-style:none; 
+  margin:0; 
+  padding:0;
+}
+
+// image centered by default on high res
+.slides > .slide {
+  position:relative;
+}
+
+
+.full-page-feature {
 
   width:100%;
-  
-  .slides { 
-    position:relative;
-    list-style:none; 
-    margin:0; 
-    padding:0;
-    .box-shadow(0 1px 0px #fff);
-  }
 
   // inset shadow on each slide
   .slides > .slide:after {
@@ -22,29 +27,23 @@
     display: block;
     z-index: 3;
   }
+  
+  // add 1px border beneath feature to give inset appearance
+  .slides { .box-shadow(0 1px 0px #fff); }
 
   // Default slide background color
   .slide { background: #3D4A43; }
 
   // image centered by default on high res
-  .slides > .slide {
-    position:relative;
-    text-align:center;
-  }
+  .slides > .slide { text-align:center; }
 
   // push the image to the right of the screen on high res
-  .slides > .slide.push-right {
-    text-align:right;
-  }
+  .slides > .slide.push-right { text-align:right; }
 
   // push the image to the left of the screen on high res
-  .slides > .slide.push-left {
-    text-align:left;
-  }
+  .slides > .slide.push-left { text-align:left; }
 
-  .feature-wrapper {
-    overflow:hidden;
-  }
+  .feature-wrapper { overflow:hidden; }
 
   // image focus definitions
   // keeps the specified portion of the image in view
@@ -52,17 +51,9 @@
   .feature-image {
     position:relative;
     width:690px;
-    &.focus-right {
-      float:right;
-    }
-    &.focus-right + .feature-content {
-      clear:right;
-    }
-    &.focus-center {
-      position:relative;
-      left:50%;
-      margin-left:-345px;
-    }
+    &.focus-right { float:right; }
+    &.focus-right + .feature-content { clear:right; }
+    &.focus-center { position:relative; left:50%; margin-left:-345px; }
   }
 
   // display feature content below image by default
@@ -94,7 +85,7 @@
 
 @media (min-width: 43.125em) {
 
-  .feature-container {
+  .full-page-feature {
 
     // adjust margin for center focused image
     .feature-image {
@@ -102,6 +93,10 @@
       &.focus-center {
         margin-left:-490px;
       }
+    }
+
+    .slides {
+      min-height:294px;
     }
 
     // detach feature content
@@ -143,9 +138,14 @@
 
 @media (min-width: 61.25em) {
 
-  .feature-container {
+  .full-page-feature {
 
     margin-bottom:1.57em;
+
+    .slides {
+      padding-top: 30%;
+      min-height:0;
+    }
 
     & > .slides > .slide { 
       overflow:hidden; 
@@ -187,7 +187,7 @@
 
 @media (min-width: 75em) {
 
-  .feature-container {
+  .full-page-feature {
 
     .feature-content {
       &.left-island {
@@ -200,6 +200,13 @@
 
   }
 
+}
+
+@media screen and (min-width: 96em) {
+  .full-page-feature .slides {
+    height: 29em;
+    padding-top: 0;
+  }
 }
 
 

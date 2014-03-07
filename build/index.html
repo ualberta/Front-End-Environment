@@ -54,11 +54,12 @@
         var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data);
 
         var feature = {
+          type: "full-page-feature",
           features: [
             {
               "imageSrc" : "http://www.placehold.it/1680x504",
               "heading" : "Base Feature",
-              "description" : "This feature contains the minimal amound of data to create a feature.",
+              "description" : "This feature contains the minimal amount of data to create a feature.",
               "buttons": [
                 {
                   "url": "#",
@@ -90,7 +91,7 @@
               ],
               "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
               "boxClass": "dark",
-              "featureClass": "sample-feature"
+              "featureClass": "ga_ualberta_fma sample-feature"
             },
             {
               "alignment" : "left",
@@ -113,14 +114,159 @@
                 }
               ],
               "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
-              "featureClass": "sample-feature"
+              "featureClass": "ga_ualberta_fma sample-feature"
             }
           ]
         };
 
-        page.addFeature(feature);
+        var carousel = {
+          features: [
+            {
+              "imageSrc" : "http://www.med.ualberta.ca/-/media/medicine/HomePage/0221-dunkley.jpg",
+              "heading" : "Base Feature",
+              "description" : "This feature contains the minimal amount of data to create a feature.",
+              "url": "#"            
+            },
+            {
+              "imageSrc" : "http://www.med.ualberta.ca/-/media/medicine/HomePage/mountainolympicrings.jpg",
+              "heading" : "Base Feature",
+              "description" : "This feature contains the minimal amount of data to create a feature.",
+              "url": "#",
+              "featureClass": "dark"           
+            }
+          ]
+        };
 
-        page.addExploreBar();
+        var leftNav = [
+          {
+            url: "#",
+            label: "Page Name",
+            children: [
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              }
+            ]
+          },
+          {
+            url: "#",
+            label: "Page Name",
+            children: [
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+                  {
+                    url: "#",
+                    label: "Page Name",
+                    children: [
+
+                    ]
+                  },
+                  {
+                    url: "#",
+                    label: "Page Name",
+                    children: [
+
+                    ]
+                  },
+                  {
+                    url: "#",
+                    label: "Page Name",
+                    children: [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            url: "#",
+            label: "Page Name",
+            children: [
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              }
+            ]
+          },
+          {
+            url: "#",
+            label: "Page Name",
+            children: [
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              }
+            ]
+          }
+        ];
 
         var news = {
           "title": "Latest News",
@@ -167,8 +313,6 @@
           }
         };
 
-        page.addToFirstColumn('data-list', news);
-
         var linkList = {
           "title": "Campus Notices",
           "items": [
@@ -187,19 +331,27 @@
           ] 
         };
 
-        page.addToSecondColumn('data-list', linkList);
-
-        linkList.title = "Colloquy Blog";
-
-        linkList.moreLink = {
-          url:"#",
-          label:"Read the colloquy blog"
+        var linkList2 = {
+          "title": "Colloquy Blog",
+          "items": [
+            {
+              "url": "#",
+              "label": "First Sample Link"
+            },
+            {
+              "url": "#",
+              "label": "Second Sample Link"
+            },
+            {
+              "url": "#",
+              "label": "Third Sample Link"
+            }
+          ],
+          "moreLink": {
+            "url":"#",
+            "label":"Read the colloquy blog"
+          }
         };
-
-        page.addToSecondColumn('data-list', linkList);
-
-
-        page.addToSidebar('sidebar-links', linkList); 
 
         var sidebarContent = {
           "title": "Content Sidebar",
@@ -209,8 +361,6 @@
             "label": "Do Something!"
           }
         };
-
-        page.addToSidebar('sidebar-content', sidebarContent);
 
         var accordionList = {
           categories : [
@@ -271,158 +421,45 @@
           ]
         };
 
-      UAlberta.FrontEnd.Modules.addModule('accordion', accordionList, '#first-column');
+        var imageCaption = {
+          imageSrc: "http://www.placehold.it/800x450",
+          imageAlt: "Placeholder image",
+          imageCaption: "a sample image caption"
+        };
 
-      UAlberta.FrontEnd.Modules.addModule('link-filter', accordionList, '#first-column');
+        var imageCaption2 = {
+          imageSrc: "http://www.placehold.it/800x450",
+          imageAlt: "Placeholder image",
+          imageCaption: "a sample image caption",
+          url :"#",
+          hoverCaption : true
+        };
 
+        var videoData = {
+          url: "//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;autoplay=1",
+          imageSrc: "http://why.ualberta.ca/-/media/ualberta/Institutional%20Page%20Images/danny-huang-why-ualberta2013.jpg",
+          imageAlt: "Danny Huang explains",
+          hoverCaption: true,
+          imageCaption: "Danny Huang explains how to work hard, have fun, stay healthy but also find a way to balance it all.",
+          icon:"angle-circled-right"
+        };
 
-      var imageCaption = {
-        imageSrc: "http://www.placehold.it/800x450",
-        imageAlt: "Placeholder image",
-        imageCaption: "a sample image caption"
-      };
+        page.addFeature(feature);
+        page.addExploreBar();
+        page.addToFirstColumn('data-list', news);
+        page.addToSecondColumn('data-list', linkList);
+        page.addToSecondColumn('data-list', linkList2);
+        page.addToSidebar('sidebar-links', linkList2); 
+        page.addToSidebar('sidebar-content', sidebarContent);
 
-      UAlberta.FrontEnd.Modules.addModule('image-caption', imageCaption, '#first-column');
-
-      imageCaption.url = "#";
-      imageCaption.hoverCaption = true;
-
-      UAlberta.FrontEnd.Modules.addModule('image-caption', imageCaption, '#first-column');
-
-      UAlberta.FrontEnd.Modules.addModule('non-existant-test', imageCaption, '#first-column');
-
-      var leftNav = [
-        {
-          url: "#",
-          label: "Page Name",
-          children: [
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            },
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            },
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            }
-          ]
-        },
-        {
-          url: "#",
-          label: "Page Name",
-          children: [
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            },
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            },
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-                {
-                  url: "#",
-                  label: "Page Name",
-                  children: [
-
-                  ]
-                },
-                {
-                  url: "#",
-                  label: "Page Name",
-                  children: [
-
-                  ]
-                },
-                {
-                  url: "#",
-                  label: "Page Name",
-                  children: [
-
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          url: "#",
-          label: "Page Name",
-          children: [
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            },
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            },
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            }
-          ]
-        },
-        {
-          url: "#",
-          label: "Page Name",
-          children: [
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            },
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            },
-            {
-              url: "#",
-              label: "Page Name",
-              children: [
-
-              ]
-            }
-          ]
-        }
-      ];
- 
-      UAlberta.FrontEnd.Modules.addModule('left-navigation',leftNav, '#first-column');
+        page.addModule('accordion', accordionList, '#first-column');
+        page.addModule('link-filter', accordionList, '#first-column');
+        page.addModule('image-caption', imageCaption, '#first-column');
+        page.addModule('image-caption', imageCaption2, '#first-column');
+        page.addModule('non-existant-test', imageCaption, '#first-column');
+        page.addModule('left-navigation',leftNav, '#first-column');
+        page.addModule('carousel',carousel, '#first-column');
+        page.addModule('youtube-video',videoData, '#first-column');
 
        // page.addToSidebar('social-media', sidebarSocialMedia);
 

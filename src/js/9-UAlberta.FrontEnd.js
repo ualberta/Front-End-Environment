@@ -53,7 +53,7 @@ var UAlberta = UAlberta || {};
 
         };
 
-        this.addModuleToPage = function(moduleName,data,parent,options) {
+        this.addModule = function(moduleName,data,parent,options) {
           UAlberta.FrontEnd.Modules.addModule(moduleName,data,parent,options);
         };
 
@@ -172,7 +172,7 @@ var UAlberta = UAlberta || {};
           if(featureData.features.length == 1)
             UAlberta.FrontEnd.Modules.addModule('single-feature',featureData, "#feature-area");
           else
-            UAlberta.FrontEnd.Modules.addModule('carousel-feature',featureData, "#feature-area");
+            UAlberta.FrontEnd.Modules.addModule('carousel',featureData, "#feature-area");
         };
 
         this.addExploreBar = function() {
@@ -180,15 +180,15 @@ var UAlberta = UAlberta || {};
         };
 
         this.addToFirstColumn = function(moduleName, data) {
-          this.addModuleToPage(moduleName,data,"#first-column");
+          this.addModule(moduleName,data,"#first-column");
         };
 
         this.addToSecondColumn = function(moduleName, data) {
-          this.addModuleToPage(moduleName,data,"#second-column");
+          this.addModule(moduleName,data,"#second-column");
         };
 
         this.addToSidebar = function(moduleName, data) {
-          this.addModuleToPage(moduleName,data,"#sidebar");
+          this.addModule(moduleName,data,"#sidebar");
         };
 
         this.base_build = this.build;
@@ -280,6 +280,58 @@ var UAlberta = UAlberta || {};
         this.prototype = new Module(id, type, template, data, placeholder, options);
       };
 
+      function Modal(id, type, template, data, placeholder, options) {
+        
+        // extend the module base
+        this.base = Module;
+        this.base(id, type, template, data, placeholder, options);
+
+        var self = this;
+
+        this.base_add = this.add; 
+        this.add = function() {
+          this.base_add();
+
+          this.el.on({
+            click: function() {
+              self.remove(); 
+              return false;
+            }
+          }, '.close');
+        };
+
+        // extend the module base
+        this.prototype = new Module(id, type, template, data, placeholder, options);
+      };
+
+      function Video(id, type, template, data, placeholder, options) {
+        
+        // extend the module base
+        this.base = Module;
+        this.base(id, type, template, data, placeholder, options);
+
+        var self = this;
+
+        this.base_add = this.add; 
+        this.add = function() {
+          this.base_add();
+
+          this.el.on({
+            click: function() {
+              var data = {
+                heading: $(this).find('img').attr('alt'),
+                embedUrl: $(this).attr('href')
+              };
+              addModule('modal', data, 'body');
+              return false;
+            }
+          }, 'a');
+        };
+
+        // extend the module base
+        this.prototype = new Module(id, type, template, data, placeholder, options);
+      };
+
       function Accordion(id, type, template, data, placeholder, options) {
         
         // extend the module base
@@ -347,7 +399,7 @@ var UAlberta = UAlberta || {};
 
           this.el.on({
             click: function() {
-              module.el.find('.link-mod-active').removeClass('link-mod-active');
+              self.el.find('.link-mod-active').removeClass('link-mod-active');
               $(this).parent().addClass('link-mod-active');
             }
           }, '.link-mod-category h4');
@@ -408,30 +460,40 @@ var UAlberta = UAlberta || {};
 
         // TODO: append timestamp to id? not sure if that is useful.
 
+        
+        var moduleConstructor;
+        switch(moduleName) {
+          case 'explore-bar':
+            moduleConstructor = ExploreBar;
+            break;
+          case 'accordion':
+            moduleConstructor = Accordion;
+            break;
+          case 'left-navigation':
+            moduleConstructor = SectionNavigation;
+            break;
+          case 'link-filter':
+            moduleConstructor = LinkFilter;
+            break;
+          case 'carousel-feature':
+            moduleConstructor = Carousel;
+            break;
+          case 'carousel':
+            moduleConstructor = Carousel;
+            break;
+          case 'modal':
+            moduleConstructor = Modal;
+            break;
+          case 'youtube-video':
+            template = UAlberta.FrontEnd.templates["image-caption.hbs"];
+            moduleConstructor = Video;
+            break;
+          default:
+            moduleConstructor = Module;
+        }
+
         if(template) {
-          var moduleConstructor;
-          switch(moduleName) {
-            case 'explore-bar':
-              moduleConstructor = ExploreBar;
-              break;
-            case 'accordion':
-              moduleConstructor = Accordion;
-              break;
-            case 'left-navigation':
-              moduleConstructor = SectionNavigation;
-              break;
-            case 'link-filter':
-              moduleConstructor = LinkFilter;
-              break;
-            case 'carousel-feature':
-              moduleConstructor = Carousel;
-              break;
-            case 'carousel':
-              moduleConstructor = Carousel;
-              break;
-            default:
-              moduleConstructor = Module;
-          }
+
           var module = new moduleConstructor(
                 moduleName, 
                 moduleName, 
@@ -449,6 +511,7 @@ var UAlberta = UAlberta || {};
         } else {
           console.log("error: template for " + moduleName + " not found.");
         } 
+
 
       };
       Modules.addModule = addModule;
