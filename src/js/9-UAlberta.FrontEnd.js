@@ -469,7 +469,7 @@ var UAlberta = UAlberta || {};
           case 'accordion':
             moduleConstructor = Accordion;
             break;
-          case 'left-navigation':
+          case 'collapsible-navigation':
             moduleConstructor = SectionNavigation;
             break;
           case 'link-filter':

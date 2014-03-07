@@ -12,7 +12,10 @@
       "size": "micro"
     }
   ],
-  "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
+  "boxPosition" : { 
+    "vertical": "bottom", 
+    "horizontal": "left" 
+  },
   "boxClass": "dark",
   "featureClass": "sample-feature"
 }

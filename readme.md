@@ -10,7 +10,7 @@ Add `/build/js/main.min.js` (requires jQuery, and Handlebars Runtime) and `/buil
     UAlberta.Modules.addModule('single-feature', jsonData, '#feature-area');
     
 
-You can also build entire pages and layout from JSON data.  For example, you could build a replica of the [UAlberta home page](http://www.ualberta.ca/) with:
+You can also build entire pages and layouts from JSON data (recommended for testing purposes only).  For example, you could build a replica of the [UAlberta home page](http://www.ualberta.ca/) with:
 
     // CREATE BASE PAGE
 
@@ -83,24 +83,82 @@ To add a module to an existing page, you need the following three parameters:
   - `parent`: a string containing a selector to append the markup to
   - `options`: any additional options for the module
 
-So far, the following modules have been inplemented.
+You can add any module that has a valid handlebars template through
 
-### `addSingleFeature(data, parent, options)`
+    UAlberta.FrontEnd.Modules.addModule(templateName, data, parent)
+
+  - `templateName`: The name of the handlebars file without the .hbs extension.
+  - `data`: The data to provide to the template
+  - `parent`: A selector string of the element that will contain this module
+
+Below you can find a list of modules that currently exist.
+
+### Single Full Page Feature
+
+Adds a single full page feature.
+
+    addModule('single-feature', data, parent, options)
 
   - [View Sample Feature JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-feature.json)
 
-### `addDataList(data, parent, options)`
+#### Options
+  - `alignment`: Set to "left" or "right" to force the image to stick to a side of the browser window on high resolutions. The image is centered by default
+  - `boxPosition.vertical`: Set to "bottom" to anchor the content box to the bottom of the feature.  Vertically centered by default.
+  - `boxPosition.horizontal`: Set to "left" or "right" to anchor the content box to either side of the feature.  Horizontally centered if not set.
+  - `boxClass`: Set to "dark" for a dark treatment of the content box.
+  - `featureClass`: A custom class to add to the feature wrapper element.
 
-  - [View Sample News List JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-news-list.json)
-  - [View Sample Link List JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-link-list.json)
+### Data Lists
 
-### `addSidebarContentItem(data, parent, options)`
+    addModule('data-list', data, parent, options)
+    addModule('sidebar-data-list', data, parent, options); // for sidebar
+
+#### Treatmeants / Data
+  - Link List [View Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-link-list.json)
+  - Heading, description list [View Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-news-list.json)
+  - Thumbnail, heading, description list [View Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-thumbnail-data-list.json)
+
+### Carousel
+
+    addModule('carousel', data, parent, options)
+
+Any carousel added to the content-inner section of the page will be wrapped with a white frame by default.  By passing the 'fullPage' option, you can force the carousel to appear at the top of the page and span the full width.
+
+  - [View Sample Carousel JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-carousel.json)
+
+
+### Sidebar Content
+
+    addModule('sidebar-content', data, parent, options)
 
   - [View Sample Sidebar Content JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-sidebar-content.json)
 
-### `addSidebarSocialMedia(data, parent, options)`
+### Sidebar Social Media
+
+    addModule('sidebar-social-media', data, parent, options)
 
   - [View Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-sidebar-social-media.json)
+
+### Collapsible Navigation
+
+    adModule('collapsible-navigation', data, parent, options)
+
+### Accordion
+
+    addModule('accordion', data, parent, options)
+
+### Link Filter
+
+    addModule('link-filter', data, parent, options)
+
+### Video
+
+    addModule('video', data, parent, options)
+
+### Modals
+
+    addModule('modal', data, parent, options)
+
 
 ## Contributing
 
