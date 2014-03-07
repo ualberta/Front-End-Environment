@@ -77,15 +77,11 @@ Extends `Page` and provides the following additional functions:
 
 ## Modules
 
-To add a module to an existing page, you need the following three parameters:
-
-  - `data`: The JSON data for the module
-  - `parent`: a string containing a selector to append the markup to
-  - `options`: any additional options for the module
-
-You can add any module that has a valid handlebars template through
+You can add any module that has a valid handlebars template with:
 
     UAlberta.FrontEnd.Modules.addModule(templateName, data, parent)
+
+Where:
 
   - `templateName`: The name of the handlebars file without the .hbs extension.
   - `data`: The data to provide to the template
