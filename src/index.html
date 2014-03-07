@@ -51,7 +51,12 @@
 
       $.getJSON( "assets/data/base_institutional.json", null, function(data) {
 
-        var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data);
+        var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data, 
+          { 
+            build: true, 
+            secondColumn: "#second-column" 
+          }
+        );
 
         var feature = {
           type: "full-page-feature",
@@ -449,25 +454,59 @@
         page.addToFirstColumn('data-list', news);
         page.addToSecondColumn('data-list', linkList);
         page.addToSecondColumn('data-list', linkList2);
+        page.addModule('collapsible-navigation',leftNav, '#second-column');
+
         page.addToSidebar('sidebar-data-list', linkList2); 
         page.addToSidebar('sidebar-content', sidebarContent);
 
         page.addModule('accordion', accordionList, '#first-column');
         page.addModule('link-filter', accordionList, '#first-column');
-        page.addModule('image-caption', imageCaption, '#first-column');
-        page.addModule('image-caption', imageCaption2, '#first-column');
+        page.addModule('image-caption', imageCaption, '#second-column').el.after("<p>You can inject some html after the module if you like.</p>");
+
+        // set heading and caption options
+        page.addModule(
+          'image-caption', 
+          imageCaption2, 
+          '#second-column', 
+          { 
+            heading: "Dynamic Heading",
+            caption: "Hover over the image above and something might happen."
+          }
+        );
+
+
         page.addModule('non-existant-test', imageCaption, '#first-column');
-        page.addModule('collapsible-navigation',leftNav, '#first-column');
-        page.addModule('carousel',carousel, '#first-column');
-        page.addModule('youtube-video',videoData, '#first-column');
+
+        page.addModule(
+          'carousel',
+          carousel, 
+          '#first-column',
+          {
+            heading:"Giving a Carousel a Heading?",
+            caption: "Also a follow up.  I doubt anyone will do this."
+          }
+        );
+
+        page.addModule(
+          'youtube-video',
+          videoData, 
+          '#second-column',
+          {
+            heading:"Here is a Video"
+          }
+        );
 
        // page.addToSidebar('social-media', sidebarSocialMedia);
+
+       console.log(page);
 
       }).fail( function(d, textStatus, error) {
 
           console.error("getJSON failed, status: " + textStatus + ", error: "+error)
 
       });
+
+
       
 /*
       UAlberta.FrontEnd.Pages.createInstitutionalHomePage();

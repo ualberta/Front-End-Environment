@@ -2076,6 +2076,9 @@ ul.footer-quick-links + p {
   }
 }
 @media screen and (min-width: 43.15em) {
+  .content-wrapper .nav-wrapper {
+    margin-bottom: 1.57em;
+  }
   .content-wrapper .nav-wrapper h2 {
     display: none;
   }
@@ -3570,7 +3573,7 @@ ul.flex-direction-nav a.flex-next:before {
   border-radius: 0 0 4px 4px;
 }
 .accordion-list li.expanded a.icon-plus::before {
-  content: '\f068';
+  content: '\e80a';
 }
 /*Content accordion*/
 ul.accordion-list li div {

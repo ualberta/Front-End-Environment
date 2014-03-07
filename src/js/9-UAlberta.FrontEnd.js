@@ -10,10 +10,14 @@ var UAlberta = UAlberta || {};
 
       };
 
-      function Page(baseData) {
+      function Page(baseData, options) {
         this.baseData = baseData;
 
         this.modules = new Array();
+
+        this.options = $.extend({
+          build: false
+        }, options);
 
         var self = this;
 
@@ -54,7 +58,7 @@ var UAlberta = UAlberta || {};
         };
 
         this.addModule = function(moduleName,data,parent,options) {
-          UAlberta.FrontEnd.Modules.addModule(moduleName,data,parent,options);
+          return UAlberta.FrontEnd.Modules.addModule(moduleName,data,parent,options);
         };
 
         // Private 
@@ -160,19 +164,26 @@ var UAlberta = UAlberta || {};
 
       // Create an institutional home page layout
       // @extends Page
-      function InstitutionalHome(baseData) {
+      function InstitutionalHome(baseData, options) {
         this.base = Page;
-        this.base(baseData);
+        this.base(baseData, options);
 
         this.baseData = baseData;
+
+        this.options.featureArea = "#feature-area";
+        this.options.firstColumn = "#first-column";
+        this.options.secondColumn = "#second-column";
+        this.options.sidebar = "#sidebar";
+
+        this.options = $.extend(this.options, options);
 
         var self = this;
 
         this.addFeature = function(featureData) {
           if(featureData.features.length == 1)
-            UAlberta.FrontEnd.Modules.addModule('single-feature',featureData, "#feature-area");
+            return UAlberta.FrontEnd.Modules.addModule('single-feature',featureData, this.options.featureArea );
           else
-            UAlberta.FrontEnd.Modules.addModule('carousel',featureData, "#feature-area");
+            return UAlberta.FrontEnd.Modules.addModule('carousel',featureData, this.options.featureArea);
         };
 
         this.addExploreBar = function() {
@@ -180,15 +191,15 @@ var UAlberta = UAlberta || {};
         };
 
         this.addToFirstColumn = function(moduleName, data) {
-          this.addModule(moduleName,data,"#first-column");
+          return this.addModule(moduleName,data,this.options.firstColumn);
         };
 
         this.addToSecondColumn = function(moduleName, data) {
-          this.addModule(moduleName,data,"#second-column");
+          return this.addModule(moduleName,data,this.options.secondColumn);
         };
 
         this.addToSidebar = function(moduleName, data) {
-          this.addModule(moduleName,data,"#sidebar");
+          return this.addModule(moduleName,data,this.options.sidebar);
         };
 
         this.base_build = this.build;
@@ -197,9 +208,10 @@ var UAlberta = UAlberta || {};
           this.setLayout("ualberta-home");
         }
 
-        this.build();
+        if(self.options.build)
+          this.build();
 
-        this.prototype = new Page(baseData);
+        this.prototype = new Page(baseData, options);
 
       }
       Pages.InstitutionalHome = InstitutionalHome;
@@ -224,13 +236,30 @@ var UAlberta = UAlberta || {};
         this.template = template;
         this.data = data;
         this.id = id;
-        this.options = options;
+        this.options = $.extend({},options);
 
+        switch(typeof(placeholder)) {
+          case 'string':
+            this.parent = $(this.placeholder);
+            break;
+          case 'object':
+            this.parent = this.placeholder;
+            break;
+          default:
+            console.log("error: invalid placeholder type");
+        }
+          
         // need to add the ID to the dom element
         this.el = $(template(data));
 
         this.add = function() {
-          $(this.placeholder).append(this.el);
+          this.parent.append(this.el);
+
+          if(this.options.heading)
+            this.el.before("<h3>"+this.options.heading+"</h3>");
+
+          if(this.options.caption)
+            this.el.after("<p>"+this.options.caption+"</p>");
         };
 
         this.remove = function() {

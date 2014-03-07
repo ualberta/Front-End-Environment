@@ -39,53 +39,25 @@ You can also build entire pages and layouts from JSON data (recommended for test
 
 **The JSON data format for each module is currently being documented.  For now, you can browse the [data folder](https://github.com/ualberta/front-end-framework/tree/master/src/assets/data) for some sample json files.**
 
-## Pages
-
-### `Page(baseData)`
-
-  - [View Institutional Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_institutional.json)
-  - [View Faculty Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_faculty.json)
-
-Creates a page with the base data provided.  The base data contains: 
-
-  - blade logo (if any)
-  - quick links
-  - banner logo (if any)
-  - site title
-  - audience links (if any)
-  - global navigation
-  - mobile navigation
-  - secondary footer data (if any)
-  - ualberta footer links
-
-The base page does not have a layout and does not automatically build when created.
-
-#### `Page.setLayout(layoutName)`
-
-Adds the specified layout to the page.  Currently `ualberta-home` is the only valid layout.
-
-### `InstitutionalHome(baseData)`
-
-Extends `Page` and provides the following additional functions:
-
-  - `addFeature(data)`
-  - `addWhyUAlberta()`: static for now
-  - `addExploreBar()`: static for now
-  - `addToFirstColumn(moduleName, data)`: "data-list" is currently the only valid moduleName in the first column.
-  - `addToSecondColumn(moduleName, data)`
-  - `addToSidebar(moduleName, data)`
 
 ## Modules
 
 You can add any module that has a valid handlebars template with:
 
-    UAlberta.FrontEnd.Modules.addModule(templateName, data, parent)
+    UAlberta.FrontEnd.Modules.addModule(templateName, data, parent,options)
 
 Where:
 
   - `templateName`: The name of the handlebars file without the .hbs extension.
   - `data`: The data to provide to the template
   - `parent`: A selector string of the element that will contain this module
+  - `options`: An object specifying the options for the module
+
+#### Module Options
+The following options are available for all modules:
+
+  - `heading`: A string containing a heading to place before the module.
+  - `caption`: A string containing some text to place after the module.
 
 Below you can find a list of modules that currently exist.
 
@@ -154,6 +126,42 @@ Any carousel added to the content-inner section of the page will be wrapped with
 ### Modals
 
     addModule('modal', data, parent, options)
+
+## Pages
+
+### `Page(baseData, options)`
+
+  - [View Institutional Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_institutional.json)
+  - [View Faculty Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_faculty.json)
+
+Creates a page with the base data provided.  The base data contains: 
+
+  - blade logo (if any)
+  - quick links
+  - banner logo (if any)
+  - site title
+  - audience links (if any)
+  - global navigation
+  - mobile navigation
+  - secondary footer data (if any)
+  - ualberta footer links
+
+The base page does not have a layout and does not automatically build when created.
+
+#### `Page.setLayout(layoutName)`
+
+Adds the specified layout to the page.  Currently `ualberta-home` is the only valid layout.
+
+### `InstitutionalHome(baseData)`
+
+Extends `Page` and provides the following additional functions:
+
+  - `addFeature(data)`
+  - `addWhyUAlberta()`: static for now
+  - `addExploreBar()`: static for now
+  - `addToFirstColumn(moduleName, data)`: "data-list" is currently the only valid moduleName in the first column.
+  - `addToSecondColumn(moduleName, data)`
+  - `addToSidebar(moduleName, data)`
 
 
 ## Contributing
