@@ -198,6 +198,9 @@ A module consists of three pieces:
 
   - `/src/templates/components/{{COMPONENT_NAME}}.hbs`: The handlebars template file for the markup
   - `/src/less/framework/components/_{{COMPONENT_NAME.less}}`: The less file containing the styling for the component (you need to reference this file in `components.less` to include it in framework.css)
-  - `/src/js/UAlberta.FrontEnd.js`: A function in the Modules namespace that specified the template to use.
+  - data in json format
 
+After creating these three pieces and compiling the templates and less files, you can add your module to any page with:
+
+    UAlberta.FrontEnd.Modules.addModule({{COMPONENT_NAME}}, {{DATA}}, {{PARENT}})
 
