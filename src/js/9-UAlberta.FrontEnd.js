@@ -64,15 +64,13 @@ var UAlberta = UAlberta || {};
         // Private 
 
         function addBlade() {
-
-          self.modules.push(
+          self.blade = 
             UAlberta.FrontEnd.Modules.addModule(
               'blade', 
               self.baseData.blade, 
               'header', 
               {}
-            )
-          );
+            );
 
           // close any open overlays when clicking the "body" element
           $('body').on('click',function(e) {
@@ -92,40 +90,37 @@ var UAlberta = UAlberta || {};
 
         function addBanner() {
 
-          self.modules.push(
+          self.banner = 
             UAlberta.FrontEnd.Modules.addModule(
               'banner', 
               self.baseData.banner, 
               'header', 
               {}
-            )
-          );
+            );
 
         };
 
         function addGlobalNavigation() {
 
-          self.modules.push(
+          self.globalNav = 
             UAlberta.FrontEnd.Modules.addModule(
               'global-navigation', 
               self.baseData.navigation, 
               'header', 
               {}
-            )
-          );
+            );
 
         };
 
         function addMobileNavigation() {
                     
-          self.modules.push(
+          self.mobileNav = 
             UAlberta.FrontEnd.Modules.addModule(
               'mobile-navigation', 
               self.baseData.navigation, 
               'header', 
               {}
-            )
-          );
+            );
 
           // close any open overlays when clicking the "body" element
           $('body').on('click',function(e) {
@@ -149,14 +144,13 @@ var UAlberta = UAlberta || {};
 
         function addInstitutionalFooter() {
 
-          self.modules.push(
+          self.primaryFooter = 
             UAlberta.FrontEnd.Modules.addModule(
               'institutional-footer', 
               self.baseData.ualbertaFooter, 
               'footer', 
               {}
-            )
-          );
+            );
 
         };
 

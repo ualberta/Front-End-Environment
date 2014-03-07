@@ -59,6 +59,12 @@ The following options are available for all modules:
   - `heading`: A string containing a heading to place before the module.
   - `caption`: A string containing some text to place after the module.
 
+#### Properties
+Each module has the following properties available to it:
+  - `el`: The jQuery DOM element for the module
+  - `parent`: The jquery parent DOM element of the module
+
+
 Below you can find a list of modules that currently exist.
 
 ### Single Full Page Feature
@@ -134,19 +140,20 @@ Any carousel added to the content-inner section of the page will be wrapped with
   - [View Institutional Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_institutional.json)
   - [View Faculty Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_faculty.json)
 
-Creates a page with the base data provided.  The base data contains: 
+#### Properties
 
-  - blade logo (if any)
-  - quick links
-  - banner logo (if any)
-  - site title
-  - audience links (if any)
-  - global navigation
-  - mobile navigation
-  - secondary footer data (if any)
-  - ualberta footer links
+Each page created has the following properties available:
 
-The base page does not have a layout and does not automatically build when created.
+  - `blade`: Blade Module
+  - `banner`: Banner Module
+  - `globalNav`: Global Navigation Module
+  - `mobileNav`: Mobile Navigation Module
+  - `secondaryFooter`: Secondary Footer Module
+  - `primaryFooter`: Primary Footer Module
+
+
+#### Options
+  - `build`: Set to true if the page should automatically build.
 
 #### `Page.setLayout(layoutName)`
 
