@@ -1,0 +1,22 @@
+
+  {{#if heading}}
+    <div class="module-heading">
+      <h3>{{heading}}</h3>
+      {{#if actions}}
+        <ul class="module-actions">
+          {{#each actions}}
+            <li>
+              <a href="{{this.url}}" class="heading-link btn btn-grey">
+                {{#if this.type}}
+                  <i class="icon-{{this.type}}"></i>
+                {{/if}}
+                {{#if this.label}}
+                  {{this.label}}
+                {{/if}}
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+      {{/if}}
+    </div>
+  {{/if}}

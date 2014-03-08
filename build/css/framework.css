@@ -1841,6 +1841,7 @@ div.content-inner hr.soften.double {
   -moz-box-shadow: none;
   box-shadow: none;
   border-radius: 0;
+  max-width: none;
 }
 .sidebar .frame img {
   width: 100%;
@@ -1855,6 +1856,9 @@ div.content-inner hr.soften.double {
 }
 .sidebar-title a:hover {
   text-decoration: none;
+}
+.sidebar-content {
+  line-height: 1.57em;
 }
 .sidebar-content > p {
   margin-top: 0.71em;
@@ -3228,20 +3232,20 @@ ul.flex-direction-nav a.flex-next:before {
     font-size: 2em;
   }
 }
-.module-container .module-heading {
+.module-heading {
   position: relative;
 }
-.module-container .module-heading h3 {
+.module-heading h3 {
   display: inline-block;
   margin-right: 0.5em;
 }
-.module-container .module-heading .module-actions {
+.module-heading .module-actions {
   list-style: none;
   margin: 0;
   padding: 0;
   display: inline-block;
 }
-.module-container .module-heading .module-actions li {
+.module-heading .module-actions li {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
@@ -3249,7 +3253,7 @@ ul.flex-direction-nav a.flex-next:before {
   padding: 0 0.5em;
   margin: -0.23em -0.23em 0 0;
 }
-.module-container .module-heading .module-actions li a {
+.module-heading .module-actions li a {
   padding: 0.35em 0.35em 0.23em;
 }
 .secondary-content-area .module-container {
@@ -4234,6 +4238,10 @@ ul.toggles li.current {
     z-index: 4;
     opacity: 1;
   }
+  .content-inner .carousel .slides {
+    overflow: hidden;
+    padding-top: 56.25%;
+  }
 }
 .content-inner .carousel {
   padding: 0.71428571em;
@@ -4248,13 +4256,9 @@ ul.toggles li.current {
   padding: 0.35714286em;
   margin-bottom: 1.57em;
 }
-.content-inner .carousel .slides {
-  overflow: hidden;
-  padding-top: 56.25%;
-}
 .content-inner .carousel .slides .slide .caption {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   right: 0;
 }
@@ -4530,12 +4534,31 @@ ul.toggles li.current {
     float: left;
   }
 }
+.f-e-container {
+  position: relative;
+}
+.edit .f-e-container:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 235, 0.5);
+  border: 1px dashed rgba(0, 0, 0, 0.25);
+  z-index: 12000;
+}
+.sidebar .sidebar-content .f-e-container .data-list li.bottom-row a {
+  left: -0.8333em;
+  right: -0.8333em;
+  bottom: -0.5833em;
+}
 /*
 @import "framework/components/dropdowns.less";
 @import "framework/components/modals.less";
 @import "framework/components/tabs.less";
 @import "framework/components/image-caption-container.less";
-
+ 
 @import "framework/base/pagination.less";
 
 @import "framework/modules/module-base.less";
@@ -4553,7 +4576,7 @@ ul.toggles li.current {
 @import "framework/modules/fma-image-scroller.less";
 @import "framework/modules/accordion-list.less";
 @import "framework/modules/emergency.less"; 
-@import "framework/modules/pagination.less";
+@import "framework/modules/pagination.less"; 
 @import "framework/modules/data-list.less";
 @import "framework/modules/login.less";
 @import "framework/modules/social-media.less";

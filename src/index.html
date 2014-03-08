@@ -274,17 +274,20 @@
         ];
 
         var news = {
-          "title": "Latest News",
-          "actions": [
-            {
-              "url": "#",
-              "type": "rss"
-            },
-            {
-              "url": "#",
-              "type": "envelope"
-            }
-          ],
+
+          "header": {
+            "heading": "Latest News",
+            "actions": [
+              {
+                "url": "#",
+                "type": "rss"
+              },
+              {
+                "url": "#",
+                "type": "envelope"
+              }
+            ]
+          },
           "items": [
             {
               "title": "Job shadowing sparks students' career potential",
@@ -319,7 +322,9 @@
         };
 
         var linkList = {
-          "title": "Campus Notices",
+          "header": {
+            "heading": "Campus Notices"
+          },
           "items": [
             {
               "url": "#",
@@ -337,7 +342,9 @@
         };
 
         var linkList2 = {
-          "title": "Colloquy Blog",
+          "header": {
+            "heading": "Colloquy Blog"
+          },
           "items": [
             {
               "url": "#",
@@ -456,8 +463,30 @@
         page.addToSecondColumn('data-list', linkList2);
         page.addModule('collapsible-navigation',leftNav, '#second-column');
 
-        page.addToSidebar('sidebar-data-list', linkList2); 
-        page.addToSidebar('sidebar-content', sidebarContent);
+        page.addToSidebar('sidebar-item', sidebarContent, {header: {heading: "Sidebar Content"}});
+
+        var testmod = page.addModule('sidebar-item', {}, '#sidebar', {header: linkList2.header});
+        testmod.addModule('data-list', linkList2, '.sidebar-content');
+
+        var sbContentModule = page.addToSidebar(
+          'sidebar-item', 
+          {
+            header: {
+              heading: "Hover Caption"
+            }, 
+            content:"This is a  hover caption container injected into the sidebar."
+          }
+        );
+
+        sbContentModule.addModule('image-caption', imageCaption2, '.sidebar-content', { prepend: true});
+
+        var sbContentModule = page.addToSidebar('sidebar-item', { content:"This is a  video injected into the sidebar."});
+
+        sbContentModule.addModule('youtube-video', videoData, '.sidebar-content', { prepend: true});
+
+        page.addToSidebar('sidebar-item', {}, {header: news.header})
+          .addModule('data-list', news, '.sidebar-content');
+        
 
         page.addModule('accordion', accordionList, '#first-column');
         page.addModule('link-filter', accordionList, '#first-column');
@@ -468,9 +497,15 @@
           'image-caption', 
           imageCaption2, 
           '#second-column', 
-          { 
-            heading: "Dynamic Heading",
-            caption: "Hover over the image above and something might happen."
+          {
+            header: 
+            { 
+              heading: "Dynamic Heading",
+            },
+            footer: 
+            {
+              text: "Hover over the image above and something might happen."
+            }
           }
         );
 
@@ -482,8 +517,14 @@
           carousel, 
           '#first-column',
           {
-            heading:"Giving a Carousel a Heading?",
-            caption: "Also a follow up.  I doubt anyone will do this."
+            header: 
+            { 
+              heading: "Carousel With a Heading"
+            },
+            footer: 
+            {
+              text: "Followed by some wrap up text."
+            }
           }
         );
 
@@ -492,11 +533,13 @@
           videoData, 
           '#second-column',
           {
-            heading:"Here is a Video"
+            header: 
+            { 
+              heading: "Here is a Video"
+            }
           }
         );
 
-       // page.addToSidebar('social-media', sidebarSocialMedia);
 
        console.log(page);
 

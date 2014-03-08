@@ -97,19 +97,20 @@ ul.toggles li.current {
     opacity:1;
   }
 
+  .content-inner .carousel .slides {
+    overflow:hidden;
+    padding-top: 56.25%;
+  }
+
 }
 
 .content-inner .carousel {
   .extrude();
   #em > .padding(5,14);
   margin-bottom:1.57em;
-  .slides {
-    overflow:hidden;
-    padding-top: 56.25%;
-  }
   .slides .slide .caption {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     right: 0;
   }
@@ -117,4 +118,4 @@ ul.toggles li.current {
     top:0.4286em;
   }
 }
-
+ 

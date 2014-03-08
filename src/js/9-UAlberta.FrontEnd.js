@@ -5,162 +5,11 @@ var UAlberta = UAlberta || {};
 
     (function (Pages) {
 
-      // TODO: size page content area if it does not fill the window
-      function fillBrowserWindow() {
-
-      };
-
-      function Page(baseData, options) {
-        this.baseData = baseData;
-
-        this.modules = new Array();
-
-        this.options = $.extend({
-          build: false
-        }, options);
-
-        var self = this;
-
-        // Public
-
-        // Sets the layout of the content area, called after build()
-        this.setLayout = function(layoutName) {
-          switch(layoutName) {
-            case "ualberta-home":
-              var template = UAlberta.FrontEnd.templates["ualberta-home.hbs"];
-              $("#content-wrapper").html(template({}));
-              break;
-            default:
-              console.log("error: invalid layout");
-          }
-        };
-
-        // Creates a base page with no layout
-        this.build = function() {
-
-          if(self.baseData.blade)
-            addBlade();
-
-          if(self.baseData.banner)
-            addBanner();
-
-          if(self.baseData.navigation) {
-            addGlobalNavigation();
-            addMobileNavigation();
-          }
-          
-          if(self.baseData.secondaryFooter)
-            addSecondaryFooter();
-          
-          if(self.baseData.ualbertaFooter)
-            addInstitutionalFooter();
-
-        };
-
-        this.addModule = function(moduleName,data,parent,options) {
-          return UAlberta.FrontEnd.Modules.addModule(moduleName,data,parent,options);
-        };
-
-        // Private 
-
-        function addBlade() {
-          self.blade = 
-            UAlberta.FrontEnd.Modules.addModule(
-              'blade', 
-              self.baseData.blade, 
-              'header', 
-              {}
-            );
-
-          // close any open overlays when clicking the "body" element
-          $('body').on('click',function(e) {
-            if($('#ql').hasClass('open')) {
-              $('#ql').removeClass('open');
-              e.stopPropagation();
-            }
-          });
-          
-          // toggle the quick links dropdown
-          $('#ql-toggle').on('click', function(e) {
-            $('#ql').toggleClass('open');
-            e.stopPropagation();
-          });
-
-        };
-
-        function addBanner() {
-
-          self.banner = 
-            UAlberta.FrontEnd.Modules.addModule(
-              'banner', 
-              self.baseData.banner, 
-              'header', 
-              {}
-            );
-
-        };
-
-        function addGlobalNavigation() {
-
-          self.globalNav = 
-            UAlberta.FrontEnd.Modules.addModule(
-              'global-navigation', 
-              self.baseData.navigation, 
-              'header', 
-              {}
-            );
-
-        };
-
-        function addMobileNavigation() {
-                    
-          self.mobileNav = 
-            UAlberta.FrontEnd.Modules.addModule(
-              'mobile-navigation', 
-              self.baseData.navigation, 
-              'header', 
-              {}
-            );
-
-          // close any open overlays when clicking the "body" element
-          $('body').on('click',function(e) {
-            if($('.nav-wrapper').hasClass('on')) {
-              $('.nav-wrapper').removeClass('on');
-              e.stopPropagation();
-            }
-          });
-          
-          // toggle the navigations
-          $('.navigation-toggle').on('click', function(e) {
-            $('.nav-wrapper').toggleClass('on');
-            e.stopPropagation();
-          });
-
-        };
-
-        function addSecondaryFooter() {
-
-        };
-
-        function addInstitutionalFooter() {
-
-          self.primaryFooter = 
-            UAlberta.FrontEnd.Modules.addModule(
-              'institutional-footer', 
-              self.baseData.ualbertaFooter, 
-              'footer', 
-              {}
-            );
-
-        };
-
-      };
-
       // Create an institutional home page layout
       // @extends Page
       function InstitutionalHome(baseData, options) {
-        this.base = Page;
-        this.base(baseData, options);
+        this.base = UAlberta.FrontEnd.Modules.Page;
+        this.base("ualberta-home", baseData, options);
 
         this.baseData = baseData;
 
@@ -181,31 +30,24 @@ var UAlberta = UAlberta || {};
         };
 
         this.addExploreBar = function() {
-          UAlberta.FrontEnd.Modules.addModule('explore-bar', null, "#explore-row");
+          return self.addModule('explore-bar', null, "#explore-row");
         };
 
-        this.addToFirstColumn = function(moduleName, data) {
-          return this.addModule(moduleName,data,this.options.firstColumn);
+        this.addToFirstColumn = function(moduleName, data, options) {
+          return self.addModule(moduleName,data,this.options.firstColumn, options);
         };
 
-        this.addToSecondColumn = function(moduleName, data) {
-          return this.addModule(moduleName,data,this.options.secondColumn);
+        this.addToSecondColumn = function(moduleName, data, options) {
+          return self.addModule(moduleName,data,this.options.secondColumn, options);
         };
 
-        this.addToSidebar = function(moduleName, data) {
-          return this.addModule(moduleName,data,this.options.sidebar);
+        this.addToSidebar = function(moduleName, data, options) {
+          return self.addModule(moduleName,data,this.options.sidebar, options);
         };
 
-        this.base_build = this.build;
-        this.build = function() {
-          this.base_build();
-          this.setLayout("ualberta-home");
-        }
+        this.add();
 
-        if(self.options.build)
-          this.build();
-
-        this.prototype = new Page(baseData, options);
+        this.prototype = new UAlberta.FrontEnd.Modules.Page("ualberta-home", baseData, options);
 
       }
       Pages.InstitutionalHome = InstitutionalHome;
@@ -223,54 +65,262 @@ var UAlberta = UAlberta || {};
 
       // creates a new module on the page, 
       // provided a template, data, and parent.
-      function Module(id, type, template, data, placeholder, options) {
+      function Module(id, type, template, data, parent, options) {
 
+        this.frontEndModule = true;
         this.type = type;
-        this.placeholder = placeholder;
+        this.placeholder = parent;
         this.template = template;
         this.data = data;
         this.id = id;
+        this.modules = new Array();
         this.options = $.extend({},options);
+        this.el = null;
 
-        switch(typeof(placeholder)) {
+        // if there is a header in the data, enable the option
+        if(this.data && this.data.header)
+          this.options.header = this.data.header;
+
+        // if there is a footer in the data, enable the option
+        if(this.data && this.data.footer)
+          this.options.footer = this.data.footer;
+
+        // set the parent jQuery element to append to
+        // if the parent is a module, set it
+        switch(typeof(parent)) {
           case 'string':
-            this.parent = $(this.placeholder);
+            this.parentEl = $(this.placeholder);
             break;
           case 'object':
-            this.parent = this.placeholder;
+            if(parent.selector) {
+              this.parentEl = parent;
+            } else if(parent.frontEndModule) {
+              this.parentEl = parent.el;
+              this.parent = parent;
+            }
             break;
           default:
             console.log("error: invalid placeholder type");
         }
-          
+
         // need to add the ID to the dom element
-        this.el = $(template(data));
+        if((typeof this.template) === "function")
+          this.el = $('<div class="f-e-container"></div>').append(this.template(data));
+
+        var self = this;
 
         this.add = function() {
-          this.parent.append(this.el);
+          if(!self.parentEl)
+            console.log("error: the selector " + self.placeholder + "doesn't exist");
 
-          if(this.options.heading)
-            this.el.before("<h3>"+this.options.heading+"</h3>");
+          if(self.options.prepend)
+            self.parentEl.prepend(self.el);
+          else
+            self.parentEl.append(self.el);
 
-          if(this.options.caption)
-            this.el.after("<p>"+this.options.caption+"</p>");
+          if(this.options.header && !this.options.suppressHeader)
+            self.addHeader();
+
+          if(this.options.footer && !this.options.suppressFooter)
+            self.addFooter();
+
+          self.activate();
+        };
+
+        this.addHeader = function() {
+          if(self.options.header) {
+            self.el.prepend(UAlberta.FrontEnd.templates["module-heading.hbs"](self.options.header));
+          }
+        };
+
+        this.addFooter = function() {
+          if(self.options.footer) {
+            self.el.append(UAlberta.FrontEnd.templates["module-footer.hbs"](self.options.footer));
+          }
         };
 
         this.remove = function() {
           this.el.remove();
         };
 
+        // placeholder for interactive modules to activate
+        this.activate = function() { };
+
+        // placeholder for interactive modules to activate
+        this.disable = function() { };
+
+        // updates the element with new data
         this.update = function(newData) {
-          /* TODO: provide a method to update the component with new data
-          var updateEl = this.el;
-          updateEl.empty();
-          $(template(data)).children().each(function() {
-            updateEl.append($(this));
-          });
-          */
+          self.el.replaceWith($('<div class="f-e-container"></div>').append(self.template(data)));
+          self.activate();
+        };
+
+        // add modules within modules within modules...
+        this.addModule = function(moduleName,data,parent,options) {
+          var parentEl = self.el.find(parent);
+          if(parentEl.length > 0) {
+            var module = UAlberta.FrontEnd.Modules.addModule(moduleName,data,parentEl,options);
+            self.modules.push(module);
+            return module;
+          }
+          console.log("error: the container " + parent + " does not exist in this module");
+        };
+
+        // swap the template and update
+        this.switchTemplate = function(templateName) {
+          var newTemplate = UAlberta.FrontEnd.templates[templateName+".hbs"];
+          if(newTemplate) {
+            self.template = newTemplate;
+            self.update(self.data);
+          }
         };
 
       };
+
+      function Page(layoutTemplate, data, options) {
+        // extend the module base
+        this.base = Module;
+        this.base('page', 'page', function() {}, data, 'body', options);
+
+        this.el = $('body');
+
+        this.layoutTemplate = layoutTemplate;
+
+        var self = this;
+
+        this.activate = function() {  
+          // close any open overlays when clicking the "body" element
+          $('body').on('click',function(e) {
+            if($('#ql').hasClass('open')) {
+              $('#ql').removeClass('open');
+              e.stopPropagation();
+            }
+          });
+          
+          // toggle the quick links dropdown
+          $('#ql-toggle').on('click', function(e) {
+            $('#ql').toggleClass('open');
+            e.stopPropagation();
+          });
+
+
+          // close any open overlays when clicking the "body" element
+          $('body').on('click',function(e) {
+            if($('.nav-wrapper').hasClass('on')) {
+              $('.nav-wrapper').removeClass('on');
+              e.stopPropagation();
+            }
+          });
+          
+          // toggle the navigations
+          $('.navigation-toggle').on('click', function(e) {
+            $('.nav-wrapper').toggleClass('on');
+            e.stopPropagation();
+          });
+        };
+
+        this.add = function() {
+          if(self.data.blade)
+            addBlade();
+
+          if(self.data.banner)
+            addBanner();
+
+          if(self.data.navigation) {
+            addGlobalNavigation();
+            addMobileNavigation();
+          }
+          
+          if(self.data.secondaryFooter)
+            addSecondaryFooter();
+          
+          if(self.data.ualbertaFooter)
+            addInstitutionalFooter();
+
+          this.activate();
+
+          self.setLayout(self.layoutTemplate);
+        };
+
+        // Sets the layout of the content area, called after build()
+        this.setLayout = function(layoutName) {
+          console.log("trying to layout " + layoutName);
+          if(!self.layout) {
+            self.layout = self.addModule(layoutName, {}, "#content-wrapper");
+          } else {
+            self.layout.switchTemplate(layoutName);
+          }
+
+        };
+
+        // Private 
+
+        function addBlade() {
+          self.blade = 
+            self.addModule(
+              'blade', 
+              self.data.blade, 
+              'header', 
+              {}
+            );
+        };
+
+        function addBanner() {
+
+          self.banner = 
+            self.addModule(
+              'banner', 
+              self.data.banner, 
+              'header', 
+              {}
+            );
+
+        };
+
+        function addGlobalNavigation() {
+
+          self.globalNav = 
+            self.addModule(
+              'global-navigation', 
+              self.data.navigation, 
+              'header', 
+              {}
+            );
+
+        };
+
+        function addMobileNavigation() {
+                    
+          self.mobileNav = 
+            self.addModule(
+              'mobile-navigation', 
+              self.data.navigation, 
+              'header', 
+              {}
+            );
+
+        };
+
+        function addSecondaryFooter() {
+
+        };
+
+        function addInstitutionalFooter() {
+
+          self.primaryFooter = 
+            self.addModule(
+              'institutional-footer', 
+              self.data.ualbertaFooter, 
+              'footer', 
+              {}
+            );
+        };
+
+        // extend the module base
+        this.prototype = new Module('page', 'page', null, data, 'body', options);
+      };
+      Modules.Page = Page;
+
 
       function ExploreBar(id, type, template, data, placeholder, options) {
         
@@ -280,10 +330,7 @@ var UAlberta = UAlberta || {};
 
         var self = this;
 
-        this.base_add = this.add; 
-        this.add = function() {
-          this.base_add();
-
+        this.activate = function() {
           this.el.flexslider({
             animation: "slide",
             itemWidth: 93,
@@ -303,6 +350,40 @@ var UAlberta = UAlberta || {};
         this.prototype = new Module(id, type, template, data, placeholder, options);
       };
 
+      function SidebarItem(id, type, template, data, placeholder, options) {
+        
+        // extend the module base
+        this.base = Module;
+        this.base(id, type, template, data, placeholder, options);
+
+        var self = this;
+
+
+        this.addHeader = function() {
+          self.el.find('.sidebar-content').before(
+            UAlberta.FrontEnd.templates["sidebar-header.hbs"](self.options.header)
+          );
+        };
+
+        this.addFooter = function() {
+          self.el.find('.sidebar-content').after(
+            UAlberta.FrontEnd.templates["sidebar-footer.hbs"](self.options.footer)
+          );
+        };
+
+        this.base_addModule = this.addModule;
+        // suppress the headers on any modules added to the sidebar
+        this.addModule = function(moduleName,data,parent,options) {
+          var newOptions = options || {};
+          newOptions.suppressHeader = true;
+          return this.base_addModule(moduleName,data,parent,newOptions);
+        };
+
+        // extend the module base
+        this.prototype = new Module(id, type, template, data, placeholder, options);
+      };
+
+
       function Modal(id, type, template, data, placeholder, options) {
         
         // extend the module base
@@ -311,10 +392,7 @@ var UAlberta = UAlberta || {};
 
         var self = this;
 
-        this.base_add = this.add; 
-        this.add = function() {
-          this.base_add();
-
+        this.activate = function() {
           this.el.on({
             click: function() {
               self.remove(); 
@@ -335,10 +413,7 @@ var UAlberta = UAlberta || {};
 
         var self = this;
 
-        this.base_add = this.add; 
-        this.add = function() {
-          this.base_add();
-
+        this.activate = function() {
           this.el.on({
             click: function() {
               var data = {
@@ -363,10 +438,7 @@ var UAlberta = UAlberta || {};
 
         var self = this;
 
-        this.base_add = this.add; 
-        this.add = function() {
-          this.base_add();
-
+        this.activate = function() {
           // expand / collapse functionality
           this.el.on({
             click: function() {
@@ -388,10 +460,7 @@ var UAlberta = UAlberta || {};
 
         var self = this;
 
-        this.base_add = this.add; 
-        this.add = function() {
-          this.base_add();
-
+        this.activate = function() {
           // expand / collapse functionality
           this.el.on({
             click: function() {
@@ -414,10 +483,7 @@ var UAlberta = UAlberta || {};
 
         var self = this;
 
-        this.base_add = this.add; 
-        this.add = function() {
-          this.base_add();
-
+        this.activate = function() {
           this.el.find('.link-mod-category:first').addClass('link-mod-active');
 
           this.el.on({
@@ -448,10 +514,7 @@ var UAlberta = UAlberta || {};
           this.el.find('.slide').eq(index).addClass('current');
         };
     
-        this.base_add = this.add; 
-        this.add = function() {
-          this.base_add();
-
+        this.activate = function() {
           var autoRotate = setInterval(function () {
             // if the next slide doesn't exist, restart
             if((self.currentSlide+1) >= data.features.length)
@@ -506,6 +569,9 @@ var UAlberta = UAlberta || {};
             break;
           case 'modal':
             moduleConstructor = Modal;
+            break;
+          case 'sidebar-item':
+            moduleConstructor = SidebarItem;
             break;
           case 'youtube-video':
             template = UAlberta.FrontEnd.templates["image-caption.hbs"];
