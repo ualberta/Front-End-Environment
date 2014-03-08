@@ -102,21 +102,18 @@ Any carousel added to the content-inner section of the page will be wrapped with
   - [View Sample Carousel JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-carousel.json)
 
 
-### Sidebar Content
+### Sidebar Items
 
-    addModule('sidebar-content', data, parent, options)
+You can add any of the available modules into a sidebar item by creating the sidebar item, and adding a module to it.
+
+    var sidebarItem = page.addModule('sidebar-item', {}, "#sidebar", options)
+    sidebarItem.addModule('name', data, ".sidebar-content", options)
 
   - [View Sample Sidebar Content JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-sidebar-content.json)
 
-### Sidebar Social Media
-
-    addModule('sidebar-social-media', data, parent, options)
-
-  - [View Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-sidebar-social-media.json)
-
 ### Collapsible Navigation
 
-    adModule('collapsible-navigation', data, parent, options)
+    addModule('collapsible-navigation', data, parent, options)
 
 ### Accordion
 
