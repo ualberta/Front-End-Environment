@@ -56,8 +56,9 @@ Where:
 #### Module Options
 The following options are available for all modules:
 
-  - `heading`: A string containing a heading to place before the module.
-  - `caption`: A string containing some text to place after the module.
+  - `header.heading`: A string containing a heading to place before the module.
+  - `header.actions`: A list of buttons the user can interact with to perform actions relating to the module.
+  - `footer.text`: A string containing some text to place after the module.
 
 #### Properties
 Each module has the following properties available to it:
