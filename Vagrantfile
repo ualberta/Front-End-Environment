@@ -23,7 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # run reload in a detached screen, to reload the browser when 
   # files in the "build" folder change
-  config.vm.provision :shell, :inline => "cd /vagrant/build ; screen -dm reload -p 8080"
+  config.vm.provision :shell, :inline => "cd /vagrant/build ; screen -dm /vagrant/node_modules/http-server/bin/http-server -p 8080"
 
   # run the default grunt task for the project
   config.vm.provision :shell, :inline => "cd /vagrant ; grunt default --verbose"

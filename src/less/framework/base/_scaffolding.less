@@ -278,6 +278,19 @@ hr.soften {
   .border-radius(500px); // crank the border-radius so it works with most reasonably sized images
 }
 
+// floats for images
+img.pull-left {
+  float:left;
+  width:45%;
+  margin-right: 0.8333em;
+}
+
+img.pull-right {
+  float:right;
+  width:45%;
+  margin-left: 0.8333em;
+}
+
 
 // Patterns
 // ------------------------
@@ -299,6 +312,25 @@ hr.soften {
   display:inline-block;
   max-width:100%;
   margin-bottom:0.4286em;
+}
+
+// add some classes to float the frame left and right
+@media (min-width: 22.5em) {
+  .frame,.extrude { 
+    &.pull-left {
+    float:left;
+    width:45%;
+    margin-right: 0.8333em;
+    }
+    &.pull-right {
+      float:right;
+      width:45%;
+      margin-left: 0.8333em;
+    }
+    &.small {
+      width:33%;
+    }
+  }
 }
 
 // add a top margin when a paragraph follows a frame

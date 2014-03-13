@@ -52,12 +52,12 @@
     position:relative;
     width:690px;
     &.focus-right { float:right; }
-    &.focus-right + .feature-content { clear:right; }
+    &.focus-right + .content-island { clear:right; }
     &.focus-center { position:relative; left:50%; margin-left:-345px; }
   }
 
   // display feature content below image by default
-  .feature-content {
+  .content-island {
     margin:auto;
     position:relative;
     z-index:990;
@@ -101,7 +101,7 @@
 
     // detach feature content
     // island positions
-    .feature-content {
+    .content-island {
       position:absolute;
       left:0;
       right:0;
@@ -189,7 +189,7 @@
 
   .full-page-feature {
 
-    .feature-content {
+    .content-island {
       &.left-island {
         left: 5%
       }

@@ -17,6 +17,33 @@
   <!-- Other Meta -->
   <meta name="description" content="University of Alberta">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+  <script>
+
+/**
+ * Protect window.console method calls, e.g. console is not defined on IE
+ * unless dev tools are open, and IE doesn't define console.debug
+ */
+(function() {
+  if (!window.console) {
+    window.console = {};
+  }
+  // union of Chrome, FF, IE, and Safari console methods
+  var m = [
+    "log", "info", "warn", "error", "debug", "trace", "dir", "group",
+    "groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd",
+    "dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"
+  ];
+  // define undefined methods as noops to prevent errors
+  for (var i = 0; i < m.length; i++) {
+    if (!window.console[m[i]]) {
+      window.console[m[i]] = function() {};
+    }    
+  } 
+})();
+
+</script>
   
   <!-- The Sheets -->
   <link href="css/framework.css" rel="stylesheet">
@@ -375,58 +402,58 @@
         };
 
         var accordionList = {
-          categories : [
+          "categories" : [
             {
-              url: "#",
-              label: "Category One",
-              links: [
+              "url": "#",
+              "label": "Category One",
+              "links": [
                 {
-                  url: "#",
-                  label : "C1 Link One"
+                  "url": "#",
+                  "label" : "C1 Link One"
                 },
                 {
-                  url: "#",
-                  label : "C1 Link Two"
+                  "url": "#",
+                  "label" : "C1 Link Two"
                 },
                 {
-                  url: "#",
-                  label : "C1 Link Three"
+                  "url": "#",
+                  "label" : "C1 Link Three"
                 }
               ]
             },
             {
-              url: "#",
-              label: "Category Two",
-              links: [
+              "url": "#",
+              "label": "Category Two",
+              "links": [
                 {
-                  url: "#",
-                  label : "C2 Link One"
+                  "url": "#",
+                  "label" : "C2 Link One"
                 },
                 {
-                  url: "#",
-                  label : "C2 Link Two"
+                  "url": "#",
+                  "label" : "C2 Link Two"
                 },
                 {
-                  url: "#",
-                  label : "C2 Link Three"
+                  "url": "#",
+                  "label" : "C2 Link Three"
                 }
               ]
             },
             {
-              url: "#",
-              label: "Category Three",
-              links: [
+              "url": "#",
+              "label": "Category Three",
+              "links": [
                 {
-                  url: "#",
-                  label : "C3 Link One"
+                  "url": "#",
+                  "label" : "C3 Link One"
                 },
                 {
-                  url: "#",
-                  label : "C3 Link Two"
+                  "url": "#",
+                  "label" : "C3 Link Two"
                 },
                 {
-                  url: "#",
-                  label : "C3 Link Three"
+                  "url": "#",
+                  "label" : "C3 Link Three"
                 }
               ]
             }
@@ -457,7 +484,6 @@
         };
 
         page.addFeature(feature);
-        page.addExploreBar();
         page.addToFirstColumn('data-list', news);
         page.addToSecondColumn('data-list', linkList);
         page.addToSecondColumn('data-list', linkList2);
@@ -613,6 +639,21 @@
         }
       );
 */
+
+        $('#explore-bar').flexslider({
+          animation: "slide",
+          itemWidth: 93,
+          minItems: 3,
+          maxItems: 7,
+          itemMargin: 0,
+          controlNav: false,
+          slideshow: false,
+          animationLoop: true,
+          prevText: "",
+          nextText: "",
+          touch: true
+        });
+
     });
   </script>
 </body>

@@ -13,38 +13,6 @@ var UAlberta = UAlberta || {};
 
         this.baseData = baseData;
 
-        this.options.featureArea = "#feature-area";
-        this.options.firstColumn = "#first-column";
-        this.options.secondColumn = "#second-column";
-        this.options.sidebar = "#sidebar";
-
-        this.options = $.extend(this.options, options);
-
-        var self = this;
-
-        this.addFeature = function(featureData) {
-          if(featureData.features.length == 1)
-            return UAlberta.FrontEnd.Modules.addModule('single-feature',featureData, this.options.featureArea );
-          else
-            return UAlberta.FrontEnd.Modules.addModule('carousel',featureData, this.options.featureArea);
-        };
-
-        this.addExploreBar = function() {
-          return self.addModule('explore-bar', null, "#explore-row");
-        };
-
-        this.addToFirstColumn = function(moduleName, data, options) {
-          return self.addModule(moduleName,data,this.options.firstColumn, options);
-        };
-
-        this.addToSecondColumn = function(moduleName, data, options) {
-          return self.addModule(moduleName,data,this.options.secondColumn, options);
-        };
-
-        this.addToSidebar = function(moduleName, data, options) {
-          return self.addModule(moduleName,data,this.options.sidebar, options);
-        };
-
         this.add();
 
         this.prototype = new UAlberta.FrontEnd.Modules.Page("ualberta-home", baseData, options);
@@ -63,6 +31,12 @@ var UAlberta = UAlberta || {};
 
     (function (Modules) {
 
+      var moduleCount = 0;
+
+      // TODO: Make sure parent is always a module
+          // add parent selector as parameter
+          // parameters (template, parentPlaceholder, parentModule, data, options)
+
       // creates a new module on the page, 
       // provided a template, data, and parent.
       function Module(id, type, template, data, parent, options) {
@@ -76,6 +50,7 @@ var UAlberta = UAlberta || {};
         this.modules = new Array();
         this.options = $.extend({},options);
         this.el = null;
+        this.placeholders = new Array();
 
         // if there is a header in the data, enable the option
         if(this.data && this.data.header)
@@ -94,18 +69,16 @@ var UAlberta = UAlberta || {};
           case 'object':
             if(parent.selector) {
               this.parentEl = parent;
+              this.placeholder = parent.selector;
             } else if(parent.frontEndModule) {
               this.parentEl = parent.el;
               this.parent = parent;
+              this.placeholder = parent.moduleSelector;
             }
             break;
           default:
             console.log("error: invalid placeholder type");
         }
-
-        // need to add the ID to the dom element
-        if((typeof this.template) === "function")
-          this.el = $('<div class="f-e-container"></div>').append(this.template(data));
 
         var self = this;
 
@@ -113,17 +86,32 @@ var UAlberta = UAlberta || {};
           if(!self.parentEl)
             console.log("error: the selector " + self.placeholder + "doesn't exist");
 
+          // set module selector once added to page
+          self.moduleSelector = self.type+"-"+(moduleCount++);
+
+          // create the element to add
+          if((typeof this.template) === "function")
+            self.el = $('<div class="f-e-container"></div>').addClass(this.moduleSelector).append(this.template(data));
+
+          if(this.options.placeholder) {
+            self.parentEl = self.parentEl.find(this.options.placeholder);
+          }
+
+          // add the element to the top or bottom of container
           if(self.options.prepend)
             self.parentEl.prepend(self.el);
           else
             self.parentEl.append(self.el);
 
+          // add the module header if it exists
           if(this.options.header && !this.options.suppressHeader)
             self.addHeader();
 
+          // add the module footer if it exists
           if(this.options.footer && !this.options.suppressFooter)
             self.addFooter();
 
+          // run any activation code for this module
           self.activate();
         };
 
@@ -160,6 +148,9 @@ var UAlberta = UAlberta || {};
           var parentEl = self.el.find(parent);
           if(parentEl.length > 0) {
             var module = UAlberta.FrontEnd.Modules.addModule(moduleName,data,parentEl,options);
+            // TODO: make it to you pass self as parent
+            //var module = UAlberta.FrontEnd.Modules.addModule(moduleName,data,self,options);
+
             self.modules.push(module);
             return module;
           }
@@ -177,6 +168,10 @@ var UAlberta = UAlberta || {};
 
       };
 
+      function Layout(layoutTemplate) {
+
+      };
+
       function Page(layoutTemplate, data, options) {
         // extend the module base
         this.base = Module;
@@ -187,6 +182,32 @@ var UAlberta = UAlberta || {};
         this.layoutTemplate = layoutTemplate;
 
         var self = this;
+
+        this.options.featureArea = "#feature-area";
+        this.options.firstColumn = "#first-column";
+        this.options.secondColumn = "#second-column";
+        this.options.sidebar = "#sidebar";
+
+        this.options = $.extend(this.options, options);
+
+        this.addFeature = function(featureData) {
+          if(featureData.features.length == 1)
+            return UAlberta.FrontEnd.Modules.addModule('single-feature',featureData, this.options.featureArea );
+          else
+            return UAlberta.FrontEnd.Modules.addModule('carousel',featureData, this.options.featureArea);
+        };
+
+        this.addToFirstColumn = function(moduleName, data, options) {
+          return self.addModule(moduleName,data,this.options.firstColumn, options);
+        };
+
+        this.addToSecondColumn = function(moduleName, data, options) {
+          return self.addModule(moduleName,data,this.options.secondColumn, options);
+        };
+
+        this.addToSidebar = function(moduleName, data, options) {
+          return self.addModule(moduleName,data,this.options.sidebar, options);
+        };
 
         this.activate = function() {  
           // close any open overlays when clicking the "body" element
@@ -217,6 +238,22 @@ var UAlberta = UAlberta || {};
             $('.nav-wrapper').toggleClass('on');
             e.stopPropagation();
           });
+
+          console.log('activating')
+
+          $('#explore-bar').flexslider({
+            animation: "slide",
+            itemWidth: 93,
+            minItems: 3,
+            maxItems: 7,
+            itemMargin: 0,
+            controlNav: false,
+            slideshow: false,
+            animationLoop: true,
+            prevText: "",
+            nextText: "",
+            touch: true
+          });
         };
 
         this.add = function() {
@@ -237,9 +274,11 @@ var UAlberta = UAlberta || {};
           if(self.data.ualbertaFooter)
             addInstitutionalFooter();
 
-          this.activate();
 
           self.setLayout(self.layoutTemplate);
+
+          this.activate();
+
         };
 
         // Sets the layout of the content area, called after build()
@@ -321,34 +360,6 @@ var UAlberta = UAlberta || {};
       };
       Modules.Page = Page;
 
-
-      function ExploreBar(id, type, template, data, placeholder, options) {
-        
-        // extend the module base
-        this.base = Module;
-        this.base(id, type, template, data, placeholder, options);
-
-        var self = this;
-
-        this.activate = function() {
-          this.el.flexslider({
-            animation: "slide",
-            itemWidth: 93,
-            minItems: 3,
-            maxItems: 7,
-            itemMargin: 0,
-            controlNav: false,
-            slideshow: false,
-            animationLoop: true,
-            prevText: "",
-            nextText: "",
-            touch: true
-          });
-        };
-
-        // extend the module base
-        this.prototype = new Module(id, type, template, data, placeholder, options);
-      };
 
       function SidebarItem(id, type, template, data, placeholder, options) {
         
@@ -549,9 +560,6 @@ var UAlberta = UAlberta || {};
         
         var moduleConstructor;
         switch(moduleName) {
-          case 'explore-bar':
-            moduleConstructor = ExploreBar;
-            break;
           case 'accordion':
             moduleConstructor = Accordion;
             break;
