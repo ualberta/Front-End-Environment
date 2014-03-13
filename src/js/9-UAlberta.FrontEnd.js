@@ -39,18 +39,20 @@ var UAlberta = UAlberta || {};
 
       // creates a new module on the page, 
       // provided a template, data, and parent.
-      function Module(id, type, template, data, parent, options) {
+      function Module(id, type, template, data, parentModule, placeholder, options) {
 
         this.frontEndModule = true;
         this.type = type;
-        this.placeholder = parent;
+        this.placeholder = placeholder;
+        this.parent = parentModule;
         this.template = template;
         this.data = data;
         this.id = id;
         this.modules = new Array();
         this.options = $.extend({},options);
         this.el = null;
-        this.placeholders = new Array();
+        this.headerTemplate = UAlberta.FrontEnd.templates["module-heading.hbs"];
+        this.footerTemplate = UAlberta.FrontEnd.templates["module-footer.hbs"]
 
         // if there is a header in the data, enable the option
         if(this.data && this.data.header)
@@ -60,31 +62,40 @@ var UAlberta = UAlberta || {};
         if(this.data && this.data.footer)
           this.options.footer = this.data.footer;
 
+        
+
+        if(this.parent === null)
+          this.parentEl = $(this.placeholder);
+        else
+          this.parentEl = this.parent.el.find(this.placeholder);
+
         // set the parent jQuery element to append to
         // if the parent is a module, set it
-        switch(typeof(parent)) {
+        /*
+        switch(typeof(this.parent)) {
           case 'string':
             this.parentEl = $(this.placeholder);
             break;
           case 'object':
-            if(parent.selector) {
-              this.parentEl = parent;
-              this.placeholder = parent.selector;
-            } else if(parent.frontEndModule) {
+            if(this.parent.frontEndModule) {
+              // we have a Module
               this.parentEl = parent.el;
-              this.parent = parent;
-              this.placeholder = parent.moduleSelector;
             }
             break;
           default:
             console.log("error: invalid placeholder type");
         }
-
+*/
         var self = this;
 
+        /* add
+         * places the module into the DOM
+         */ 
         this.add = function() {
+          //console.log(self, self.parent); 
+
           if(!self.parentEl)
-            console.log("error: the selector " + self.placeholder + "doesn't exist");
+            console.log("error: the selector " + self.placeholder + " doesn't exist");
 
           // set module selector once added to page
           self.moduleSelector = self.type+"-"+(moduleCount++);
@@ -117,16 +128,19 @@ var UAlberta = UAlberta || {};
 
         this.addHeader = function() {
           if(self.options.header) {
-            self.el.prepend(UAlberta.FrontEnd.templates["module-heading.hbs"](self.options.header));
+            self.el.prepend(this.headerTemplate(self.options.header));
           }
         };
 
         this.addFooter = function() {
           if(self.options.footer) {
-            self.el.append(UAlberta.FrontEnd.templates["module-footer.hbs"](self.options.footer));
+            self.el.append(this.footerTemplate(self.options.footer));
           }
         };
 
+        /* remove
+         * removes the element from the DOM
+         */
         this.remove = function() {
           this.el.remove();
         };
@@ -144,17 +158,23 @@ var UAlberta = UAlberta || {};
         };
 
         // add modules within modules within modules...
-        this.addModule = function(moduleName,data,parent,options) {
-          var parentEl = self.el.find(parent);
+        this.addModule = function(moduleName,data,placeholder,options) {
+          // if the placeholder refers to an element outside the module
+          console.log("adding module:",moduleName,placeholder,self)
+
+          var newOptions = $.extend({}, options);
+
+          var parentEl = self.el.find(placeholder);
+          if(newOptions.outsideModule)
+            parentEl = $(placeholder);
           if(parentEl.length > 0) {
-            var module = UAlberta.FrontEnd.Modules.addModule(moduleName,data,parentEl,options);
+            var module = UAlberta.FrontEnd.Modules.addModule(moduleName,data,self,placeholder,newOptions);
             // TODO: make it to you pass self as parent
             //var module = UAlberta.FrontEnd.Modules.addModule(moduleName,data,self,options);
-
             self.modules.push(module);
             return module;
           }
-          console.log("error: the container " + parent + " does not exist in this module");
+          console.log("error: the container " + placeholder + " does not exist in this module");
         };
 
         // swap the template and update
@@ -175,26 +195,27 @@ var UAlberta = UAlberta || {};
       function Page(layoutTemplate, data, options) {
         // extend the module base
         this.base = Module;
-        this.base('page', 'page', function() {}, data, 'body', options);
+        this.base('page', 'page', function() {}, data, null, 'body', options);
 
         this.el = $('body');
 
         this.layoutTemplate = layoutTemplate;
 
-        var self = this;
-
         this.options.featureArea = "#feature-area";
-        this.options.firstColumn = "#first-column";
-        this.options.secondColumn = "#second-column";
-        this.options.sidebar = "#sidebar";
+        this.options.firstColumn= "#first-column";
+        this.options.secondColumn= "#second-column";
+        this.options.sidebar= "#sidebar";
 
         this.options = $.extend(this.options, options);
 
+        var self = this;
+
+
         this.addFeature = function(featureData) {
           if(featureData.features.length == 1)
-            return UAlberta.FrontEnd.Modules.addModule('single-feature',featureData, this.options.featureArea );
+            return self.addModule('single-feature',featureData, this.options.featureArea );
           else
-            return UAlberta.FrontEnd.Modules.addModule('carousel',featureData, this.options.featureArea);
+            return self.addModule('carousel',featureData, this.options.featureArea);
         };
 
         this.addToFirstColumn = function(moduleName, data, options) {
@@ -356,50 +377,52 @@ var UAlberta = UAlberta || {};
         };
 
         // extend the module base
-        this.prototype = new Module('page', 'page', null, data, 'body', options);
+        this.prototype = new Module('page', 'page', null, data, null, 'body', options);
       };
       Modules.Page = Page;
 
 
-      function SidebarItem(id, type, template, data, placeholder, options) {
+      function SidebarItem(id, type, template, data, parentModule, placeholder, options) {
         
         // extend the module base
         this.base = Module;
-        this.base(id, type, template, data, placeholder, options);
+        this.base(id, type, template, data, parentModule, placeholder, options);
 
         var self = this;
+
+        this.headerTemplate = UAlberta.FrontEnd.templates["sidebar-header.hbs"];
+        this.footerTemplate = UAlberta.FrontEnd.templates["sidebar-footer.hbs"];
 
 
         this.addHeader = function() {
           self.el.find('.sidebar-content').before(
-            UAlberta.FrontEnd.templates["sidebar-header.hbs"](self.options.header)
+            this.headerTemplate(self.options.header)
           );
         };
 
         this.addFooter = function() {
           self.el.find('.sidebar-content').after(
-            UAlberta.FrontEnd.templates["sidebar-footer.hbs"](self.options.footer)
+            this.footerTemplate(self.options.footer)
           );
         };
 
         this.base_addModule = this.addModule;
         // suppress the headers on any modules added to the sidebar
         this.addModule = function(moduleName,data,parent,options) {
-          var newOptions = options || {};
-          newOptions.suppressHeader = true;
-          return this.base_addModule(moduleName,data,parent,newOptions);
+          var newOptions = $.extend({ suppressHeader: true },options)
+          return this.base_addModule(moduleName,data,parent, newOptions);
         };
 
         // extend the module base
-        this.prototype = new Module(id, type, template, data, placeholder, options);
+        this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
       };
 
 
-      function Modal(id, type, template, data, placeholder, options) {
+      function Modal(id, type, template, data, parentModule, placeholder, options) {
         
         // extend the module base
         this.base = Module;
-        this.base(id, type, template, data, placeholder, options);
+        this.base(id, type, template, data, parentModule, placeholder, options);
 
         var self = this;
 
@@ -413,14 +436,14 @@ var UAlberta = UAlberta || {};
         };
 
         // extend the module base
-        this.prototype = new Module(id, type, template, data, placeholder, options);
+        this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
       };
 
-      function Video(id, type, template, data, placeholder, options) {
+      function Video(id, type, template, data, parentModule, placeholder, options) {
         
         // extend the module base
         this.base = Module;
-        this.base(id, type, template, data, placeholder, options);
+        this.base(id, type, template, data, parentModule, placeholder, options);
 
         var self = this;
 
@@ -431,21 +454,21 @@ var UAlberta = UAlberta || {};
                 heading: $(this).find('img').attr('alt'),
                 embedUrl: $(this).attr('href')
               };
-              addModule('modal', data, 'body');
+              addModule('modal', data, 'body', { outsideModule: true });
               return false;
             }
           }, 'a');
         };
 
         // extend the module base
-        this.prototype = new Module(id, type, template, data, placeholder, options);
+        this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
       };
 
-      function Accordion(id, type, template, data, placeholder, options) {
+      function Accordion(id, type, template, data, parentModule, placeholder, options) {
         
         // extend the module base
         this.base = Module;
-        this.base(id, type, template, data, placeholder, options);
+        this.base(id, type, template, data, parentModule, placeholder, options);
 
         var self = this;
 
@@ -460,14 +483,14 @@ var UAlberta = UAlberta || {};
         };
 
         // extend the module base
-        this.prototype = new Module(id, type, template, data, placeholder, options);
+        this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
       };
 
-      function SectionNavigation(id, type, template, data, placeholder, options) {
+      function SectionNavigation(id, type, template, data, parentModule, placeholder, options) {
         
         // extend the module base
         this.base = Module;
-        this.base(id, type, template, data, placeholder, options);
+        this.base(id, type, template, data, parentModule, placeholder, options);
 
         var self = this;
 
@@ -483,14 +506,14 @@ var UAlberta = UAlberta || {};
         };
 
         // extend the module base
-        this.prototype = new Module(id, type, template, data, placeholder, options);
+        this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
       };
 
-      function LinkFilter(id, type, template, data, placeholder, options) {
+      function LinkFilter(id, type, template, data, parentModule, placeholder, options) {
         
         // extend the module base
         this.base = Module;
-        this.base(id, type, template, data, placeholder, options);
+        this.base(id, type, template, data, parentModule, placeholder, options);
 
         var self = this;
 
@@ -506,14 +529,14 @@ var UAlberta = UAlberta || {};
         };
 
         // extend the module base
-        this.prototype = new Module(id, type, template, data, placeholder, options);
+        this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
       };
 
-      function Carousel(id, type, template, data, placeholder, options) {
+      function Carousel(id, type, template, data, parentModule, placeholder, options) {
         
         // extend the module base
         this.base = Module;
-        this.base(id, type, template, data, placeholder, options);
+        this.base(id, type, template, data, parentModule, placeholder, options);
 
         var self = this;
 
@@ -545,13 +568,13 @@ var UAlberta = UAlberta || {};
         };
 
         // extend the module base
-        this.prototype = new Module(id, type, template, data, placeholder, options);
+        this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
       };
 
       // module factory
       // returns a module as long as a valid moduleName is provided
       // moduleName must match the hbs template file name
-      function addModule(moduleName, data, parent, options) {
+      function addModule(moduleName, data, parent, placeholder, options) {
 
         var template = UAlberta.FrontEnd.templates[moduleName+".hbs"];
 
@@ -596,7 +619,8 @@ var UAlberta = UAlberta || {};
                 moduleName, 
                 template, 
                 data, 
-                parent, 
+                parent,
+                placeholder, 
                 options
           );
 

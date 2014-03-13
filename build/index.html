@@ -489,9 +489,19 @@
         page.addToSecondColumn('data-list', linkList2);
         page.addModule('collapsible-navigation',leftNav, '#second-column');
 
-        page.addToSidebar('sidebar-item', sidebarContent, {header: {heading: "Sidebar Content"}});
+        page.addToSidebar('sidebar-item', sidebarContent, 
+          {
+            header: {
+              heading: "Sidebar Content"
+            }
+          }
+        );
 
-        var testmod = page.addModule('sidebar-item', {}, '#sidebar', {header: linkList2.header});
+        var testmod = page.addModule('sidebar-item', {}, '#sidebar', 
+          {
+            header: linkList2.header
+          }
+        );
         testmod.addModule('data-list', linkList2, '.sidebar-content');
 
         var sbContentModule = page.addToSidebar(
@@ -640,19 +650,7 @@
       );
 */
 
-        $('#explore-bar').flexslider({
-          animation: "slide",
-          itemWidth: 93,
-          minItems: 3,
-          maxItems: 7,
-          itemMargin: 0,
-          controlNav: false,
-          slideshow: false,
-          animationLoop: true,
-          prevText: "",
-          nextText: "",
-          touch: true
-        });
+
 
     });
   </script>
