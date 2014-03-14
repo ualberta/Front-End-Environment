@@ -7,15 +7,14 @@ The UAlberta front-end framework allows dynamic creation of pages and modules wi
 Add `/build/js/main.min.js` (requires jQuery, and Handlebars Runtime) and `/build/css/framework.css` to your page, then add modules to the page by passing the JSON data, and a selector string that represents the placeholder to insert the module into.
 
     // add a full width feature to a page
-    UAlberta.Modules.addModule('single-feature', jsonData, '#feature-area');
+    UAlberta.Modules.addModule('single-feature', jsonData, null, '#feature-area');
     
 
 You can also build entire pages and layouts from JSON data (recommended for testing purposes only).  For example, you could build a replica of the [UAlberta home page](http://www.ualberta.ca/) with:
 
     // CREATE BASE PAGE
 
-    var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(pageData);
-
+    var page = new UAlberta.FrontEnd.Modules.Page("ualberta-home",pageData);
 
     // ADD MODULES
 
@@ -44,13 +43,14 @@ You can also build entire pages and layouts from JSON data (recommended for test
 
 You can add any module that has a valid handlebars template with:
 
-    UAlberta.FrontEnd.Modules.addModule(templateName, data, parent,options)
+    UAlberta.FrontEnd.Modules.addModule(templateName, data, parentModule, placeholder, options)
 
 Where:
 
   - `templateName`: The name of the handlebars file without the .hbs extension.
   - `data`: The data to provide to the template
-  - `parent`: A selector string of the element that will contain this module
+  - `parentModule`: A Module object that will contain this module (null if no parent)
+  - `placeholder`: A selector string of the element that will contain this module
   - `options`: An object specifying the options for the module
 
 #### Module Options
