@@ -20,10 +20,6 @@ You can also build entire pages and layouts from JSON data (recommended for test
 
     page.addFeature(featureData); 
 
-    page.addWhyUAlberta();
-
-    page.addExploreBar();
-
     page.addToFirstColumn('data-list', newsData);
 
     page.addToSecondColumn('data-list', campusNoticeData); 
