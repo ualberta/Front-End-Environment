@@ -129,6 +129,23 @@
       }
     ]
   },
+  "pageTitle": {
+    "breadcrumbs": [
+      {
+        "url": "#",
+        "label": "Home"
+      },
+      {
+        "url": "#",
+        "label": "Page Name"
+      },
+      {
+        "url": "#",
+        "label": "Another Page Name"
+      }
+    ],
+    "pageName":"Current Page"
+  },
   "ualbertaFooter" : {
     "footerLinks": [
       {

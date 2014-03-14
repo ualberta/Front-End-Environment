@@ -1092,7 +1092,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "\n<div id=\"feature\" class=\"content-top-row\"></div>\n\n<div id=\"page-title\" class=\"page-title-row\"></div>\n\n<div class=\"content-container container\">\n    \n    <div class=\"content-inner row-fluid\">\n\n        <div id=\"first-column\" class=\"span primary-content-area\"></div>\n    \n        <div id=\"second-column\" class=\"span secondary-content-area clearfix\"></div>\n\n        <div id=\"sidebar\" class=\"span sidebar\"></div>\n\n    </div>\n\n</div>\n";
+  return "<div id=\"feature-area\" class=\"content-top-row\"></div>\n\n<div id=\"page-title\" class=\"page-title-row\"></div>\n\n<div class=\"content-container container\">\n    \n    <div class=\"content-inner row-fluid\">\n\n        <div id=\"first-column\" class=\"span primary-content-area\"></div>\n    \n        <div id=\"second-column\" class=\"span secondary-content-area clearfix\"></div>\n\n        <div id=\"sidebar\" class=\"span sidebar\"></div>\n\n    </div>\n\n</div>\n";
   });
 
 this["UAlberta"]["FrontEnd"]["templates"]["banner.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -1337,34 +1337,35 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n          <li><a href=\""
+  buffer += "\n  <ul class=\"breadcrumbs\">\n      ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.breadcrumbs), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n      <li class=\"bc-here\">";
+  if (stack1 = helpers.pageName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.pageName); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n  </ul>\n  ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n        <li><a href=\""
     + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a></li>\n        ";
+    + "</a></li>\n      ";
   return buffer;
   }
 
-  buffer += "\n<div class=\"title-container container\">\n    \n    <ul class=\"breadcrumbs\">\n        \n        <li class=\"\"><a href=\"";
-  if (stack1 = helpers.homeLink) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.homeLink); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">";
-  if (stack1 = helpers.homeName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.homeName); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a></li>\n        \n        ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.breadcrumbs), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  buffer += "<div class=\"title-container container\">\n  ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.breadcrumbs), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n        <li class=\"bc-here\">";
+  buffer += "\n  <h1 class=\"page-title\">";
   if (stack1 = helpers.pageName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.pageName); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</li>\n        \n    </ul>\n    \n    <h1 class=\"page-title\">";
-  if (stack1 = helpers.pageName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.pageName); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</h1>\n\n</div>\n";
+    + "</h1>\n</div>\n";
   return buffer;
   });
 

@@ -980,132 +980,19 @@ ul.breadcrumbs li:after {
 ul.breadcrumbs li.bc-here:after {
   content: none;
 }
-
-
 div.content-inner hr.soften.double {
-  margin: 1.57em 0em;
+  margin: 1.57em 0;
 }
 
-.primary-content-area p.button-container a {
-  text-decoration: none;
-}
-
-.primary-content-area, .secondary-content-area {
-  h2, h3 {
-    border: none;
-  }
-}
-
-.primary-content-area h3 {
+.primary-content-area h3,
+.secondary-content-area h3 {
   padding-top:0.625em;
 }
 
-.primary-content-area h3:first-child {
+.primary-content-area h3:first-child,
+.secondary-content-area h3:first-child {
   padding-top:0;
-}
-
-.content-wrapper {
-  position: relative;
-}
-
-.content-inner {
-  padding: 0;
-  margin-top: 1.57em;
-}
-
-.content-top-row {
-  .container;
-}
-
-.container {
-    width:  auto;
-    padding: 0 0.8333em;
-}
-
-.content-top-row {
-  .tab-content {
-    min-height: none;
-  }
-}
-
-.row-fluid {
-  .primary-content-area,
-  .audience-area,
-  .secondary-content-area {
-    margin-left: 0;
-  }
-}
-.row-fluid {
-  .feature-area,
-  .primary-content-area {
-    margin-bottom: 1.5em;
-  }
-}
-
-@media (min-width: 43.125em) {
-
-  // set column widths
-  .row-fluid {
-    .primary-content-area { width: 65%; }
-    .secondary-content-area { width: 30%; margin-left:5%; }
-    .sidebar { width:100%; margin-left:0;} // sidebar is at bottom
-  }
-
-  .row-fluid.one-col{
-    .primary-content-area.span {
-      width: 100%;
-    }
-    .sidebar{
-      position:inherit;
-    }
-  }
-}
-
-
-// added from ualberta base
-@media (min-width: 43.125em) and (max-width: 61.23em) {
-  .row-fluid {
-    .primary-content-area { width: 56%; }
-    .secondary-content-area { width: 39%; margin-left:5%; }
-  }
-}
-
-@media screen and (min-width: 61.25em) {
-
-  // set column widths
-  .row-fluid {
-    .primary-content-area { width: 45%; }
-    .secondary-content-area { width: 30%; margin-left:3%;}
-    .sidebar { width:19%; margin-left:3%; margin-top:0; padding-top: 0; border-top:none; box-shadow: none; }
-  }
-
-  .row-fluid.one-col{
-    .primary-content-area.span {
-      width: 78%;
-    }
-  }
-
-  // increase left / right page margins to 3% at 980px
-  .content-top-row { margin:0 3%; }
-  .container, .blade-inner, .banner-inner, .navigation-inner {
-      margin:0 3%;
-      box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing:border-box;
-      width:auto;
-  }
-  .banner-inner .site-title {
-        left:auto;
-    }
-}
-
-// increase left / right page margins to 5% at 1200px
-@media screen and (min-width: 75em) {
-  .content-top-row { margin:0 5%; }
-  .container, .blade-inner, .banner-inner, .navigation-inner {
-      margin:0 5%;
-  }
+  margin-top:0;
 }
 
 // SIDEBAR
@@ -1164,33 +1051,6 @@ div.content-inner hr.soften.double {
 	// no more collapsing sidebars - Jan 20
 	.sidebar-content.sidebar-collapse.collapse {
 	  height:auto!important;
-	}
-
-	// display sidebar items side by side in 2 columns
-	@media (min-width: 26.25em) {
-	  .sidebar > .extrude { 
-	    width: 47%;
-	    display: inline-block;
-	    vertical-align: top;
-	    margin: 1%;
-	    box-sizing: border-box;
-	  }
-	}
-
-	// display sidebar items side by side in 3 columns
-	@media (min-width: 43.125em) {
-	  .sidebar > .extrude { 
-	    width: 30.8%;
-	  }
-	}
-
-	// sidebar item fills container
-	@media (min-width: 61.25em) {
-	  .sidebar > .extrude { 
-	    width: auto;
-	    display: block;
-	    margin: 0 0 1.57em;
-	  }
 	}
 
 // -------------

@@ -354,6 +354,17 @@ var UAlberta = UAlberta || {};
           }
         };
 
+        this.setPageTitle = function(data) {
+          var titleData = data || self.data.pageTitle;
+          self.pageTitle = 
+            self.addModule(
+              'page-title', 
+              self.data.pageTitle, 
+              '#page-title', 
+              {}
+            );
+        };
+
         /** @private adds the blade to the page */
         function addBlade() {
           self.blade = 
@@ -413,6 +424,10 @@ var UAlberta = UAlberta || {};
               {}
             );
         };
+
+        // build the page
+        if(!this.options.suppressBuild)
+          this.add();
 
         // extend the module base
         this.prototype = new Module('page', 'page', null, data, null, 'body', options);

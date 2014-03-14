@@ -1,18 +1,11 @@
-
 <div class="title-container container">
-    
-    <ul class="breadcrumbs">
-        
-        <li class=""><a href="{{homeLink}}">{{homeName}}</a></li>
-        
-        {{#each breadcrumbs}}
-          <li><a href="{{this.url}}">{{this.label}}</a></li>
-        {{/each}}
-
-        <li class="bc-here">{{pageName}}</li>
-        
-    </ul>
-    
-    <h1 class="page-title">{{pageName}}</h1>
-
+  {{#if breadcrumbs}}
+  <ul class="breadcrumbs">
+      {{#each breadcrumbs}}
+        <li><a href="{{this.url}}">{{this.label}}</a></li>
+      {{/each}}
+      <li class="bc-here">{{pageName}}</li>
+  </ul>
+  {{/if}}
+  <h1 class="page-title">{{pageName}}</h1>
 </div>
