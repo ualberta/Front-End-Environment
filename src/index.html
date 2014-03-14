@@ -78,12 +78,14 @@
 
       $.getJSON( "assets/data/base_institutional.json", null, function(data) {
 
-        var page = new UAlberta.FrontEnd.Pages.InstitutionalHome(data, 
+        var page = new UAlberta.FrontEnd.Modules.Page("ualberta-home",data, 
           { 
             build: true, 
             secondColumn: "#second-column" 
           }
         );
+
+        page.add();
 
         var feature = {
           type: "full-page-feature",
