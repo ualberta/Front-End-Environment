@@ -90,7 +90,7 @@ var UAlberta = UAlberta || {};
        */
       function Module(id, type, template, data, parentModule, placeholder, options) {
         
-        this.id = id;
+        this.id = type+"-"+(moduleCount++);
         this.type = type;
         this.template = template;
         this.data = data;
@@ -134,14 +134,11 @@ var UAlberta = UAlberta || {};
           if(!self.parentEl)
             console.log("error: the selector " + self.placeholder + " doesn't exist");
 
-          // set module selector once added to page
-          self.moduleSelector = self.type+"-"+(moduleCount++);
-
           // create the element to add
-          if((typeof this.template) === "function")
+          if((typeof self.template) === "function")
             self.el = $('<div class="f-e-container"></div>')
-                        .addClass(this.moduleSelector)
-                        .append(this.template(data));
+                        .addClass(self.type)
+                        .append(self.template(self.data));
 
           if(this.options.placeholder) {
             self.parentEl = self.parentEl.find(this.options.placeholder);

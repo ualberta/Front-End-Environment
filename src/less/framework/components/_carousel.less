@@ -62,27 +62,27 @@ ul.toggles li.current {
   left:auto;
 }
 
-.carousel .slides {
+.carousel-container .slides {
   z-index:2;
 }
 
-.carousel .slides .slide {
+.carousel-container .slides .slide {
   display:none;
 }
 
-.carousel .slides .slide.current {
+.carousel-container .slides .slide.current {
   display:block;
 }
 
 
 @media screen and (min-width:43.125em) { 
 
-  .carousel .slides {
+  .carousel-container .slides {
     position:relative;
 
   }
         
-  .carousel .slides .slide {
+  .carousel-container .slides .slide {
     position: absolute;
     top:0;right:0;bottom:0;left:0;
     z-index:2;
@@ -92,19 +92,19 @@ ul.toggles li.current {
     -webkit-backface-visibility: hidden;
   }
 
-  .carousel .slides .slide.current {
+  .carousel-container .slides .slide.current {
     z-index:4;
     opacity:1;
   }
 
-  .content-inner .carousel .slides {
+  .content-inner .carousel-container .slides {
     overflow:hidden;
     padding-top: 56.25%;
   }
 
 }
 
-.content-inner .carousel {
+.content-inner .carousel-container {
   .extrude();
   #em > .padding(5,14);
   margin-bottom:1.57em;

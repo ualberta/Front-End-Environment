@@ -1,0 +1,10 @@
+<ul class="social-media">
+    {{#each socialMedia}}
+    <li>
+        <a class="btn-social-media {{this.icon}}-footer" href="{{this.url}}" target="_blank">
+            <i class="icon-{{this.icon}}"></i>
+            <span>{{this.label}}</span>
+        </a>
+    </li>
+    {{/each}}
+</ul>

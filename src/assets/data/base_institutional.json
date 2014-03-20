@@ -146,6 +146,77 @@
     ],
     "pageName":"Current Page"
   },
+  "secondaryFooter" : {
+    "title": "Faculty of Development",
+    "links": [
+      {
+        "url": "#",
+        "label": "Link one"
+      },
+      {
+        "url": "#",
+        "label": "Link two"
+      },
+            {
+        "url": "#",
+        "label": "Third one"
+      },
+            {
+        "url": "#",
+        "label": "With a fourth"
+      }
+    ],
+    "socialMedia" : [
+      {
+        "icon": "facebook",
+        "url": "#",
+        "label": "Facebook"
+      },
+      {
+        "icon": "youtube",
+        "url": "#",
+        "label": "Tumblr"
+      },
+      {
+        "icon": "linkedin",
+        "url": "#",
+        "label": "Linked In"
+      },
+      {
+        "icon": "tumblr",
+        "url": "#",
+        "label": "Tumblr"
+      },
+      {
+        "icon": "twitter",
+        "url": "#",
+        "label": "Twitter"
+      },
+      {
+        "icon": "flickr",
+        "url": "#",
+        "label": "Flickr"
+      },
+      {
+        "icon": "blogger",
+        "url": "#",
+        "label": "Blogger"
+      },
+      {
+        "icon": "googleplus",
+        "url": "#",
+        "label": "Google Plus"
+      }
+    ],
+    "streetAddress" : "555 87 Avenue",
+    "locality" : "Edmonton",
+    "region" : "Alberta",
+    "country" : "Canada",
+    "postalCode" : "T6G 1S2",
+    "telephone" : "780-555-5555",
+    "fax" : "780-555-5556",
+    "email" : "test@ualberta.ca"
+  },
   "ualbertaFooter" : {
     "footerLinks": [
       {

@@ -443,6 +443,33 @@ function program4(depth0,data) {
   return buffer;
   }));
 
+Handlebars.registerPartial("SocialMediaIcons", Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n    <li>\n        <a class=\"btn-social-media "
+    + escapeExpression(((stack1 = (depth0 && depth0.icon)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "-footer\" href=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" target=\"_blank\">\n            <i class=\"icon-"
+    + escapeExpression(((stack1 = (depth0 && depth0.icon)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"></i>\n            <span>"
+    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span>\n        </a>\n    </li>\n    ";
+  return buffer;
+  }
+
+  buffer += "<ul class=\"social-media\">\n    ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.socialMedia), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n</ul>";
+  return buffer;
+  }));
+
 Handlebars.registerPartial("VideoEmbed", Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -523,7 +550,7 @@ function program3(depth0,data) {
   if (stack1 = helpers.type) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.type); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + " carousel\">\n    <div class=\"slides\">\n      ";
+    + " carousel-container\">\n    <div class=\"slides\">\n      ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.features), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    </div>\n    <ul class=\"toggles\">\n      ";
@@ -1371,8 +1398,8 @@ function program2(depth0,data) {
 
 this["UAlberta"]["FrontEnd"]["templates"]["secondary-footer.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, stack2, functionType="function", escapeExpression=this.escapeExpression, self=this;
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
   
@@ -1385,47 +1412,52 @@ function program1(depth0,data) {
   return buffer;
   }
 
-function program3(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n                        <li>\n                            <a class=\"btn-social-media "
-    + escapeExpression(((stack1 = (depth0 && depth0.icon)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "-footer\" href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.link)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" target=\"_blank\">\n                                <i class=\"icon-"
-    + escapeExpression(((stack1 = (depth0 && depth0.icon)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\"></i>\n                                <span>"
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n                            </a>\n                        </li>\n                        ";
-  return buffer;
-  }
-
-  buffer += "<div class=\"top-footer-row\">\n    <div class=\"footer-container container\">\n        <div class=\"footer-inner row-fluid\">\n            <div class=\"span6 footer-faculty-links\">\n                <h3>"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.title)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</h3>\n                <div class=\"row-fluid\">\n                    <div class=\"span5\">\n                    \n                        <ul class=\"faculty-links\">\n                            ";
-  stack2 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.links), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n                        </ul>\n                        \n                    </div>\n                    <div class=\"span7\">\n                        \n                        <ul class=\"unstyled social-media\">\n                        \n                        ";
-  stack2 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.socialMedia), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n                    \n                        </ul>\n                            \n                    </div>\n                </div>\n            </div>\n            <div class=\"span6 vcard\">\n                <h3>Contact Information</h3>\n                <div class=\"row-fluid\">\n                    <div class=\"span6\">\n                        <p class=\"adr\">\n                            <span class=\"street-address\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.streetAddress)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><br>\n                            <span class=\"locality\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.locality)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>, \n                            <span class=\"region\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.region)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><br>\n                            <span class=\"country-name\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.country)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span> \n                            <span class=\"postal-code\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.postalCode)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span><br>\n                        </p>\n                        \n                    </div>\n                    <div class=\"span6\"> \n                        <div>\n                            <strong><abbr title=\"Telephone\">Tel:</abbr> </strong>\n                            <span>1-"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.telephone)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n                        </div>\n                        <div>\n                            <strong>Fax: </strong>\n                            <span>"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.fax)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n                        </div>\n                        <p><strong>Email: </strong><a href=\"mailto:"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.email)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" class=\"email\">"
-    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.secondaryFooter)),stack1 == null || stack1 === false ? stack1 : stack1.email)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+  buffer += "<div class=\"top-footer-row\">\n    <div class=\"footer-container container\">\n        <div class=\"footer-inner row-fluid\">\n            <div class=\"span6 footer-faculty-links\">\n                <h3>";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.title); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h3>\n                <div class=\"row-fluid\">\n                    <div class=\"span5\">\n                        <ul class=\"faculty-links\">\n                            ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.links), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n                        </ul>\n                    </div>\n                    <div class=\"span7\">\n                        ";
+  stack1 = self.invokePartial(partials.SocialMediaIcons, 'SocialMediaIcons', depth0, helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n                    </div>\n                </div>\n            </div>\n            <div class=\"span6 vcard\">\n                <h3>Contact Information</h3>\n                <div class=\"row-fluid\">\n                    <div class=\"span6\">\n                        <p class=\"adr\">\n                            <span class=\"street-address\">";
+  if (stack1 = helpers.streetAddress) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.streetAddress); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span><br>\n                            <span class=\"locality\">";
+  if (stack1 = helpers.locality) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.locality); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>, \n                            <span class=\"region\">";
+  if (stack1 = helpers.region) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.region); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span><br>\n                            <span class=\"country-name\">";
+  if (stack1 = helpers.country) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.country); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span> \n                            <span class=\"postal-code\">";
+  if (stack1 = helpers.postalCode) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.postalCode); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span><br>\n                        </p>\n                        \n                    </div>\n                    <div class=\"span6\"> \n                        <div>\n                            <strong><abbr title=\"Telephone\">Tel:</abbr> </strong>\n                            <span>1-";
+  if (stack1 = helpers.telephone) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.telephone); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n                        </div>\n                        <div>\n                            <strong>Fax: </strong>\n                            <span>";
+  if (stack1 = helpers.fax) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.fax); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</span>\n                        </div>\n                        <p><strong>Email: </strong><a href=\"mailto:";
+  if (stack1 = helpers.email) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.email); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" class=\"email\">";
+  if (stack1 = helpers.email) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.email); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
     + "</a></p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>";
   return buffer;
   });

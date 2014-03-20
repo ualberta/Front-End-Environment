@@ -137,20 +137,15 @@
 }
 
 @media (min-width: 61.25em) {
-
   .full-page-feature {
-
     margin-bottom:1.57em;
-
     .slides {
       padding-top: 30%;
       min-height:0;
     }
-
     & > .slides > .slide { 
       overflow:hidden; 
     }
-
     // max out the image at 1560px wide
     // show overflow in case image has a shadow
     .feature-wrapper {
@@ -160,16 +155,13 @@
       max-width: 1560px;
       overflow:visible;
     }
- 
     .feature-image {
       width:auto;
     }
-
     .feature-image img {
       width:100%;
       max-width:none; 
     }
-
     .feature-image {
       &.focus-right {
         float:none;
@@ -180,15 +172,11 @@
         margin:0;
       }
     }
-
   }
-
 }
 
 @media (min-width: 75em) {
-
   .full-page-feature {
-
     .content-island {
       &.left-island {
         left: 5%
@@ -197,14 +185,12 @@
         right: 5%;
       }
     }
-
   }
-
 }
 
 @media screen and (min-width: 96em) {
   .full-page-feature .slides {
-    height: 29em;
+    height: 28.55em; // fixed height at 1536
     padding-top: 0;
   }
 }
