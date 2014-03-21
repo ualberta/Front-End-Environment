@@ -137,7 +137,7 @@ var UAlberta = UAlberta || {};
           // create the element to add
           if((typeof self.template) === "function")
             self.el = $('<div class="f-e-container"></div>')
-                        .addClass(self.type)
+                        .addClass(self.type+"-module")
                         .append(self.template(self.data));
 
           if(this.options.placeholder) {
@@ -408,7 +408,17 @@ var UAlberta = UAlberta || {};
 
         /** @private adds a secondary footer to the page */
         function addSecondaryFooter() {
-
+          if(self.data.secondaryFooter) {
+            self.secondaryFooter = 
+              self.addModule(
+                'secondary-footer',
+                data.secondaryFooter, 
+                'footer',
+                {
+                  prepend:true
+                }
+              );
+          }
         };
 
         /** @private add the institutional footer to a page */

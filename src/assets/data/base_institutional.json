@@ -208,14 +208,17 @@
         "label": "Google Plus"
       }
     ],
-    "streetAddress" : "555 87 Avenue",
-    "locality" : "Edmonton",
-    "region" : "Alberta",
-    "country" : "Canada",
-    "postalCode" : "T6G 1S2",
-    "telephone" : "780-555-5555",
-    "fax" : "780-555-5556",
-    "email" : "test@ualberta.ca"
+    "contact": {
+      "title" : "Contact Information",
+      "streetAddress" : "555 87 Avenue",
+      "locality" : "Edmonton",
+      "region" : "Alberta",
+      "country" : "Canada",
+      "postalCode" : "T6G 1S2",
+      "telephone" : "780-555-5555",
+      "fax" : "780-555-5556",
+      "email" : "test@ualberta.ca"
+    }
   },
   "ualbertaFooter" : {
     "footerLinks": [

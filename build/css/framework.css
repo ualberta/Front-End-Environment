@@ -2234,21 +2234,21 @@ ul.footer-quick-links + p {
   }
 }
 @media (min-width: 61.25em) {
-  .ualberta-home .row-fluid .main-content {
+  .ualberta-home-module .row-fluid .main-content {
     width: 80%;
     float: left;
   }
-  .ualberta-home .row-fluid .primary-content-area {
+  .ualberta-home-module .row-fluid .primary-content-area {
     width: 61.25%;
   }
-  .ualberta-home .row-fluid .secondary-content-area {
+  .ualberta-home-module .row-fluid .secondary-content-area {
     width: 35%;
     margin-left: 3.75%;
   }
-  .ualberta-home .row-fluid .secondary-content-area > hr.soften:first-child {
+  .ualberta-home-module .row-fluid .secondary-content-area > hr.soften:first-child {
     display: none;
   }
-  .ualberta-home .row-fluid .sidebar {
+  .ualberta-home-module .row-fluid .sidebar {
     width: 17%;
     margin-left: 3%;
   }
