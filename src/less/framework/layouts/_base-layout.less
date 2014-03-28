@@ -70,7 +70,7 @@
   }
 }
 
-@media screen and (min-width: 61.25em) {
+@media (min-width: 61.25em) {
   // set column widths
   .row-fluid {
     .primary-content-area { width: 45%; }
@@ -109,8 +109,9 @@
 }
 
 // increase left / right page margins to 5% at 1200px
-@media screen and (min-width: 75em) {
+@media (min-width: 75em) {
   .container, .blade-inner, .banner-inner, .navigation-inner {
       margin:0 5%;
+      max-width: 105em;
   }
 }

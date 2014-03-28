@@ -32,7 +32,7 @@
     ]
   },
   "banner": {
-    "siteLogo": "http://ualberta.ca/~publicas/uofa/img/logo-reverse.svg",
+    "siteLogo": "http://ualberta.ca/~publicas/uofa/img/ieLogo.png",
     "siteTitle": "University of Alberta",
     "siteUrl": "http://www.ualberta.ca/",
     "audienceLinks": [
@@ -58,7 +58,26 @@
     "globalLinks": [
       {
         "url": "#",
-        "label": "Why UAlberta?"
+        "label": "Why UAlberta?",
+        "subMenu": {
+          "content": "<strong>Test Content</strong>",
+          "links": [ {
+            "url" : "#",
+            "label" : "Test Link"
+          },
+          {
+            "url" : "#",
+            "label" : "Filler Link"
+          },
+          {
+            "url" : "#",
+            "label" : "Another Filler"
+          },
+          {
+            "url" : "#",
+            "label" : "Test Link"
+          } ]
+        }
       },
       {
         "url": "#",

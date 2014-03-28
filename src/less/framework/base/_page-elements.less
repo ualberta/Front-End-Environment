@@ -446,26 +446,15 @@
 
 	// Banner Logo
 	.banner-logo {
-	  position: absolute;
+	  position: relative;
 	  z-index: 999;
 	  #em > .position(top,20,@baseFontSizepx);
-	  .site-logo a { display:  inline-block; }
+	  .site-logo a { 
+      display: block; 
+    }
 	  img {
 	    #em > .size(width,210,@baseFontSizepx);
 	    #em > .size(height,55,@baseFontSizepx);
-	  }
-	}
-
-	.inlinesvg .banner-logo {
-	  .site-logo a { 
-	    #em > .size(width,210,@baseFontSizepx);
-	    #em > .size(height,55,@baseFontSizepx);
-	    display:block;
-	    background: transparent url('../assets/img/logo-reverse.svg') no-repeat center center;
-	    background-size: 100% 100%;
-	  }
-	  .site-logo img {
-	    display:none; // using svg background, don't display the image
 	  }
 	}
 
@@ -707,7 +696,7 @@ nav.audience-navigation {
   display:none;
 }
 
-@media screen and (max-width: 43.0625em) {
+@media (max-width: 43.0625em) {
   .nav-mobile .nav-wrapper {
     position: absolute;
     top: 0;
@@ -1184,51 +1173,56 @@ footer {
 	  content: "";
 	}
 
+
+  .no-svg .social-media [class*='icon-'] {
+    background-repeat:none;
+  }
+
 	// svg and fallback definitions
 	.no-svg .social-media .icon-blogger {
-	  background: url("../assets/img/social-icons/webicon-blogger-m.png"); }
+	  background: url("../assets/img/social-icons/webicon-blogger.png"); }
 
 	.svg .social-media .icon-blogger {
 	  background: url("../assets/img/social-icons/webicon-blogger.svg"); }
 
 	.no-svg .social-media .icon-facebook {
-	  background: url("../assets/img/social-icons/webicon-facebook-m.png"); }
+	  background: url("../assets/img/social-icons/webicon-facebook.png"); }
 
 	.svg .social-media .icon-facebook {
 	  background: url("../assets/img/social-icons/webicon-facebook.svg"); }
 
 	.no-svg .social-media .icon-flickr {
-	  background: url("../assets/img/social-icons/webicon-flickr-m.png"); }
+	  background: url("../assets/img/social-icons/webicon-flickr.png"); }
 
 	.svg .social-media .icon-flickr {
 	  background: url("../assets/img/social-icons/webicon-flickr.svg"); }
 
 	.no-svg .social-media .icon-googleplus {
-	  background: url("../assets/img/social-icons/webicon-googleplus-m.png"); }
+	  background: url("../assets/img/social-icons/webicon-googleplus.png"); }
 
 	.svg .social-media .icon-googleplus {
 	  background: url("../assets/img/social-icons/webicon-googleplus.svg"); }
 
 	.no-svg .social-media .icon-linkedin {
-	  background: url("../assets/img/webicons/webicon-linkedin-m.png"); }
+	  background: url("../assets/img/webicons/webicon-linkedin.png"); }
 
 	.svg .social-media .icon-linkedin {
 	  background: url("../assets/img/social-icons/webicon-linkedin.svg"); }
 
 	.no-svg .social-media .icon-twitter {
-	  background: url("../assets/img/social-icons/webicon-twitter-m.png"); }
+	  background: url("../assets/img/social-icons/webicon-twitter.png"); }
 
 	.svg .social-media .icon-twitter {
 	  background: url("../assets/img/social-icons/webicon-twitter.svg"); }
 
 	.no-svg .social-media .icon-youtube {
-	  background: url("../assets/img/social-icons/webicon-youtube-m.png"); }
+	  background: url("../assets/img/social-icons/webicon-youtube.png"); }
 
 	.svg .social-media .icon-youtube {
 	  background: url("../assets/img/social-icons/webicon-youtube.svg"); }
 
   .no-svg .social-media .icon-tumblr {
-    background: url("../assets/img/social-icons/webicon-tumblr-m.png"); }
+    background: url("../assets/img/social-icons/webicon-tumblr.png"); }
 
   .svg .social-media .icon-tumblr {
     background: url("../assets/img/social-icons/webicon-tumblr.svg"); }

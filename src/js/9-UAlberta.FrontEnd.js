@@ -38,6 +38,9 @@ var UAlberta = UAlberta || {};
           case 'carousel':
             moduleConstructor = Carousel;
             break;
+          case 'tabs':
+            moduleConstructor = Tabs;
+            break;
           case 'modal':
             // place modal at root
             parent = null;
@@ -314,27 +317,27 @@ var UAlberta = UAlberta || {};
 
         /** @function builds the page and adds it to the DOM */
         this.add = function() {
-          if(self.data.blade)
-            addBlade();
+          if(self.layoutTemplate) {
+            if(self.data.blade)
+              addBlade();
 
-          if(self.data.banner)
-            addBanner();
+            if(self.data.banner)
+              addBanner();
 
-          if(self.data.navigation) {
-            addGlobalNavigation();
-            addMobileNavigation();
+            if(self.data.navigation) {
+              addGlobalNavigation();
+              addMobileNavigation();
+            }
+            
+            if(self.data.secondaryFooter)
+              addSecondaryFooter();
+            
+            if(self.data.ualbertaFooter)
+              addInstitutionalFooter();
+
+            self.setLayout(self.layoutTemplate);
           }
-          
-          if(self.data.secondaryFooter)
-            addSecondaryFooter();
-          
-          if(self.data.ualbertaFooter)
-            addInstitutionalFooter();
-
-          self.setLayout(self.layoutTemplate);
-
           this.activate();
-
         };
 
         /** 
@@ -479,6 +482,20 @@ var UAlberta = UAlberta || {};
       };
 
       /** @private */
+      function SubMenu(id, type, template, data, parentModule, placeholder, options) {
+        // extend the module base
+        this.base = Module;
+        this.base(id, type, template, data, parentModule, placeholder, options);
+
+        var self = this;
+
+        this.activate = function() { };
+
+        // extend the module base
+        this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
+      };
+
+      /** @private */
       function Modal(id, type, template, data, parentModule, placeholder, options) {
         // extend the module base
         this.base = Module;
@@ -518,6 +535,33 @@ var UAlberta = UAlberta || {};
               return false;
             }
           }, 'a');
+        };
+
+        // extend the module base
+        this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
+      };
+
+      /** @private */
+      function Tabs(id, type, template, data, parentModule, placeholder, options) {
+        // extend the module base
+        this.base = Module;
+        this.base(id, type, template, data, parentModule, placeholder, options);
+
+        var self = this;
+
+        this.activate = function() {
+          this.el.find('.nav a').first().parent().addClass('active');
+          this.el.find('.tab-pane').first().addClass('active');
+          this.el.on({
+            click: function(e) {
+              console.log(e);
+              var tabId = $(this).attr('href');
+              self.el.find('.active').removeClass('active');
+              self.el.find(tabId).addClass('active');
+              $(this).parent().addClass('active');
+              return false;
+            }
+          }, '.nav a');
         };
 
         // extend the module base

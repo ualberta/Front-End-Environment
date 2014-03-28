@@ -1,12 +1,16 @@
 <div>
     <ul class="nav nav-tabs">
         {{#each tabs}}
-            <li><a href="#{{this.id}}">{{this.label}}</a></li>
+            <li>
+                <a href="#{{this.id}}">{{this.label}}</a>
+            </li>
         {{/each}}
     </ul>
     <div class="tab-content">
         {{#each tabs}}
-            <div id="{{this.id}}" class="tab-pane">{{this.content}}</div>
+            <div id="{{this.id}}" class="tab-pane">
+                {{{this.content}}}
+            </div>
         {{/each}}
     </div>
 </div>
