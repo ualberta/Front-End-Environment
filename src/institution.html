@@ -306,6 +306,8 @@
         type: "full-page-feature",
         features: [
           {
+            "shadowOverlay" : true,
+            "backgroundColor" : "#999999",
             "imageSrc" : "http://www.placehold.it/1680x504",
             "heading" : "Base Feature",
             "description" : "This feature contains the minimal amount of data to create a feature.",
@@ -325,6 +327,29 @@
             ]            
           },
           {
+            "backgroundColor" : "#ccd",
+            "backgroundSrc" : "http://www.placehold.it/1680x504",
+            "heading" : "Base Feature",
+            "description" : "This feature contains the minimal amount of data to create a feature.",
+            "buttons": [
+              {
+                "url": "#",
+                "label": "Wow",
+                "type": "green",
+                "size": "micro"
+              },
+              {
+                "url": "#",
+                "label": "Such nice",
+                "type": "grey",
+                "size": "micro"
+              }
+            ],
+            "boxPosition" : { "vertical": "bottom", "horizontal": "center" } 
+          },
+          {
+            "gradientOverlay": "dark left",
+            "backgroundColor" : "#000000",
             "alignment" : "right",
             "imageSrc" : "http://www.placehold.it/1680x504",
             "imageFocalPoint": "center",
@@ -339,11 +364,13 @@
               }
             ],
             "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
-            "boxClass": "dark",
+            "boxClass": "dark no-box",
             "featureClass": "ga_ualberta_fma sample-feature"
           },
           {
             "alignment" : "left",
+            "gradientOverlay": "light right",
+            "backgroundColor" : "#ffffff",
             "imageSrc" : "http://www.placehold.it/1680x504",
             "imageFocalPoint": "left",
             "heading" : "Sample Heading",
@@ -362,47 +389,15 @@
                 "size": "micro"
               }
             ],
-            "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
+            "boxPosition" : { "vertical": "bottom", "horizontal": "right" },
             "featureClass": "ga_ualberta_fma sample-feature"
           }
         ]
       };
-
-      var tabs = {
-        "tabs": [
-          {
-            "id": "tab1",
-            "label": "First",
-            "content": "<p>First content</p>"
-          },
-          {
-            "id": "tab2",
-            "label": "Second",
-            "content": "<p>Second content</p>"
-          },
-          {
-            "id": "tab3",
-            "label": "Third",
-            "content": "<p>Third content</p>"
-          }          
-        ]
-      };
-
-      var button = {
-        "url" : "#",
-        "type" : "grey",
-        "size" : "small",
-        "label" : "Test Button"
-      };
-
-      var inlineForm = {
-        "id" : "mail",
-        "icon" : "mail",
-        "placeholder" : "sample@site.com",
-        "buttonLabel" : "Subscribe"
-      };
  
       page.addFeature(feature);
+ 
+/*
 
       var html = { html: '<h3>Heading!</h3>' };
 
@@ -416,6 +411,8 @@
       page.addToSidebar('button', button);      
 
       page.addToSecondColumn('inline-field', inlineForm);
+
+      */
 
     });
 

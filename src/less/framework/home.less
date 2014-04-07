@@ -1,0 +1,64 @@
+// CSS Reset
+@import "./base/_reset.less";
+
+// Core variables, mixins, fonts
+@import "./base/_mixins.less";
+
+// Default styles and patterns
+@import "./base/_scaffolding.less";
+
+// Grid system
+@import "./base/_grid.less"; 
+
+// Blade, Banner, Navigation, Content, Sidebar and Footer Page Elements 
+@import "./base/_page-elements.less"; 
+
+// Nav
+@import "./base/_navigation.less"; 
+
+@import "./components/_icons.less";
+@import "./components/_buttons.less";
+@import "./components/_data-list.less";
+@import "./components/_explore-bar.less";
+@import "./components/_module-base.less";
+@import "./components/_feature-area.less";
+@import "./components/_tooltips.less";
+@import "./components/_inline-form.less";
+
+
+  .main-navigation li[class*="nav"] { 
+      width:16.66%;
+    }
+    .main-navigation li.nav2 {
+      width:24.33%;
+    }
+    .main-navigation li.nav3, .main-navigation li.nav4 {
+      width:13.33%;
+    }
+    .main-navigation li.nav5 {
+      width:15.66%;
+    }  
+    .sidebar .extrude { position:relative; } 
+  
+
+@import "./layouts/_base-layout.less";
+@import "./layouts/_institutional-home.less"; 
+
+// homepage
+@import "../../old_less/ualberta/pages/homepage.less";  
+ 
+  
+// Sidebar Components
+// ==================
+
+ 
+  // Social Media Sidebar Links
+  // ---------------------------
+  // used in conjunction with data-list, 
+  // this displays icons beside labels 
+  @import "./components/_social-media.less";
+
+  // Sidebar Base
+  // --------------------------- 
+  // simple content sidebar item
+  @import "./components/_sidebar_base.less";

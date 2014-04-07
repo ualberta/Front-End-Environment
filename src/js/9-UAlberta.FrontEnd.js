@@ -147,6 +147,10 @@ var UAlberta = UAlberta || {};
             self.parentEl = self.parentEl.find(this.options.placeholder);
           }
 
+          // add a wrapper class if needed
+          if(this.options.wrapperClass)
+            self.el.addClass(this.options.wrapperClass);
+
           // add the element to the top or bottom of container
           if(self.options.prepend)
             self.parentEl.prepend(self.el);
@@ -250,11 +254,11 @@ var UAlberta = UAlberta || {};
 
         var self = this;
 
-        this.addFeature = function(featureData) {
+        this.addFeature = function(featureData, options) {
           if(featureData.features.length == 1)
-            return self.addModule('single-feature',featureData, this.options.featureArea );
+            return self.addModule('single-feature',featureData, this.options.featureArea, options );
           else
-            return self.addModule('carousel',featureData, this.options.featureArea);
+            return self.addModule('carousel',featureData, this.options.featureArea,options);
         };
 
         this.addToFirstColumn = function(moduleName, data, options) {
@@ -654,6 +658,7 @@ var UAlberta = UAlberta || {};
         };
     
         this.activate = function() {
+
           var autoRotate = setInterval(function () {
             // if the next slide doesn't exist, restart
             if((self.currentSlide+1) >= data.features.length)

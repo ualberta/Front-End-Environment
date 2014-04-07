@@ -1,12 +1,23 @@
-
+{{! if there are buttons, use content island format }}
 {{#if buttons}}
-  <div class="slide push-{{alignment}} {{featureClass}}">
+  <div class="slide {{featureClass}} 
+    {{#if alignment }} push-{{alignment}} {{~/if~}}
+    {{~#if backgroundSrc }} bg-image{{~/if~}}
+    " style="
+      {{#if backgroundColor }} background-color: {{backgroundColor}};{{~/if~}}
+      {{#if backgroundSrc }} background-image: url({{backgroundSrc}});{{~/if~}}
+    "
+    >
     <div class="feature-wrapper">
-      <div class="feature-image focus-{{imageFocalPoint}}">
-          <img src="{{imageSrc}}" alt="{{imageAlt}}" />
-      </div>
-
-        <div class="content-island {{boxPosition.horizontal}}-island {{boxPosition.vertical}}-island {{boxClass}}">
+      {{#if imageSrc}}
+        <div class="feature-image focus-{{imageFocalPoint}}">
+            <img src="{{imageSrc}}" alt="{{imageAlt}}" />
+        </div>
+      {{/if}}
+        <div class="content-island {{boxClass}} 
+          {{#if hBoxPosition }} {{hBoxPosition}}-island {{~/if~}}
+          {{#if vBoxPosition }} {{vBoxPosition}}-island {{~/if~}}
+          ">
           <h3>{{heading}}</h3>
           <p>{{description}}</p>
           <div class="feature-buttons">
@@ -15,22 +26,25 @@
             {{/each}}
           </div>
         </div>
-
+        {{#if shadowOverlay}}
+          <div class="overlay-shadow"></div>
+        {{/if}}
+        {{#if gradientOverlay}}
+          <div class="overlay-gradient {{gradientOverlay}}"></div>
+        {{/if}}
     </div>
   </div>
 {{/if}}
 
-
+{{! if a url is provided instead, use feature caption format }}
 {{#if url}}
   <div class="slide image-caption-container {{featureClass}}">
     <a href="{{url}}" class="image-shadow">
       <img src="{{imageSrc}}" alt="{{imageAlt}}" />
     </a>
-    <div class="feature-caption caption">
-      <h3>
-        <a href="http://www.med.ualberta.ca/news/2014/february/3m-teaching-award">{{heading}}</a>
-      </h3>
+    <a href="{{url}}" class="feature-caption caption">
+      <h3>{{heading}}</h3>
       <p>{{description}}</p>
-    </div>
+    </a>
   </div>
 {{/if}}

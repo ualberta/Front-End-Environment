@@ -11,15 +11,15 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    a {
-      color: @linkColor;
-    }
     p,h3 {
       margin: 0;
       padding: 0;
       position: relative;
     }
-    h3 { text-shadow: 0px 1px 6px #5FC494; }
+    h3 { 
+      color: @linkColor;
+      text-shadow: 0px 1px 6px #5FC494; 
+    }
     p {
       font-weight: 500;
       color: @lightText;
@@ -94,7 +94,7 @@
     #gradient > .vertical(rgba(0,0,0,0.45), rgba(0,0,0,0.85));
     color: #fff;
     text-shadow: 0px 1px 2px #000;
-    a {
+    h3 {
       color: #ffdb05;
       text-shadow: 0px 1px 4px #000;
     }

@@ -10,7 +10,7 @@
   position:relative;
 }
 
-
+// style definitions to full page feature
 .full-page-feature {
 
   width:100%;
@@ -23,7 +23,6 @@
     right: 0;
     top: 0;
     bottom: 0;
-    -webkit-box-shadow: inset 0 -2px 10px rgba(0, 0, 0, 0.35);
     display: block;
     z-index: 3;
   }
@@ -31,8 +30,29 @@
   // add 1px border beneath feature to give inset appearance
   .slides { .box-shadow(0 1px 0px #fff); }
 
+  // semi transparent border at the bottom of the feature area
+  .slides:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.2);
+    display: block;
+    content: "";
+    z-index: 4;
+  }
+
   // Default slide background color
   .slide { background: #3D4A43; }
+
+  // put in spacing for image if using background
+  .slide.bg-image { 
+    background-size: auto 207px;
+    padding-top:207px;
+    background-repeat:no-repeat;
+    background-position: top center;
+  }
 
   // image centered by default on high res
   .slides > .slide { text-align:center; }
@@ -43,7 +63,14 @@
   // push the image to the left of the screen on high res
   .slides > .slide.push-left { text-align:left; }
 
+  // alignment for background images
+  .slide.bg-image.push-left { background-position: left top; }
+  .slide.bg-image.push-right { background-position: right top; }
+
   .feature-wrapper { overflow:hidden; }
+
+  // hide gradients until image hits its max width
+  .overlay-gradient { display:none; }
 
   // image focus definitions
   // keeps the specified portion of the image in view
@@ -77,6 +104,7 @@
     margin:0.275em 0.75em 0.275em 0;
   }
 
+  // last button has no margin
   .feature-buttons a:last-child {
     margin-right:0;
   }
@@ -87,6 +115,14 @@
 
   .full-page-feature {
 
+    // image centered by default on high res
+    .slides > .slide {
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+    }
+
     // adjust margin for center focused image
     .feature-image {
       width:980px;
@@ -95,8 +131,16 @@
       }
     }
 
-    .slides {
-      min-height:294px;
+    // fix height of feature image and hide any overflow
+    .slides, .slide {
+      min-height:290px;
+      overflow:hidden;
+    }
+
+    // using content islands now, no need for padding to show background
+    .slide.bg-image {
+      padding-top:0;
+      background-size: auto 294px;
     }
 
     // detach feature content
@@ -130,6 +174,11 @@
         text-shadow: 0 1px 6px #000;
         h3 { color: #ffdb05; }
       }
+      &.no-box {
+        border:none;
+        background:none;
+        .box-shadow(none); 
+      }
     }
 
   }
@@ -152,8 +201,13 @@
       display: inline-block;
       position: relative;
       width: 100%;
+      height:100%;
       max-width: 1560px;
       overflow:visible;
+    }
+    // set to 100.5% to prevent 1px from showing up below image
+    .slide.bg-image {
+      background-size: auto 100.5%;
     }
     .feature-image {
       width:auto;
@@ -188,11 +242,12 @@
   }
 }
 
-@media (min-width: 96em) {
+@media (min-width: 98.25em) {
   .full-page-feature .slides {
-    height: 28.55em; // fixed height at 1536
+    height: 29.25em; // fixed height at 1536
     padding-top: 0;
   }
+  .full-page-feature .overlay-gradient { display:block; }
 }
 
 

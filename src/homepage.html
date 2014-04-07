@@ -147,27 +147,6 @@
               <ul id="nav-list" class="main-navigation collapse">                
                 <li role="menuitem" class="nav1">
                   <a href="#">Why UAlberta?</a>
-                  <div class="sub-menu">
-                    <div class="sub-menu-content">                      
-                      <ul class="section-navigation">                        
-                        <li>
-                          <a href="#">Test Link</a>
-                        </li>                       
-                        <li>
-                          <a href="#">Filler Link</a>
-                        </li>                        
-                        <li>
-                          <a href="#">Another Filler</a>
-                        </li>                        
-                        <li>
-                          <a href="#">Test Link</a>
-                        </li>                        
-                      </ul>
-                      <div class="section-description">
-                        <strong>Test Content</strong>
-                      </div>                    
-                    </div>
-                  </div>
                 </li>                
                 <li role="menuitem" class="nav2">
                   <a href="#">Faculties &amp; Programs</a>
@@ -303,76 +282,13 @@
       });
 
       var feature = {
-        type: "full-page-feature",
         features: [
           {
-            "shadowOverlay" : true,
-            "backgroundColor" : "#999999",
-            "imageSrc" : "http://www.placehold.it/1680x504",
-            "heading" : "Base Feature",
-            "description" : "This feature contains the minimal amount of data to create a feature.",
-            "buttons": [
-              {
-                "url": "#",
-                "label": "Wow",
-                "type": "green",
-                "size": "micro"
-              },
-              {
-                "url": "#",
-                "label": "Such nice",
-                "type": "grey",
-                "size": "micro"
-              }
-            ]            
-          },
-          {
-            "backgroundColor" : "#ccd",
-            "backgroundSrc" : "http://www.placehold.it/1680x504",
-            "heading" : "Base Feature",
-            "description" : "This feature contains the minimal amount of data to create a feature.",
-            "buttons": [
-              {
-                "url": "#",
-                "label": "Wow",
-                "type": "green",
-                "size": "micro"
-              },
-              {
-                "url": "#",
-                "label": "Such nice",
-                "type": "grey",
-                "size": "micro"
-              }
-            ],
-            "boxPosition" : { "vertical": "bottom", "horizontal": "center" } 
-          },
-          {
-            "gradientOverlay": "dark left",
-            "backgroundColor" : "#000000",
-            "alignment" : "right",
-            "imageSrc" : "http://www.placehold.it/1680x504",
-            "imageFocalPoint": "center",
-            "heading" : "Sample Heading",
-            "description" : "A sample description will follow the heading.",
-            "buttons": [
-              {
-                "url": "#",
-                "label": "Do Something!",
-                "type": "green",
-                "size": "micro"
-              }
-            ],
-            "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
-            "boxClass": "dark no-box",
-            "featureClass": "ga_ualberta_fma sample-feature"
-          },
-          {
-            "alignment" : "left",
             "gradientOverlay": "light right",
-            "backgroundColor" : "#ffffff",
+            "backgroundColor" : "#ccc",
             "imageSrc" : "http://www.placehold.it/1680x504",
             "imageFocalPoint": "left",
+            "alignment": "right",
             "heading" : "Sample Heading",
             "description" : "A sample description will follow the heading.",
             "buttons": [
@@ -389,13 +305,14 @@
                 "size": "micro"
               }
             ],
-            "boxPosition" : { "vertical": "bottom", "horizontal": "right" },
+            "hBoxPosition" : "right",
+            "vBoxPosition" : "bottom",
             "featureClass": "ga_ualberta_fma sample-feature"
           }
         ]
       };
- 
-      page.addFeature(feature);
+  
+      page.addFeature(feature, { wrapperClass: 'full-page-feature' });
  
 /*
 

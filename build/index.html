@@ -45,7 +45,7 @@
 
 </script>
   
-
+ 
 
   <!-- The Sheets -->
   <link href="css/framework.css" rel="stylesheet">
@@ -89,7 +89,6 @@
         page.setPageTitle(); 
 
         var feature = {
-          type: "full-page-feature",
           features: [
             {
               "imageSrc" : "http://www.placehold.it/1680x504",
@@ -124,7 +123,8 @@
                   "size": "micro"
                 }
               ],
-              "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
+              "vBoxPosition" : "bottom", 
+              "hBoxPosition": "left" ,
               "boxClass": "dark",
               "featureClass": "ga_ualberta_fma sample-feature"
             },
@@ -148,7 +148,8 @@
                   "size": "micro"
                 }
               ],
-              "boxPosition" : { "vertical": "bottom", "horizontal": "left" },
+              "vBoxPosition" : "bottom", 
+              "hBoxPosition": "left",
               "featureClass": "ga_ualberta_fma sample-feature"
             }
           ]
@@ -513,7 +514,14 @@
           "label" : "Test Button"
         };
 
-        page.addFeature(feature);
+        var inlineForm = {
+          "id" : "mail",
+          "icon" : "envelope",
+          "placeholder" : "sample@site.com",
+          "buttonLabel" : "Subscribe"
+        };
+
+        page.addFeature(feature, { wrapperClass: 'full-page-feature' });
         page.addToFirstColumn('data-list', news);
         page.addToSecondColumn('data-list', linkList);
         page.addToSecondColumn('data-list', linkList2);
@@ -610,7 +618,8 @@
         page.addToFirstColumn('button', button);
 
         button.type = 'green';
-        page.addToSecondColumn('button', button);
+        page.addToFirstColumn('button', button);
+        page.addToSecondColumn('inline-field', inlineForm);
 
       }).fail( function(d, textStatus, error) {
 
