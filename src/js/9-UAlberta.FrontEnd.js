@@ -255,10 +255,7 @@ var UAlberta = UAlberta || {};
         var self = this;
 
         this.addFeature = function(featureData, options) {
-          if(featureData.features.length == 1)
-            return self.addModule('single-feature',featureData, this.options.featureArea, options );
-          else
-            return self.addModule('carousel',featureData, this.options.featureArea,options);
+          return self.addModule('carousel',featureData, this.options.featureArea,options);
         };
 
         this.addToFirstColumn = function(moduleName, data, options) {
@@ -303,20 +300,6 @@ var UAlberta = UAlberta || {};
             e.stopPropagation();
           });
 
-          // activate the explore bar
-          $('#explore-bar').flexslider({
-            animation: "slide",
-            itemWidth: 93,
-            minItems: 3,
-            maxItems: 7,
-            itemMargin: 0,
-            controlNav: false,
-            slideshow: false,
-            animationLoop: true,
-            prevText: "",
-            nextText: "",
-            touch: true
-          });
         };
 
         /** @function builds the page and adds it to the DOM */
@@ -411,7 +394,7 @@ var UAlberta = UAlberta || {};
               'header', 
               {}
             );
-        };
+        }; 
 
         /** @private adds a secondary footer to the page */
         function addSecondaryFooter() {
@@ -658,6 +641,10 @@ var UAlberta = UAlberta || {};
         };
     
         this.activate = function() {
+
+          if(self.el.find('.slide').length < 2) {
+            self.el.find('.toggles').remove();
+          }
 
           var autoRotate = setInterval(function () {
             // if the next slide doesn't exist, restart

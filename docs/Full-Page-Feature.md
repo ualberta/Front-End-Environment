@@ -24,7 +24,14 @@ To create a full page feature you should provide a heading, description, buttons
         }
       ]
     };
-    var feature = new UAlberta.FrontEnd.Modules('carousel', data, null, '#feature-area');
+
+    var featureModule = UAlberta.FrontEnd.Modules.addModule(
+      'carousel',
+      data,
+      null,
+      '#feature-area',
+      { wrapperClass: 'full-page-feature' }
+    );
 
 
 ## Data

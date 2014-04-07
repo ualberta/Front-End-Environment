@@ -4,6 +4,8 @@ module.exports = function(grunt) {
     'watch'
   ]);
 
+  grunt.registerTask('buildHome', ['concat:js', 'concat:libs', 'uglify:js'])
+
   grunt.registerTask('buildjs',['concat:js', 'concat:libs', 'uglify:js']);
  
   grunt.initConfig({
@@ -29,7 +31,7 @@ module.exports = function(grunt) {
     },
     uglify: {
       options: {
-        mangle: false
+        mangle: true
       },
       js: {
         files: {

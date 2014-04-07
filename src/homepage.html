@@ -312,7 +312,15 @@
         ]
       };
   
-      page.addFeature(feature, { wrapperClass: 'full-page-feature' });
+      var featureModule = UAlberta.FrontEnd.Modules.addModule(
+        'carousel',
+        feature,
+        null,
+        '#feature-area',
+        { wrapperClass: 'full-page-feature' }
+      );
+
+      //page.addFeature(feature, { wrapperClass: 'full-page-feature' });
  
 /*
 
