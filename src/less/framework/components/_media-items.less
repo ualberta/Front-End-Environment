@@ -1,0 +1,48 @@
+.rmi-thumbnail {
+  margin: -0.7143em;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+
+.rmi-box {
+  position:relative;
+}
+
+.rmi-content {
+  padding-bottom:2.25em;
+}
+
+a.rmi-bottom-link {
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.8333em 0.8333em 0.8333em 2em;
+  height: 3em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #f4faf6;
+  font-weight: bold;
+  border-radius: 0 0 4px 4px;
+  border-top: 1px dotted #E0E4E0;
+  border-bottom: 2px solid rgba(119, 185, 83, 0.13);
+  line-height:1.4;
+  &:after {
+    content: "";
+    position: absolute;
+    border: 0.35em solid rgba(0, 0, 0, 0);
+    border-left: 0.35em solid #007C41;
+    left: 0.8333em;
+    top: 0;
+    bottom: 0;
+    height: 0;
+    margin: auto;
+  }
+  &:hover {
+    background: #FFF5B8;
+    border-top: 1px solid #E1D8A4;
+    padding: 0.8333em 0.8333em 0.8333em 2em;
+  }
+}

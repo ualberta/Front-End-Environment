@@ -1,0 +1,1509 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <!-- Meta: These two must be before <title> -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <!-- Title -->
+  <title>University of Alberta</title>
+  
+  <!-- Other Meta -->
+  <meta name="description" content="University of Alberta">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  /**
+  * Protect window.console method calls, e.g. console is not defined on IE
+  * unless dev tools are open, and IE doesn't define console.debug
+  */
+  (function() {
+  if (!window.console) {
+  window.console = {};
+  }
+  // union of Chrome, FF, IE, and Safari console methods
+  var m = [
+  "log", "info", "warn", "error", "debug", "trace", "dir", "group",
+  "groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd",
+  "dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"
+  ];
+  // define undefined methods as noops to prevent errors
+  for (var i = 0; i < m.length; i++) {
+  if (!window.console[m[i]]) {
+  window.console[m[i]] = function() {};
+  }
+  }
+  })();
+  </script>
+  
+  <!-- The Sheets -->
+  <link href="css/framework.css" rel="stylesheet">
+  <!-- The Favicon -->
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  
+  <!-- Touch Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js
+  " type="text/javascript"></script><![endif]-->
+  <!-- Head Scripts: ANALYTICS/MODERNIZR ONLY!  All others before </body> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="js/libs.min.js"></script>
+  <style>
+
+h1, h2, h3, h4, h5, h6, .site-title {
+  margin: 1.57em 0 0.57em;
+  font-family: "DIN Bold", sans-serif;
+  font-weight: normal;
+  line-height: 1;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+/** modular scale based on a perfect fifth, 16, and 1680 **/
+
+h1.page-title {
+  font-size:29px;
+}
+
+h2 { 
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 19px;
+  line-height: 1.2em;
+  font-family: "DIN Bold";
+  text-transform: uppercase;
+  color: rgba(61, 74, 67, 0.75);
+}
+
+.second-column h2:nth-child(1) {
+  margin-top:0;
+}
+
+.bad, .good {
+  position: relative;
+  padding: 0.7143em;
+  margin: 0.753em 0;
+  pointer-events: none;
+}
+
+.good:after {
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px solid rgba(0, 255, 0, 0.15);
+}
+
+.bad:after {
+  background: rgba(255, 0, 0, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.15);
+}
+
+.bad:after, .good:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+pre.prettyprint {
+  overflow: auto;
+  border: 1px solid #DDD!important;
+  padding: 10px!important;
+  background: #FFF;
+  font-size: 1.25em;
+  line-height: 1.57em;
+  margin-top: 0;
+}
+
+pre.prettyprint + p.filename {
+  margin-bottom: 1.57em;
+}
+
+p.filename {
+  background: #DDD;
+  color: #666;
+  padding: 0 5px;
+  font-weight: bold;
+  font-size: 11px;
+  margin-top: -1.33em;
+}
+
+.nav-wrapper ul.level-0 li.active ul {
+  display:block;
+}
+
+.content-wrapper .nav-wrapper ul.level-0 li.active ul li.active a {
+  display: block;
+  background-color: #F6F8ED;
+  background-color: rgba(255, 245, 184, 0.15);
+  border: 1px solid #E1D8A4;
+  margin: 0 -0.8333em;
+  padding: 0.4em 0.8333em 0.4em 1.75em;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-image:none;
+  color:#007c41;
+}
+
+.content-wrapper .nav-wrapper ul.level-0 li.active ul li.active a:after {
+  display:none;
+}
+
+.colors {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.colors li {
+  display:inline-block;
+  width:5em;
+  height:5em;
+  text-align:center;
+  margin: 0 0.57em 0.57em 0;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2), 0 1px 8px rgba(0, 0, 0, 0.35);
+  border-radius: 10em;
+  border: 5px solid #FFF;
+  position:relative;
+  text-align:center;
+}
+
+.colors li span {
+  position:absolute;
+  font-weight:bold;
+  font-size:0.92em;
+  height:1em;
+  top:0;bottom:0; left:0; right:0;
+  margin:auto;
+  display:block;
+  text-align:center;
+  line-height:1;
+}
+
+#grid-example .row-fluid {
+  background-color: rgba(255,125,255,0.2);
+  padding: 10px 0;
+}
+
+#grid-example [class*="span"] {
+  background-color: rgba(0,255,255,0.2);
+}
+
+.icons .label {
+  font-size:0.8333em;
+  margin-left:0.57em;
+}
+
+.example {
+  border: 2px dashed #ccc;
+  padding:0.7143em;
+  position:relative;
+}
+
+.example .toggle-markup {
+  position:absolute;
+  height:3em;
+  width:12em;
+  right: 0.7143em;
+  top:0.7143em;
+  margin:auto;
+  font-weight:normal;
+}
+
+@media (min-width:980px) {
+  .example .toggle-markup {
+    top:0;
+    right: -13em;
+  }
+}
+
+pre.markup {
+  border: 1px solid #DDD;
+  background: #FFF;
+  overflow: auto;
+  max-height: 400px;
+  padding:0.7143em;
+}
+
+.example pre.markup {
+  display:none;
+}
+
+.example.show-markup pre.markup {
+  display:block;
+}
+
+.example.show-markup .preview {
+  display:none;
+}
+
+.example > button:after {
+  content: "Show Markup";
+}
+
+.example.show-markup > button:after {
+  content:"Show Preview";
+}
+
+</style>
+</head>
+<body>
+  <!--[if lt IE 8]><p class=alert>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header>
+    <div class="f-e-container blade-module">
+      <div class="blade-container">
+        <div class="blade-inner">
+          <nav class="blade-navigation">
+            <ul class="quick-links-container">
+              <li id="ql" class="dropdown">
+                <a href="#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop">
+                <span class="quick-links-text">Quick Links</span>
+                </a>
+                <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                  <li role="menuitem">
+                    <a href="#">Find a Person</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">ONEcard</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Bear Tracks</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Maps</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Email &amp; Apps</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">eClass</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Libraries</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="f-e-container banner-module">
+      <div class="banner-container">
+        <div class="banner-inner">
+          <div class="banner-logo">
+            <span class="site-logo">
+            <a href="http://www.ualberta.ca/"><img src="http://ualberta.ca/~publicas/uofa/img/ieLogo.png" alt="University of Alberta"></a>
+            </span>
+          </div>
+          <nav class="audience-navigation">
+            <ul>
+              <li role="menuitem" class="audience-link">
+                <a href="#">Faculty and Staff</a>
+              </li>
+              
+              <li role="menuitem" class="audience-link">
+                <a href="#">Prospective Students</a>
+              </li>
+              
+              <li role="menuitem" class="audience-link">
+                <a href="#">Current Students</a>
+              </li>
+              
+              <li role="menuitem" class="audience-link">
+                <a href="#">Alumni and Friends</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="f-e-container global-navigation-module">
+      <div class="navigation-container">
+        <nav id="main-nav" class="navigation-inner">
+          <ul>
+            <li>
+              <a class="navigation-toggle">
+              <span>Show Navigation</span>
+              <i class="icon-toggle-nav"></i>
+              </a>
+              <ul id="nav-list" class="main-navigation collapse">
+                <li role="menuitem" class="nav1">
+                  <a href="#">Why UAlberta?</a>
+                </li>
+                <li role="menuitem" class="nav2">
+                  <a href="#">Faculties &amp; Programs</a>
+                </li>
+                <li role="menuitem" class="nav3">
+                  <a href="#">Research</a>
+                </li>
+                <li role="menuitem" class="nav4">
+                  <a href="#">Admissions</a>
+                </li>
+                <li role="menuitem" class="nav5">
+                  <a href="#">Campus Life</a>
+                </li>
+                <li role="menuitem" class="nav6">
+                  <a href="#">News &amp; Events</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="f-e-container mobile-navigation-module">
+      <div class="nav-mobile">
+
+      </div>
+    </div>
+  </header>
+  <div id="content-wrapper" class="content-wrapper tertiary">
+    <div id="feature-area" class="content-top-row"></div>
+    <div id="page-title" class="page-title-row"></div>
+    <div class="content-container container">
+      
+      <div class="content-inner row-fluid">
+        <div id="first-column" class="span first-column">
+        <div class="nav-wrapper">
+          <ul class="level-0 nav">
+            <li class="active">
+              <a href="#base-styles">Base Styles</a>
+              <ul class="level-1">
+                <li><a href="#grid-system">Grid System</a></li>
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#icons">Icons</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#patterns">Patterns</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#components">Components</a>
+              <ul class="level-1">
+                <li><a href="#mobile-navigation">Mobile Navigation</a></li>
+                <li><a href="#left-navigation">Left Navigation</a></li>
+                <li><a href="#dropdown-navigation">Dropdown Navigation</a></li>
+                <li><a href="#sticky-navigation">Sticky Navigation</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#carousel">Carousel</a></li>
+                <li><a href="#tabs">Tabs</a></li>
+                <li><a href="#accordion">Accordion</a></li>
+                <li><a href="#link-bucket">Categorized Link Bucket</a></li>
+                <li><a href="#media-items">Media Items</a></li>
+                <li><a href="#sidebar-items">Sidebar Items</a></li>
+                <li><a href="#pagination">Pagination</a></li>
+                <li><a href="#tooltips">Tooltips</a></li>
+                <li><a href="#modals">Modals</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#page-layouts">Page Layouts</a>
+              <ul class="level-1">
+                <li><a href="#institution-home">Homepage</a></li>
+                <li><a href="#faculty-home">Faculty Home</a></li>
+                <li><a href="#landing-page">Landing Page</a></li>
+                <li><a href="#content-page">Content Page</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        </div>
+        
+        <div id="second-column" class="span second-column clearfix">
+
+          <h2 id="base-styles">Base Styles</h2>
+
+          <h3 id="grid-system">Grid System</h3>
+          <div>
+            <p>You can utilize the grid system that is built into the framework to arrange content in various ways that may better suit the content you are displaying.</p>
+            <p>The grid system consists of 12 fluid columns fit into a container.  To use the grid, create a row and then create the columns you desire within the row.  You can use the preset span classes (.span1, .span2, .span3, etc) to make an element span multiple columns. The total number of columns spanned per row should be 12.</p>
+            <p>On devices with a display resolution less than 690px, each grid column spans the entire width of the screen.</p>
+             
+            <h4>Creating Rows and Columns</h4>
+            <p>The following example shows one way three rows with different columns can be built. The first row contains 3 equally sized columns that each span 4 rows.  The second row contains two columns that span 6 rows.  The last row contains two columns, one of which spans 8 columns, and one which spans 4 columns.</p>
+            <div id="grid-example" class="example">
+              <div class="row-fluid">
+                <span class="span4">.span4</span>
+                <span class="span4">.span4</span>
+                <span class="span4">.span4</span>
+              </div>
+              <div class="row-fluid">
+                <span class="span6">.span6</span>
+                <span class="span6">.span6</span>
+              </div>
+              <div class="row-fluid">
+                <span class="span8">.span8</span>
+                <span class="span4">.span4</span>
+              </div>
+            </div>
+          </div>          
+    <hr />
+          <h3 id="colors">Colors</h3>
+          <h4>Primary Colors</h4>
+          <ul class="colors">
+            <li class="solid"><span>#007C41</span></li>
+            <li class="solid"><span>#FFDB05</span></li>
+            <li class="solid"><span>#FFFFFF</span></li>
+          </ul>
+          <h4>Secondary Colors</h4>
+          <ul class="colors">
+            <li class="solid"><span style="color:#fff">#44524A</span></li>
+            <li class="solid"><span>#7AC900</span></li>
+            <li class="solid"><span>#FFF5B8</span></li>
+          </ul>
+          <h4>Gradients</h4>
+          <ul class="colors">
+            <li class="gradient gradient-default"></li>
+            <li class="gradient gradient-highlight"></li>
+            <li class="gradient gradient-selected"></li>
+          </ul>
+
+    <hr />
+
+    <h3 id="typography">Typography</h3>
+
+      <h4>Content Headings</h4>
+      <!-- Standard Headings --> 
+
+        <p>Headings are used in the page content to facilitate scanning and identifying content that follows the heading.</p>
+        <ul>
+          <li><strong>Only use Heading 2 through Heading 6 (h2 - h6)</strong><br><span class="secondary-text small-text">Heading 1 (h1) is reserved for the page title for SEO purposes.</span>
+          </li>
+          <li>
+            <strong>Use title casing</strong><br>
+            <span class="secondary-text small-text">e.g. Here is Some Text Inside a Heading Tag</span>
+          </li>
+        </ul>
+        <div class="row-fluid">
+          <div class="good">
+            <h5>Good:</h5>
+            <pre class="prettyprint">    &lt;h2&gt;About Our Programs&lt;/h2&gt;</pre>
+            <p class="filename">document.html</p>
+            <ul class="unstyled">
+              <li><i class="icon-ok"></i>H2 tag is permitted in the content area.</li>
+              <li><i class="icon-ok"></i>Heading text uses title casing.</li>
+            </ul>
+          </div>
+          <div class="bad">
+            <h5>Bad:</h5>
+            <pre class="prettyprint">&lt;h1&gt;Heading for some page content&lt;/h1&gt;</pre>
+            <p class="filename">document.html</p>
+            <ul class="unstyled">
+              <li><i class="icon-cancel"></i>H1 (and H2) should not be used in page content, it is reserved for the website title.</li>
+              <li><i class="icon-cancel"></i>Heading text does not use title casing.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="example">
+          <h1>Heading One</h1>
+          <h2>Heading Two</h2>
+          <h3>Heading Three</h3>
+          <h4>Heading Four</h4>
+          <h5>Heading Five</h5>
+          <h6>Heading Six</h6>
+        </div>
+      <!-- End Standard Headings -->
+      
+
+      <!-- Links --> 
+      <h4>Links</h4>
+
+      <p>Standard links are green by default.  Links appearing within content pieces like paragraphs, news articles, etc. will have underlines.</p>
+
+      <ul>
+        <li>
+          <strong>Use descriptive text</strong><br>
+          <span class="secondary-text small-text">Do not use phrases like "click here" for links.</span>
+        </li>
+        <li>
+          <strong>Use the data list for small link collections </strong><br>
+          <span class="secondary-text small-text">
+            3 to 7 links
+          </span>
+        </li>
+        <li>
+          <strong>Use the filterable link collection module for categorized collections of links.</strong><br>
+          <span class="secondary-text small-text">
+            3 to 7 categories, 3+ links per category
+          </span>
+        </li>
+        <li>
+          <strong>Use the accordion module for categorized collections of links.</strong><br>
+          <span class="secondary-text small-text">
+            7+ categories, 3+ links per category
+          </span>
+        </li>
+      </ul>
+    <div class="row-fluid">
+      <div class="span6 good not-code">
+        <h5>Good:</h5>
+        <div class="extrude">
+          <p style="margin-bottom: 0;">Our department offers a wide variety of <a href="#">programs</a>.</p>
+        </div>
+        <ul class="unstyled">
+          <li><i class="icon-ok"></i>Link text indicates that the link will go to a programs page.</li>
+        </ul>
+      </div>
+      <div class="span6 bad not-code">
+        <h5>Bad:</h5>
+        <div class="extrude">
+          <p style="margin-bottom: 0;">To view the programs our department offers <a href="#">click here</a>.</p>
+        </div>
+        <ul class="unstyled">
+          <li><i class="icon-cancel"></i>Link does not contain descriptive text.</li>
+        </ul>
+      </div>
+    </div>
+  <!-- End Links -->
+  
+  <!-- Paragraphs -->
+  <h4>Paragraphs</h4>
+      <ul>
+        <li>
+          <strong>45 to 80 characters per line</strong><br>
+          <span class="secondary-text small-text">Use the grid system to put content in solumns to reduce line length.</span>
+        </li>
+      </ul>
+  <!-- End Paragraphs -->
+  
+    <hr />
+
+  <!-- Lists -->
+  <h3 id="lists">Lists</h3>
+
+      <p>There are a variety of lists should be used when displaying choices, events, news, definitions, steps, links or any type of data where common sense dictates to use one.</p>
+
+      <h4>Unordered List</h4>
+      <p>
+        Default list for content when orering is not important.
+      </p>
+
+      <div class="example">
+        <ul>
+          <li>List Item One</li>
+          <li>List Item Two</li>
+          <li>List Item Three</li>
+        </ul>
+      </div>
+
+      <h4>Ordered List</h4>
+      <p>
+        Default ordered list, used for outlining a list of steps or other times when numbering is important.
+      </p>
+      <div class="example">
+        <ol>
+          <li>List Item One</li>
+          <li>List Item Two</li>
+          <li>List Item Three</li>
+        </ol>
+      </div>
+
+      <h4>Definition List</h4>
+      <p>
+        Default list used for words and their definitions
+      </p>
+      <div class="example">
+        <dl>
+          <dt><dfn>Word</dfn></dt>
+          <dd>This is the definition for the word</dd>
+        </dl>
+      </div>
+
+      <h4>Unstyled List</h4>
+      <p>
+        A list of items with no bullet styling can be created by adding the "unstyled" class to the element.
+      </p>
+      <div class="example">
+        <ul class="unstyled">
+          <li>List Item One</li>
+          <li>List Item Two</li>
+          <li>List Item Three</li>
+        </ul>
+      </div>
+
+      <h4>Lists of Links</h4>
+      <p>Lists of links that occur in the main content area of the page should be contained in a data list. If there is a link to view more of whatever is listed, then the bottom-row class should be utilized.</p> 
+      <div class="example">
+        <ul class="data-list">
+            <li><a href="#">Costs, Tuition, and Fees</a></li>
+            <li><a href="#">Major Deadlines</a></li>
+            <li><a href="#">Registrar </a></li>
+            <li class="bottom-row"><a href="#">View the Calendar</a></li>
+        </ul>
+      </div>
+
+      <h4>Lists of Links with Descriptions</h4>
+      <p>This pattern is most commonly used with news articles or events, where the link is the article or event name and the text that follows is a brief description of what the user can expect to find if they click the link. Similar to the list of links, the .bottom-row class can be used to provide a link to view more.</p> 
+      <div class="example">
+        <ul class="link-description-list data-list">
+          <li>
+            <a href="#">
+                <div class="list-item-content">
+                  <h4>Title or Link Name</h4>
+                  <p class="list-item-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat risus nibh, in pulvinar metus porta sit amet. Cras non ullamcorper massa. 
+                  </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="list-item-content">
+                <h4>Title or Link Name</h4>
+                <p class="list-item-extra">January 26, 2014</p>
+                <p class="list-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat risus nibh, in pulvinar metus porta sit amet. Cras non ullamcorper massa. 
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="list-item-content">
+                <h4>Title or Link Name</h4>
+                <p class="list-item-description">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat risus nibh, in pulvinar metus porta sit amet. Cras non ullamcorper massa. 
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <h4>Link List with Thumbnails</h4>
+      <div class="example">
+        <ul class="image-link-list data-list">
+          <li>
+            <a href="#">
+                <div class="list-item-image frame">
+                  <img src="http://placehold.it/80x80">
+                </div>
+                <div class="list-item-content">
+                  <h4>Title or Link Name</h4>
+                  <p class="list-item-extra">Posted on January 4, 2014</p>
+                  <p class="list-item-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat risus nibh, in pulvinar metus porta sit amet. Cras non ullamcorper massa. 
+                  </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+                <div class="list-item-image frame">
+                  <img src="http://placehold.it/80x80">
+                </div>
+                <div class="list-item-content">
+                  <h4>Title or Link Name</h4>
+                  <p class="list-item-extra">Posted on January 4, 2014</p>
+                  <p class="list-item-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc consequat risus nibh, in pulvinar metus porta sit amet. Cras non ullamcorper massa. 
+                  </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+                <div class="list-item-image frame">
+                  <img src="http://placehold.it/80x80">
+                </div>
+                <div class="list-item-content">
+                  <h4>Title or Link Name</h4>
+                  <p class="list-item-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    <hr />
+
+    <h3 id="icons">Icons</h3>
+    <p>Icons can be used to provide visual cues to the user.  Icons should only be used when they enhance the user experience as opposed to decoration uses.  Below is a list of the available icons, and their associated class names.</p>
+    <div class="row-fluid icons">
+      <div class="span3">
+        <p><i class="icon-search"></i><span class="label">icon-search</span></p>
+        <p><i class="icon-stethoscope"></i><span class="label">icon-stethoscope</span></p>
+        <p><i class="icon-mail-alt"></i><span class="label">icon-mail-alt</span></p>
+        <p><i class="icon-heart"></i><span class="label">icon-heart</span></p>
+        <p><i class="icon-heart-empty"></i><span class="label">icon-heart-empty</span></p>
+        <p><i class="icon-star"></i><span class="label">icon-star</span></p>
+        <p><i class="icon-star-half"></i><span class="label">icon-star-half</span></p>
+        <p><i class="icon-star-half-alt"></i><span class="label">icon-star-half-alt</span></p>
+        <p><i class="icon-user"></i><span class="label">icon-user</span></p>
+        <p><i class="icon-users"></i><span class="label">icon-users</span></p>
+        <p><i class="icon-megaphone"></i><span class="label">icon-megaphone</span></p>
+        <p><i class="icon-rocket"></i><span class="label">icon-rocket</span></p>
+        <p><i class="icon-right-circled"></i><span class="label">icon-right-circled</span></p>
+      </div>
+      <div class="span3">
+        <p><i class="icon-male"></i><span class="label">icon-male</span></p>
+        <p><i class="icon-female"></i><span class="label">icon-female</span></p>
+        <p><i class="icon-camera-alt"></i><span class="label">icon-camera-alt</span></p>
+        <p><i class="icon-ok"></i><span class="label">icon-ok</span></p>
+        <p><i class="icon-cancel"></i><span class="label">icon-cancel</span></p>
+        <p><i class="icon-plus"></i><span class="label">icon-plus</span></p>
+        <p><i class="icon-minus"></i><span class="label">icon-minus</span></p>
+        <p><i class="icon-home"></i><span class="label">icon-home</span></p>
+        <p><i class="icon-lock"></i><span class="label">icon-lock</span></p>
+        <p><i class="icon-lock-open"></i><span class="label">icon-lock-open</span></p>
+        <p><i class="icon-coffee"></i><span class="label">icon-coffee</span></p>
+        <p><i class="icon-user-md"></i><span class="label">icon-user-md</span></p>
+        <p><i class="icon-rss"></i><span class="label">icon-rss</span></p>
+      </div>
+      <div class="span3">
+        <p><i class="icon-bell"></i><span class="label">icon-bell</span></p>
+        <p><i class="icon-bell-alt"></i><span class="label">icon-bell-alt</span></p>
+        <p><i class="icon-attention"></i><span class="label">icon-attention</span></p>
+        <p><i class="icon-attention-circled"></i><span class="label">icon-attention-circled</span></p>
+        <p><i class="icon-location"></i><span class="label">icon-location</span></p>
+        <p><i class="icon-envelope"></i><span class="label">icon-envelope</span></p>
+        <p><i class="icon-cog"></i><span class="label">icon-cog</span></p>
+        <p><i class="icon-lightbulb"></i><span class="label">icon-lightbulb</span></p>
+        <p><i class="icon-angle-left"></i><span class="label">icon-angle-left</span></p>
+        <p><i class="icon-angle-right"></i><span class="label">icon-angle-right</span></p>
+        <p><i class="icon-bug"></i><span class="label">icon-bug</span></p>
+        <p><i class="icon-beaker"></i><span class="label">icon-beaker</span></p>
+        <p><i class="icon-truck"></i><span class="label">icon-truck</span></p>
+      </div>
+      <div class="span3">
+        <p><i class="icon-award"></i><span class="label">icon-award</span></p>
+        <p><i class="icon-globe"></i><span class="label">icon-globe</span></p>
+        <p><i class="icon-flash"></i><span class="label">icon-flash</span></p>
+        <p><i class="icon-umbrella"></i><span class="label">icon-umbrella</span></p>
+        <p><i class="icon-flight"></i><span class="label">icon-flight</span></p>
+        <p><i class="icon-briefcase"></i><span class="label">icon-briefcase</span></p>
+        <p><i class="icon-suitcase"></i><span class="label">icon-suitcase</span></p>
+        <p><i class="icon-road"></i><span class="label">icon-road</span></p>
+        <p><i class="icon-book"></i><span class="label">icon-book</span></p>
+        <p><i class="icon-asterisk"></i><span class="label">icon-asterisk</span></p>
+        <p><i class="icon-credit-card"></i><span class="label">icon-credit-card</span></p>
+        <p><i class="icon-angle-circled-right"></i><span class="label">icon-angle-circled-right</span></p>
+      </div>
+    </div>
+
+    <hr />
+
+    <h3 id="images">Images</h3>
+    <p>Images should be used sparingly on the page, and only when they compliment the content. Images that are poor quality, obvious stock images, excessively large, or distasteful are not to be used.</p>
+    <p>Images should not be used to display text content, only photos and figures. Any text required should be placed over the image in HTML so it remains accessible and searchable.</p>
+
+      <h4>Image Sizes</h4>
+      <p>Images change dimensions but maintain aspect ratios across devices. Here are some common image ratios (width:height) used throughout the University websites.</p>
+      <ul>
+        <li><strong>Full page feature:</strong> 10:3 (e.g. 1680 x 504)</li> 
+        <li><strong>Faculty feature / News story images:</strong> 16:9 (e.g. 780 x 440)</li>
+        <li><strong>Thumbnail images:</strong> 1:1 (e.g. 80 x 80)</li>
+        <li><strong>Wide thumbnail images:</strong> 16:9 (e.g 156 x 88)</li>
+      </ul>
+
+      <h4>Image Frame</h4>
+      <div class="style-description">
+          <p>Wrapping an image in a div with the "frame" class will add a white border with rounded corners and a shadow to an image.  Also, wrapping the image in an "image-shadow" gives the image an inset appearance.</p>
+      </div>
+      <div class="example">
+        <div class="frame">
+          <a class="image-shadow">
+            <img src="http://www.placehold.it/800x450">
+          </a>
+        </div>
+      </div>
+
+      <h5>With a Caption</h5>
+      <div class="style-description">
+          <p>Captions are encouraged on images to give a short summary of the image, or if the image is a link, what the user can expect to see when they click on it.</p>
+      </div>
+      <div class="example">
+        <div class="frame">
+          <div class="image-caption-container">
+            <a class="image-shadow">
+              <img src="http://www.placehold.it/800x450">
+            </a>
+            <p class="caption">
+              This is a sample caption for an image with a frame.
+            </p>
+          </div>
+        </div>
+      </div>
+   
+      <h4>Inset Image</h4>
+      <div class="style-description">
+        <p>Images can also be given an inset appearance without a frame, using the "image-shadow" class.  Adding the "rounded" class will add rounded corners.</p>
+      </div>
+      <div class="example">
+        <a class="image-shadow rounded">
+          <img src="http://www.placehold.it/800x450">
+        </a>
+      </div>
+
+    <hr />
+
+    <h3 id="buttons">Buttons</h3>
+      <p>Buttons are used to indicate to the user that they can perform an action. Text inside of buttons should follow title casing.</p>
+      <h4>Primary Calls to Action</h4>
+      <p>There are three buttons that have been designated as our "Primary Calls to Action". Buttons that represent one of these calls to action have unique styling reserved for them, and should not be used for other buttons.</p>
+      <div>
+        <div class="row-fluid">
+          <div class="span4">
+            <h5>Careers Call to Action</h5>
+            <a href="#" class="btn btn-work">Careers</a><br>
+            <a href="#" class="btn btn-work btn-small">Careers</a><br>
+            <a href="#" class="btn btn-work btn-micro">Careers</a>
+          </div>
+          <div class="span4">
+            <h5>Donate Call to Action</h5>
+            <a href="#" class="btn btn-give">Make A Gift</a><br>
+            <a href="#" class="btn btn-give btn-small">Make A Gift</a><br>
+            <a href="#" class="btn btn-give btn-micro">Make A Gift</a>
+          </div>
+          <div class="span4">
+            <h5>Apply Now Call to Action</h5>
+            <a href="#" class="btn btn-apply">Apply Now</a><br>
+            <a href="#" class="btn btn-apply btn-small">Apply Now</a><br>
+            <a href="#" class="btn btn-apply btn-micro">Apply Now</a>
+          </div>
+        </div>
+      </div>
+      <div class="row-fluid">
+        <div class="span6 good not-code">
+          <h5>Good:</h5>
+            <a href="#" class="btn btn-grey btn-small" style="margin-bottom:1em">Send Message</a>
+          <ul class="unstyled">
+            <li><i class="icon-ok"></i>Uses standard styling because it is not a primary call to action</li>
+            <li><i class="icon-ok"></i>Uses title casing</li>
+          </ul>
+        </div>
+        <div class="span6 bad not-code">
+          <h5>Bad:</h5>
+          <a href="#" class="btn btn-grey btn-small btn-apply" style="margin-bottom:1em">Send message</a>
+          <ul class="unstyled">
+            <li><i class="icon-cancel"></i>Uses styling reserved for primary calls to action</li>
+            <li><i class="icon-cancel"></i>Does not use title casing</li>
+          </ul>
+        </div>
+      </div>
+      <h4>Standard Buttons</h4>
+      <p>The standard button is to be used for generic calls to action and other areas where buttons are required.  Buttons should be used for performing an action, and not just for standard links.</p>
+      <div>
+
+            <h5>Sizes</h5>
+            <ul>
+              <li><strong>.btn-large</strong>: Used for campaign work and very rare conditions where a large button is deemed necessary.</li>
+              <li><strong>.btn-small</strong>: Small buttons are the standard size, and the default for form submit buttons.</li>
+              <li><strong>.btn-micro</strong>: Micro sized buttons should be used within containers when space is limited.</li>
+            </ul>
+
+            <h5>Colors</h5>
+            <ul>
+              <li><strong>.btn-grey</strong>: Grey buttons should be used by default.</li>
+              <li><strong>.btn-green</strong>: Green buttons are reserved for feature messaging areas and other areas where extra attention needs to be added to the button.</li>
+            </ul>
+
+            <h5>Example</h5>
+            <div style="display: inline-block;">
+              <a href="#" class="btn btn-grey">Button</a><br>
+              <a href="#" class="btn btn-grey btn-small">Button</a><br>
+              <a href="#" class="btn btn-grey btn-micro">Button</a>
+            </div>
+            <div style="display: inline-block;">
+              <a href="#" class="btn btn-green">Button</a><br>
+              <a href="#" class="btn btn-green btn-small">Button</a><br>
+              <a href="#" class="btn btn-green btn-micro">Button</a>
+            </div>
+
+      </div>
+
+    <hr />
+
+  <h3 id="tables">Tables</h3>
+
+  <h4>Standard Table</h4>
+  <p>The default table is used for showing data when appropriate.  As tables typically contain several rows, the table should be zebra striped and have a hover state to enhance readability.</p>
+  <div class="example">
+
+      <table id="standard-table" class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>First Column</th>
+            <th>Second Column</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Row Data</td>
+            <td>Row Data</td>
+          </tr>
+          <tr>
+            <td>Row Data</td>
+            <td>Row Data</td>
+          </tr>
+          <tr>
+            <td>Row Data</td>
+            <td>Row Data</td>
+          </tr>
+          <tr>
+            <td>Row Data</td>
+            <td>Row Data</td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
+
+    <hr />
+
+  <h3 id="forms">Forms</h3>
+  <p class="alert error"><strong>Form markup and styling below is currently not accurate due to Sitecore's custom form markup and CSS stylesheet.</strong></p>
+  <div class="example">
+    <form>
+      <fieldset>
+        <legend>Legend</legend>
+        <label>Input Label</label>
+        <input type="text" placeholder="Type something…">
+        <span class="help-block">Example block-level help text here.</span>
+        
+        <label>Textarea Label</label>
+        <textarea rows="3"></textarea>
+
+        <label>Select something</label>
+        <select>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+
+        <label class="checkbox">
+          <input type="checkbox" value="">
+          Option one is this and that—be sure to include why it's great
+        </label>
+         
+        <label class="radio">
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+          Option one is this and that—be sure to include why it's great
+        </label>
+        <label class="radio">
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          Option two can be something else and selecting it will deselect option one
+        </label>
+        <button type="submit" class="btn btn-green btn-small">Submit</button>
+        <button type="submit" class="btn btn-grey btn-small">Cancel</button>
+      </fieldset>
+    </form>
+  </div>
+
+    <hr />
+
+  <h3 id="patterns">Patterns</h3>
+  
+  <h4>Extruded Container</h4>
+  <p>The extruded container is used to to bring elements out of the page.  The extruded container is used to hold images, videos, program types, sidebar modules, and more.  Use the .extrude class for content pieces, and the .frame class for images and videos.
+  </p>
+  <div class="example">
+    <div class="extrude">
+      Container
+    </div>
+  </div>
+  
+  <h4>Inset Container</h4>
+  <p>The inset container gives the area the look that it is sunk into the page to draw the eye.  The inset container is used primarily for feature areas.</p>
+  <div class="example">
+    <div class="inset">
+      Container
+    </div>
+  </div>
+  
+  <h4>Alerts</h4>
+  <p>Alert messages are used to provide the user with feedback or highlight important messages. Four different alert classes can be used: Success, Information, Warning, and Error.</p>
+  <div class="example">
+    <p class="alert success">This is a success alert</p>
+    <p class="alert information">This is an information alert</p>
+    <p class="alert warning">This is a warning alert</p>
+    <p class="alert error">This is an error alert</p>
+  </div>
+
+  <h4>Loading</h4>
+  <p>Adding the loading class to an element will place the loading spinner in the center of that element.  Use a callback to remove the loading class to remove the spinner.</p>
+  <div class="example">
+    <div class="extrude">
+      <div class="loading">Loading...</div>
+    </div>
+  </div>
+
+    <hr />
+
+          <h2 id="components">Components</h2>
+
+          <h3 id="video">Video</h3>
+          <p>The video component allows you to display a thumbnail image with a play icon and caption. When the user clicks the thumbnail, the video will appear in a modal window. If the user is on a mobile device, they will be directed to the mobile friendly page for the video. You have the option of providing a thumbnail for the video, or automatically obtaining one from the provider. Only YouTube and Vimeo are supported currently.</p>
+          <div id="video-example" class="example"></div>
+            <h4>Activation</h4>
+            <p>A video can be added after page load by passing json data to the front end framework.</p>
+            <pre class="markup">
+page.addModule(
+  'youtube-video',                                           // module name
+  '/assets/data/components/sample-youtube-video.json',       // json object, or the url to a json file
+  '#video-container,                                 // element selector 
+  {}
+);</pre>
+    <hr />
+          <h3 id="carousel">Carousel</h3>
+          <p>A carousel contains several slides that the user can navigate through. Slides can contain an image with a caption, video, or HTML content. The carousel should be used to display content with a high priority to the user, such as highlighting news stories or upcoming events. The carousel should not be used to display static images.</p>
+
+              <div id="carousel-example"></div>
+
+          <div class="example">
+            <div class="carousel-container">
+              <div class="slides">
+                <div class="slide current image-caption-container">
+                  <a href="#" class="image-shadow">
+                    <img src="http://placehold.it/800x450" alt="">
+                  </a>
+                  <a href="#" class="feature-caption caption">
+                    <h3>Base Feature</h3>
+                    <p>This feature contains the minimal amount of data to create a feature.</p>
+                  </a>
+                </div>
+                <div class="slide image-caption-container dark">
+                  <a href="#" class="image-shadow">
+                    <img src="http://placehold.it/800x450" alt="">
+                  </a>
+                  <a href="#" class="feature-caption caption">
+                    <h3>Base Feature</h3>
+                    <p>This feature contains the minimal amount of data to create a feature.</p>
+                  </a>
+                </div>
+              </div>
+              <ul class="toggles">
+                  <li class="">1</li>
+                  <li class="">2</li>
+              </ul>
+            </div>
+          </div>
+
+            <h4>Activation</h4>
+            <p>If the markup for the carousel already exists on the page, it can be activated by calling the carousel function.</p>
+            <pre class="markup">$('.carousel-container').carousel();</pre>
+            <p>Alternatively it can be added after page load by passing json data to the front end framework.</p>
+            <pre class="markup">
+page.addModule(
+  'carousel',                                           // module name
+  '/assets/data/components/sample-carousel.json',       // json object, or the url to a json file
+  '#carousel-container,                                 // element selector 
+  {}
+);</pre>
+
+    <hr />
+          <h3 id="tabs">Tabs</h3>
+          <p>Tabs are useful for using one area to target multiple audiences or for grouping types of content, but hiding pieces that may not be of interest to all users.</p>
+          <div id="tabs-example" class="example"></div>
+            <h4>Activation</h4>
+            <p>If the markup for the tabs already exists on the page, it can be activated by calling the tabs function.</p>
+            <pre class="markup">$('#tabs-container').tabs();</pre>
+            <p>Alternatively it can be added after page load by passing json data to the front end framework.</p>
+            <pre class="markup">
+page.addModule(
+  'tabs',                                           // module name
+  '/assets/data/components/sample-tabs.json',       // json object, or the url to a json file
+  '#tabs-container,                                 // element selector 
+  {}
+);</pre>
+    <hr />
+          <h3 id="accordion">Accordion</h3>
+          <p>The accordion is used to display large amounts of nested links. The user has the choice of clicking the top level link, or choosing to expand the top level element and browse the links below it. Because the accordion has such a large number of links, the links should be ordered alphabetically so the user can easily find what they are looking for. If the number of top level categories is less than 10, the categorized link bucket should be used instead.</p>
+          <div class="example">
+            <ul class="accordion-list">
+              <li>
+                <a href="#">Category One</a>
+                <a class="accordion-toggle icon-plus"></a>
+                <ul>
+                  <li>
+                    <a href="#">C1 Link One</a>
+                  </li>
+                  <li>
+                    <a href="#">C1 Link Two</a>
+                  </li>
+                  <li>
+                    <a href="#">C1 Link Three</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Category Two</a>
+                <a class="accordion-toggle icon-plus"></a>
+                <ul>
+                  <li>
+                    <a href="#">C2 Link One</a>
+                  </li>
+                  <li>
+                    <a href="#">C2 Link Two</a>
+                  </li>
+                  <li>
+                    <a href="#">C2 Link Three</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Category Three</a>
+                <a class="accordion-toggle icon-plus"></a>
+                <ul>
+                  <li>
+                    <a href="#">C3 Link One</a>
+                  </li>
+                  <li>
+                    <a href="#">C3 Link Two</a>
+                  </li>
+                  <li>
+                    <a href="#">C3 Link Three</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+
+          </div>
+            <h4>Activation</h4>
+            <p>If the markup for the accordion already exists on the page, it can be activated by calling the accordion function.</p>
+            <pre class="markup">$('.accordion-list').accordion();</pre>
+            <p>Alternatively it can be added after page load by passing json data to the front end framework.</p>
+            <pre class="markup">
+page.addModule(
+  'accordion',                                           // module name
+  '/assets/data/components/sample-accordion.json',       // json object, or the url to a json file
+  '#accordion-container,                                 // element selector 
+  {}
+);</pre>
+    <hr />
+          <h3 id="link-bucket">Categorized Link Bucket</h3>
+          <p>The cateogirzed link bucket is similar to the accordion, but displays links in a horizontal manner as opposed to vertically. The categorized link bucket is also filterable by typing a query into the input field labelled "filter links". Links can optionally be sorted by popularity (from analytics) instead of alphabetically. The number of categories (on the left) should not exceed 10.</p>
+          <div id="link-bucket-example" class="example"></div>
+    <hr />
+
+          <h3 id="media-items">Media Items</h3>
+          <p>The media item pattern consists of a thumbnail image, heading link, date, and description. The pattern can be used to display news items, posts by users, events, videos, or similar content.</p>  
+
+          <div class="example">
+            <div class="row-fluid">
+              <div class="span6">
+                <div class="extrude rmi-box">
+                  <div class="rmi-thumbnail">
+                    <a href="#">
+                      <img src="http://placehold.it/640x360" />
+                    </a>
+                  </div>
+                  <div class="rmi-content">
+                    <h3>Media Item One</h3>
+                    <p>Here is a description of the media item.</p>
+                    <a href="#" class="rmi-bottom-link">Read more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="span6">
+                <div class="extrude rmi-box">
+                  <div class="rmi-thumbnail">
+                    <a href="#">
+                      <img src="http://placehold.it/640x360" />
+                    </a>
+                  </div>
+                  <div class="rmi-content">
+                    <h3>Second Media Item</h3>
+                    <p>Here is a description of the media item.</p>
+                    <a href="#" class="rmi-bottom-link">Watch video</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+    <hr />
+          <h3 id="sidebar-items">Sidebar Items</h3>
+          <div class="sidebar" style="width:100%; margin-left:0; ">
+            <div id="sidebar-item-example" class="example" style="width:300px"></div>
+          </div>
+    <hr />
+          <h3 id="pagination">Pagination</h3>
+          <div class="example">
+            <ul class="pagination">
+              <li><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li class="active"><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">6</a></li>
+              <li><a href="#">7</a></li>
+            </ul>
+          </div>
+    <hr />
+          <h3 id="tooltips">Tooltips</h3>
+          <p>Tooltips can be added on any element that contains the data-toggle="tooltip" attribute.  The tooltip will display whatever text is in the title attribute of the associated element.  The data-placement attribute can also be set to specify where the tooltip should be displayed in relation to the element.</p>
+          <div class="example">
+<button type="button" class="btn btn-green btn-micro" data-toggle="tooltip" data-placement="top" title="Here's the tooltip!">Hover over this button for a tooltip</button>
+          </div>
+    <hr />
+
+          <h2 id="page-layouts">Page Layouts</h2>
+
+          <h3 id="institutional-home">Institutional Home</h3>
+          <!--
+          <img src="/assets/img/style-guide/home-page.jpg" alt="Institutional Home" />
+          -->
+    <hr />
+          <h3 id="faculty-home">Faculty Home</h3>
+          <!--
+          <img src="/assets/img/style-guide/faculty-home.jpg" alt="Faculty Home" />
+          -->
+    <hr />
+          <h3 id="landing-page">Landing Page</h3>
+          <!--
+          <img src="/assets/img/style-guide/landing-page.jpg" alt="Landing Page" />
+          -->
+    <hr />
+          <h3 id="content-page">Content Page</h3>
+          <!--
+          <img src="/assets/img/style-guide/content-page.jpg" alt="Content Page" />
+          -->
+        
+          <!--
+          <div class="image-caption-container frame">
+            <a class="image-shadow">
+            <img src="http://placehold.it/800x450" alt="placeholder">
+            </a>
+            <p class="caption">
+            A sample caption
+            </p>
+          </div>
+        -->
+        </div>
+        <div id="sidebar" class="span sidebar"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="f-e-container institutional-footer-module">
+      <div class="bottom-footer-row">
+        <div class="footer-container container">
+          <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+              <ul class="footer-quick-links">
+                <li>
+                  <a href="#" target="">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#" target="">Feedback</a>
+                </li>
+                <li>
+                  <a href="#" target="">University Calendar</a>
+                </li>
+                <li>
+                  <a href="#" target="">Careers</a>
+                </li>
+                <li>
+                  <a href="#" target="">Emergency</a>
+                </li>
+                <li>
+                  <a href="#" target="">Policies</a>
+                </li>
+                <li>
+                  <a href="#" target="">Weather</a>
+                </li>
+                <li>
+                  <a href="#" target="">Edmonton</a>
+                </li>
+                <li>
+                  <a href="#" target="">Privacy</a>
+                </li>
+                <li>
+                  <a href="#" target="">Keep In Touch</a>
+                </li>
+                <li><a href="#">Back to Top</a></li>
+              </ul>
+              <p>© 2014 <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    var page = new UAlberta.FrontEnd.Modules.Page({
+      featureArea: "#feature-area",
+      firstColumn: "#first-column",
+      secondColumn: "#second-column",
+      sidebar: "#sidebar"
+    });
+    
+    var linkList = {
+      "header": {
+      "heading": "Campus Notices"
+      },
+      "items": [
+        {
+        "url": "#",
+        "label": "Facebook"
+        },
+        {
+        "url": "#",
+        "label": "Twitter"
+        },
+        {
+        "url": "#",
+        "label": "YouTube"
+        },
+        {
+        "url": "#",
+        "label": "Flickr"
+        }
+      ]
+    };
+
+    var sidebarContent = {
+      "title": "Twitter",
+      "content": "<p>Join us on Twitter for some stuff.</p>",
+      "moreLink": {
+        "url": "#",
+        "label": "Follow @ualberta"
+      }
+    };
+
+    var pageTitle = {
+      breadcrumbs: [
+        {
+          url: "#",
+          label: "Home"
+        },
+        {
+          url: "#",
+          label: "University Digital Strategy"
+        }
+      ],
+      pageName: "Style Guide"
+    };
+
+    page.addModule(
+      'youtube-video', 
+      '/assets/data/components/sample-youtube-video.json', 
+      '#video-example', 
+      {}
+    ); 
+/**
+
+    page.addModule(
+      'carousel', 
+      '/assets/data/components/sample-carousel.json', 
+      '#carousel-example', 
+      {}
+    ); 
+
+    page.addModule(
+      'accordion', 
+      '/assets/data/components/sample-accordion-list.json', 
+      '#accordion-example', 
+      {}
+    ); 
+**/
+
+    $('.accordion-list').accordion();
+
+    $('.carousel-container').carousel();
+
+    page.addModule(
+      'link-filter', 
+      '/assets/data/components/sample-accordion-list.json', 
+      '#link-bucket-example', 
+      {}
+    ); 
+
+    page.addModule(
+      'tabs', 
+      '/assets/data/components/sample-tabs.json', 
+      '#tabs-example', 
+      {}
+    ); 
+
+    page.addModule('page-title', pageTitle, '#page-title');
+
+    page.addModule('sidebar-item', {
+      header: {
+        heading: "Keep in Touch"
+      }
+    }, '#sidebar-item-example').addModule('data-list', linkList, '.sidebar-content');
+
+    page.activate(); 
+
+    var navElements = $('ul.level-0');
+    navElements.on('click', 'a', function(event) {
+      $("body").animate({ scrollTop: $($(this).attr('href')).offset().top-18 }, 600); 
+      event.stopPropagation();
+    });
+
+    $('body').scrollspy({ 
+      target: '.nav-wrapper',
+      offset: 30
+    });
+
+    $(window).resize(function() {
+      $('body').scrollspy('refresh');
+    });
+
+
+    $('#first-column').affix({
+      offset: {
+        top: $('#first-column').offset().top
+      , bottom: function () {
+          return (this.bottom = $('.footer').outerHeight(true))
+        }
+      }
+    });
+
+    $('.colors li.solid').each(function() {
+      $(this).css('background-color', $(this).text());
+    });
+
+
+
+    $('.example').wrapInner('<div class="preview"></div>');
+
+    $('.example').append('<pre class="markup"></pre>');
+
+    $('.example').each(function() {
+      $(this).find('.markup').text($(this).find('.preview').html());
+
+      var toggleButton = $('<button class="btn btn-grey btn-micro toggle-markup"></button>');
+
+      $(this).append(toggleButton);
+      toggleButton.on('click', function() {
+        $(this).parent().toggleClass('show-markup');
+      });
+
+    });
+
+  });
+  </script>
+</body>
+</html>

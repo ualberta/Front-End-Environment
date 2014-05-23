@@ -1,0 +1,58 @@
+{
+  "categories" : [
+    {
+      "url": "#",
+      "label": "Category One",
+      "links": [
+        {
+          "url": "#",
+          "label" : "C1 Link One"
+        },
+        {
+          "url": "#",
+          "label" : "C1 Link Two"
+        },
+        {
+          "url": "#",
+          "label" : "C1 Link Three"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "label": "Category Two",
+      "links": [
+        {
+          "url": "#",
+          "label" : "C2 Link One"
+        },
+        {
+          "url": "#",
+          "label" : "C2 Link Two"
+        },
+        {
+          "url": "#",
+          "label" : "C2 Link Three"
+        }
+      ]
+    },
+    {
+      "url": "#",
+      "label": "Category Three",
+      "links": [
+        {
+          "url": "#",
+          "label" : "C3 Link One"
+        },
+        {
+          "url": "#",
+          "label" : "C3 Link Two"
+        },
+        {
+          "url": "#",
+          "label" : "C3 Link Three"
+        }
+      ]
+    }
+  ]
+}

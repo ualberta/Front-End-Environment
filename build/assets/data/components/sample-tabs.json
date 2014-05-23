@@ -1,0 +1,19 @@
+{
+  "tabs": [
+    {
+      "id": "tab1",
+      "label": "First",
+      "content": "<p>First content</p>"
+    },
+    {
+      "id": "tab2",
+      "label": "Second",
+      "content": "<p>Second content</p>"
+    },
+    {
+      "id": "tab3",
+      "label": "Third",
+      "content": "<p>Third content</p>"
+    }          
+  ]
+}

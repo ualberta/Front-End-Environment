@@ -1,0 +1,27 @@
+<div class="banner-container">
+    <div class="banner-inner">
+
+        {{#if siteLogo}}
+            <div class="banner-logo">
+                <span class="site-logo">
+                    <a href="{{siteUrl}}"><img src="{{siteLogo}}" alt="{{siteTitle}}"></a>
+                </span>
+            </div>
+        {{else}}
+            <a href="{{siteUrl}}" class="site-title">{{siteTitle}}</a>
+        {{/if}}
+
+        {{#if audienceLinks}}
+            <nav class="audience-navigation">
+                <ul>
+                    {{#each audienceLinks}}
+                    <li role="menuitem" class="audience-link">
+                        <a href="{{this.url}}">{{this.label}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </nav> 
+        {{/if}} 
+
+    </div>
+</div> 

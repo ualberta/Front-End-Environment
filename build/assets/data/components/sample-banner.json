@@ -1,0 +1,22 @@
+{
+  "siteTitle": "University of Alberta",
+  "siteUrl": "http://www.ualberta.ca/",
+  "audienceLinks": [
+    {
+      "url": "#",
+      "label": "Faculty and Staff"
+    },
+    {
+      "url": "#",
+      "label": "Prospective Students"
+    },
+    {
+      "url": "#",
+      "label": "Current Students"
+    },
+    {
+      "url": "#",
+      "label": "Alumni and Friends"
+    }
+  ] 
+}

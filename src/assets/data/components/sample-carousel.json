@@ -1,13 +1,13 @@
 {
   "features": [
     {
-      "imageSrc" : "http://www.med.ualberta.ca/-/media/medicine/HomePage/0221-dunkley.jpg",
+      "imageSrc" : "http://placehold.it/800x450",
       "heading" : "Base Feature",
       "description" : "This feature contains the minimal amount of data to create a feature.",
       "url": "#"            
     },
     {
-      "imageSrc" : "http://www.med.ualberta.ca/-/media/medicine/HomePage/mountainolympicrings.jpg",
+      "imageSrc" : "http://placehold.it/800x450",
       "heading" : "Base Feature",
       "description" : "This feature contains the minimal amount of data to create a feature.",
       "url": "#",

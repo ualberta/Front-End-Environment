@@ -514,6 +514,40 @@ function program7(depth0,data) {
   return buffer;
   }));
 
+Handlebars.registerPartial("InlineForm", Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+
+
+  buffer += "<i class=\"icon-";
+  if (stack1 = helpers.icon) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.icon); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"></i>\n<input id=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "-text\" type=\"text\" placeholder=\"";
+  if (stack1 = helpers.placeholder) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.placeholder); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" class=\"";
+  if (stack1 = helpers.className) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.className); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n<button id=\"";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "-button\" class=\"btn btn-grey btn-small\" type=\"button\">\n  ";
+  if (stack1 = helpers.buttonLabel) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.buttonLabel); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n</button>\n";
+  return buffer;
+  }));
+
 Handlebars.registerPartial("Island", Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
@@ -674,6 +708,117 @@ function program2(depth0,data) {
   return buffer;
   });
 
+this["UAlberta"]["FrontEnd"]["templates"]["banner.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n            <div class=\"banner-logo\">\n                <span class=\"site-logo\">\n                    <a href=\"";
+  if (stack1 = helpers.siteUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.siteUrl); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"><img src=\"";
+  if (stack1 = helpers.siteLogo) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.siteLogo); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" alt=\"";
+  if (stack1 = helpers.siteTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.siteTitle); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\"></a>\n                </span>\n            </div>\n        ";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n            <a href=\"";
+  if (stack1 = helpers.siteUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.siteUrl); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" class=\"site-title\">";
+  if (stack1 = helpers.siteTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.siteTitle); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</a>\n        ";
+  return buffer;
+  }
+
+function program5(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n            <nav class=\"audience-navigation\">\n                <ul>\n                    ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.audienceLinks), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n                </ul>\n            </nav> \n        ";
+  return buffer;
+  }
+function program6(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                    <li role=\"menuitem\" class=\"audience-link\">\n                        <a href=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>\n                    </li>\n                    ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"banner-container\">\n    <div class=\"banner-inner\">\n\n        ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.siteLogo), {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n\n        ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.audienceLinks), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += " \n\n    </div>\n</div> ";
+  return buffer;
+  });
+
+this["UAlberta"]["FrontEnd"]["templates"]["blade.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n        <a class=\"brand\" href=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.logo)),stack1 == null || stack1 === false ? stack1 : stack1.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n            <img src=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.logo)),stack1 == null || stack1 === false ? stack1 : stack1.imageSrc)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" alt=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.logo)),stack1 == null || stack1 === false ? stack1 : stack1.altText)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n        </a>\n        ";
+  return buffer;
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                            <li role=\"menuitem\">\n                                <a href=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>\n                            </li>\n                        ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"blade-container\">\n    <div class=\"blade-inner\">\n\n        ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.logo), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n\n        <nav class=\"blade-navigation\">\n            <ul class=\"quick-links-container\">\n                <li id=\"ql\" class=\"dropdown\">\n                    <a href=\"#\" id=\"ql-toggle\" class=\"btn btn-grey btn-small hidden-desktop\">\n                        <span class=\"quick-links-text\">Quick Links</span>\n                    </a> \n                    <ul class=\"quick-links\" role=\"menu\" aria-labelledby=\"ql-toggle\">\n                        ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.quickLinks), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n                    </ul>\n                </li>\n            </ul>\n        </nav>\n\n        <div class=\"blade-search\">\n            ";
+  stack1 = self.invokePartial(partials.InlineForm, 'InlineForm', (depth0 && depth0.search), helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n        </div>\n\n    </div>\n</div>  \n";
+  return buffer;
+  });
+
 this["UAlberta"]["FrontEnd"]["templates"]["button.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
@@ -726,6 +871,18 @@ function program3(depth0,data) {
   return buffer;
   });
 
+this["UAlberta"]["FrontEnd"]["templates"]["collapsible-navigation.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, self=this;
+
+
+  stack1 = self.invokePartial(partials.CollapsibleNavigation, 'CollapsibleNavigation', depth0, helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n";
+  return buffer;
+  });
+
 this["UAlberta"]["FrontEnd"]["templates"]["contact-info.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
@@ -746,6 +903,78 @@ helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partial
   stack1 = self.invokePartial(partials.DataList, 'DataList', depth0, helpers, partials, data);
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n";
+  return buffer;
+  });
+
+this["UAlberta"]["FrontEnd"]["templates"]["global-navigation.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n                        <li role=\"menuitem\" class=\"nav";
+  if (stack1 = helpers.index) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.index); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n                            <a href=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>\n\n                            ";
+  stack2 = helpers['if'].call(depth0, (depth0 && depth0.subMenu), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                        </li>\n                    ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n                                <div class=\"sub-menu\">\n                                    <div class=\"sub-menu-content\">\n\n                                        ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.subMenu)),stack1 == null || stack1 === false ? stack1 : stack1.links), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n                                        ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.subMenu)),stack1 == null || stack1 === false ? stack1 : stack1.content), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                                        \n                                    </div> \n                                </div>\n                            ";
+  return buffer;
+  }
+function program3(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n\n                                            <ul class=\"section-navigation\">\n                                                ";
+  stack2 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.subMenu)),stack1 == null || stack1 === false ? stack1 : stack1.links), {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                                            </ul>\n\n                                        ";
+  return buffer;
+  }
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                                                <li>\n                                                    <a href=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a>\n                                                </li>\n                                                ";
+  return buffer;
+  }
+
+function program6(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n                                            <div class=\"section-description\">\n                                                ";
+  stack2 = ((stack1 = ((stack1 = (depth0 && depth0.subMenu)),stack1 == null || stack1 === false ? stack1 : stack1.content)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n                                            </div>\n                                        ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"navigation-container\">\n    <nav id=\"main-nav\" class=\"navigation-inner\">\n        <ul>\n            <li>\n                <a class=\"navigation-toggle\">\n                    <span>Show Navigation</span>\n                    <i class=\"icon-toggle-nav\"></i>\n                </a>\n                <ul id=\"nav-list\" class=\"main-navigation collapse\">\n\n                    ";
+  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
+  stack2 = ((stack1 = helpers.each_with_index || (depth0 && depth0.each_with_index)),stack1 ? stack1.call(depth0, (depth0 && depth0.globalLinks), options) : helperMissing.call(depth0, "each_with_index", (depth0 && depth0.globalLinks), options));
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n\n                </ul>\n            </li>\n        </ul>\n    </nav>\n</div> \n ";
   return buffer;
   });
 
@@ -776,31 +1005,14 @@ helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partial
 
 this["UAlberta"]["FrontEnd"]["templates"]["inline-field.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, self=this;
 
 
-  buffer += "<div class=\"inline-form\">\n    <i class=\"icon-";
-  if (stack1 = helpers.icon) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.icon); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"></i>\n    <input id=\"";
-  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "-text\" type=\"text\" placeholder=\"";
-  if (stack1 = helpers.placeholder) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.placeholder); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n    <button id=\"";
-  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.id); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "-button\" class=\"btn btn-grey btn-small\" type=\"button\">\n      ";
-  if (stack1 = helpers.buttonLabel) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.buttonLabel); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\n    </button>\n</div>\n";
+  buffer += "<div class=\"inline-form\">\n  ";
+  stack1 = self.invokePartial(partials.InlineForm, 'InlineForm', depth0, helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n</div>\n  ";
   return buffer;
   });
 
@@ -838,6 +1050,27 @@ function program2(depth0,data) {
   return buffer;
   });
 
+this["UAlberta"]["FrontEnd"]["templates"]["mobile-navigation.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n<div class=\"nav-mobile\">\n    ";
+  stack1 = self.invokePartial(partials.CollapsibleNavigation, 'CollapsibleNavigation', (depth0 && depth0.mobileLinks), helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n</div> \n";
+  return buffer;
+  }
+
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.mobileLinks), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += " \n ";
+  return buffer;
+  });
+
 this["UAlberta"]["FrontEnd"]["templates"]["modal.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
@@ -860,7 +1093,11 @@ function program1(depth0,data) {
     + "</h3>\n    </div>\n    <div class=\"modal-body\">\n      ";
   stack1 = helpers['if'].call(depth0, (depth0 && depth0.embedUrl), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </div>\n  </div>\n";
+  buffer += "\n      ";
+  if (stack1 = helpers.modalContent) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.modalContent); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </div>\n  </div>\n";
   return buffer;
   });
 
@@ -986,6 +1223,79 @@ function program1(depth0,data) {
   else { stack1 = (depth0 && depth0.story); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n        </div>\n        <aside>\n            <hr class=\"soften first\">\n            <h3>Share this story</h3>\n            <div class=\"social-media-actions\"></div>\n            <hr class=\"soften\">\n            <h3>Related links</h3>\n            <ul id=\"related-links\" class=\"data-list\"></ul>\n            <hr class=\"soften\">\n            <h3>Top stories</h3>\n            <ul id=\"top-stories\" class=\"data-list\"></ul>\n        </aside>\n    </div>    \n</article>";
+  return buffer;
+  });
+
+this["UAlberta"]["FrontEnd"]["templates"]["page-title.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n  <ul class=\"breadcrumbs\">\n      ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.breadcrumbs), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n      <li class=\"bc-here\">";
+  if (stack1 = helpers.pageName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.pageName); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n  </ul>\n  ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n        <li><a href=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a></li>\n      ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"title-container container\">\n  ";
+  stack1 = helpers['if'].call(depth0, (depth0 && depth0.breadcrumbs), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  <h1 class=\"page-title\">";
+  if (stack1 = helpers.pageName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.pageName); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h1>\n</div>\n";
+  return buffer;
+  });
+
+this["UAlberta"]["FrontEnd"]["templates"]["secondary-footer.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n                                <li><a href=\""
+    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">"
+    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</a></li>\n                            ";
+  return buffer;
+  }
+
+  buffer += "<div class=\"top-footer-row\">\n    <div class=\"footer-container container\">\n        <div class=\"footer-inner row-fluid\">\n            <div class=\"span6 footer-faculty-links\">\n                <h3>";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.title); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</h3>\n                <div class=\"row-fluid\">\n                    <div class=\"span5\">\n                        <ul class=\"faculty-links\">\n                            ";
+  stack1 = helpers.each.call(depth0, (depth0 && depth0.links), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n                        </ul>\n                    </div>\n                    <div class=\"span7\">\n                        ";
+  stack1 = self.invokePartial(partials.SocialMediaIcons, 'SocialMediaIcons', depth0, helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n                    </div>\n                </div>\n            </div>\n            <div class=\"span6 vcard\">\n                ";
+  stack1 = self.invokePartial(partials.ContactInfo, 'ContactInfo', (depth0 && depth0.contact), helpers, partials, data);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n            </div>\n        </div>\n    </div>\n</div>\n";
   return buffer;
   });
 
@@ -1241,366 +1551,5 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   else { stack1 = (depth0 && depth0.videoDescription); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
     + "</p>\n    </div>\n</div>\n";
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["content-page.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
-
-
-  return "<div class=\"row-fluid\">\n  <div id=\"left-nav\" class=\"span navigation\"></div>\n  <div id=\"content-column\" class=\"span content\"></div>\n  <div id=\"sidebar\" class=\"span sidebar\"></div>\n</div>";
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["faculty-home.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "";
-
-
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["faculty-landing.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "";
-
-
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["news-article.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "";
-
-
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["ualberta-home.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
-
-
-  return "<div id=\"feature-area\"></div>\n\n<div id=\"why-ualberta\" class=\"why-container container\">\n  \n  <div class=\"inset\">\n    <div class=\"why-ualberta-row row-fluid ga_ualberta_why-ualberta\">\n      <div class=\"frame why-thumbnail\">\n        <a class=\"image-shadow\" href=\"http://news.ualberta.ca/newsarticles/2013/september/ualberta-alumni-founded-organizations-a-staggering-engine-of-albertas-prosperity\">\n        <img src=\"http://www.ualberta.ca/~publicas/uofa/img/alumni-impact-img.png\">\n        </a>\n      </div>\n      <div class=\"why-text\">\n        <h3>$348.5 Billion Engine</h3>\n        <p class=\"description\">Landmark study by Faculty of Business professors Tony Briggs and Jennifer Jennings highlights the economic and\n        social impact of UAlberta alumni. <br><a href=\"http://news.ualberta.ca/newsarticles/2013/september/ualberta-alumni-founded-organizations-a-staggering-engine-of-albertas-prosperity\">See the results.</a></p>\n      </div>\n      <div class=\"button-container\">\n        <a href=\"http://admission.ualberta.ca/\" class=\"btn btn-apply km_1000_ualberta\">Apply Now</a>\n        <a href=\"http://www.careers.ualberta.ca/\" class=\"btn btn-work km_1001_ualberta\">Careers</a>\n        <a href=\"http://www.giving.ualberta.ca/\" class=\"btn btn-give km_1002_ualberta\">Give to the U of A</a>\n      </div>\n    </div>\n  </div>\n\n</div>\n\n<div class=\"content-container container\">\n\n  <div class=\"content-inner row-fluid\">\n\n    <div class=\"main-content span\">\n    \n      <div id=\"explore-row\" class=\"row-fluid\">\n        <div id=\"explore-bar\" class=\"explore-bar-container\">\n          <ul class=\"explore-bar slides\">\n            <li>\n              <a href=\"http://uofa.ualberta.ca/dinosaurs/dino101\">\n                <i class=\"explore-i-dino101\" style=\"text-indent:-4px\"></i>\n                <span>Dino 101</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.bookstore.ualberta.ca/\">\n                <i class=\"explore-i-bookstore\"></i>\n                <span>Bookstore</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.registrar.ualberta.ca/calendar/\">\n                <i class=\"explore-i-u-calendar\"></i>\n                <span>University Calendar</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.residence.ualberta.ca/\">\n                <i class=\"explore-i-residence\"></i>\n                <span>Residence / Housing</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.campusmaps.ualberta.ca/\">\n                <i class=\"explore-i-maps\"></i>\n                <span>Maps</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://events.ualberta.ca/\">\n                <i class=\"explore-i-events\"></i>\n                <span>Events</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.athletics.ualberta.ca/\">\n                <i class=\"explore-i-athletics\"></i>\n                <span>Athletics</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://recservices.ualberta.ca/\">\n                <i class=\"explore-i-recreation\"></i>\n                <span>Recreation Services</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.uwell.ualberta.ca/\">\n                <i class=\"explore-i-wellness\"></i>\n                <span>Wellness</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.su.ualberta.ca/\">\n                <i class=\"explore-i-students-union\"></i>\n                <span>Students' Union</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.communityrelations.ualberta.ca/\">\n                <i class=\"explore-i-community\"></i>\n                <span>Community Relations</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.governance.ualberta.ca/\">\n                <i class=\"explore-i-governance\"></i>\n                <span>Governance</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://faculties.ualberta.ca/\">\n                <i class=\"explore-i-programs\"></i>\n                <span>Programs</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.international.ualberta.ca/\">\n                <i class=\"explore-i-international\"></i>\n                <span>International Impact</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.president.ualberta.ca/\">\n                <i class=\"explore-i-president\"></i>\n                <span>President</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://www.museums.ualberta.ca/\">\n                <i class=\"explore-i-museums\"></i>\n                <span>Museums</span>\n              </a>\n            </li>\n\n            <li>\n              <a href=\"http://www.gsa.ualberta.ca/\">\n                <i class=\"explore-i-graduate\"></i>\n                <span>Graduate Students' Association</span>\n              </a>\n            </li>\n            <li>\n              <a href=\"http://news.ualberta.ca/mediarelations\">\n                <i class=\"explore-i-media\"></i>\n                <span>Media Relations</span>\n              </a>\n            </li>\n\n            <li>\n              <a href=\"http://www.sustainability.ualberta.ca/\">\n                <i class=\"explore-i-sustainability\"></i>\n                <span>Sustainability</span>\n              </a>\n            </li>\n          </ul>\n        </div>\n      </div>\n\n      <hr class=\"soften explore-separator\">\n\n      <div class=\"row-fluid\">\n\n        <div id=\"first-column\" class=\"primary-content-area span\"></div> \n\n        <div id=\"second-column\" class=\"secondary-content-area span\"></div>\n\n      </div>\n\n    </div>\n\n    <div id=\"sidebar\" class=\"span sidebar\"></div>\n\n  </div>\n \n</div>\n";
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["ualberta-landing.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
-
-
-  return "<div id=\"feature-area\" class=\"content-top-row\"></div>\n\n<div id=\"page-title\" class=\"page-title-row\"></div>\n\n<div class=\"content-container container\">\n    \n    <div class=\"content-inner row-fluid\">\n\n        <div id=\"first-column\" class=\"span primary-content-area\"></div>\n    \n        <div id=\"second-column\" class=\"span secondary-content-area clearfix\"></div>\n\n        <div id=\"sidebar\" class=\"span sidebar\"></div>\n\n    </div>\n\n</div>\n";
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["banner.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n            <div class=\"banner-logo\">\n                <span class=\"site-logo\">\n                    <a href=\"";
-  if (stack1 = helpers.siteUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.siteUrl); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"><img src=\"";
-  if (stack1 = helpers.siteLogo) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.siteLogo); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\" alt=\"";
-  if (stack1 = helpers.siteTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.siteTitle); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\"></a>\n                </span>\n            </div>\n        ";
-  return buffer;
-  }
-
-function program3(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n            <a href=\"";
-  if (stack1 = helpers.siteUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.siteUrl); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\" class=\"site-title\">";
-  if (stack1 = helpers.siteTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.siteTitle); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</a>\n        ";
-  return buffer;
-  }
-
-function program5(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n            <nav class=\"audience-navigation\">\n                <ul>\n                    ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.audienceLinks), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n                </ul>\n            </nav> \n        ";
-  return buffer;
-  }
-function program6(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n                    <li role=\"menuitem\" class=\"audience-link\">\n                        <a href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>\n                    </li>\n                    ";
-  return buffer;
-  }
-
-  buffer += "<div class=\"banner-container\">\n    <div class=\"banner-inner\">\n\n        ";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.siteLogo), {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n        ";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.audienceLinks), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " \n\n    </div>\n</div>  \n";
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["blade.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <a class=\"brand\" href=\"http://ualberta.ca\">\n            <img src=\"";
-  if (stack1 = helpers.logo) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.logo); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\" alt=\"University of Alberta\">\n        </a>\n        ";
-  return buffer;
-  }
-
-function program3(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n                            <li role=\"menuitem\">\n                                <a href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>\n                            </li>\n                        ";
-  return buffer;
-  }
-
-  buffer += "<div class=\"blade-container\">\n    <div class=\"blade-inner\">\n\n        ";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.logo), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n        <nav class=\"blade-navigation\">\n            <ul class=\"quick-links-container\">\n                <li id=\"ql\" class=\"dropdown\">\n                    <a href=\"#\" id=\"ql-toggle\" class=\"btn btn-grey btn-small hidden-desktop\">\n                        <span class=\"quick-links-text\">Quick Links</span>\n                    </a> \n                    <ul class=\"quick-links\" role=\"menu\" aria-labelledby=\"ql-toggle\">\n                        ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.quickLinks), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n                    </ul>\n                </li>\n            </ul>\n        </nav>\n\n        <div class=\"blade-search\">\n            <i class=\"icon-search\"></i>\n            <input type=\"search\" class=\"search-query\" placeholder=\"search\">\n            <button type=\"button\" class=\"btn btn-grey btn-small global-search-btn\">Search</button>\n        </div>\n\n    </div>\n</div>  \n ";
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["collapsible-navigation.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
-  var buffer = "", stack1, self=this;
-
-
-  stack1 = self.invokePartial(partials.CollapsibleNavigation, 'CollapsibleNavigation', depth0, helpers, partials, data);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n";
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["global-navigation.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, stack2, options, functionType="function", escapeExpression=this.escapeExpression, self=this, helperMissing=helpers.helperMissing;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1, stack2;
-  buffer += "\n                        <li role=\"menuitem\" class=\"nav";
-  if (stack1 = helpers.index) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.index); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\">\n                            <a href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>\n\n                            ";
-  stack2 = helpers['if'].call(depth0, (depth0 && depth0.subMenu), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n                        </li>\n                    ";
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  var buffer = "", stack1, stack2;
-  buffer += "\n                                <div class=\"sub-menu\">\n                                    <div class=\"sub-menu-content\">\n\n                                        ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.subMenu)),stack1 == null || stack1 === false ? stack1 : stack1.links), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n\n                                        ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = (depth0 && depth0.subMenu)),stack1 == null || stack1 === false ? stack1 : stack1.content), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n                                        \n                                    </div> \n                                </div>\n                            ";
-  return buffer;
-  }
-function program3(depth0,data) {
-  
-  var buffer = "", stack1, stack2;
-  buffer += "\n\n                                            <ul class=\"section-navigation\">\n                                                ";
-  stack2 = helpers.each.call(depth0, ((stack1 = (depth0 && depth0.subMenu)),stack1 == null || stack1 === false ? stack1 : stack1.links), {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n                                            </ul>\n\n                                        ";
-  return buffer;
-  }
-function program4(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n                                                <li>\n                                                    <a href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>\n                                                </li>\n                                                ";
-  return buffer;
-  }
-
-function program6(depth0,data) {
-  
-  var buffer = "", stack1, stack2;
-  buffer += "\n                                            <div class=\"section-description\">\n                                                ";
-  stack2 = ((stack1 = ((stack1 = (depth0 && depth0.subMenu)),stack1 == null || stack1 === false ? stack1 : stack1.content)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1);
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n                                            </div>\n                                        ";
-  return buffer;
-  }
-
-  buffer += "<div class=\"navigation-container\">\n    <nav id=\"main-nav\" class=\"navigation-inner\">\n        <ul>\n            <li>\n                <a class=\"navigation-toggle\">\n                    <span>Show Navigation</span>\n                    <i class=\"icon-toggle-nav\"></i>\n                </a>\n                <ul id=\"nav-list\" class=\"main-navigation collapse\">\n\n                    ";
-  options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data};
-  stack2 = ((stack1 = helpers.each_with_index || (depth0 && depth0.each_with_index)),stack1 ? stack1.call(depth0, (depth0 && depth0.globalLinks), options) : helperMissing.call(depth0, "each_with_index", (depth0 && depth0.globalLinks), options));
-  if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n\n                </ul>\n            </li>\n        </ul>\n    </nav>\n</div> \n ";
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["institutional-footer.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n                    <li>\n                        <a href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\" target=\"\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a>\n                    </li>\n                    ";
-  return buffer;
-  }
-
-  buffer += "<div class=\"bottom-footer-row\">\n    <div class=\"footer-container container\">\n        <div class=\"footer-inner row-fluid\">\n            <div class=\"span12 footer-copyright\">\n                <ul class=\"footer-quick-links\">\n\n                    ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.footerLinks), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n                    <li><a href=\"#\">Back to Top</a></li>\n\n                </ul>\n                <p>© 2014 <span id=\"phfooter_0_ualberta_address\">University of Alberta 116 St. and 85 Ave., <br class=\"visible-phone\">Edmonton, AB, Canada T6G 2R3</span></p>\n            </div>\n        </div>\n    </div>\n</div> \n";
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["mobile-navigation.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
-  var buffer = "", stack1, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n<div class=\"nav-mobile\">\n    ";
-  stack1 = self.invokePartial(partials.CollapsibleNavigation, 'CollapsibleNavigation', (depth0 && depth0.mobileLinks), helpers, partials, data);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n</div> \n";
-  return buffer;
-  }
-
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.mobileLinks), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += " \n ";
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["page-title.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n  <ul class=\"breadcrumbs\">\n      ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.breadcrumbs), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n      <li class=\"bc-here\">";
-  if (stack1 = helpers.pageName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.pageName); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n  </ul>\n  ";
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n        <li><a href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a></li>\n      ";
-  return buffer;
-  }
-
-  buffer += "<div class=\"title-container container\">\n  ";
-  stack1 = helpers['if'].call(depth0, (depth0 && depth0.breadcrumbs), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n  <h1 class=\"page-title\">";
-  if (stack1 = helpers.pageName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.pageName); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</h1>\n</div>\n";
-  return buffer;
-  });
-
-this["UAlberta"]["FrontEnd"]["templates"]["secondary-footer.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); partials = this.merge(partials, Handlebars.partials); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
-
-function program1(depth0,data) {
-  
-  var buffer = "", stack1;
-  buffer += "\n                                <li><a href=\""
-    + escapeExpression(((stack1 = (depth0 && depth0.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "\">"
-    + escapeExpression(((stack1 = (depth0 && depth0.label)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</a></li>\n                            ";
-  return buffer;
-  }
-
-  buffer += "<div class=\"top-footer-row\">\n    <div class=\"footer-container container\">\n        <div class=\"footer-inner row-fluid\">\n            <div class=\"span6 footer-faculty-links\">\n                <h3>";
-  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.title); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</h3>\n                <div class=\"row-fluid\">\n                    <div class=\"span5\">\n                        <ul class=\"faculty-links\">\n                            ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.links), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n                        </ul>\n                    </div>\n                    <div class=\"span7\">\n                        ";
-  stack1 = self.invokePartial(partials.SocialMediaIcons, 'SocialMediaIcons', depth0, helpers, partials, data);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n                    </div>\n                </div>\n            </div>\n            <div class=\"span6 vcard\">\n                ";
-  stack1 = self.invokePartial(partials.ContactInfo, 'ContactInfo', (depth0 && depth0.contact), helpers, partials, data);
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n            </div>\n        </div>\n    </div>\n</div>\n";
   return buffer;
   });

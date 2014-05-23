@@ -1,0 +1,810 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <!-- Meta: These two must be before <title> -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <!-- Title -->
+  <title>University of Alberta</title>
+  
+  <!-- Other Meta -->
+  <meta name="description" content="University of Alberta">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  /**
+  * Protect window.console method calls, e.g. console is not defined on IE
+  * unless dev tools are open, and IE doesn't define console.debug
+  */
+  (function() {
+  if (!window.console) {
+  window.console = {};
+  }
+  // union of Chrome, FF, IE, and Safari console methods
+  var m = [
+  "log", "info", "warn", "error", "debug", "trace", "dir", "group",
+  "groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd",
+  "dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"
+  ];
+  // define undefined methods as noops to prevent errors
+  for (var i = 0; i < m.length; i++) {
+  if (!window.console[m[i]]) {
+  window.console[m[i]] = function() {};
+  }
+  }
+  })();
+  </script>
+  
+  <!-- The Sheets -->
+  <link href="css/framework.css" rel="stylesheet">
+  <!-- The Favicon -->
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  
+  <!-- Touch Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js
+  " type="text/javascript"></script><![endif]-->
+  <!-- Head Scripts: ANALYTICS/MODERNIZR ONLY!  All others before </body> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="js/libs.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <style>
+
+
+
+h1, h2, h3, h4, h5, h6, .site-title {
+  margin: 1.57em 0 0.57em;
+  font-family: "DIN Bold", sans-serif;
+  font-weight: normal;
+  line-height: 1;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+  .banner-inner .site-title {
+    margin: 0 0 0.1em 0;
+    font-family: "DIN Medium", sans-serif;
+  }
+
+  @media (min-width:61.25em) {
+    .banner-inner .site-title {
+      font-size: 42px;
+    }
+  }
+
+.page-title {
+  font-size:32px;
+}
+
+h2 { 
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.2em;
+  font-family: "DIN Bold";
+  text-transform: uppercase;
+}
+
+.scholarship-list {
+  list-style: none;
+  margin: 0 0 1.57em 0;
+  padding: 0;
+}
+
+.scholarship-list > li {
+  padding:0.7143em 0 0 0;
+  border-top:1px dotted #ddd
+}
+
+.scholarship-list > li ul {
+  margin-bottom:0.7143em;
+}
+
+table {
+  width:100%;
+  margin-bottom:1.57em;
+}
+
+table th,
+table td {
+  padding: 0.355em 0;
+  border-bottom:1px dotted #ddd;
+}
+
+table th {
+  text-align:left;
+  border-bottom-style:solid;
+}
+
+</style>
+</head>
+<body>
+  <!--[if lt IE 8]><p class=alert>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header>
+    <div class="f-e-container blade-module">
+      <div class="blade-container">
+        <div class="blade-inner">
+          <a class="brand" href="http://ualberta.ca">
+            <img src="http://www.med.ualberta.ca/design/img/logo2.svg" alt="University of Alberta"> <!-- For Faculties only -->
+          </a>
+          <nav class="blade-navigation">
+            <ul class="quick-links-container">
+              <li id="ql" class="dropdown">
+                <a href="#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop">
+                <span class="quick-links-text">Quick Links</span>
+                </a>
+                <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                  <li role="menuitem">
+                    <a href="#">Find a Person</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">ONEcard</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Bear Tracks</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Maps</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Email &amp; Apps</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">eClass</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Libraries</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="f-e-container banner-module">
+      <div class="banner-container">
+        <div class="banner-inner">
+          <a href="//www.med.ualberta.ca/" class="site-title">Faculty of Medicine &amp; Dentistry</a>
+        </div>
+      </div>
+    </div>
+    <div class="f-e-container global-navigation-module">
+      <div class="navigation-container">
+        <nav id="main-nav" class="navigation-inner">
+          <ul>
+            <li>
+              <a class="navigation-toggle">
+              <span>Show Navigation</span>
+              <i class="icon-toggle-nav"></i>
+              </a>
+              <ul id="nav-list" class="main-navigation collapse">
+                <li role="menuitem" class="nav1">
+                  <a href="#">Why UAlberta?</a>
+                </li>
+                <li role="menuitem" class="nav2">
+                  <a href="#">Faculties &amp; Programs</a>
+                </li>
+                <li role="menuitem" class="nav3">
+                  <a href="#">Research</a>
+                </li>
+                <li role="menuitem" class="nav4">
+                  <a href="#">Admissions</a>
+                </li>
+                <li role="menuitem" class="nav5">
+                  <a href="#">Campus Life</a>
+                </li>
+                <li role="menuitem" class="nav6">
+                  <a href="#">News &amp; Events</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="f-e-container mobile-navigation-module">
+      <div class="nav-mobile">
+        <div class="nav-wrapper">
+          <ul class="level-0">
+            <li>
+              <a href="#">Why UAlberta?</a>
+            </li>
+            <li>
+              <a href="#">Faculties and Programs</a>
+            </li>
+            <li>
+              <a href="#">Research</a>
+            </li>
+            <li>
+              <a href="#">Campus Life</a>
+            </li>
+            <li>
+              <a href="#">News and Events</a>
+            </li>
+            <li>
+              <a href="#">Prospective Students</a>
+            </li>
+            <li>
+              <a href="#">Current Students</a>
+            </li>
+            <li>
+              <a href="#">Faculty and Staff</a>
+            </li>
+            <li>
+              <a href="#">Alumni and Friends</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="content-wrapper" class="content-wrapper tertiary">
+    <div id="feature-area" class="content-top-row"></div>
+    <div id="page-title" class="page-title-row"></div>
+    <div class="content-container container">
+      
+      <div class="content-inner row-fluid">
+        <div id="first-column" class="span first-column">
+          
+        </div>
+        
+        <div id="second-column" class="span second-column clearfix">
+          <p class="intro-text">Indigenous Health Initiatives (IHI) hopes to help correct the under-representation of Aboriginal Peoples in health-care professions. IHI assists qualified Aboriginal students gain admission and graduate from the University of Alberta’s medical and dentistry programs. The initiative was founded in 1988 by the Faculty of Medicine &amp; Dentistry.</p>
+
+          <h2 id="about">About</h2>
+
+          <p>As of June 2011, 73 Aboriginal physicians have graduated with the help of IHI. A growing number of those who have completed their training are taking leadership roles in Aboriginal health programs and organizations across Canada. They are also providing direct health services to First Nations communities.</p>
+          <p>Whether they participate in Aboriginal health research or administer care, the faculty believes its Aboriginal students are leaders and role models in their communities.</p>
+          <p>Aboriginal Peoples who want access to physicians from their culture face a challenge. According to the Canadian Medical Association, in 1993, the ratio of Aboriginal physicians in Canada to was 1:30,000. This statistic is meager in comparison to the overall ratio of physicians to the general population, which was 1:600. </p>
+          <p>Despite recent advances in the health status of Canada’s Aboriginal Peoples, significant differences remain, including shorter life expectancy, higher infant mortality rates and higher morbidity rates than the general population.</p>
+          <h3>Mandate</h3>
+          <p>The mandate of the Indigenous Health Initiatives is:</p>
+          <ul>
+              <li>Correct the under-representation of Aboriginal physicians in Canada by encouraging more Aboriginal students to consider careers in medicine and dentistry. </li>
+              <li>Coordinate their admission into the MD program and other programs within the faculty.</li>
+              <li>Provide support services to enable students to graduate successfully. </li>
+          </ul>
+          <p>It is the faculty’s belief that Aboriginal students with a commitment to their culture and traditions will serve as role models for other Aboriginal youth, become leaders in producing improvements to Aboriginal health standards and enrich the faculty as a whole. </p>
+          <p>In order to fulfil this mandate, the faculty has instituted special status admission to the MD and DDS programs for Aboriginal applicants. The faculty has a national proactive <a href="http://www.med.ualberta.ca/communities/ihi/admissions/recruitment" id="https://medicine-beta.sitecore.ualberta.ca/Communities/http://www.med.ualberta.ca/communities/ihi/admissions/recruitment_68">recruitment policy</a>. </p>
+
+
+          <hr />
+
+
+          <h2 id="admissions">Admissions</h2>
+          <p>Programs within the Faculty of Medicine &amp; Dentistry reserve positions for qualified Aboriginal students:</p>
+          <table>
+            <tbody>
+              <tr>
+                <th width="50%">
+                  Program
+                </th>
+                <th>
+                  Number of Available Positions
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://www.med.ualberta.ca/programs/md">Medicine</a>
+                </td>
+                <td>
+                  5
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://www.med.ualberta.ca/programs/mls">Medical Laboratory Science</a>
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://dentistry.ualberta.ca/en/ProgramsAdmissions/Dentistry/DDSOverview.aspx" target="_blank" title="Doctor of Dental Surgery">Doctor of Dental Surgery</a>
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://dentistry.ualberta.ca/ProgramsAdmissions/DentalHygiene/DentalHygieneDiploma.aspx" target="_blank" title="Dental Hygiene Program">Dental Hygiene Program</a>
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>All other professional health-sciences faculties at the University of Alberta also offer special positions reserved for Aboriginal students. </p>
+          <p>To qualify, applicants must provide proof of Aboriginal ancestry as defined in <a href="http://www.registrar.ualberta.ca/calendar/Admission/General-Requirements/14.html" target="_blank" title="University of Alberta Calendar, Section 14.1" id="University of Alberta Calendar, Section 14.1_74">Section 14.1</a> of the University of Alberta Calendar. This is in alignment with the Constitutional Act of 1982, Section 35, Part 2.</p>
+          <p>Candidates must meet all the requirements for admission as outlined by the University of Alberta, including a personal interview (where applicable). At least one person on the interview team for Aboriginal applicants will be of Aboriginal ancestry.</p>
+          <h3>Residency Requirements:</h3>
+          <p>Residency requirements are waived for all Aboriginal applicants. Preference for positions set aside for Aboriginal students may be given to residents of Alberta. </p>
+          <h3>Recruitment</h3>
+          <p>The Faculty of Medicine &amp; Dentistry has a national recruitment policy—students and graduates come from across Canada. They represent Abenaki, Blackfoot, Cree, Delaware, Inuit, Iroquois, Métis, Micmac, Maliseet, Mohawk, Ojibwa, Odawa and Saulteaux Nations.</p>
+          <p>Aboriginal MD and DDS students and graduates travel across Canada with an administrator to inform other Aboriginal youth about the University of Alberta and the IHI program. They appear at national and regional career fairs, workshops, schools, universities, conferences, etc.</p>
+          <p>Recruitment posters featuring Aboriginal students are produced and distributed to schools, organizations and interested individuals across Canada.</p>
+
+          <hr />
+
+
+          <h2 id="funding-opportunities">Funding Opportunities</h2>
+          <h3>University of Alberta</h3>
+          <ol class="scholarship-list">
+            <li><strong>Darcy Tailfeathers Memorial Awards in Medicine </strong>
+              <p>Every year, the Faculty of Medicine &amp; Dentistry honours two Aboriginal medical students. The candidates are nominated by the faculty and must be of Aboriginal descent, as outlined in the calendar.</p>
+              This award was established in memory of the Faculty of Medicine &amp; Dentistry's first Aboriginal MD student, Darcy Tailfeathers, who died in an automobile accident during the third year of his studies.
+              <p><b>Number:</b> 2<br>
+              <b>
+              Amount:</b> $1,750</p>
+            </li>
+            <li><strong>Tom Wegmann Memorial Award </strong>
+              <p>Biennially, the Faculty of Medicine &amp; Dentistry recognizes an Aboriginal student with an interest in indigenous health care. </p>
+              <p>The award was established in 1995 in memory of a Faculty member who, for many years, was a strong supporter of the IHI Program. </p>
+              <p><b>Number:</b> 1, biennially<br>
+              <b>
+              Amount:</b> $750</p>
+            </li>
+            <li><strong>Aboriginal Student Services Centre (ASSC)</strong>
+              <p>The ASSC annually posts a list of <a href="http://www.aboriginalservices.ualberta.ca/ScholarshipsAwardsandBursaries.aspx" title="ASSC list of awards" target="_blank" id="ASSC list of awards_69">awards</a> that are only available to Aboriginal students at the University of Alberta.</p>
+            </li>
+          </ol>
+          <h3>Canadian Medical Foundation</h3>
+          <ol class="scholarship-list">
+            <li><strong>Canadian Medical Foundation Bursaries</strong>
+              <p>Limited to MD students<br>
+              Available through Indspire’s scholarship publication <i><i><i><a href="http://indspire.ca/wp-content/uploads/2013/05/May-16-Final-Slim-PDF-Indspire_May16.pdf" target="_blank" title="Building Brighter Futures publication" id="Building Brighter Futures publication_70"><i>Building Brighter Futures</i></a></i></i></i>, this bursary is available to all Aboriginal medical students in Canada.</p>
+              <p>Applications are available from any Faculty of Medicine &amp; Dentistry co-ordinator.</p>
+              <p><b>Number:</b> Variable <br>
+              <b>
+              Amount:</b> Variable</p>
+            </li>
+            <li><strong>Dr. John Big Canoe Memorial Scholarship</strong>
+              <p>The Canadian Medical FoundationOpen to any undergraduate Aboriginal student enrolled in their second, third, or fourth year of study in a Canadian medical school. The ideal applicant has demonstrated strong academic performance and outstanding contributions to an Aboriginal community in Canada.</p>
+              <p>Applications are available from any Faculty of Medicine in Canada or a CMF Special Bursary Program for Aboriginal Medical Students co-ordinator.<br>
+              <b>
+              Tel:</b> 1-800-267-9703</p>
+              <p><b>Number:</b> 1<br>
+              <b>
+              Amount:</b> $2,000</p>
+            </li>
+          </ol>
+          <h3>Government of Canada</h3>
+          <ol class="scholarship-list">
+            <li><b>Aboriginal Bursaries Canada
+              </b>
+              <p>This <a href="http://www.aadnc-aandc.gc.ca/eng/1351185180120/1351685455328" title="Government of Canada searchable award database" target="_blank" id="Government of Canada searchable award database_71">searchable database</a> has hundreds of scholarship opportunities exclusively for Aboriginal students.</p>
+            </li>
+          </ol>
+          <h3>Government of Alberta</h3>
+          <ol class="scholarship-list">
+            <li><b>Province of Alberta Aboriginal Health Careers Bursaries
+              </b>
+              <p>Each year, the Province of Alberta awards <a href="https://alis.alberta.ca/pdf/scholarships/Aboriginal%20Health%20Careers.pdf" target="_blank" title="Government of Alberta Aboriginal burasries" id="Government of Alberta Aboriginal burasries_72">bursaries</a> to qualified Aboriginal students pursuing health care careers. One year residency in Alberta and proof of membership in an Alberta Band or Métis Association is required to apply.</p>
+              <p><b>Number:</b> Variable<br>
+              <b>
+              Amount:</b> Up to $11,000</p>
+            </li>
+          </ol>
+          <h3>Alberta Network Environments for Aboriginal Health Research</h3>
+          <ol class="scholarship-list">
+            <li><strong>Network Environments for Aboriginal Health Research Graduate Awards</strong>
+              <p><a href="http://www.neahr.ualberta.ca/en/GraduateAwards.aspx" target="_blank" title="NEAHR Research Graduate Award" id="NEAHR Research Graduate Award_73">This award</a> is given to an graduate working in Aboriginal health research with an Indigenous community. Recipients can reapply for two years of funding.</p>
+              <p><b>Number:</b> Variable<br>
+              <b>
+              Amount:</b> $20,000/year for PhD students; $17,000/year for master’s students</p>
+            </li>
+          </ol>
+          <h3>Edmonton Community Foundation</h3>
+          <ol class="scholarship-list">
+            <li><strong>Belcourt Brosseau Métis Award</strong>
+              <p><a href="http://www.ecfoundation.org/belcourt-brosseau-metis-awards" target="_blank" title="Belcourt Brosseau Métis Award" id="Belcourt Brosseau Métis Award_74">Belcourt Brosseau Métis Award</a> was established in 2001. It was a joint effort by the directors of the Canative Housing Corporation, Orval Belcourt, Herb Belcourt and George Brosseau. Students are evaluated on a combination of factors, which include connections to the Métis community, financial need and academic performance.</p>
+              <p><b>Number:</b> Variable<br>
+              <b>
+              Amount:</b> between $2,000 and $7,000.</p>
+            </li>
+          </ol>
+
+          <hr />
+
+          <h2 id="student-services">Student Services</h2>
+          <p>The administration provides Aboriginal students and applicants who are planning their undergraduate degrees with the following services:</p>
+          <ol class="scholarship-list">
+            <li><b>Assistance and facilitating during the admissions process.
+              </b>
+              <ul>
+                <li>Aboriginal applicants must meet all academic qualifications when applying for medical programs.</li>
+                <li>Administration will assist with the admissions process, and help students plan their undergraduate program. </li>
+                <li>Students are given the opportunity to visit the campus early in the application process.</li>
+                <li>During the applicant interviews (where applicable), at least one of the panel members will be of Aboriginal descent.</li>
+                <li>Applicants, students and interviewers are invited to a luncheon after the applicant interviews.</li>
+              </ul>
+            </li>
+            <li><b>Academic upgrading, tutoring services, referrals.
+              </b>
+              <ul>
+                <li>The administration can assist with upgrading and tutoring.</li>
+                <li>The Aboriginal Student Services Centre offers <a href="http://www.aboriginalservices.ualberta.ca/en/ProgramsandServices/ASSCTutoringWorkshopFundingPro.aspx" target="_blank" title="tutoring services for Aboriginal students">tutoring services</a>.</li>
+                <li>The <a href="http://www.aboriginalservices.ualberta.ca/ProgramsandServices/MentoringAboriginalPeersProgra.aspx" target="_blank" title="Mentoring Aboriginal Peers Program">Mentoring Aboriginal Peers Program</a> helps first- and second-year students make the transition to university as comfortable as possible.</li>
+              </ul>
+            </li>
+            <li><b>The <a href="http://www.aboriginalservices.ualberta.ca/" target="_blank" title="Aboriginal Student Services Centre">Aboriginal Student Services Centre</a> offers academic, personal and financial counseling.</b>
+              <ul>
+                <li><a href="http://www.aboriginalservices.ualberta.ca/ProgramsandServices/AboriginalStudentHousing.aspx" target="_blank" title="Housing options for Aboriginal students">Housing options</a> are offered to Aboriginal students.</li>
+              </ul>
+            </li>
+            <li><b>IHI and Faculty of Medicine &amp; Dentistry activities
+              </b>
+              <ul>
+                <li>The IHI founded activities for nurturing Aboriginal students’ academic and cultural well-being</li>
+                <li>Events take place throughout the year to celebrate academic achievements. </li>
+              </ul>
+            </li>
+          </ol>
+
+          <hr />
+
+
+          <h2 id="events">Events</h2>
+          <h3>New Students Orientation Lunch</h3>
+          <p>The University of Alberta welcomes new Aboriginal students from all faculties and programs with an annual luncheon. Attendees will have the opportunity to meet new and returning students. They will also be introduced to their respective programs of study.</p>
+          <p>New students have the option to be mentored by a returning student in their program. The mentor should be able to answer most questions, help locate classes and assist in the new student’s transition to university.</p>
+          <h3>Medical Applicants Interview Luncheon</h3>
+          <p>All medical school applicants go through an interview process. Aboriginal applicant interviews are scheduled each morning during Interview Week. At least one panel member addressing these applicants will be of Aboriginal descent.</p>
+          <p>After the interviews, Aboriginal applicants and interviewers are invited to a welcoming luncheon. Aboriginal students already enrolled in the Faculty, as well as former Aboriginal graduates, are also invited to attend. The lunch is hosted by staff of Indigenous Health Initiatives (IHI) Program and the Faculty of Medicine &amp; Dentistry.</p>
+          <p>The luncheon gives the applicants an opportunity to meet their potential peers and mentors. The relaxed social setting helps Aboriginal students learn more about the Faculty, curriculum and IHI Program. </p>
+          <p>Attendees from previous years have said that the luncheon eased their transition into university. Gaining familiarity with the campus and seeing familiar faces during the first few weeks of medical school helped them settle into their new environment.</p>
+          <h3>Graduate Awards Luncheon</h3>
+          <p>This annual luncheon celebrates the success of Aboriginal students. Faculty members, Aboriginal graduates, recipients of the&nbsp;<a href="http://www.med.ualberta.ca/communities/ihi/funding" id="https://medicine-beta.sitecore.ualberta.ca/Communities/IHI/http://www.med.ualberta.ca/communities/ihi/funding_69">Darcy Tailfeathers Awards</a> and the students’ families are all invited to celebrate their academic accomplishments.</p>
+          <p>This luncheon tradition was initiated in 1989, when Darcy Tailfeather’s family was awarded his posthumous degree. Darcy Tailfeathers was the first Aboriginal medical student to attend the University of Alberta. He was killed in an automobile accident during his third year of study. Members of the Tailfeathers family attend the luncheon each year.</p>
+          <h3>Undergraduate Luncheon</h3>
+          <p>During this biennial luncheon, the Faculty of Medicine &amp; Dentistry celebrates the academic success of its Aboriginal students. Recipients of the <a href="http://www.med.ualberta.ca/communities/ihi/funding" id="https://medicine-beta.sitecore.ualberta.ca/Communities/IHI/http://www.med.ualberta.ca/communities/ihi/funding_70">Tom Wegmann Award </a>will be given their prize at this time.</p>
+          <p>Faculty members, Aboriginal students and their families are all invited to join. Dr Tom Wegmann’s family is warmly welcomed as well.</p>
+          <h3>Health&nbsp;Horizon Days</h3>
+          <p>Health Horizon Days brings Aboriginal youth to the University of Alberta to discuss careers in medicine. Attendees will learn more about medical careers through group discussion and workshops. Youth will also have the opportunity to spend time with Aboriginal role models from the medical laboratory sciences, medicine and dentistry programs.</p>
+          <p>At the Health Horizon Days in October 2011, youth took part in one of three workshops hosted by dedicated physicians, Faculty members and Aboriginal students. The first was crime scene investigation in a medical sciences lab. “Life as a Surgeon” exposed them to an operating room at the U of A Hospital. They also enjoyed a variety of hands-on learning projects in a new dental lab at the Edmonton Clinic Health Academy.</p>
+          <p>The main goals of this event are:</p>
+          <ol>
+            <li>Provide students and chaperones with a positive and culturally appropriate experience</li>
+            <li>Improve their understanding of their community’s health </li>
+            <li>Improve their understanding of the under-representation of Aboriginals in health care.</li>
+            <li>Develop capacity in First Nations, Métis and Inuit communities by investing in youth.</li>
+          </ol>
+          <p>The Faculty of Medicine &amp; Dentistry strongly encourages Aboriginal youth to pursue health-care careers. Aboriginals are under-represented in every level of the health sector—hospitals, clinics and laboratories; policy-making divisions also lack representation. This is something the University of Alberta hopes to help reverse.</p>
+          <p><strong>The next Health Horizon Day is scheduled for Summer 2013.</strong></p>
+          <p>Health Horizon Days are a collaborative effort from the IHI program and Treaty 6, Treaty 7 and Treaty 8.</p>
+
+          <hr />
+
+
+          <h2 id="contact">Contact</h2>
+          <p><strong>The Division of Community Engagement</strong></p>
+          <p>2-115 Edmonton Clinic Health Academy<br>
+          Faculty of Medicine &amp; Dentistry<br>
+          University of Alberta<br>
+          Edmonton, AB<br>
+          Canada, T6G 1C9</p>
+          <p><b>Tel:</b> 780-492-8928<br>
+          <b>Fax:</b> 780-248-1163</p>
+          <h3>Staff and Faculty</h3>
+          <div class="row-fluid">
+            <div class="span7">
+              <div class="module-container ">
+                <div>
+                  <p><b>Dr. Jill Konkin</b><br>
+                  Associate Dean<br>
+                  <b>
+                  Tel:</b> 780-492-0678<br>
+                  <b>Email:&nbsp;</b>jill.konkin@ualberta.ca</p>
+                  <p><b>Wendy Brown</b><br>
+                  Administrator<br>
+                  <b>
+                  Tel:</b> 780-492-5362<br>
+                  <b>Email:</b>&nbsp;wendy.brown@ualberta.ca</p>
+                  <p><b>Julie Nguyen</b><br>
+                  Financial Co-ordinator<br>
+                  <b>
+                  Tel:</b> 780-492-0582<br>
+                  <b>Email:</b>&nbsp;jn5@ualberta.ca</p>
+                  <p><b>Cheryl Knowles</b><br>
+                  Reception/Admin Assistant<br>
+                  <b>
+                  Tel:</b> 780-492-8928<br>
+                  <b>Email:</b>&nbsp;cknowles@ualberta.ca</p>
+                  <br>
+                  <h4>Community Engaged Research</h4>
+                  <p><b>Dr. Louanne Keenan</b><br>
+                  Director, Community Engaged Research<br>
+                  <b>
+                  Tel:</b> 780-492-1418<br>
+                  <b>Email:</b>&nbsp;lkeenan@ualberta.ca</p>
+                  <br>
+                  <h4>Global Health</h4>
+                  <p><strong>Dr. David Zakus</strong><br>
+                  Director<br>
+                  <b>
+                  Tel:</b> 780-492-6348<br>
+                  <b>Email:</b>&nbsp;zakus@ualberta.ca</p>
+                  <p><strong>Dr. Dominic Allain</strong><br>
+                  Assistant Director<br>
+                  <b>
+                  Tel:</b>  780-492-7004<br>
+                  <b>Email:</b>&nbsp;dominic.allain@albertahealthservices.ca<br>
+                  <b>Email:</b>&nbsp;dallain@ualberta.ca</p>
+                  <br>
+                  <h4>Indigenous Health Initiatives</h4>
+                  <p><strong>Kenton Boutillier</strong><br>
+                  Administrator, IHI<br>
+                  <b>
+                  Tel:</b> 780-492-9526<br>
+                  <b>Email:</b>&nbsp;kboutill@ualberta.ca</p>
+                </div>
+              </div>
+            </div>
+            <div class="span5">
+              <div class="module-container ">
+                <div>
+                  <h4>Inner City Health</h4>
+                  <p><strong>Dr. Jill Konkin</strong><br>
+                  <b>
+                  Tel:</b> 780-492-8928</p>
+                  <br>
+                  <h4>Rural &amp; Regional Health</h4>
+                  <p><b>Toll free:</b> 866-492-0678</p>
+                  <p><strong>Dr. Fred Janke</strong><br>
+                  Director<br>
+                  <b>
+                  Tel:</b> 780-492-0678<br>
+                  <b>Email:</b>&nbsp;fjanke@ualberta.ca</p>
+                  <p><strong>Rattan Dhillon</strong><br>
+                  Administrative Assistant<br>
+                  <b>
+                  Tel:</b> 780-492-0678<br>
+                  <b>Email:</b>&nbsp;rattan1@ualberta.ca</p>
+                  <h4></h4>
+                  <h4>Integrated Community Clerkship</h4>
+                  <p><strong>Dr. Darren Nichols</strong><br>
+                  Program Director<br>
+                  <b>
+                  Tel:</b> 780-492-8569<br>
+                  <b>Email:</b>&nbsp;dnichols@ualberta.ca</p>
+                  <p><br>
+                  </p>
+                  <p>Program Coordinator<br>
+                  <b>
+                  Tel:</b> 780-248-1103<br>
+                  <b>Email:</b>&nbsp;iccume@ualberta.ca</p>
+                  <p>
+                  Learning Specialist<br>
+                  <b>
+                  Tel:</b> 780-248-1455<br>
+                  <b>Email:</b>&nbsp;iccume@ualberta.ca</p>
+                  <p><strong>Daniel Lemoine</strong><br>
+                  Research Assistant<br>
+                  <b>
+                  Tel:</b> 780-492-9417<br>
+                  <b>Email:</b>&nbsp;dlemoine@ualberta.ca</p>
+                  <p><strong>Dallas Dyson</strong><br>
+                  Community Liaison<br>
+                  <b>
+                  Tel:</b> 780-492-6631<br>
+                  <b>Email:</b>&nbsp;dyson@ualberta.ca</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--
+          <div class="image-caption-container frame">
+            <a class="image-shadow">
+            <img src="http://placehold.it/800x450" alt="placeholder">
+            </a>
+            <p class="caption">
+            A sample caption
+            </p>
+          </div>
+        -->
+        </div>
+        <div id="sidebar" class="span sidebar"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="f-e-container institutional-footer-module">
+      <div class="bottom-footer-row">
+        <div class="footer-container container">
+          <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+              <ul class="footer-quick-links">
+                <li>
+                  <a href="#" target="">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#" target="">Feedback</a>
+                </li>
+                <li>
+                  <a href="#" target="">University Calendar</a>
+                </li>
+                <li>
+                  <a href="#" target="">Careers</a>
+                </li>
+                <li>
+                  <a href="#" target="">Emergency</a>
+                </li>
+                <li>
+                  <a href="#" target="">Policies</a>
+                </li>
+                <li>
+                  <a href="#" target="">Weather</a>
+                </li>
+                <li>
+                  <a href="#" target="">Edmonton</a>
+                </li>
+                <li>
+                  <a href="#" target="">Privacy</a>
+                </li>
+                <li>
+                  <a href="#" target="">Keep In Touch</a>
+                </li>
+                <li><a href="#">Back to Top</a></li>
+              </ul>
+              <p>© 2014 <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    var page = new UAlberta.FrontEnd.Modules.Page({
+    featureArea: "#feature-area",
+    firstColumn: "#first-column",
+    secondColumn: "#second-column",
+    sidebar: "#sidebar"
+    });
+    
+    var linkList = {
+    "header": {
+    "heading": "Campus Notices"
+    },
+    "items": [
+    {
+    "url": "#",
+    "label": "Facebook"
+    },
+    {
+    "url": "#",
+    "label": "Twitter"
+    },
+    {
+    "url": "#",
+    "label": "YouTube"
+    },
+    {
+    "url": "#",
+    "label": "Flickr"
+    }
+    ]
+    };
+    var sidebarContent = {
+    "title": "Twitter",
+    "content": "<p>For more information on our programs, please contact the <a href='http://www.med.ualberta.ca/communities/community/contact'>Division of Community Engagement</a></p>"
+    };
+    var pageTitle = {
+      breadcrumbs: [
+        {
+          url: "#",
+          label: "Home"
+        },
+        {
+          url: "#",
+          label: "Communities"
+        }
+      ],
+      pageName: "Indigenous Health Initiatives"
+    };
+
+    var imageCaption2 = {
+      imageSrc: "http://www.med.ualberta.ca/-/media/medicine/communityengagement/IHI/aboriginal-grads.jpg",
+      imageAlt: "2013 Indigenous Health Celebration and Awards",
+      imageCaption: "2013 Indigenous Health Celebration and Awards",
+      url :"#",
+      hoverCaption : true
+    };
+
+    page.addModule('page-title', pageTitle, '#page-title');
+
+    page.addToSidebar('sidebar-item', {
+      header: {
+        heading: "Contact Information"
+      },
+      content:"<p>For more information on our programs, please contact the <a href='http://www.med.ualberta.ca/communities/community/contact'>Division of Community Engagement</a></p>",
+    });
+
+    var sidebarItem = page.addToSidebar('sidebar-item', {
+      header: {
+        heading: "Graduating Excellence"
+      } 
+    });
+    sidebarItem.addModule('image-caption', imageCaption2, '.sidebar-content')
+    sidebarItem.addModule('html-content', { html: '<p>Congratulations to the 2013 medicine and dentistry aboriginal graduands!</p>' }, '.sidebar-content');
+    
+    page.activate();
+
+function convertToSlug(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^a-z0-9 -]/g, '')
+        .replace(/[^\w ]+/g,'')
+        .replace(/ +/g,'-');
+}
+
+var navContainer = $('#first-column');
+var navSections = $('.second-column h2');
+var navRoot = $('<ul></ul>').addClass('level-0').addClass('nav');
+
+navContainer.prepend('<div class="nav-wrapper"></div>');
+
+navSections.each(function() {
+  var headingId = convertToSlug($(this).text());
+  var navElement = $('<li><a href="#'+headingId+'">'+$(this).text()+'</a></li>');
+  
+  // add the id to the heading
+  $(this).attr('id', headingId);
+   
+  // scroll to section on click
+  navElement.on('click', 'a', function(event) {
+    $("body").animate({ scrollTop: $('#'+headingId).offset().top-18 }, 600); 
+    return false;
+  });
+
+
+  
+  // add to the navigation menu
+  navRoot.append(navElement);
+});
+
+navContainer.find('.nav-wrapper').append(navRoot);
+
+
+  $('body').scrollspy({ 
+    target: '.nav-wrapper',
+    offset: 120
+  });
+
+
+  $('#first-column').affix({
+    offset: {
+      top: $('#first-column').offset().top
+    , bottom: function () {
+        return (this.bottom = $('.footer').outerHeight(true))
+      }
+    }
+  })
+
+  });
+  </script>
+</body>
+</html>

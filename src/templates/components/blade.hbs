@@ -1,0 +1,32 @@
+<div class="blade-container">
+    <div class="blade-inner">
+
+        {{#if logo}}
+        <a class="brand" href="{{logo.url}}">
+            <img src="{{logo.imageSrc}}" alt="{{logo.altText}}">
+        </a>
+        {{/if}}
+
+        <nav class="blade-navigation">
+            <ul class="quick-links-container">
+                <li id="ql" class="dropdown">
+                    <a href="#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop">
+                        <span class="quick-links-text">Quick Links</span>
+                    </a> 
+                    <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                        {{#each quickLinks}}
+                            <li role="menuitem">
+                                <a href="{{this.url}}">{{this.label}}</a>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="blade-search">
+            {{> InlineForm search}}
+        </div>
+
+    </div>
+</div>  

@@ -64,6 +64,7 @@
 
   <!-- Head Scripts: ANALYTICS/MODERNIZR ONLY!  All others before </body> -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="js/libs.min.js"></script>
   
 </head>
@@ -73,7 +74,19 @@
 
   <header></header>
 
-  <div id="content-wrapper" class="content-wrapper"></div>
+  <div id="feature-area"></div>
+
+  <div id="content-wrapper" class="content-wrapper">
+    <div id="first-column">
+
+    </div>
+    <div id="second-column">
+
+    </div>
+    <div id="sidebar">
+
+    </div>
+  </div>
 
   <footer></footer>
   <script src="js/main.min.js"></script>
@@ -81,12 +94,48 @@
 
     $(document).ready(function() {
 
+      var page = new UAlberta.FrontEnd.Modules.Page({});
+
+      page.addModule(
+        'blade', 
+        'http://localhost:3333/assets/data/components/sample-blade.json', 
+        'header', 
+        { prepend: true }
+      );
+
+/*
+      page.addModule(
+        'banner', 
+        'http://localhost:3333/assets/data/components/sample-banner.json', 
+        'header', 
+        {}
+      );
+
+      page.addModule(
+        'global-navigation', 
+        'http://localhost:3333/assets/data/components/sample-global-navigation.json', 
+        'header', 
+        {}
+      );
+
+      page.addModule(
+        'mobile-navigation', 
+        'http://localhost:3333/assets/data/components/sample-mobile-navigation.json', 
+        'header', 
+        {}
+      );
+
+      page.addModule(
+        'feature-carousel', 
+        'http://localhost:3333/assets/data/components/sample-feature.json', 
+        '#feature-area', 
+        {}
+      );
+
+      page.activate();
+
+
       $.getJSON( "assets/data/base_institutional.json", null, function(data) {
-
-        var page = new UAlberta.FrontEnd.Modules.Page("ualberta-home",data
-        );
-
-        page.setPageTitle(); 
 
         var feature = {
           features: [
@@ -626,8 +675,9 @@
           console.error("getJSON failed, status: " + textStatus + ", error: "+error)
 
       });
-
+*/
     });
+
   </script>
 </body>
 </html>

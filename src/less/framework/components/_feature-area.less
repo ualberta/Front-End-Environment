@@ -10,10 +10,21 @@
   position:relative;
 }
 
+// if it has the container class it doesn't
+// span the whole page, so add some margins
+.full-page-feature.container {
+  margin-top:-1px; 
+  .slide {
+    background:transparent;
+    .border-radius(0 0 4px 4px);
+  }
+  .slide img {
+    .border-radius(0 0 4px 4px);
+  }
+}
+
 // style definitions to full page feature
 .full-page-feature {
-
-  width:100%;
 
   // inset shadow on each slide
   .slides > .slide:after {
@@ -115,6 +126,10 @@
 
   .full-page-feature {
 
+    &.container .slides:after {
+      display:none;
+    } 
+
     // image centered by default on high res
     .slides > .slide {
       position:absolute;
@@ -157,11 +172,11 @@
       .border-radius(4px);
       &.left-island {
         right:auto;
-        left: 3%
+        left: 5%
       }
       &.right-island {
         left:auto;
-        right: 3%;
+        right: 5%;
       }
       &.bottom-island {
         top:auto;
@@ -233,11 +248,15 @@
   .full-page-feature {
     .content-island {
       &.left-island {
-        left: 5%
+        left: 9%;
       }
       &.right-island {
-        right: 5%;
+        right: 9%;
       }
+    }
+    &.container .content-island {
+      &.left-island { left: 5%; }
+      &.right-island { right: 5%; }
     }
   }
 }
@@ -246,6 +265,10 @@
   .full-page-feature .slides {
     height: 29.25em; // fixed height at 1536
     padding-top: 0;
+  }
+  .full-page-feature.container .slides {
+    height:auto;
+    padding-top:30%;
   }
   .full-page-feature .overlay-gradient { display:block; }
 }

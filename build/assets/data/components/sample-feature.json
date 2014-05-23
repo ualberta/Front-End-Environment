@@ -1,21 +1,56 @@
 {
-  "imageSrc" : "http://www.placehold.it/1680x504",
-  "imageAlt" : "Placeholder Image",
-  "imageFocalPoint": "right",
-  "heading" : "This is a sample feature.",
-  "description" : "A sample description will follow the heading.",
-  "buttons": [
+  "features": [
     {
-      "url": "#",
-      "label": "Do Something!",
-      "type": "green",
-      "size": "micro"
+      "gradientOverlay": "light right",
+      "backgroundColor" : "#ccc",
+      "imageSrc" : "http://www.placehold.it/1680x504",
+      "imageFocalPoint": "left",
+      "alignment": "right",
+      "heading" : "Sample Heading",
+      "description" : "A sample description will follow the heading.",
+      "buttons": [
+        {
+          "url": "#",
+          "label": "Do Something Else!",
+          "type": "green",
+          "size": "micro"
+        },
+        {
+          "url": "#",
+          "label": "Don't!",
+          "type": "grey",
+          "size": "micro"
+        }
+      ],
+      "hBoxPosition" : "right",
+      "vBoxPosition" : "bottom",
+      "featureClass": "ga_ualberta_fma sample-feature"
+    },
+    {
+      "gradientOverlay": "dark right",
+      "backgroundColor" : "#ccc",
+      "imageSrc" : "http://www.placehold.it/1680x504",
+      "imageFocalPoint": "left",
+      "alignment": "right",
+      "heading" : "Sample Heading",
+      "description" : "A sample description will follow the heading.",
+      "buttons": [
+        {
+          "url": "#",
+          "label": "Do Something Else!",
+          "type": "green",
+          "size": "micro"
+        },
+        {
+          "url": "#",
+          "label": "Don't!",
+          "type": "grey",
+          "size": "micro"
+        }
+      ],
+      "hBoxPosition" : "right",
+      "vBoxPosition" : "bottom",
+      "featureClass": "ga_ualberta_fma sample-feature"
     }
-  ],
-  "boxPosition" : { 
-    "vertical": "bottom", 
-    "horizontal": "left" 
-  },
-  "boxClass": "dark",
-  "featureClass": "sample-feature"
+  ]
 }

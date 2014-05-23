@@ -1,0 +1,49 @@
+{
+  "mobileLinks": [
+    {
+      "url": "#",
+      "label": "Why UAlberta?",
+      "children": []
+    },
+    {
+      "url": "#",
+      "label": "Faculties and Programs",
+      "children": []
+    },
+    {
+      "url": "#",
+      "label": "Research",
+      "children": []
+    },
+    {
+      "url": "#",
+      "label": "Campus Life",
+      "children": []
+    },
+    {
+      "url": "#",
+      "label": "News and Events",
+      "children": []
+    },
+    {
+      "url": "#",
+      "label": "Prospective Students",
+      "children": []
+    },
+    {
+      "url": "#",
+      "label": "Current Students",
+      "children": []
+    },
+    {
+      "url": "#",
+      "label": "Faculty and Staff",
+      "children": []
+    },
+    {
+      "url": "#",
+      "label": "Alumni and Friends",
+      "children": []
+    }
+  ]
+}

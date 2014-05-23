@@ -62,7 +62,7 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ['src/js/**/*.js'],
-        tasks: ['concat:js', 'concat:libs']
+        tasks: ['concat:js', 'concat:libs', 'uglify:js']
       },
       css: {
         files: ['src/less/**/*.less'],

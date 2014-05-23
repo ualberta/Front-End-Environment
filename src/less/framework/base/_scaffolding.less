@@ -201,9 +201,7 @@ ol ol,
 ol ul {
   margin-bottom: 0;
 }
-li {
-  line-height: @baseLineHeight;
-}
+
 ul.unstyled,
 ol.unstyled {
   margin-left: 0;
@@ -215,7 +213,6 @@ address {
   display: block;
   margin-bottom: @baseLineHeight;
   font-style: normal;
-  line-height: @baseLineHeight;
 }
 
 // MISC
@@ -281,13 +278,13 @@ hr.soften {
 // floats for images
 img.pull-left {
   float:left;
-  width:45%;
+  max-width:50%;
   margin-right: 0.8333em;
 }
 
 img.pull-right {
   float:right;
-  width:45%;
+  max-width:50%;
   margin-left: 0.8333em;
 }
 
@@ -368,7 +365,7 @@ img.pull-right {
 [class^="loading"],
 [class*="loading"],
 .loading {
-  background:  url('http://www.ualberta.ca/~publicas/uofa/img/loading.gif') no-repeat center center;
+  background:  url('//www.ualberta.ca/~publicas/uofa/img/loading.gif') no-repeat center center;
   min-height: 30px;
 }
 

@@ -1,0 +1,701 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head> 
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <!-- Meta: These two must be before <title> -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <!-- Title -->
+  <title>University of Alberta</title>
+  
+  <!-- Other Meta -->
+  <meta name="description" content="University of Alberta">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+  <script>
+
+/**
+ * Protect window.console method calls, e.g. console is not defined on IE
+ * unless dev tools are open, and IE doesn't define console.debug
+ */
+(function() {
+  if (!window.console) {
+    window.console = {};
+  }
+  // union of Chrome, FF, IE, and Safari console methods
+  var m = [
+    "log", "info", "warn", "error", "debug", "trace", "dir", "group",
+    "groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd",
+    "dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"
+  ];
+  // define undefined methods as noops to prevent errors
+  for (var i = 0; i < m.length; i++) {
+    if (!window.console[m[i]]) {
+      window.console[m[i]] = function() {};
+    }    
+  } 
+})();
+
+</script>
+  
+ 
+
+  <!-- The Sheets -->
+  <link href="css/framework.css" rel="stylesheet">
+
+  <!-- The Favicon -->
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  
+  <!-- Touch Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  
+<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js
+" type="text/javascript"></script><![endif]-->
+
+  <!-- Head Scripts: ANALYTICS/MODERNIZR ONLY!  All others before </body> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="js/libs.min.js"></script>
+  
+</head>
+<body>  
+
+  <!--[if lt IE 8]><p class=alert>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+
+  <header></header>
+
+  <div id="content-wrapper" class="content-wrapper tertiary">
+    <div id="feature-area"></div>
+    <div class="container content-container">
+      <div class="content-inner row-fluid">
+        <div id="first-column" class="first-column span">
+
+        </div>
+        <div id="second-column" class="second-column span">
+
+        </div>
+        <div id="sidebar" class="sidebar">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer></footer>
+  <script src="js/main.min.js"></script>
+  <script>
+
+    $(document).ready(function() {
+
+      var page = new UAlberta.FrontEnd.Modules.Page({});
+
+      page.addModule(
+        'blade', 
+        'http://localhost:3333/assets/data/components/sample-blade.json', 
+        'header', 
+        { prepend: true }
+      );
+
+
+      page.addModule(
+        'banner', 
+        'http://localhost:3333/assets/data/components/sample-banner.json', 
+        'header', 
+        {}
+      );
+
+      page.addModule(
+        'global-navigation', 
+        'http://localhost:3333/assets/data/components/sample-global-navigation.json', 
+        'header', 
+        {}
+      );
+
+      page.addModule(
+        'mobile-navigation', 
+        'http://localhost:3333/assets/data/components/sample-mobile-navigation.json', 
+        'header', 
+        {}
+      );
+
+      page.addModule(
+        'feature-carousel', 
+        'http://localhost:3333/assets/data/components/sample-feature.json', 
+        '#feature-area', 
+        {}
+      );
+
+      page.addModule(
+        'collapsible-navigation', 
+        'http://localhost:3333/assets/data/components/sample-collapsible-nav.json', 
+        '#first-column', 
+        {}
+      ); 
+
+      page.addModule(
+        'carousel', 
+        'http://localhost:3333/assets/data/components/sample-carousel.json', 
+        '#second-column', 
+        {}
+      ); 
+
+      page.activate();
+
+      /** 
+
+      $.getJSON( "assets/data/base_institutional.json", null, function(data) {
+
+        var feature = {
+          features: [
+            {
+              "imageSrc" : "http://www.placehold.it/1680x504",
+              "heading" : "Base Feature",
+              "description" : "This feature contains the minimal amount of data to create a feature.",
+              "buttons": [
+                {
+                  "url": "#",
+                  "label": "Wow",
+                  "type": "green",
+                  "size": "micro"
+                },
+                {
+                  "url": "#",
+                  "label": "Such nice",
+                  "type": "grey",
+                  "size": "micro"
+                }
+              ]            
+            },
+            {
+              "alignment" : "right",
+              "imageSrc" : "http://www.placehold.it/1680x504",
+              "imageFocalPoint": "center",
+              "heading" : "Sample Heading",
+              "description" : "A sample description will follow the heading.",
+              "buttons": [
+                {
+                  "url": "#",
+                  "label": "Do Something!",
+                  "type": "green",
+                  "size": "micro"
+                }
+              ],
+              "vBoxPosition" : "bottom", 
+              "hBoxPosition": "left" ,
+              "boxClass": "dark",
+              "featureClass": "ga_ualberta_fma sample-feature"
+            },
+            {
+              "alignment" : "left",
+              "imageSrc" : "http://www.placehold.it/1680x504",
+              "imageFocalPoint": "left",
+              "heading" : "Sample Heading",
+              "description" : "A sample description will follow the heading.",
+              "buttons": [
+                {
+                  "url": "#",
+                  "label": "Do Something Else!",
+                  "type": "green",
+                  "size": "micro"
+                },
+                {
+                  "url": "#",
+                  "label": "Don't!",
+                  "type": "grey",
+                  "size": "micro"
+                }
+              ],
+              "vBoxPosition" : "bottom", 
+              "hBoxPosition": "left",
+              "featureClass": "ga_ualberta_fma sample-feature"
+            }
+          ]
+        };
+
+        var carousel = {
+          features: [
+            {
+              "imageSrc" : "http://www.med.ualberta.ca/-/media/medicine/HomePage/0221-dunkley.jpg",
+              "heading" : "Base Feature",
+              "description" : "This feature contains the minimal amount of data to create a feature.",
+              "url": "#"            
+            },
+            {
+              "imageSrc" : "http://www.med.ualberta.ca/-/media/medicine/HomePage/mountainolympicrings.jpg",
+              "heading" : "Base Feature",
+              "description" : "This feature contains the minimal amount of data to create a feature.",
+              "url": "#",
+              "featureClass": "dark"           
+            }
+          ]
+        };
+
+        var leftNav = [
+          {
+            url: "#",
+            label: "Page Name",
+            children: [
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              }
+            ]
+          },
+          {
+            url: "#",
+            label: "Page Name",
+            children: [
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+                  {
+                    url: "#",
+                    label: "Page Name",
+                    children: [
+
+                    ]
+                  },
+                  {
+                    url: "#",
+                    label: "Page Name",
+                    children: [
+
+                    ]
+                  },
+                  {
+                    url: "#",
+                    label: "Page Name",
+                    children: [
+
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            url: "#",
+            label: "Page Name",
+            children: [
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              }
+            ]
+          },
+          {
+            url: "#",
+            label: "Page Name",
+            children: [
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              },
+              {
+                url: "#",
+                label: "Page Name",
+                children: [
+
+                ]
+              }
+            ]
+          }
+        ];
+
+        var news = {
+
+          "header": {
+            "heading": "Latest News",
+            "actions": [
+              {
+                "url": "#",
+                "type": "rss"
+              },
+              {
+                "url": "#",
+                "type": "envelope"
+              }
+            ]
+          },
+          "items": [
+            {
+              "title": "Job shadowing sparks students' career potential",
+              "url": "#",
+              "description": "Job shadow program connects record number of students with potential employers, and helps alumni give back."
+            },
+            {
+              "title": "Breaking down barriers, leading equality",
+              "url": "#",
+              "description": "Fourth-year medical student encourages openness, involvement for LGBTQ community on campus."
+            },
+            {
+              "title": "Surge in designer drugs, tainted 'E' poses lethal risks",
+              "url": "#",
+              "description": "With up to 10 new designer drugs flooding streets every year, more education is needed to convey risks, especially among youth, say UAlberta researchers."
+            },
+            {
+              "title": "UAlberta set to bask in a rainbow of pride",
+              "url": "#",
+              "description": "Beginning Feb. 26, Pride Week celebrates an often invisible campus population."
+            },
+            {
+              "title": "Crowding around campus projects",
+              "url": "#",
+              "description": "U of A looks to crowdfunding to help launch first Alberta-made satellite, support other campus projects."
+            }
+          ],
+          "moreLink" : {
+            "url": "#",
+            "label":"Read more news"
+          }
+        };
+
+        var linkList = {
+          "header": {
+            "heading": "Campus Notices"
+          },
+          "items": [
+            {
+              "url": "#",
+              "label": "First Sample Link"
+            },
+            {
+              "url": "#",
+              "label": "Second Sample Link"
+            },
+            {
+              "url": "#",
+              "label": "Third Sample Link"
+            }
+          ] 
+        };
+
+        var linkList2 = {
+          "header": {
+            "heading": "Colloquy Blog"
+          },
+          "items": [
+            {
+              "url": "#",
+              "label": "First Sample Link"
+            },
+            {
+              "url": "#",
+              "label": "Second Sample Link"
+            },
+            {
+              "url": "#",
+              "label": "Third Sample Link"
+            }
+          ],
+          "moreLink": {
+            "url":"#",
+            "label":"Read the colloquy blog"
+          }
+        };
+
+        var sidebarContent = {
+          "title": "Content Sidebar",
+          "content": "<p>This sidebar only contains a paragraph, but you could put any content inside of these.</p>",
+          "moreLink": {
+            "url": "#",
+            "label": "Do Something!"
+          }
+        };
+
+        var accordionList = {
+          "categories" : [
+            {
+              "url": "#",
+              "label": "Category One",
+              "links": [
+                {
+                  "url": "#",
+                  "label" : "C1 Link One"
+                },
+                {
+                  "url": "#",
+                  "label" : "C1 Link Two"
+                },
+                {
+                  "url": "#",
+                  "label" : "C1 Link Three"
+                }
+              ]
+            },
+            {
+              "url": "#",
+              "label": "Category Two",
+              "links": [
+                {
+                  "url": "#",
+                  "label" : "C2 Link One"
+                },
+                {
+                  "url": "#",
+                  "label" : "C2 Link Two"
+                },
+                {
+                  "url": "#",
+                  "label" : "C2 Link Three"
+                }
+              ]
+            },
+            {
+              "url": "#",
+              "label": "Category Three",
+              "links": [
+                {
+                  "url": "#",
+                  "label" : "C3 Link One"
+                },
+                {
+                  "url": "#",
+                  "label" : "C3 Link Two"
+                },
+                {
+                  "url": "#",
+                  "label" : "C3 Link Three"
+                }
+              ]
+            }
+          ]
+        };
+
+        var imageCaption = {
+          imageSrc: "http://www.placehold.it/800x450",
+          imageAlt: "Placeholder image",
+          imageCaption: "a sample image caption"
+        };
+
+        var imageCaption2 = {
+          imageSrc: "http://www.placehold.it/800x450",
+          imageAlt: "Placeholder image",
+          imageCaption: "a sample image caption",
+          url :"#",
+          hoverCaption : true
+        };
+
+        var videoData = {
+          url: "//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;autoplay=1",
+          imageSrc: "http://why.ualberta.ca/-/media/ualberta/Institutional%20Page%20Images/danny-huang-why-ualberta2013.jpg",
+          imageAlt: "Danny Huang explains",
+          hoverCaption: true,
+          imageCaption: "Danny Huang explains how to work hard, have fun, stay healthy but also find a way to balance it all.",
+          icon:"angle-circled-right"
+        };
+
+        var tabs = {
+          "tabs": [
+            {
+              "id": "tab1",
+              "label": "First",
+              "content": "<p>First content</p>"
+            },
+            {
+              "id": "tab2",
+              "label": "Second",
+              "content": "<p>Second content</p>"
+            },
+            {
+              "id": "tab3",
+              "label": "Third",
+              "content": "<p>Third content</p>"
+            }          
+          ]
+        };
+
+        var button = {
+          "url" : "#",
+          "type" : "grey",
+          "size" : "small",
+          "label" : "Test Button"
+        };
+
+        var inlineForm = {
+          "id" : "mail",
+          "icon" : "envelope",
+          "placeholder" : "sample@site.com",
+          "buttonLabel" : "Subscribe"
+        };
+
+        page.addFeature(feature, { wrapperClass: 'full-page-feature' });
+        page.addToFirstColumn('data-list', news);
+        page.addToSecondColumn('data-list', linkList);
+        page.addToSecondColumn('data-list', linkList2);
+        page.addModule('collapsible-navigation',leftNav, '#second-column');
+
+        page.addToSidebar('sidebar-item', sidebarContent, 
+          {
+            header: {
+              heading: "Sidebar Content"
+            }
+          }
+        );
+
+        page.addToFirstColumn('tabs', tabs);
+
+        var testmod = page.addModule('sidebar-item', {}, '#sidebar', 
+          {
+            header: linkList2.header
+          }
+        );
+        testmod.addModule('data-list', linkList2, '.sidebar-content');
+
+        var sbContentModule = page.addToSidebar(
+          'sidebar-item', 
+          {
+            header: {
+              heading: "Hover Caption"
+            }, 
+            content:"This is a  hover caption container injected into the sidebar."
+          }
+        );
+
+        sbContentModule.addModule('image-caption', imageCaption2, '.sidebar-content', { prepend: true});
+
+        var sbContentModule = page.addToSidebar('sidebar-item', { content:"This is a  video injected into the sidebar."});
+
+        sbContentModule.addModule('youtube-video', videoData, '.sidebar-content', { prepend: true});
+
+        page.addToSidebar('sidebar-item', {}, {header: news.header})
+          .addModule('data-list', news, '.sidebar-content');
+        
+
+        page.addModule('accordion', accordionList, '#first-column');
+        page.addModule('link-filter', accordionList, '#first-column');
+        page.addModule('image-caption', imageCaption, '#second-column').el.after("<p>You can inject some html after the module if you like.</p>");
+
+        // set heading and caption options
+        page.addModule(
+          'image-caption', 
+          imageCaption2, 
+          '#second-column', 
+          {
+            header: 
+            { 
+              heading: "Dynamic Heading",
+            },
+            footer: 
+            {
+              text: "Hover over the image above and something might happen."
+            }
+          }
+        );
+
+        page.addModule('non-existant-test', imageCaption, '#first-column');
+
+        page.addModule(
+          'carousel',
+          carousel, 
+          '#first-column',
+          {
+            header: 
+            { 
+              heading: "Carousel With a Heading"
+            },
+            footer: 
+            {
+              text: "Followed by some wrap up text."
+            }
+          }
+        );
+
+        page.addModule(
+          'youtube-video',
+          videoData, 
+          '#second-column',
+          {
+            header: 
+            { 
+              heading: "Here is a Video"
+            }
+          }
+        );
+
+        page.addToFirstColumn('button', button);
+
+        button.type = 'green';
+        page.addToFirstColumn('button', button);
+        page.addToSecondColumn('inline-field', inlineForm);
+
+      }).fail( function(d, textStatus, error) {
+
+          console.error("getJSON failed, status: " + textStatus + ", error: "+error)
+
+      });
+*/
+    });
+
+  </script>
+</body>
+</html>
