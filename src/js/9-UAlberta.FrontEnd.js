@@ -322,6 +322,19 @@ var UAlberta = UAlberta || {};
           // tooltips
           $('[data-toggle="tooltip"]').tooltip();
 
+          $('[data-toggle="iframe-modal"]').click(function(e) {
+            var modal = $($(this).data('target'));
+            var iframe = modal.find('iframe');
+            modal.find('h3').text($(this).data('title'));
+            iframe.attr('src',$(this).data('url'));
+            modal.addClass('in');
+            modal.find('.close').click(function() {
+              modal.removeClass('in');
+              iframe.attr('src','');
+            });
+            return false;
+          });
+
         };
 
         // extend the module base
@@ -389,6 +402,7 @@ var UAlberta = UAlberta || {};
         var self = this;
 
         this.activate = function() {
+          this.el.addClass('in');
           this.el.on({
             click: function() {
               self.remove(); 

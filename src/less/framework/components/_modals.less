@@ -3,6 +3,7 @@
 // --------------------------------------------------
 
 .modal-module {
+  display:none;
   background: rgba(0,0,0,0.65);
   position: fixed;
   top: 0;
@@ -11,9 +12,12 @@
   right: 0;
   width: 100%;
   height: 100%;
-  display: block;
-  z-index: 999;
+  z-index: 9999;
 }
+
+.modal-module.in {
+  display:block;
+}  
 
 
 // Base modal

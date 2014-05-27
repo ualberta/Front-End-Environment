@@ -43,6 +43,8 @@
   
   <!-- The Sheets -->
   <link href="css/framework.css" rel="stylesheet">
+    <link href="css/wireframe.css" rel="stylesheet">
+
   <!-- The Favicon -->
   <link rel="shortcut icon" href="assets/ico/favicon.ico">
   
@@ -177,18 +179,18 @@
   <div id="content-wrapper" class="content-wrapper">
 
     <div id="layoutcontainer" class="content-wrapper faculty-home">  
-    <!--
+    
     <div id="page-title" class="page-title-row"></div>
-    <div id="feature-area" class="content-top-row"></div>
-    -->
-      <div class="content-top-row">
+
+      <div id="feature-area" class="content-top-row">
         <div class="content-container container">
           <div class="content-inner row-fluid">
-            <div id="feature-area" class="span feature-area"></div>
+            <div id="highlights-area" class="span feature-area"></div>
             <div id="audience-area" class="span audience-area"></div>
           </div>
         </div>
       </div>
+
       <div class="content-container container">
         <div class="content-inner row-fluid">
           <div id="first-column" class="span first-column"></div>
@@ -416,7 +418,7 @@
       page.addModule(
         'carousel',
         'assets/data/components/sample-carousel.json',
-        '#feature-area'
+        '#highlights-area'
       );
 
       page.addModule(
@@ -460,6 +462,14 @@
       });
 
       page.activate();
+
+      // Wireframe mode
+
+      var wfToggle = $('<button id="wfToggle" class="btn btn-green btn-micro"></button>').appendTo('body');
+
+      wfToggle.click(function(e) {
+         $('body').toggleClass('wireframe');
+      });
 
     });
 

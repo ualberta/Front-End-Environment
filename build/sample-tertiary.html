@@ -43,6 +43,8 @@
   
   <!-- The Sheets -->
   <link href="css/framework.css" rel="stylesheet">
+    <link href="css/wireframe.css" rel="stylesheet">
+
   <!-- The Favicon -->
   <link rel="shortcut icon" href="assets/ico/favicon.ico">
   
@@ -207,13 +209,16 @@
     </div>
   </header>
   <div id="content-wrapper" class="content-wrapper tertiary">
-    <div id="feature-area" class="content-top-row"></div>
 
     <div id="page-title" class="page-title-row"></div>
+
+    <div id="feature-area" class="content-top-row"></div>
 
     <div class="content-container container">
         
       <div class="content-inner row-fluid">
+
+        <div class="intro-content"></div>
 
           <div id="first-column" class="span first-column"></div>
       
@@ -452,6 +457,14 @@
 
       page.activate();
 
+
+      // Wireframe mode
+
+      var wfToggle = $('<button id="wfToggle" class="btn btn-green btn-micro"></button>').appendTo('body');
+
+      wfToggle.click(function(e) {
+         $('body').toggleClass('wireframe');
+      });
  
 
     });

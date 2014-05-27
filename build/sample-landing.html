@@ -43,6 +43,7 @@
   
   <!-- The Sheets -->
   <link href="css/framework.css" rel="stylesheet">
+  <link href="css/wireframe.css" rel="stylesheet">
   <!-- The Favicon -->
   <link rel="shortcut icon" href="assets/ico/favicon.ico">
   
@@ -217,10 +218,10 @@
       <div class="content-inner row-fluid">
 
           <div class="intro-content">
-              One of the world’s elite academic health sciences centres.
+              <span>One of the world’s elite academic health sciences centres.</span>
           </div>
 
-          <div id="first-col" class="span first-column"></div>
+          <div id="first-column" class="span first-column"></div>
       
           <div id="second-column" class="span second-column"></div>
 
@@ -282,7 +283,7 @@
     $(document).ready(function() {
       var page = new UAlberta.FrontEnd.Modules.Page({
         featureArea: "#feature-area",
-        firstColumn: "#first-col",
+        firstColumn: "#first-column",
         secondColumn: "#second-column",
         sidebar: "#sidebar"
       });
@@ -495,6 +496,13 @@
       page.activate();
 
  
+      // Wireframe mode
+
+      var wfToggle = $('<button id="wfToggle" class="btn btn-green btn-micro"></button>').appendTo('body');
+
+      wfToggle.click(function(e) {
+         $('body').toggleClass('wireframe');
+      });
 
     });
 
