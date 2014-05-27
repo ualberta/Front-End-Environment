@@ -3,7 +3,7 @@
   // Banner
   // ----------------
   .banner-container .banner-logo {
-	background: transparent url(../img/ieLogo.png) no-repeat center center;
+	background: transparent url(../assets/img/ieLogo.png) no-repeat center center;
     #em > .size(width,210,@baseFontSizepx);
     #em > .size(height,55px,@baseFontSizepx);
     img { display: none; }
@@ -13,7 +13,7 @@
   // ----------------
   .banner-container,
   .bottom-footer-row  { 
-    background: #007c41 url(../img/banner-bg.jpg) repeat-x top left;
+    background: #007c41 url(../assets/img/banner-bg.jpg) repeat-x top left;
   }
 
   
@@ -25,7 +25,8 @@
   // ---------------
 	
   .top-footer-row {
-	 background: #F4F5E9;	
+    border-top: darken(#F4F5E9,10%);
+    background: #F4F5E9;	
   }
   
 }
@@ -33,7 +34,7 @@
 // drop shadow
 // ---------------------
 .no-boxshadow {
-  .frame, .extrude, ul.our-programs li, ul.accordion-list {
+  .frame, .extrude, ul.our-programs li, ul.accordion-list, .carousel-container {
     	border: 1px solid #e0e0e0;
   	}
   
@@ -48,6 +49,16 @@
         border-right: 1px solid #cbd2cd;
       }
     }
+  }
+
+  ul.toggles li {
+    color: #637169;
+    border: 3px solid #e0e0e0;
+    line-height:1em; 
+  }
+
+  ul.toggles li.current {
+    border-color:#ffdb05;
   }
   
   .image-shadow {
@@ -65,6 +76,22 @@
     border-top: 1px solid #dca;
     border-bottom: 1px solid #cba;
   }
+
+  .inset {
+    position:relative;
+    background-color:#d0ddc2;
+    border:1px solid #a0ad95;
+  }
+  .inset:after {
+    content: "";
+    height:1px;
+    background:#fff;
+    line-height:0;
+    position:absolute;
+    bottom:-2px;
+    right:0;
+    left:0;
+  }
   
 }
 
@@ -76,7 +103,7 @@
   .navigation-container {
     border-top: 1px solid #ccc404;
     border-bottom-color: #abb1ae;
-    background: transparent url(../img/navbar-bg.gif) repeat-x center center;
+    background: transparent url(../assets/img/navbar-bg.gif) repeat-x center center;
     background-size: auto 100%;
     .navigation-inner > ul > li { background: none; }
   }
@@ -86,7 +113,7 @@
   
   .btn-apply {
   	filter: none;
-  	background: #ffec05 left bottom repeat-x url(../img/bg-btn-lg-yellow.png);
+  	background: #ffec05 left bottom repeat-x url(../assets/img/bg-btn-lg-yellow.png);
   	&:hover {
   		filter: none;
   		background-image: none;
@@ -94,13 +121,13 @@
   	}
   }
   .btn-micro.btn-apply, .btn-small.btn-apply {
-  	background-image: url(../img/bg-btn-sm-yellow.png);
+  	background-image: url(../assets/img/bg-btn-sm-yellow.png);
   	
   }
   
   .btn-work, .btn-give {
   	filter: none;
-  	background: #f3f7f5 left bottom repeat-x url(../img/bg-btn-lg-greygloss.png);
+  	background: #f3f7f5 left bottom repeat-x url(../assets/img/bg-btn-lg-greygloss.png);
   	&:hover {
   		filter: none;
   		background-image: none;

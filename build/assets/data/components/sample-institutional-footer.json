@@ -1,0 +1,46 @@
+{
+  "ualbertaFooter" : {
+    "footerLinks": [
+      {
+        "url": "#",
+        "label": "Contact Us"
+      },
+      {
+        "url": "#",
+        "label": "Feedback"
+      },
+      {
+        "url": "#",
+        "label": "University Calendar"
+      },
+      {
+        "url": "#",
+        "label": "Careers"
+      },
+      {
+        "url": "#",
+        "label": "Emergency"
+      },
+      {
+        "url": "#",
+        "label": "Policies"
+      },
+      {
+        "url": "#",
+        "label": "Weather"
+      },
+      {
+        "url": "#",
+        "label": "Edmonton"
+      },
+      {
+        "url": "#",
+        "label": "Privacy"
+      },
+      {
+        "url": "#",
+        "label": "Keep In Touch"
+      }
+    ]
+  }  
+}

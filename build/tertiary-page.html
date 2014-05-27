@@ -1,0 +1,462 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+  <!-- Meta: These two must be before <title> -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <!-- Title -->
+  <title>University of Alberta</title>
+  
+  <!-- Other Meta -->
+  <meta name="description" content="University of Alberta">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <script>
+  /**
+  * Protect window.console method calls, e.g. console is not defined on IE
+  * unless dev tools are open, and IE doesn't define console.debug
+  */
+  (function() {
+  if (!window.console) {
+  window.console = {};
+  }
+  // union of Chrome, FF, IE, and Safari console methods
+  var m = [
+  "log", "info", "warn", "error", "debug", "trace", "dir", "group",
+  "groupCollapsed", "groupEnd", "time", "timeEnd", "profile", "profileEnd",
+  "dirxml", "assert", "count", "markTimeline", "timeStamp", "clear"
+  ];
+  // define undefined methods as noops to prevent errors
+  for (var i = 0; i < m.length; i++) {
+  if (!window.console[m[i]]) {
+  window.console[m[i]] = function() {};
+  }
+  }
+  })();
+  </script>
+  
+  <!-- The Sheets -->
+  <link href="css/framework.css" rel="stylesheet">
+  <!-- The Favicon -->
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  
+  <!-- Touch Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js
+  " type="text/javascript"></script><![endif]-->
+  <!-- Head Scripts: ANALYTICS/MODERNIZR ONLY!  All others before </body> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="js/libs.min.js"></script>
+  
+</head>
+<body>
+  <!--[if lt IE 8]><p class=alert>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header>
+    <div class="f-e-container blade-module">
+      <div class="blade-container">
+        <div class="blade-inner">
+          <nav class="blade-navigation">
+            <ul class="quick-links-container">
+              <li id="ql" class="dropdown">
+                <a href="#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop">
+                <span class="quick-links-text">Quick Links</span>
+                </a>
+                <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">      
+                  <li role="menuitem">
+                    <a href="#">Find a Person</a>
+                  </li>              
+                  <li role="menuitem">
+                    <a href="#">ONEcard</a>
+                  </li>              
+                  <li role="menuitem">
+                    <a href="#">Bear Tracks</a>
+                  </li>              
+                  <li role="menuitem">
+                    <a href="#">Maps</a>
+                  </li>              
+                  <li role="menuitem">
+                    <a href="#">Email &amp; Apps</a>
+                  </li>              
+                  <li role="menuitem">
+                    <a href="#">eClass</a>
+                  </li>              
+                  <li role="menuitem">
+                    <a href="#">Libraries</a>
+                  </li>            
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="f-e-container banner-module">
+      <div class="banner-container">
+        <div class="banner-inner">
+          <div class="banner-logo">
+            <span class="site-logo">
+            <a href="http://www.ualberta.ca/"><img src="http://ualberta.ca/~publicas/uofa/img/ieLogo.png" alt="University of Alberta"></a>
+            </span>
+          </div>
+          <nav class="audience-navigation">
+            <ul>
+              <li role="menuitem" class="audience-link">
+                <a href="#">Faculty and Staff</a>
+              </li>
+              
+              <li role="menuitem" class="audience-link">
+                <a href="#">Prospective Students</a>
+              </li>
+              
+              <li role="menuitem" class="audience-link">
+                <a href="#">Current Students</a>
+              </li>
+              
+              <li role="menuitem" class="audience-link">
+                <a href="#">Alumni and Friends</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="f-e-container global-navigation-module">
+      <div class="navigation-container">
+        <nav id="main-nav" class="navigation-inner">
+          <ul>
+            <li>
+              <a class="navigation-toggle">
+              <span>Show Navigation</span>
+              <i class="icon-toggle-nav"></i>
+              </a>
+              <ul id="nav-list" class="main-navigation collapse">                
+                <li role="menuitem" class="nav1">
+                  <a href="#">Why UAlberta?</a>
+                </li>                
+                <li role="menuitem" class="nav2">
+                  <a href="#">Faculties &amp; Programs</a>
+                </li>
+                <li role="menuitem" class="nav3">
+                  <a href="#">Research</a>
+                </li>
+                <li role="menuitem" class="nav4">
+                  <a href="#">Admissions</a>
+                </li>
+                <li role="menuitem" class="nav5">
+                  <a href="#">Campus Life</a>
+                </li>
+                <li role="menuitem" class="nav6">
+                  <a href="#">News &amp; Events</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="f-e-container mobile-navigation-module">
+      <div class="nav-mobile">
+        <div class="nav-wrapper">
+          <ul class="level-0">
+            <li>
+              <a href="#">Why UAlberta?</a>
+            </li>
+            <li>
+              <a href="#">Faculties and Programs</a>
+            </li>
+            <li>
+              <a href="#">Research</a>
+            </li>
+            <li>
+              <a href="#">Campus Life</a>
+            </li>
+            <li>
+              <a href="#">News and Events</a>
+            </li>
+            <li>
+              <a href="#">Prospective Students</a>
+            </li>
+            <li>
+              <a href="#">Current Students</a>
+            </li>
+            <li>
+              <a href="#">Faculty and Staff</a>
+            </li>
+            <li>
+              <a href="#">Alumni and Friends</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="content-wrapper" class="content-wrapper tertiary">
+    <div id="feature-area" class="content-top-row"></div>
+
+    <div id="page-title" class="page-title-row"></div>
+
+    <div class="content-container container">
+        
+      <div class="content-inner row-fluid">
+
+          <div id="first-column" class="span first-column"></div>
+      
+          <div id="second-column" class="span second-column clearfix">
+
+            <p class="intro-text">Aenean hendrerit justo et nisi ultrices pulvinar. Nam suscipit dolor et congue interdum. Sed scelerisque sapien ante, sed aliquam neque pretium at. Cras tempor dui ac magna consequat, sit amet sollicitudin urna porta.</p>
+            <h2>This One is a Secondary Title</h2>
+            <h3>Now We're Tertiary</h3>
+            <h4>Quaternary</h4>
+            <h5>Quinary</h5>
+            <h6>Senary</h6>
+            <p>Curabitur purus lacus, facilisis eget ligula eget, condimentum lobortis tortor. Maecenas convallis dignissim viverra. Ut in leo non magna porta tempus. Donec mollis eget metus nec scelerisque. In at lacus ac dui bibendum ultricies. Vestibulum non urna volutpat, eleifend nulla sed, viverra erat. In tincidunt lectus eget sagittis scelerisque. Morbi sed pretium metus. Etiam interdum egestas tortor, in <a href="#">porta turpis interdum</a> at. Aenean hendrerit justo et nisi ultrices pulvinar. Nam suscipit dolor et congue interdum. Sed scelerisque sapien ante, sed aliquam neque pretium at. Cras tempor dui ac magna consequat, sit amet sollicitudin urna porta. Mauris congue, dui quis laoreet sagittis, tortor sem posuere arcu, non accumsan risus elit posuere nulla. Pellentesque interdum a urna nec tempus. Nulla tincidunt odio sed egestas pretium.</p>
+            <h2>This One is a Secondary Title</h2>
+            <p>Sed quis laoreet ante. Nunc sed pharetra risus, quis auctor arcu. Mauris mattis mollis tortor sed posuere. Pellentesque metus dolor, molestie sed aliquam vitae, elementum nec tellus. Ut faucibus ultricies magna, eget imperdiet ante convallis sed. Nunc molestie tortor nec turpis cursus, eu pharetra dui facilisis. Nulla a luctus turpis, vitae molestie sem. Nulla facilisi. Donec tempor massa ac lectus aliquam posuere. Praesent quis faucibus nunc. Ut justo elit, elementum ac ultrices in, volutpat sit amet leo. Nunc sed dapibus tellus. Mauris a nibh non dolor pellentesque dignissim in sit amet tellus.</p>
+            
+            <h3>Now We're Tertiary</h3>
+            <img class="pull-right" src="http://placehold.it/400x300">
+            <p>Ut euismod, sem ac euismod egestas, nibh tellus hendrerit tortor, id auctor velit eros eget quam. Ut venenatis, mi aliquet dapibus fermentum, diam felis sagittis arcu, vitae ultrices purus arcu posuere turpis. Aenean euismod viverra purus id fringilla. Proin vestibulum tempus arcu eget placerat. Aliquam tempus elit et sapien dictum, id gravida lorem tempus. Sed adipiscing laoreet leo, vel placerat arcu viverra et. Sed scelerisque nisl lobortis sem faucibus suscipit. Maecenas viverra lacinia pretium. Nunc ornare eleifend massa, at dapibus purus tempor quis. Donec a laoreet mi. Integer placerat euismod arcu, a tristique quam consectetur at.</p>
+            <h4>Quaternary</h4>
+            <p>Sed quis laoreet ante. Nunc sed pharetra risus, quis auctor arcu. Mauris mattis mollis tortor sed posuere. Pellentesque metus dolor, molestie sed aliquam vitae, elementum nec tellus. Ut faucibus ultricies magna, eget imperdiet ante convallis sed. Nunc molestie tortor nec turpis cursus, eu pharetra dui facilisis. Nulla a luctus turpis, vitae molestie sem. Nulla facilisi.</p>
+            <ul class="content-list">
+                <li>List Item One
+                    <ul><li>Sub list item</li></ul>
+                </li>
+                <li>List Item Two</li>
+                <li>List Item Three</li>
+                <li>List Item Four</li>
+                <li>List Item Five</li>
+            </ul>
+            <p>Nunc sed pharetra risus, quis auctor arcu. Mauris mattis mollis tortor sed posuere. Pellentesque metus dolor, molestie sed aliquam vitae, elementum nec tellus. Ut faucibus ultricies magna, eget imperdiet ante convallis sed. Nunc molestie tortor nec turpis cursus, eu pharetra dui facilisis. Nulla a luctus turpis, vitae molestie sem.</p>
+            <h5>Quinary</h5>
+            <img class="pull-left" src="http://placehold.it/100x100">
+            <p>Sed quis laoreet ante. Nunc sed pharetra risus, quis auctor arcu. Mauris mattis mollis tortor sed posuere. Pellentesque metus dolor, molestie sed aliquam vitae, elementum nec tellus. Ut faucibus ultricies magna, eget imperdiet ante convallis sed. Nunc molestie tortor nec turpis cursus, eu pharetra dui facilisis. </p><p>Aenean hendrerit justo et nisi ultrices pulvinar. Nam suscipit dolor et congue interdum. Sed scelerisque sapien ante, sed aliquam neque pretium at. Cras tempor dui ac magna consequat, sit amet sollicitudin urna porta. Mauris congue, dui quis laoreet sagittis, tortor sem posuere arcu, non accumsan risus elit posuere nulla.</p>
+            <h6>Senary</h6>
+            <p>Sed quis laoreet ante. Nunc sed pharetra risus, quis auctor arcu. </p>
+
+          </div>
+
+          <div id="sidebar" class="span sidebar"></div>
+
+      </div>
+
+    </div>
+  </div>
+  <footer>
+    <div class="f-e-container institutional-footer-module">
+      <div class="bottom-footer-row">
+        <div class="footer-container container">
+          <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+              <ul class="footer-quick-links">                
+                <li>
+                  <a href="#" target="">Contact Us</a>
+                </li>                
+                <li>
+                  <a href="#" target="">Feedback</a>
+                </li>                
+                <li>
+                  <a href="#" target="">University Calendar</a>
+                </li>                
+                <li>
+                  <a href="#" target="">Careers</a>
+                </li>               
+                <li>
+                  <a href="#" target="">Emergency</a>
+                </li>                
+                <li>
+                  <a href="#" target="">Policies</a>
+                </li>
+                <li>
+                  <a href="#" target="">Weather</a>
+                </li>
+                <li>
+                  <a href="#" target="">Edmonton</a>
+                </li>
+                <li>
+                  <a href="#" target="">Privacy</a>
+                </li>
+                <li>
+                  <a href="#" target="">Keep In Touch</a>
+                </li>
+                <li><a href="#">Back to Top</a></li>
+              </ul>
+              <p>© 2014 <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.min.js"></script>
+  <script>
+
+    $(document).ready(function() {
+      var page = new UAlberta.FrontEnd.Modules.Page({
+        featureArea: "#feature-area",
+        firstColumn: "#first-column",
+        secondColumn: "#second-column",
+        sidebar: "#sidebar"
+      });
+
+      var news = {
+        "header": {
+          "heading": "Latest News"
+        },
+        "items": [
+          {
+            "title": "Job shadowing sparks students' career potential",
+            "url": "#",
+            "description": "Job shadow program connects record number of students with potential employers, and helps alumni give back."
+          },
+          {
+            "title": "Breaking down barriers, leading equality",
+            "url": "#",
+            "description": "Fourth-year medical student encourages openness, involvement for LGBTQ community on campus."
+          },
+          {
+            "title": "Surge in designer drugs, tainted 'E' poses lethal risks",
+            "url": "#",
+            "description": "With up to 10 new designer drugs flooding streets every year, more education is needed to convey risks, especially among youth, say UAlberta researchers."
+          },
+          {
+            "title": "UAlberta set to bask in a rainbow of pride",
+            "url": "#",
+            "description": "Beginning Feb. 26, Pride Week celebrates an often invisible campus population."
+          },
+          {
+            "title": "Crowding around campus projects",
+            "url": "#",
+            "description": "U of A looks to crowdfunding to help launch first Alberta-made satellite, support other campus projects."
+          }
+        ],
+        "moreLink" : {
+          "url": "#",
+          "label":"Read more news"
+        }
+      };
+
+      var linkList = {
+        "header": {
+          "heading": "Campus Notices"
+        },
+        "items": [
+          {
+            "url": "#",
+            "label": "First Sample Link"
+          },
+          {
+            "url": "#",
+            "label": "Second Sample Link"
+          },
+          {
+            "url": "#",
+            "label": "Third Sample Link"
+          },
+          {
+            "url": "#",
+            "label": "Second Sample Link"
+          },
+          {
+            "url": "#",
+            "label": "Third Sample Link"
+          }
+        ] 
+      };
+
+      var linkList2 = {
+        "header": {
+          "heading": "Colloquy Blog"
+        },
+        "items": [
+          {
+            "url": "#",
+            "label": "First Sample Link"
+          },
+          {
+            "url": "#",
+            "label": "Second Sample Link"
+          },
+          {
+            "url": "#",
+            "label": "Third Sample Link"
+          }
+        ],
+        "moreLink": {
+          "url":"#",
+          "label":"Read the colloquy blog"
+        }
+      };
+
+      var sidebarContent = {
+        "title": "Twitter",
+        "content": "<p>Join us on Twitter for some stuff.</p>",
+        "moreLink": {
+          "url": "#",
+          "label": "Follow @ualberta"
+        }
+      };
+
+      var pageTitle = {
+        breadcrumbs: [
+          {
+            url: "#",
+            label: "Home"
+          },
+          {
+            url: "#",
+            label: "About Us"
+          }
+        ],
+        pageName: "Governance"
+      };
+
+      page.addModule('page-title', pageTitle, '#page-title');
+
+      page.addToFirstColumn('collapsible-navigation', 'http://localhost:3333/assets/data/components/sample-collapsible-nav.json');
+
+      page.addToSidebar('sidebar-item', {
+        header: {
+          heading: "Twitter"
+        }, 
+        content:"<p>This is a  hover caption container injected into the sidebar.</p>",
+        footer: {
+          actions: [{
+            url: "#",
+            label: "Follow @ualberta"
+          }]
+        }
+      });
+
+      page.addToSidebar('sidebar-item', {
+        header: {
+          heading: "Keep in Touch"
+        }
+      }).addModule('data-list', linkList, '.sidebar-content');;
+
+      page.activate();
+
+ 
+
+    });
+
+  </script>
+
+</body>
+</html>

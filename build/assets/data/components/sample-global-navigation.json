@@ -1,0 +1,47 @@
+{
+  "globalLinks": [
+    {
+      "url": "#",
+      "label": "Why UAlberta?",
+      "subMenu": {
+        "content": "<strong>Test Content</strong>",
+        "links": [ {
+          "url" : "#",
+          "label" : "Test Link"
+        },
+        {
+          "url" : "#",
+          "label" : "Filler Link"
+        },
+        {
+          "url" : "#",
+          "label" : "Another Filler"
+        },
+        {
+          "url" : "#",
+          "label" : "Test Link"
+        } ]
+      }
+    },
+    {
+      "url": "#",
+      "label": "Faculties & Programs"
+    },
+    {
+      "url": "#",
+      "label": "Research"
+    },
+    {
+      "url": "#",
+      "label": "Admissions"
+    },
+    {
+      "url": "#",
+      "label": "Campus Life"
+    },
+    {
+      "url": "#",
+      "label": "News & Events"
+    }
+  ]
+}

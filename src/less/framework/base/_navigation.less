@@ -1,7 +1,5 @@
 // COLLAPSIBLE NAVIGATION (TABLET+)
 
-
-
 @media (min-width: 43.15em) {
 
   .content-wrapper .nav-wrapper {
@@ -67,12 +65,13 @@
     text-align: right;
   }
   .content-wrapper .nav-wrapper a:hover .nav-toggle {
-    right: 0.625em;
+    right: 0.55em;
   }
   .content-wrapper .nav-wrapper ul li.nav-expand > a {
     font-weight: bold;
   }
-  .content-wrapper .nav-wrapper ul li.nav-current > a {
+  .content-wrapper .nav-wrapper ul li.nav-current > a,
+  .content-wrapper .nav-wrapper ul li.active > a {
     position: relative;
     border-radius: 4px;
     color: #FFF;
@@ -90,10 +89,12 @@
     border: none;
     font-weight: bold;
   }
-  .content-wrapper .nav-wrapper ul li.nav-current > a:hover {
+  .content-wrapper .nav-wrapper ul li.nav-current > a:hover,
+  .content-wrapper .nav-wrapper ul li.active > a:hover {
     text-decoration: none;
   }
-  .content-wrapper .nav-wrapper ul li.nav-current > a:after {
+  .content-wrapper .nav-wrapper ul li.nav-current > a:after,
+  .content-wrapper .nav-wrapper ul li.active > a:after {
     right: -6px;
     top: 0.65em;
   }
@@ -119,7 +120,9 @@
     display:none;
   }
 
-  .content-wrapper .nav-wrapper ul li.nav-current > a:after {
+  .content-wrapper .nav-wrapper ul li.nav-current > a:after,
+  .content-wrapper .nav-wrapper ul li.active > a:after 
+  {
     content: "";
     position: absolute;
     border: none;
@@ -139,5 +142,30 @@
     background: -ms-linear-gradient(135deg,#00A355,#008A47);
     background: -o-linear-gradient(135deg,#00A355,#008A47);
     background: linear-gradient(135deg,#00A355,#008A47);
+  }
+}
+
+// Affix styles for placing elements in a fixed position in the window
+// used in conjunction with the Affix bootstrap plugin
+
+@media (min-width:43.125em) {
+  .affix .nav-wrapper {
+    position:fixed;
+    top:0.7143em;
+    left:0.8333em;
+    width:28%;
+  }
+}
+
+@media (min-width:61.25em) {
+  .affix .nav-wrapper {
+    margin-left:5%;
+    width:16.1%;
+  }
+}
+
+@media (min-width:75em) {
+  .affix .nav-wrapper {
+    margin-left:9%;
   }
 }

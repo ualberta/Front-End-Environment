@@ -1,0 +1,44 @@
+{
+  "logo": {
+    "url": "#",
+    "imageSrc": "./assets/img/logo2.svg",
+    "altText": "University of Alberta"
+  },
+  "quickLinks": [
+    {
+      "url": "#",
+      "label": "Find a Person"
+    },
+    {
+      "url": "#",
+      "label": "ONEcard"
+    },
+    {
+      "url": "#",
+      "label": "Bear Tracks"
+    },
+    {
+      "url": "#",
+      "label": "Maps"
+    },
+    {
+      "url": "#",
+      "label": "Email & Apps"
+    },
+    {
+      "url": "#",
+      "label": "eClass"
+    },
+    {
+      "url": "#",
+      "label": "Libraries"
+    }
+  ], 
+  "search": {
+    "icon": "search",
+    "id": "search",
+    "placeholder": "",
+    "buttonLabel": "Search",
+    "className": "search-query"
+  }
+}

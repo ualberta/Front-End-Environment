@@ -6,7 +6,7 @@
   padding: 0;
   margin-top: 1.57em;
 }
-
+ 
 .container {
     width:  auto;
     padding: 0 0.8333em;
@@ -18,17 +18,21 @@
   }
 }
 
+.intro-content {
+  display:none;
+}
+
 .row-fluid {
-  .primary-content-area,
+  .first-column,
   .audience-area,
-  .secondary-content-area {
+  .second-column {
     margin-left: 0;
   }
 }
 
 .row-fluid {
   .feature-area,
-  .primary-content-area {
+  .first-column {
     margin-bottom: 1.5em;
   }
 }
@@ -51,8 +55,19 @@
 @media (min-width: 43.125em) {
   // set column widths
   .row-fluid {
-    .primary-content-area { width: 56%; }
-    .secondary-content-area { width: 39%; margin-left:5%; }
+    .first-column { 
+      width: 56%; 
+      .f-e-container:nth-child(1) h3 {
+        margin-top:0;
+      }
+    }
+    .second-column { 
+      width: 39%; 
+      margin-left:5%; 
+      .f-e-container:nth-child(1) h3 {
+        margin-top:0;
+      }
+    }
     // sidebar is at bottom
     .sidebar { 
       width:100%; 
@@ -66,15 +81,15 @@
       & > div:nth-child(3n+3) {
         margin-right:-5px;
       }
-    } 
+    }
   }
 }
 
 @media (min-width: 61.25em) {
   // set column widths
   .row-fluid {
-    .primary-content-area { width: 45%; }
-    .secondary-content-area { width: 30%; margin-left:3%;}
+    .first-column { width: 45%; }
+    .second-column { width: 30%; margin-left:3%;}
     .sidebar { 
       width:19%; 
       margin-left:3%; 
@@ -94,8 +109,13 @@
   } 
 
   // increase left / right page margins to 3% at 980px
-  .container, .blade-inner, .banner-inner, .navigation-inner {
-    margin:0 3%;
+  .container, 
+  .blade-inner, 
+  .banner-inner, 
+  .navigation-inner, 
+  .content-area-feature
+  {
+    margin:0 5%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -110,8 +130,12 @@
 
 // increase left / right page margins to 5% at 1200px
 @media (min-width: 75em) {
-  .container, .blade-inner, .banner-inner, .navigation-inner {
-      margin:0 5%;
+  .container, 
+  .blade-inner, 
+  .banner-inner, 
+  .navigation-inner,
+  .content-area-feature {
+      margin:0 9%;
       max-width: 105em;
   }
 }

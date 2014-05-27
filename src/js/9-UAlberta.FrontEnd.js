@@ -32,7 +32,14 @@ var UAlberta = UAlberta || {};
           case 'link-filter':
             moduleConstructor = LinkFilter;
             break;
-          case 'carousel-feature':
+          case 'feature-carousel':
+            var newOptions = options || {};
+            if(newOptions.wrapperClass)
+              newOptions.wrapperClass = 'full-page-feature '+newOptions.wrapperClass;
+            else
+              newOptions.wrapperClass = 'full-page-feature';
+            options = newOptions;
+            template = UAlberta.FrontEnd.templates["carousel.hbs"];
             moduleConstructor = Carousel;
             break;
           case 'carousel':
@@ -78,7 +85,7 @@ var UAlberta = UAlberta || {};
         } 
       };
       Modules.addModule = addModule;
-
+ 
       /** 
        *  A base module
        *  @constructor Module
@@ -198,12 +205,24 @@ var UAlberta = UAlberta || {};
         /** @function takes new data and re-renders the module. */
         this.update = function(newData) {
           self.el.replaceWith($('<div class="f-e-container"></div>')
-            .append(self.template(data)));
+            .append(self.template(newData)));
           self.activate();
         };
 
         /** @function adds a module inside this module */
         this.addModule = function(moduleName,data,placeholder,options) {
+          // if data is a string, assume it's a url and fetch the data
+          if((typeof data) === "string") {
+            var moduleName = moduleName;
+            var placeholder = placeholder;
+            var options = options;
+            $.getJSON( data, null, function(jsonData) {
+              // data should be an object now, so call addModule again
+              return self.addModule(moduleName, jsonData, placeholder, options);
+            });
+          } 
+          // data is an object so create the module
+          if((typeof data) === "object") {
             var module = UAlberta.FrontEnd.Modules.addModule(
               moduleName,
               data,
@@ -211,9 +230,9 @@ var UAlberta = UAlberta || {};
               placeholder,
               options
             );
-            //var module = UAlberta.FrontEnd.Modules.addModule(moduleName,data,self,options);
             self.modules.push(module);
             return module;
+          }
         };
 
         /** @function switches the template used to render this module */
@@ -234,15 +253,13 @@ var UAlberta = UAlberta || {};
        *  @property {object}   data            A JSON object containing the data to pass to the template
        *  @property {object}   options         A JSON object containing the options for the module
        */
-      function Page(layoutTemplate, data, options) {
+      function Page(options) {
 
         // extend the module base
         this.base = Module;
-        this.base('page', 'page', function() {}, data, null, 'body', options);
+        this.base('page', 'page', function() {}, {}, null, 'body', options);
 
         this.el = $('body');
-
-        this.layoutTemplate = layoutTemplate;
 
         // default placeholders
         this.options.featureArea = "#feature-area";
@@ -255,7 +272,8 @@ var UAlberta = UAlberta || {};
         var self = this;
 
         this.addFeature = function(featureData, options) {
-          return self.addModule('carousel',featureData, this.options.featureArea,options);
+          console.log("addFeature",options);
+          return self.addModule('feature-carousel',featureData, this.options.featureArea, options);
         };
 
         this.addToFirstColumn = function(moduleName, data, options) {
@@ -270,6 +288,7 @@ var UAlberta = UAlberta || {};
           return self.addModule(moduleName,data,this.options.sidebar, options);
         };
 
+        /** @function activates the quick links toggle and navigation toggle */
         this.activate = function() {  
           // close any open overlays when clicking the "body" element
           $('body').on('click',function(e) {
@@ -283,7 +302,7 @@ var UAlberta = UAlberta || {};
           $('#ql-toggle').on('click', function(e) {
             $('#ql').toggleClass('open');
             e.stopPropagation();
-          });
+          });  
 
 
           // close any open overlays when clicking the "body" element
@@ -300,134 +319,26 @@ var UAlberta = UAlberta || {};
             e.stopPropagation();
           });
 
+          // tooltips
+          $('[data-toggle="tooltip"]').tooltip();
+
+          $('[data-toggle="iframe-modal"]').click(function(e) {
+            var modal = $($(this).data('target'));
+            var iframe = modal.find('iframe');
+            modal.find('h3').text($(this).data('title'));
+            iframe.attr('src',$(this).data('url'));
+            modal.addClass('in');
+            modal.find('.close').click(function() {
+              modal.removeClass('in');
+              iframe.attr('src','');
+            });
+            return false;
+          });
+
         };
-
-        /** @function builds the page and adds it to the DOM */
-        this.add = function() {
-          if(self.layoutTemplate) {
-            if(self.data.blade)
-              addBlade();
-
-            if(self.data.banner)
-              addBanner();
-
-            if(self.data.navigation) {
-              addGlobalNavigation();
-              addMobileNavigation();
-            }
-            
-            if(self.data.secondaryFooter)
-              addSecondaryFooter();
-            
-            if(self.data.ualbertaFooter)
-              addInstitutionalFooter();
-
-            self.setLayout(self.layoutTemplate);
-          }
-          this.activate();
-        };
-
-        /** 
-         * sets the layout of the page to the template name provided
-         * @function 
-         * @param {string} layoutName A string specifying the layout template name
-         */
-        this.setLayout = function(layoutName) {
-          console.log("trying to layout " + layoutName);
-          if(!self.layout) {
-            self.layout = self.addModule(layoutName, {}, "#content-wrapper");
-          } else {
-            self.layout.switchTemplate(layoutName);
-          }
-        };
-
-        this.setPageTitle = function(data) {
-          var titleData = data || self.data.pageTitle;
-          self.pageTitle = 
-            self.addModule(
-              'page-title', 
-              self.data.pageTitle, 
-              '#page-title', 
-              {}
-            );
-        };
-
-        /** @private adds the blade to the page */
-        function addBlade() {
-          self.blade = 
-            self.addModule(
-              'blade', 
-              self.data.blade, 
-              'header', 
-              {}
-            );
-        };
-
-        /** @private adds the banner to the page */
-        function addBanner() {
-          self.banner = 
-            self.addModule(
-              'banner', 
-              self.data.banner, 
-              'header', 
-              {}
-            );
-        };
-
-        /** @private adds global navigation to the page */
-        function addGlobalNavigation() {
-          self.globalNav = 
-            self.addModule(
-              'global-navigation', 
-              self.data.navigation, 
-              'header', 
-              {}
-            );
-        };
-
-        /** @private adds mobile navigation to the page */
-        function addMobileNavigation() {    
-          self.mobileNav = 
-            self.addModule(
-              'mobile-navigation', 
-              self.data.navigation, 
-              'header', 
-              {}
-            );
-        }; 
-
-        /** @private adds a secondary footer to the page */
-        function addSecondaryFooter() {
-          if(self.data.secondaryFooter) {
-            self.secondaryFooter = 
-              self.addModule(
-                'secondary-footer',
-                data.secondaryFooter, 
-                'footer',
-                {
-                  prepend:true
-                }
-              );
-          }
-        };
-
-        /** @private add the institutional footer to a page */
-        function addInstitutionalFooter() {
-          self.primaryFooter = 
-            self.addModule(
-              'institutional-footer', 
-              self.data.ualbertaFooter, 
-              'footer', 
-              {}
-            );
-        };
-
-        // build the page
-        if(!this.options.suppressBuild)
-          this.add();
 
         // extend the module base
-        this.prototype = new Module('page', 'page', null, data, null, 'body', options);
+        this.prototype = new Module('page', 'page', null, {}, null, 'body', options);
       };
       Modules.Page = Page;
 
@@ -491,6 +402,7 @@ var UAlberta = UAlberta || {};
         var self = this;
 
         this.activate = function() {
+          this.el.addClass('in');
           this.el.on({
             click: function() {
               self.remove(); 
@@ -537,24 +449,13 @@ var UAlberta = UAlberta || {};
         var self = this;
 
         this.activate = function() {
-          this.el.find('.nav a').first().parent().addClass('active');
-          this.el.find('.tab-pane').first().addClass('active');
-          this.el.on({
-            click: function(e) {
-              console.log(e);
-              var tabId = $(this).attr('href');
-              self.el.find('.active').removeClass('active');
-              self.el.find(tabId).addClass('active');
-              $(this).parent().addClass('active');
-              return false;
-            }
-          }, '.nav a');
+          this.el.tabs();
         };
 
         // extend the module base
         this.prototype = new Module(id, type, template, data, parentModule, placeholder, options);
       };
-
+ 
       /** @private */
       function Accordion(id, type, template, data, parentModule, placeholder, options) {
         // extend the module base
@@ -564,13 +465,7 @@ var UAlberta = UAlberta || {};
         var self = this;
 
         this.activate = function() {
-          // expand / collapse functionality
-          this.el.on({
-            click: function() {
-              $(this).parent().toggleClass('expanded'); 
-              return false;
-            }
-          }, '.accordion-toggle'); 
+          this.el.accordion();
         };
 
         // extend the module base
@@ -631,37 +526,9 @@ var UAlberta = UAlberta || {};
         this.base(id, type, template, data, parentModule, placeholder, options);
 
         var self = this;
-
-        this.currentSlide = 0;
-
-        this.goToSlide = function(index) {
-          this.el.find('.current').removeClass('current');
-          this.el.find('.toggles li').eq(index).addClass('current');
-          this.el.find('.slide').eq(index).addClass('current');
-        };
     
         this.activate = function() {
-
-          if(self.el.find('.slide').length < 2) {
-            self.el.find('.toggles').remove();
-          }
-
-          var autoRotate = setInterval(function () {
-            // if the next slide doesn't exist, restart
-            if((self.currentSlide+1) >= data.features.length)
-              self.currentSlide = -1;
-            self.goToSlide(self.currentSlide++);
-          }, 8000);
-
-          this.el.on({ 
-            click: function() {
-              self.currentSlide = $(this).index();
-              self.goToSlide(self.currentSlide);
-              clearInterval(autoRotate);
-            }
-          },'li:not(.current)');
-
-          self.goToSlide(0);
+          self.el.carousel();
         };
 
         // extend the module base
