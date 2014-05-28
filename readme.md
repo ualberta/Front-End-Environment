@@ -115,7 +115,7 @@ Any carousel added to the content-inner section of the page will be wrapped with
 
 You can add any of the available modules into a sidebar item by creating the sidebar item, and adding a module to it.
 
-    var sidebarItem = UAlberta.page.addToSidebar('sidebar-item', {}, {
+    var sidebarItem = UAlberta.page.addToSidebar('sidebar-item', {
             header: {
               heading: "Sidebar Content"
             }
