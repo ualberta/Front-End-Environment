@@ -24,7 +24,7 @@ module.exports = function(grunt) {
           separator: ';'
         },
         src: [
-          'src/js/vendor/*.js'
+          'src/js/libs/*.js'
         ],
         dest: 'build/js/libs.min.js'
       }

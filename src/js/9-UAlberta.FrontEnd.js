@@ -322,6 +322,7 @@ var UAlberta = UAlberta || {};
           // tooltips
           $('[data-toggle="tooltip"]').tooltip();
 
+          // iframe modals
           $('[data-toggle="iframe-modal"]').click(function(e) {
             var modal = $($(this).data('target'));
             var iframe = modal.find('iframe');
@@ -334,6 +335,15 @@ var UAlberta = UAlberta || {};
             });
             return false;
           });
+
+          // accordions 
+          $('.accordion-list').accordion();
+
+          // enable carousels
+          $('.carousel-container').carousel();
+
+          // enable tabs
+          $('.tabs-container').tabs();
 
         };
 

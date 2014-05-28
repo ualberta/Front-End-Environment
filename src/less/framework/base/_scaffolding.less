@@ -143,7 +143,7 @@ cite {
 .text-success {
   color: @successText;
 }
-
+ 
 
 // Headings
 // -------------------------
@@ -156,15 +156,21 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizelegibility; // Fix the character spacing for headings
 }
 
+/** modular scale based on a perfect fifth, 16, and 1680 **/
+
 h1 { font-size: 1.75em;line-height: 1.2em; }
 h2 { font-size: 1.7143em;line-height: 1.2em; }
-h3 { font-size: 1.3571em;line-height: 1.2em; text-transform: uppercase; color:#6d756f; color: rgba(61, 74, 67, 0.75);}
+h3 { font-size: 1.3571em;line-height: 1.2em; }
 h4 { font-size: 1.15em; line-height: 1.2em;}
 h5 { font-size: 1em; line-height: 1.2em; font-family: sans-serif; font-weight: bold; }
 h6 { font-size: 0.9em; font-family: sans-serif; font-weight: bold; }
 
 
-/** modular scale based on a perfect fifth, 16, and 1680 **/
+.tertiary h3 {
+  text-transform: uppercase; 
+  color:#6d756f; 
+  color: rgba(61, 74, 67, 0.75);
+}
 
 .second-column h2:nth-child(1) {
   margin-top:0;

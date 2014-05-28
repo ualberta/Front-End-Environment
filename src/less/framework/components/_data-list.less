@@ -85,7 +85,31 @@
 .image-link-list {
   .list-item-image {
     float:left;
-    margin-right:0.5em;
+    width:5em;
+  }
+  .list-item-content {
+    margin-left:6.5em;
+  }
+}
+
+.image-link-list.wide {
+  .list-item-image {
+    float:left;
+    width:10em;
+  }
+  .list-item-content {
+    margin-left:11.5em;
+  }
+}
+
+@media (max-width: 24em) {
+  .image-link-list.wide {
+    .list-item-image {
+      float:none;
+    }
+    .list-item-content {
+      margin-left:0;
+    }
   }
 }
 
