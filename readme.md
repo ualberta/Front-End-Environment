@@ -191,5 +191,5 @@ A module consists of three pieces:
 
 After creating these three pieces and compiling the templates and less files, you can add your module to any page with:
 
-    UAlberta.FrontEnd.Modules.addModule({{COMPONENT_NAME}}, {{DATA}}, {{PARENT}})
+    UAlberta.page.addModule({{COMPONENT_NAME}}, {{DATA}}, {{PARENT}}, {{OPTIONS}})
 
