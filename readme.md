@@ -4,33 +4,18 @@ The UAlberta front-end framework allows dynamic creation of pages and modules wi
 
 ## Usage
 
-Add `/build/js/main.min.js` (requires jQuery, and Handlebars Runtime) and `/build/css/framework.css` to your page, then add modules to the page by passing the JSON data, and a selector string that represents the placeholder to insert the module into.
+Add `/build/js/main.min.js` (requires jQuery) and `/build/css/framework.css` to your page. 
 
-    // add a full width feature to a page
-    UAlberta.Modules.addModule('single-feature', jsonData, null, '#feature-area');
-    
+The javascript file will build a page object in the UAlberta namespace that you can add modules to with JSON data.
 
-You can also build entire pages and layouts from JSON data (recommended for testing purposes only).  For example, you could build a replica of the [UAlberta home page](http://www.ualberta.ca/) with:
+    // add a carousel to a specific selector on the page.
+    UAlberta.page.addModule('carousel', './assets/data/components/sample-carousel.json', '#carousel-element');
 
-    // CREATE BASE PAGE
-
-    var page = new UAlberta.FrontEnd.Modules.Page("ualberta-home",pageData);
-
-    // ADD MODULES
-
-    page.addFeature(featureData); 
-
-    page.addToFirstColumn('data-list', newsData);
-
-    page.addToSecondColumn('data-list', campusNoticeData); 
-
-    page.addToSecondColumn('data-list', blogData);  
-
-    page.addToSidebar('content', contentData);
-
-    page.addToSidebar('social-media', socialMediaData);
-
-
+    // or use the shortcut functions to add modules to predefined areas
+    UAlberta.page.addFeature(featureData); 
+    UAlberta.page.addToFirstColumn('data-list', newsData);
+    UAlberta.page.addToSecondColumn('data-list', campusNoticeData); 
+    UAlberta.page.addToSidebar('social-media', socialMediaData);
 
 **The JSON data format for each module is currently being documented.  For now, you can browse the [data folder](https://github.com/ualberta/front-end-framework/tree/master/src/assets/data) for some sample json files.**
 
@@ -39,27 +24,55 @@ You can also build entire pages and layouts from JSON data (recommended for test
 
 You can add any module that has a valid handlebars template with:
 
-    UAlberta.FrontEnd.Modules.addModule(templateName, data, parentModule, placeholder, options)
+    UAlberta.page.addModule(componentName, data, placeholder, options)
 
 Where:
 
-  - `templateName`: The name of the handlebars file without the .hbs extension.
+  - `componentName`: The name of the component's handlebars template file without the .hbs extension.
   - `data`: The data to provide to the template
-  - `parentModule`: A Module object that will contain this module (null if no parent)
   - `placeholder`: A selector string of the element that will contain this module
   - `options`: An object specifying the options for the module
 
 #### Module Options
 The following options are available for all modules:
 
+  - `prepend`: If set to true, the module will be prepended to the container instead of appended.
+  - `wrapperClass`: A class name to wrap the module in.
   - `header.heading`: A string containing a heading to place before the module.
   - `header.actions`: A list of buttons the user can interact with to perform actions relating to the module.
   - `footer.text`: A string containing some text to place after the module.
+  - `footer.content`: A string containing HTML to place after the module.
+
+##### Example
+Here is a JSON object setting all the options for a module:
+
+    {
+        "prepend": true,
+        "wrapperClass": "frame",
+        "header": {
+            "heading": "Here is the heading for a module",
+            "actions": [
+              {
+                "url": "#",
+                "type": "rss"
+              },
+              {
+                "url": "#",
+                "type": "envelope"
+              }
+            ]
+        },
+        "footer": {
+            "text": "this text will be displayed below the module",
+            "content": "<strong>This HTML will be displayed below the module.</strong>"
+        }
+    }
 
 #### Properties
 Each module has the following properties available to it:
   - `el`: The jQuery DOM element for the module
   - `parent`: The jquery parent DOM element of the module
+  - `modules`: An array of modules the current module contains
 
 
 Below you can find a list of modules that currently exist.
@@ -68,7 +81,7 @@ Below you can find a list of modules that currently exist.
 
 Adds a single full page feature.
 
-    addModule('single-feature', data, parent, options)
+    UAlberta.page.addModule('single-feature', data, parent, options)
 
   - [View Sample Feature JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-feature.json)
 
@@ -81,8 +94,8 @@ Adds a single full page feature.
 
 ### Data Lists
 
-    addModule('data-list', data, parent, options)
-    addModule('sidebar-data-list', data, parent, options); // for sidebar
+    UAlberta.page.addModule('data-list', data, parent, options)
+    UAlberta.page.addModule('sidebar-data-list', data, parent, options); // for sidebar
 
 #### Treatmeants / Data
   - Link List [View Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-link-list.json)
@@ -91,18 +104,22 @@ Adds a single full page feature.
 
 ### Carousel
 
-    addModule('carousel', data, parent, options)
+    UAlberta.page.addModule('carousel', data, parent, options)
 
 Any carousel added to the content-inner section of the page will be wrapped with a white frame by default.  By passing the 'fullPage' option, you can force the carousel to appear at the top of the page and span the full width.
 
   - [View Sample Carousel JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-carousel.json)
 
 
-### Sidebar Items
+### Sidebar Items / Nesting Modules
 
 You can add any of the available modules into a sidebar item by creating the sidebar item, and adding a module to it.
 
-    var sidebarItem = page.addModule('sidebar-item', {}, "#sidebar", options)
+    var sidebarItem = UAlberta.page.addToSidebar('sidebar-item', {}, {
+            header: {
+              heading: "Sidebar Content"
+            }
+          });
     sidebarItem.addModule('name', data, ".sidebar-content", options)
 
   - [View Sample Sidebar Content JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/components/sample-sidebar-content.json)
@@ -121,48 +138,11 @@ You can add any of the available modules into a sidebar item by creating the sid
 
 ### Video
 
-    addModule('video', data, parent, options)
+    addModule('youtube-video', data, parent, options)
 
 ### Modals
 
     addModule('modal', data, parent, options)
-
-## Pages
-
-### `Page(baseData, options)`
-
-  - [View Institutional Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_institutional.json)
-  - [View Faculty Sample JSON](https://github.com/ualberta/front-end-framework/blob/master/src/assets/data/base_faculty.json)
-
-#### Properties
-
-Each page created has the following properties available:
-
-  - `blade`: Blade Module
-  - `banner`: Banner Module
-  - `globalNav`: Global Navigation Module
-  - `mobileNav`: Mobile Navigation Module
-  - `secondaryFooter`: Secondary Footer Module
-  - `primaryFooter`: Primary Footer Module
-
-
-#### Options
-  - `build`: Set to true if the page should automatically build.
-
-#### `Page.setLayout(layoutName)`
-
-Adds the specified layout to the page.  Currently `ualberta-home` is the only valid layout.
-
-### `InstitutionalHome(baseData)`
-
-Extends `Page` and provides the following additional functions:
-
-  - `addFeature(data)`
-  - `addWhyUAlberta()`: static for now
-  - `addExploreBar()`: static for now
-  - `addToFirstColumn(moduleName, data)`: "data-list" is currently the only valid moduleName in the first column.
-  - `addToSecondColumn(moduleName, data)`
-  - `addToSidebar(moduleName, data)`
 
 
 ## Contributing
