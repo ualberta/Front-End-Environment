@@ -171,7 +171,7 @@ The development environment is preconfigured with npm and grunt tasks that will:
   - Watch `.less` files in `/src/less/` for changes 
     - compile into `/build/css/framework.css` 
   - Watch `*.js` files in `/src/js` for changes 
-    - concatenate vendor scripts in `/src/js/vendor`
+    - concatenate library scripts in `/src/js/libs`
     - concatenate author scripts in `/src/js`
     - uglify
     - copy to `/build/js`
@@ -180,6 +180,20 @@ The development environment is preconfigured with npm and grunt tasks that will:
   - Watch `/src/templates/` for `.hbs` tempate changes 
     - compiles the templates into `/build/js/templates.js`, which are accessible through `UAlberta.FrontEnd.templates`
 
+
+### Folder Structure
+
+#### Javascript
+All javascript resides in the `/src/js/` folder.  Upon modification of any of the javascript files, the grunt task will compile all of the javascript files, uglify them and copy them to the `/build/js` folder.
+
+  - `/src/js/*.js` -> compile in order of file name, uglify -> `/build/js/main.min.js`
+  - `/src/js/libs/*.js` -> compile in order of file name, uglify -> `/build/js/libs.min.js`
+
+
+#### LESS / CSS
+Any modifications to CSS code should be applied to the less files located in the `src/less/` folder.  The folder is organized as follows:
+
+  - `/src/less/framework.less` : The master less file that imports all of the partial less files
 
 ### Creating a Module
 
