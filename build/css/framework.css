@@ -255,7 +255,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1.57em 0 0.57em;
+  margin: 1.5em 0 0.5em;
   font-family: "DIN Bold", sans-serif;
   font-weight: normal;
   line-height: 1;
@@ -264,7 +264,7 @@ h6 {
 }
 /** modular scale based on a perfect fifth, 16, and 1680 **/
 h1 {
-  font-size: 1.75em;
+  font-size: 2.0714em;
   line-height: 1.2em;
 }
 h2 {
@@ -272,7 +272,7 @@ h2 {
   line-height: 1.2em;
 }
 h3 {
-  font-size: 1.3571em;
+  font-size: 1.3857em;
   line-height: 1.2em;
 }
 h4 {
@@ -4964,6 +4964,7 @@ ul.accordion-list li.expanded div {
   margin: 0;
   padding: 0;
   position: relative;
+  text-transform: none;
 }
 .image-caption-container .caption h3 {
   color: #007c41;
