@@ -190,10 +190,14 @@ All javascript resides in the `/src/js/` folder.  Upon modification of any of th
   - `/src/js/libs/*.js` -> compile in order of file name, uglify -> `/build/js/libs.min.js`
 
 
-#### LESS / CSS
+#### LESS / CSS File Structure
 Any modifications to CSS code should be applied to the less files located in the `src/less/` folder.  The folder is organized as follows:
 
   - `/src/less/framework.less` : The master less file that imports all of the partial less files
+  - `/src/less/framework/base/` : This folder contains all of the less files for mixins, standard HTML elements, and elements that are common to every page (blade, banner, navigation, footer).
+  - `/src/less/framework/components/` : Contains files that handle the styling of components. Each component has its own less file.
+  - `/src/less/framework/layouts/` : Contains files that handle the content layout.
+
 
 ### Creating a Module
 
