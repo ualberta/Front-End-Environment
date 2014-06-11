@@ -26,22 +26,6 @@
       color: @lightText;
     }
   }
-}
-
-@media (max-width: 43.125em) {
-  .image-caption-container .caption {
-    position:relative;
-  }
-}
-
-// extends image caption container and overlays 
-// the caption over the image on hover
-.hover-caption-container {
-  overflow: hidden;
-  position:relative;
-  a, a:hover {
-    text-decoration:  none;
-  }
   i {
     position:absolute; 
     width: 1em;
@@ -59,7 +43,26 @@
     .opacity(40);
     pointer-events:none;
   }
-  p.caption {
+  &:hover i {
+    .opacity(100);
+  }
+  a, a:hover {
+    text-decoration:  none;
+  }
+}
+
+@media (max-width: 43.125em) {
+  .image-caption-container .caption {
+    position:relative;
+  }
+}
+
+// extends image caption container and overlays 
+// the caption over the image on hover
+.hover-caption-container {
+  overflow: hidden;
+  position:relative;
+  .caption {
     color:#fff;
     background:#333;
     background: rgba(0,0,0,0.75);
@@ -76,9 +79,6 @@
   }
   &:hover .caption {
     bottom: 0;
-  }
-  &:hover i {
-    .opacity(100);
   }
 }
 

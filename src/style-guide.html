@@ -1196,26 +1196,23 @@ pre.markup {
           <div class="example">
             <div class="frame">
               <div class="image-caption-container hover-caption-container">
-                <a href="//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;amp;autoplay=1" class="image-shadow" data-title="Danny Huang Explains" data-url="//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;amp;autoplay=1" data-toggle="iframe-modal" data-target="#videoModal">
+                <a href="//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;amp;autoplay=1" class="image-shadow" data-title="Danny Huang Explains" data-url="//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;amp;autoplay=1" data-modal="iframe" data-target="#videoModal">
                   <img src="http://placehold.it/800x450" alt="Danny Huang explains">
                   <i class="icon-angle-circled-right"></i> 
-                </a>
+                
                 <p class="caption">
                     Danny Huang explains how to work hard, have fun, stay healthy but also find a way to balance it all.
                 </p>
+                </a>
               </div>
             </div>
             <div class="modal-module" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true"> 
               <div class="modal">
                 <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <button type="button" class="close" aria-hidden="true">&times;</button>
                   <h3></h3>
                 </div>
-                <div class="modal-body">
-                  <div class="video-mod-container">
-                    <iframe type="text/html" src="" frameborder="0"></iframe>
-                  </div>
-                </div>
+                <div class="modal-body"></div>
               </div>
             </div>
           </div>
@@ -1240,26 +1237,32 @@ UAlberta.page.addModule(
                 <div class="slide current image-caption-container">
                   <a href="#" class="image-shadow">
                     <img src="http://placehold.it/800x450" alt="">
-                  </a>
-                  <a href="#" class="feature-caption caption">
-                    <h3>Base Feature</h3>
-                    <p>This feature contains the minimal amount of data to create a feature.</p>
+                    <div class="caption">
+                      <h3>Base Feature</h3>
+                      <p>This feature contains the minimal amount of data to create a feature.</p>
+                    </div>
                   </a>
                 </div>
                 <div class="slide image-caption-container dark">
                   <a href="#" class="image-shadow">
                     <img src="http://placehold.it/800x450" alt="">
-                  </a>
-                  <a href="#" class="feature-caption caption">
+                  <div class="caption">
                     <h3>Base Feature</h3>
                     <p>This feature contains the minimal amount of data to create a feature.</p>
+                  </div>
+                  </a>
+                </div>
+                <div class="slide image-caption-container">
+                  <a href="//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;amp;autoplay=1" class="image-shadow" data-title="Danny Huang Explains" data-url="//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;amp;autoplay=1" data-modal="iframe" data-target="#videoModal">
+                    <img src="http://placehold.it/800x450" alt="Sample Video">
+                    <i class="icon-angle-circled-right"></i> 
+                    <div class="caption">
+                        <h3>Video Feature</h3>
+                        <p>This feature will launch a video.</p>
+                    </div>
                   </a>
                 </div>
               </div>
-              <ul class="toggles">
-                  <li class="">1</li>
-                  <li class="">2</li>
-              </ul>
             </div>
           </div>
 
@@ -1450,21 +1453,53 @@ UAlberta.page.addModule(
           </div>
     <hr />
             <h3 id="modals">Modal Windows</h3>
-            <p>Modal windows can be enabled by adding the data-toggle="modal" attribute to a link.</p>
+            <p>Modal windows can be enabled by adding the data-modal="content" or data-modal="iframe" attribute to a link.</p>
+            <h4>Content Modals</h4>
             <div class="example">
-            <a href="#myModal" role="button" class="btn btn-green" data-toggle="modal">Launch demo modal</a>
-            <div class="modal-module" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
-              <div class="modal">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h3>Modal Title</h3>
-                </div>
-                <div class="modal-body">
-                  <p>Modal content</p>
+              <!-- modal trigger -->  
+              <a href="#myModal" role="button" class="btn btn-green" 
+                data-target="#myModal" 
+                data-modal="content" 
+                data-modal-content="#demo-modal" 
+                data-title="Sample Modal" 
+              >Launch content modal</a>
+
+              <!-- content to display in modal -->
+              <div id="demo-modal" class="modal-content">Here is a demo!</div>
+
+              <!-- modal window -->
+              <div class="modal-module" id="myModal" tabindex="-1" role="dialog" aria-hidden="true"> 
+                <div class="modal">
+                  <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h3></h3>
+                  </div>
+                  <div class="modal-body"></div>
                 </div>
               </div>
             </div>
-          </div>
+
+            <h4>External (iframe) Modals </h4>
+            <div class="example">
+              <!-- modal trigger -->  
+              <a href="//ualberta.ca/" role="button" class="btn btn-green" 
+                data-target="#iframeModal" 
+                data-modal="iframe" 
+                data-url="//ualberta.ca/" 
+                data-title="ualberta.ca" 
+              >Launch external modal</a>
+
+              <!-- modal window -->
+              <div class="modal-module" id="iframeModal" tabindex="-1" role="dialog" aria-hidden="true"> 
+                <div class="modal">
+                  <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h3></h3>
+                  </div>
+                  <div class="modal-body"></div>
+                </div>
+              </div>
+            </div>
 
           <h2 id="page-layouts">Page Layouts</h2>
           <h3 id="overall-layout">Overall Layout</h3>

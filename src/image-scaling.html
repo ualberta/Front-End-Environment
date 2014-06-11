@@ -1,0 +1,580 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7 ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie10 lt-ie9 lt-ie8 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie10 lt-ie9 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js lt-ie10 ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <!--[if lt IE 9]><script src="./js/html5shiv.min.js"></script><![endif]-->
+  
+  <!-- Meta: These two must be before <title> -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>University of Alberta</title>
+
+  <meta name="description" content="University of Alberta">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+
+  <link href="./css/framework.css" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="./assets/ico/apple-touch-icon-57-precomposed.png">
+  
+  <!--[if lt IE 9]><script src="./js/respond.js" type="text/javascript"></script><![endif]-->
+
+  <script src="./js/libs.min.js"></script>
+
+  <style>
+
+.bad, .good { 
+  position: relative;
+  padding: 0.7143em;
+  margin: 0.753em 0;
+  pointer-events: none;
+}
+
+.good:after {
+  background: rgba(0, 255, 0, 0.05);
+  border: 1px solid rgba(0, 255, 0, 0.15);
+}
+
+.bad:after {
+  background: rgba(255, 0, 0, 0.05);
+  border: 1px solid rgba(255, 0, 0, 0.15);
+}
+
+.bad:after, .good:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+pre.prettyprint {
+  overflow: auto;
+  border: 1px solid #DDD!important;
+  padding: 10px!important;
+  background: #FFF;
+  font-size: 1.25em;
+  line-height: 1.57em;
+  margin-top: 0;
+}
+
+pre.prettyprint + p.filename {
+  margin-bottom: 1.57em;
+}
+
+p.filename {
+  background: #DDD;
+  color: #666;
+  padding: 0 5px;
+  font-weight: bold;
+  font-size: 11px;
+  margin-top: -1.33em;
+}
+
+.nav-wrapper ul.level-0 li.active ul {
+  display:block;
+}
+
+.content-wrapper .nav-wrapper ul.level-0 li.active ul li.active a {
+  display: block;
+  background-color: #F6F8ED;
+  background-color: rgba(255, 245, 184, 0.15);
+  border: 1px solid #E1D8A4;
+  margin: 0 -0.8333em;
+  padding: 0.4em 0.8333em 0.4em 1.75em;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  background-image:none;
+  color:#007c41;
+}
+
+.content-wrapper .nav-wrapper ul.level-0 li.active ul li.active a:after {
+  display:none;
+}
+
+.colors {
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.colors li {
+  display:inline-block;
+  width:5em;
+  height:5em;
+  text-align:center;
+  margin: 0 0.57em 0.57em 0;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2), 0 1px 8px rgba(0, 0, 0, 0.35);
+  border-radius: 10em;
+  border: 5px solid #FFF;
+  position:relative;
+  text-align:center;
+}
+
+.colors li span {
+  position:absolute;
+  font-weight:bold;
+  font-size:0.92em;
+  height:1em;
+  top:0;bottom:0; left:0; right:0;
+  margin:auto;
+  display:block;
+  text-align:center;
+  line-height:1;
+}
+
+#grid-example .row-fluid {
+  background-color: rgba(255,125,255,0.2);
+  padding: 10px 0;
+}
+
+#grid-example [class*="span"] {
+  background-color: rgba(0,255,255,0.2);
+}
+
+.icons .label {
+  font-size:0.8333em;
+  margin-left:0.57em;
+}
+
+.example {
+  border: 2px dashed #ccc;
+  padding:0.7143em;
+  position:relative;
+}
+
+.example .toggle-markup {
+  position:absolute;
+  height:3em;
+  width:12em;
+  right: 0.7143em;
+  top:0.7143em;
+  margin:auto;
+  font-weight:normal;
+}
+
+@media (min-width:980px) {
+  .example .toggle-markup {
+    top:0;
+    right: -13em;
+  }
+}
+
+pre.markup {
+  border: 1px solid #DDD;
+  background: #FFF;
+  overflow: auto;
+  max-height: 400px;
+  padding:0.7143em;
+}
+
+.example pre.markup {
+  display:none;
+}
+
+.example.show-markup pre.markup {
+  display:block;
+}
+
+.example.show-markup .preview {
+  display:none;
+}
+
+.example > button:after {
+  content: "Show Markup";
+}
+
+.example.show-markup > button:after {
+  content:"Show Preview";
+}
+
+  .principles {
+      list-style: none;
+      margin: 0;
+    }
+    .principles li ul {
+      margin-left: 1.3em;
+    }
+    .principles li .message {
+      position: relative;
+      margin: 0.79em 0;
+      color: rgba(0,0,0,0.65);
+      padding: 1em 1em 1em 3.25em;
+      border-radius: 4px;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      font-size: 1.3em;
+    }
+    .principles li i {
+      position: absolute;
+      left: 0.55em;
+      font-size: 1.5em;
+    }
+    .principles .do .message {
+      background: rgba(0,255,0,0.1);
+      border: 1px solid rgba(0,155,0,0.25);
+      text-shadow: 1px 1px 1px rgba(0,155,0,0.35);
+    }
+    .principles .do i {
+      color: green;
+    }
+    .principles .dont .message {
+      background: rgba(255,0,0,0.1);
+      border: 1px solid rgba(155,0,0,0.25);
+      text-shadow: 1px 1px 1px rgba(155,0,0,0.35);
+    }
+    .principles li.dont i {
+      color: red;
+    }
+
+
+</style>
+</head>
+<body>
+  <!--[if lt IE 8]><p class=alert>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header>
+    <div class="f-e-container blade-module">
+      <div class="blade-container">
+        <div class="blade-inner">
+          <nav class="blade-navigation">
+            <ul class="quick-links-container">
+              <li id="ql" class="dropdown">
+                <a href="#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop">
+                <span class="quick-links-text">Quick Links</span>
+                </a>
+                <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                  <li role="menuitem">
+                    <a href="#">Find a Person</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">ONEcard</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Bear Tracks</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Maps</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Email &amp; Apps</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">eClass</a>
+                  </li>
+                  <li role="menuitem">
+                    <a href="#">Libraries</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+          <div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="f-e-container banner-module">
+      <div class="banner-container">
+        <div class="banner-inner">
+          <div class="banner-logo">
+            <span class="site-logo">
+            <a href="http://www.ualberta.ca/"><img src="http://ualberta.ca/~publicas/uofa/img/logo-reverse.svg" alt="University of Alberta"></a>
+            </span>
+          </div>
+          <nav class="audience-navigation">
+            <ul>
+              <li role="menuitem" class="audience-link">
+                <a href="#">Faculty and Staff</a>
+              </li>
+              
+              <li role="menuitem" class="audience-link">
+                <a href="#">Prospective Students</a>
+              </li>
+              
+              <li role="menuitem" class="audience-link">
+                <a href="#">Current Students</a>
+              </li>
+              
+              <li role="menuitem" class="audience-link">
+                <a href="#">Alumni and Friends</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="f-e-container global-navigation-module">
+      <div class="navigation-container">
+        <nav id="main-nav" class="navigation-inner">
+          <ul>
+            <li>
+              <a class="navigation-toggle">
+              <span>Show Navigation</span>
+              <i class="icon-toggle-nav"></i>
+              </a>
+              <ul id="nav-list" class="main-navigation collapse">
+                <li role="menuitem" class="nav1">
+                  <a href="#">Why UAlberta?</a>
+                </li>
+                <li role="menuitem" class="nav2">
+                  <a href="#">Faculties &amp; Programs</a>
+                </li>
+                <li role="menuitem" class="nav3">
+                  <a href="#">Research</a>
+                </li>
+                <li role="menuitem" class="nav4">
+                  <a href="#">Admissions</a>
+                </li>
+                <li role="menuitem" class="nav5">
+                  <a href="#">Campus Life</a>
+                </li>
+                <li role="menuitem" class="nav6">
+                  <a href="#">News &amp; Events</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="f-e-container mobile-navigation-module">
+      <div class="nav-mobile">
+
+      </div>
+    </div>
+  </header>
+  <div id="content-wrapper" class="content-wrapper tertiary">
+    <div id="feature-area" class="content-top-row"></div>
+    <div id="page-title" class="page-title-row"></div>
+    <div class="content-container container">
+      
+      <div class="content-inner row-fluid">
+        <div id="first-column" class="span first-column">
+        <div class="nav-wrapper">
+          <ul class="level-0 nav">
+            <li class="active">
+              <a href="#guidelines">Guidelines</a>
+            </li>
+            <li>
+              <a href="#base-styles">Base Styles</a>
+              <ul class="level-1">
+                <li><a href="#grid-system">Grid System</a></li>
+                <li><a href="#colors">Colors</a></li>
+                <li><a href="#typography">Typography</a></li>
+                <li><a href="#lists">Lists</a></li>
+                <li><a href="#icons">Icons</a></li>
+                <li><a href="#images">Images</a></li>
+                <li><a href="#buttons">Buttons</a></li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#forms">Forms</a></li>
+                <li><a href="#patterns">Patterns</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#components">Components</a>
+              <ul class="level-1">
+                <li><a href="#video">Video</a></li>
+                <li><a href="#carousel">Carousel</a></li>
+                <li><a href="#tabs">Tabs</a></li>
+                <li><a href="#accordion">Accordion</a></li>
+                <li><a href="#link-bucket">Categorized Link Bucket</a></li>
+                <li><a href="#media-items">Media Items</a></li>
+                <li><a href="#sidebar-items">Sidebar Items</a></li>
+                <li><a href="#pagination">Pagination</a></li>
+                <li><a href="#tooltips">Tooltips</a></li>
+                <li><a href="#modals">Modals</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#page-layouts">Page Layouts</a>
+              <ul class="level-1">
+                <li><a href="#overall-layout">Overall Layout</a></li>
+                <li><a href="#institution-home">Institutional Homepage</a></li>
+                <li><a href="#faculty-home">Faculty Home</a></li>
+                <li><a href="#landing-page">Landing Page</a></li>
+                <li><a href="#content-page">Content Page</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+        </div>
+        
+        <div id="second-column" class="span second-column clearfix">
+          <img src="http://www.med.ualberta.ca/-/media/medicine/homepage/0605-fammedgroup2014.jpg?w=320">
+        </div>
+        <div id="sidebar" class="span sidebar"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="f-e-container institutional-footer-module">
+      <div class="bottom-footer-row">
+        <div class="footer-container container">
+          <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+              <ul class="footer-quick-links">
+                <li>
+                  <a href="#" target="">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#" target="">Feedback</a>
+                </li>
+                <li>
+                  <a href="#" target="">University Calendar</a>
+                </li>
+                <li>
+                  <a href="#" target="">Careers</a>
+                </li>
+                <li>
+                  <a href="#" target="">Emergency</a>
+                </li>
+                <li>
+                  <a href="#" target="">Policies</a>
+                </li>
+                <li>
+                  <a href="#" target="">Weather</a>
+                </li>
+                <li>
+                  <a href="#" target="">Edmonton</a>
+                </li>
+                <li>
+                  <a href="#" target="">Privacy</a>
+                </li>
+                <li>
+                  <a href="#" target="">Keep In Touch</a>
+                </li>
+                <li><a href="#">Back to Top</a></li>
+              </ul>
+              <p>© 2014 <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/main.min.js"></script>
+  <script>
+  $(document).ready(function() {
+
+    var linkList = {
+      "header": {
+      "heading": "Campus Notices"
+      },
+      "items": [
+        {
+        "url": "#",
+        "label": "Facebook"
+        },
+        {
+        "url": "#",
+        "label": "Twitter"
+        },
+        {
+        "url": "#",
+        "label": "YouTube"
+        },
+        {
+        "url": "#",
+        "label": "Flickr"
+        }
+      ]
+    };
+
+    var pageTitle = {
+      breadcrumbs: [
+        {
+          url: "#",
+          label: "Home"
+        },
+        {
+          url: "#",
+          label: "University Digital Strategy"
+        }
+      ],
+      pageName: "Style Guide"
+    };
+
+    UAlberta.page.addModule('page-title', pageTitle, '#page-title');
+
+    UAlberta.page.addModule(
+      'youtube-video', 
+      './assets/data/components/sample-youtube-video.json', 
+      '#video-example', 
+      {}
+    ); 
+
+    UAlberta.page.addModule(
+      'link-filter', 
+      './assets/data/components/sample-accordion-list.json', 
+      '#link-bucket-example', 
+      {}
+    ); 
+
+    UAlberta.page.addModule('sidebar-item', {
+      header: {
+        heading: "Keep in Touch"
+      }
+    }, '#sidebar-item-example').addModule('data-list', linkList, '.sidebar-content');
+
+    // scroll to nav elements on click
+    var navElements = $('ul.level-0');
+    navElements.on('click', 'a', function(event) {
+      $("body").animate({ scrollTop: $($(this).attr('href')).offset().top-18 }, 600); 
+      event.stopPropagation();
+    });
+
+    // update nav elements as the user scrolls
+    $('body').scrollspy({ 
+      target: '.nav-wrapper',
+      offset: 30
+    });
+
+    // refresh scrollspy on window resize
+    $(window).resize(function() {
+      $('body').scrollspy('refresh');
+    });
+
+    // fix the left hand navigation to the window
+    $('#first-column').affix({
+      offset: {
+        top: $('#first-column').offset().top
+      , bottom: function () {
+          return (this.bottom = $('.footer').outerHeight(true))
+        }
+      }
+    });
+
+    // Add background colors to color elements
+    $('.colors li.solid').each(function() {
+      $(this).css('background-color', $(this).text());
+    });
+
+    // enable "Show Markup" button
+    $('.example').wrapInner('<div class="preview"></div>');
+    $('.example').append('<pre class="markup"></pre>');
+    $('.example').each(function() {
+      $(this).find('.markup').text($(this).find('.preview').html());
+      var toggleButton = $('<button class="btn btn-grey btn-micro toggle-markup"></button>');
+      $(this).append(toggleButton);
+      toggleButton.on('click', function() {
+        $(this).parent().toggleClass('show-markup');
+      });
+    });
+
+  });
+  </script>
+</body>
+</html>

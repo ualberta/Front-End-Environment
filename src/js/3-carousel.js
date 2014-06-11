@@ -22,9 +22,21 @@
             
             base.options = $.extend({},$.carousel.defaultOptions, options);
 
+            var numSlides = base.$el.find('.slide').length;
+
             // remove toggles if there is only one slide
-            if(base.$el.find('.slide').length < 2) {
-                base.$el.find('.toggles').remove();
+            if(numSlides > 1) {
+                var toggleEl = $('<ul class="toggles"></ul>');
+                for(var i = 0; i < numSlides; i++) {
+                    toggleEl.append('<li>'+i+'</li>');
+                }
+                base.$el.append(toggleEl);
+                base.$el.append('
+                    <ul class="prev-next">
+                        <li><i class="icon-angle-left"></i></li>
+                        <li><i class="icon-angle-right"></i></li>
+                    </ul>
+                ');
             }
 
             // set auto rotation if specified

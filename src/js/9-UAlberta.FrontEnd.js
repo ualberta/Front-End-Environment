@@ -20,7 +20,7 @@ var UAlberta = UAlberta || {};
 
         var template = UAlberta.FrontEnd.templates[moduleName+".hbs"];
 
-        // TODO: append timestamp to id? not sure if that is useful. 
+        // set the constructor based on the moduleName 
         var moduleConstructor;
         switch(moduleName) {
           case 'accordion':
@@ -322,18 +322,69 @@ var UAlberta = UAlberta || {};
           // tooltips
           $('[data-toggle="tooltip"]').tooltip();
 
-          // iframe modals
-          $('[data-toggle="iframe-modal"]').click(function(e) {
+          // activate modals
+          $('[data-modal]').click(function(e) {
+
             var modal = $($(this).data('target'));
-            var iframe = modal.find('iframe');
+            var modalBody = modal.find('.modal-body');
+            var modalType = $(this).data('modal');
+
+            // add the iframe to the body if it's external
+            if(modalType=='iframe') {
+              var iframe = $('<iframe type="text/html" frameborder="0"></iframe>')
+                .attr('src',$(this).data('url'));
+              $('<div class="video-mod-container"></div>').append(iframe).appendTo(modalBody);
+            } else if (modalType=='content') {
+              var modalContent = $($(this).data('modal-content'));
+              // if the content exists, put it in the body
+              if(modalContent.length > 0) {
+                modalBody.empty().append(modalContent.clone());
+              }
+            }
+
+            // set the title
             modal.find('h3').text($(this).data('title'));
-            iframe.attr('src',$(this).data('url'));
+
+            // make it visible
             modal.addClass('in');
-            modal.find('.close').click(function() {
+
+            var closeModal = function() {
               modal.removeClass('in');
-              iframe.attr('src','');
-            });
+              modalBody.empty();
+            };
+
+            // enable close button
+            modal.find('.close').click(closeModal);
+            $('.modal-module.in').click(closeModal);
+
+ 
             return false;
+          });
+
+          // Device image scaling
+          var mediaLibraryImages = $(".content-container img[src*='ualberta.ca/-/media/']");
+
+          $(window).setBreakpoints({
+            distinct: true, 
+            breakpoints: [
+                360,
+                480,
+                768,
+                1024
+            ]
+          });
+
+          $(window).bind('enterBreakpoint360',function() {
+            mediaLibraryImages.DeviceImageScaling(480);
+          });
+          $(window).bind('enterBreakpoint480',function() {
+            mediaLibraryImages.DeviceImageScaling(768);
+          });
+          $(window).bind('enterBreakpoint768',function() {
+            mediaLibraryImages.DeviceImageScaling(1024);
+          });
+          $(window).bind('enterBreakpoint1024',function() {
+            mediaLibraryImages.DeviceImageScaling(null);
           });
 
           // accordions 
@@ -344,6 +395,9 @@ var UAlberta = UAlberta || {};
 
           // enable tabs
           $('.tabs-container').tabs();
+
+          // trigger window resize to set breakpoints
+          $(window).resize();
 
         };
 
