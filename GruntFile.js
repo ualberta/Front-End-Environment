@@ -8,6 +8,8 @@ module.exports = function(grunt) {
 
   grunt.registerTask('buildjs',['concat:js', 'concat:libs', 'uglify:js']);
  
+  grunt.registerTask('production',['concat:js',  'uglify:prod', 'less:prod']);
+
   grunt.initConfig({
     concat: {
       js: {
@@ -38,12 +40,25 @@ module.exports = function(grunt) {
           'build/js/main.min.js': ['build/js/main.min.js'],
           'build/js/libs.min.js': ['build/js/libs.min.js']
         }
+      },
+      prod: {
+        files: {
+          'build/js/UAlberta.FrontEnd.min.js' : ['build/js/main.min.js']
+        }
       }
     },
     less: {
       style: {
         files: {
           "build/css/framework.css": "src/less/framework.less"
+        }
+      },
+      prod: {
+        options: {
+          compress:true
+        },
+        files: {
+          "build/css/framework.min.css": "src/less/framework.less"
         }
       }
     },
