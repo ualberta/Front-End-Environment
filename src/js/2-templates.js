@@ -1461,7 +1461,7 @@ function program4(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div id=\"pnlSubMenu\" class=\"sub-menu ";
+  buffer += "<div class=\"sub-menu ";
   if (stack1 = helpers.className) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.className); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)

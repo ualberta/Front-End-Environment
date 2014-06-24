@@ -56,6 +56,8 @@
   right: 0;
 }
 
+.prev-next { display:none;}
+
 pre.prettyprint {
   overflow: auto;
   border: 1px solid #DDD!important;
@@ -953,17 +955,30 @@ pre.markup {
         <li><strong>Wide thumbnail images:</strong> 16:9 (e.g 156 x 88)</li>
       </ul>
 
+      <h4>Image Classes</h4> 
+      <p>The following classes can be applied to a div or an image to apply various behaviors:</p>
+      <ul>
+        <li><strong>pull-left:</strong> Floats the div or image to the left side of the container.</li>
+        <li><strong>pull-right:</strong> Floats the div or image to the right side of the container.</li>
+        <li><strong>rounded:</strong> adds rounded corners to the image / div.</li>
+        <li><strong>img-circle:</strong> turns the image into a circle.</li>
+      </ul>
+      <div class="example">
+        <img src="http://www.placehold.it/80x80" class="pull-left">
+        <p>Proin convallis magna elit, ut aliquet libero pellentesque ac. Sed sit amet fringilla risus. Suspendisse quis porttitor turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut mauris tellus, tristique eu dolor nec, tempus mollis lacus. Nulla facilisi. Phasellus scelerisque augue ac enim tincidunt faucibus. </p> 
+
+        <img src="http://www.placehold.it/80x80" class="pull-right">
+        <p>Proin convallis magna elit, ut aliquet libero pellentesque ac. Sed sit amet fringilla risus. Suspendisse quis porttitor turpis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut mauris tellus, tristique eu dolor nec, tempus mollis lacus. Nulla facilisi. Phasellus scelerisque augue ac enim tincidunt faucibus. </p> 
+        <img src="http://www.placehold.it/150x150" class="rounded">
+        <img src="http://www.placehold.it/150x150" class="img-circle">
+      </div>
+
+
       <h4>Image Frame</h4>
       <div class="style-description">
           <p>Wrapping an image in a div with the "frame" class will add a white border with rounded corners and a shadow to an image.  Also, wrapping the image in an "image-shadow" gives the image an inset appearance.</p>
       </div>
-      <div class="example">
-        <div class="frame">
-          <a class="image-shadow">
-            <img src="http://www.placehold.it/800x450">
-          </a>
-        </div>
-      </div>
+
 
       <h5>With a Caption</h5>
       <div class="style-description">
@@ -1894,7 +1909,7 @@ UAlberta.page.addModule(
       </div>
     </div>
   </footer>
-  <script src="./js/main.min.js"></script>
+  <script src="./js/UAlberta.FrontEnd.min.js"></script>
   <script>
   $(document).ready(function() {
 

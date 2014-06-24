@@ -1,3 +1,11 @@
+/* 
+ * Device image scaling
+ * Appends a query string parameter to the URL of 
+ * an image based on the provided size to scale to
+ * if null is provided as the size, the image is 
+ * displayed at its original size.
+*/
+
 (function ($) {
     $.fn.DeviceImageScaling = function (size) {
 
@@ -20,7 +28,6 @@
 
       return this.each(function () {
           var newImageSrc = getNewImageUrl($(this).attr("src"));
-          console.log(newImageSrc);
           // only update if the new url is different
           if ($(this).attr("src") !== newImageSrc) {
               $(this).attr("src", newImageSrc);

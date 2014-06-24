@@ -1,83 +1,51 @@
+/**************************************
+ * UAlberta CSS Framework
+ **************************************/
+
+
+// base styles, include:
+//   _reset.less            CSS Reset
+//   _mixins.less           Variables and functions to use in less files
+//   _scaffolding.less      body,links,typography,lists,image styles,tables
+//   _grid.less             fluid grid system and responsive utilities
+//   _forms.less            base form styling
+//   _page-elements.less    blade,banner,breadcrumbs,footer
+//   _navigation.less       global,mobile,left navigation
 @import "framework/base/base.less";
 
-//@import "edit-mode.less";
-   
-	// INSTITUTIONAL OVERRIDES  
- 
-	// hide title on institutional
-	//.banner-inner .site-title { display:none; }
-
-
-	// hide blade logo
-	//.brand { display:none; } 
-
-	.main-navigation li[class*="nav"] { 
-  		width:16.66%;
-  	}
-  	.main-navigation li.nav2 {
-  		width:24.33%;
-  	}
-  	.main-navigation li.nav3, .main-navigation li.nav4 {
-  		width:13.33%;
-  	}
-  	.main-navigation li.nav5 {
-  		width:15.66%;
-  	}  
-  	.sidebar .extrude { position:relative; } 
- 
-//@import "framework/base/forms.less";  
-
+// content area layout styling, includes:
+//   _base-layout.less
+//   _faculty_home.less
+//   _institutional_home.less
+//   _landing-page.less
+//   _tertiary.less
 @import "framework/layouts/layouts.less"; 
 
+// components available inside the framework:
+//   _accordion.less
+//   _alerts.less
+//   _buttons.less
+//   _carousel.less
+//   _data-list.less
+//   _dropdowns.less
+//   _explore-bar.less
+//   _feature-area.less
+//   _icons.less
+//   _image-captions.less 
+//   _inline-form.less
+//   _link-filter.less
+//   _media-items.less
+//   _modals.less
+//   _module-base.less 
+//   _overlays.less
+//   _pagination.less
+//   _sidebar-base.less
+//   _social-media.less
+//   _sub-menu.less
+//   _tabs.less
+//   _tooltips.less
+//   _video.less
 @import "framework/components/components.less";
 
+// contains fallbacks for feature lacking browsers
 @import "fallbacks.less";
-
-// homepage
-// @import "../old_less/ualberta/pages/homepage.less";  
-
-  
-/*
-@import "framework/components/dropdowns.less";
-@import "framework/components/modals.less";
-@import "framework/components/tabs.less";
-@import "framework/components/image-caption-container.less";
- 
-@import "framework/base/pagination.less";
-
-@import "framework/modules/module-base.less";
-@import "framework/modules/twitter.less";
-@import "framework/modules/image-callout.less";
-@import "framework/modules/link-bucket.less";
-@import "framework/modules/events.less"; 
-@import "framework/modules/news.less";
-@import "framework/modules/link-module.less";
-@import "framework/modules/video.less";
-@import "framework/modules/calendar-med-mod.less";
-@import "framework/modules/campus-maps.less";
-@import "framework/modules/fma-module.less";
-@import "framework/modules/fma-tabs.less";
-@import "framework/modules/fma-image-scroller.less";
-@import "framework/modules/accordion-list.less";
-@import "framework/modules/emergency.less"; 
-@import "framework/modules/pagination.less"; 
-@import "framework/modules/data-list.less";
-@import "framework/modules/login.less";
-@import "framework/modules/social-media.less";
-@import "framework/modules/responsive-media-item.less";
-@import "framework/modules/contact-info.less";
-
-@import "framework/devices/mobile.less";  
-@import "framework/devices/tablet.less";
-//@import "framework/devices/desktop.less";
-@import "framework/devices/highres.less";
-
-@import "ualberta/pages/news-article.less";
-
-@import "framework/fallbacks.less";
-
-@import "framework/hide-elements.less";
-*/
-
-
-/******** FRAMEWORK COMMON ELEMENTS END *********/

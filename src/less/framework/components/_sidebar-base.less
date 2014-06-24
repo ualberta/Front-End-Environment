@@ -1,3 +1,27 @@
+// SIDEBAR
+// ----------
+
+.sidebar { 
+  padding-top: 1em; 
+  margin-top:1em; 
+  border-top:1px solid #fff; 
+  .box-shadow(0 -1px 0 #ddd); 
+}
+
+.sidebar > .btn {
+  display:block;
+  margin:0 0 1em;
+  max-width:15em;
+}
+
+.sidebar .extrude {
+  position:relative;
+  #em > .font-size(12,@baseFontSizepx); // set base font to 12
+  #em > .padding(10, 12); // 10px @ base font 12
+  margin-bottom: 1.57em;
+  #em > .padding(10, 10, 6, 10, 12); // 10px 10px 6px 10px @ base font 12
+}
+
 .sidebar-title {
   line-height: 1.2em;
   font-size: 1.2em;
@@ -25,6 +49,17 @@
 // force frames in sidebar to occupy full width
 .sidebar .frame {
   display:block;
+  padding:0;
+  margin: 0 -0.8333em;
+  -webkit-box-shadow: none;
+  -moz-box-shadow:none;
+  box-shadow: none;
+  border-radius:0;
+  max-width:none;
+  img {
+    width:100%;
+    max-width: none;
+  }
 }
 
 .sidebar .extrude .btn {
@@ -65,11 +100,24 @@
   }
 }  
 
+.sidebar p {
+  margin:0.714285714285715em 0;
+  line-height:1.57em;
+}
 
+.sidebar .btn { margin-bottom:1em; }
+.sidebar-title a:hover { text-decoration:none; }
+.sidebar-content { line-height:1.57em; }
+.sidebar-content > p { margin-top:0.71em; }
+
+// no more collapsing sidebars - Jan 20
+.sidebar-content.sidebar-collapse.collapse {
+  height:auto!important;
+}
 
 .sidebar .extrude {
   .btn-green, .btn-grey, .btn-apply, .btn-give, .btn-work {
-    box-shadow: none;
+    .box-shadow(none);
     text-shadow: none;
     color:#007C41;
   }

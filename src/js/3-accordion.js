@@ -14,6 +14,7 @@
             
             base.options = $.extend({},$.accordion.defaultOptions, options);
 
+            // add expanded class to parent on click
             base.$el.on({
                 click: function() {
                   $(this).parent().toggleClass('expanded'); 

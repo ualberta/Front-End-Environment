@@ -372,7 +372,7 @@ var UAlberta = UAlberta || {};
                 768,
                 1024
             ]
-          });
+          }); 
 
           $(window).bind('enterBreakpoint360',function() {
             mediaLibraryImages.DeviceImageScaling(480);
