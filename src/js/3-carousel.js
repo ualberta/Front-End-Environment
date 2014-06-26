@@ -33,8 +33,8 @@
                 base.$el.append(toggleEl);
                 base.$el.append('
                     <ul class="prev-next">
-                        <li><i class="icon-angle-left"></i></li>
-                        <li><i class="icon-angle-right"></i></li>
+                        <li><i class="icon-chevron-left"></i></li>
+                        <li><i class="icon-chevron-right"></i></li>
                     </ul>
                 ');
             }
