@@ -56,7 +56,6 @@
   right: 0;
 }
 
-.prev-next { display:none;}
 
 pre.prettyprint {
   overflow: auto;
@@ -1213,7 +1212,7 @@ pre.markup {
               <div class="image-caption-container hover-caption-container">
                 <a href="//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;amp;autoplay=1" class="image-shadow" data-title="Danny Huang Explains" data-url="//www.youtube.com/embed/QhYfyUG0MW8?wmode=transparent&amp;amp;autoplay=1" data-modal="iframe" data-target="#videoModal">
                   <img src="http://placehold.it/800x450" alt="Danny Huang explains">
-                  <i class="icon-angle-circled-right"></i> 
+                  <i class="icon-play-circle"></i> 
                 
                 <p class="caption">
                     Danny Huang explains how to work hard, have fun, stay healthy but also find a way to balance it all.
@@ -1909,33 +1908,9 @@ UAlberta.page.addModule(
       </div>
     </div>
   </footer>
-  <script src="./js/UAlberta.FrontEnd.min.js"></script>
+  <script src="./js/main.min.js"></script>
   <script>
   $(document).ready(function() {
-
-    var linkList = {
-      "header": {
-      "heading": "Campus Notices"
-      },
-      "items": [
-        {
-        "url": "#",
-        "label": "Facebook"
-        },
-        {
-        "url": "#",
-        "label": "Twitter"
-        },
-        {
-        "url": "#",
-        "label": "YouTube"
-        },
-        {
-        "url": "#",
-        "label": "Flickr"
-        }
-      ]
-    };
 
     var pageTitle = {
       breadcrumbs: [
@@ -1967,12 +1942,6 @@ UAlberta.page.addModule(
       {}
     ); 
 
-    UAlberta.page.addModule('sidebar-item', {
-      header: {
-        heading: "Keep in Touch"
-      }
-    }, '#sidebar-item-example').addModule('data-list', linkList, '.sidebar-content');
-
     // scroll to nav elements on click
     var navElements = $('ul.level-0');
     navElements.on('click', 'a', function(event) {
@@ -2002,7 +1971,7 @@ UAlberta.page.addModule(
     });
 
     // Add background colors to color elements
-    $('.colors li.solid').each(function() {
+    $('.colors li.solid').each(function() { 
       $(this).css('background-color', $(this).text());
     });
 

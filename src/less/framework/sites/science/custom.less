@@ -1,0 +1,77 @@
+@media (min-width: 43.125em) {
+  .navigation-container {
+    .navigation-inner ul li ul {
+      .nav1 {
+        width: 12%;
+      }
+      .nav2 {
+        width: 14%;
+      }
+      .nav3 {
+        width: 17%;
+      }
+      .nav4 {
+        width: 27%;
+      }
+      .nav5 {
+        width: 20%;
+      }
+      .nav6 {
+        width: 10%;
+      }
+    }
+  }
+}
+
+// Big menu image links
+.navigation-inner .section-description a {
+	padding: 0;
+	display: inline;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-transform: none;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+// Add space beneath carousel on the subpages
+.contours, .graduate, .studentlife, .undergraduate, .sciencecareers, .departments {
+	.flexslider {
+		margin-bottom: 3em;
+	}
+}
+
+// Make sure inline links are underlined
+.primary-content-area, .sidebar { 
+	p a { 
+		text-decoration: underline; 
+		color: #007C41;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+// Remove button underlines
+.primary-content-area p.button-container a { 
+	text-decoration: none; 
+}
+.social-media-links {
+  img {
+    width:  16px;
+    height:  16px;
+    margin-right: 4px;
+    margin-bottom: 1px;
+  }
+}
+
+// Fix spacing on enclosed content components
+.content h5.sidebar-title {
+	margin: 0 -0.6em 0.6em -0.6em;
+	padding: 0 0.6em 0.35714em 0.55em;
+}
+
+.sub-menu .section-description img {
+  display:block;
+}

@@ -1,0 +1,138 @@
+@media (min-width: 43.125em) {
+  .navigation-container {
+    .navigation-inner ul li ul {
+      .nav1 {
+        width: 12.1%;
+      }
+      .nav2 {
+        width: 14.5%;
+      }
+      .nav3 {
+        width: 17.1%;
+      }
+      .nav4 {
+        width: 14.5%;
+      }
+      .nav5 {
+        width: 22.6%;
+      }
+      .nav6 {
+        width: 19.2%;
+      }
+    }
+  }
+}
+
+// Add space beneath carousel on Departments
+
+.departments, .programs, .research, .workofarts {
+	.flexslider {
+		margin-bottom: 3em;
+	}
+}
+
+// Sidebar image gap
+
+.sidebar .frame {
+	margin: 0;
+}
+
+// Big menu image links
+.navigation-inner .section-description a {
+	padding: 0;
+	display: inline;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-transform: none;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+// Orange button
+
+
+.sidebar .btn-green.btn-orange {
+	  @orange: #CA7700;
+	  background-image: linear-gradient(to bottom, lighten(@orange, 5%), darken(@orange, 5%));
+	  border-color: lighten(@orange, 10%);
+	  border-right-color: @orange;
+	  border-bottom-color: darken(@orange, 10%);
+	  text-shadow: 1px 1px 1px desaturate(darken(@orange, 5%),10%);
+	  &:hover {
+	    background-image: linear-gradient(to bottom, lighten(@orange, 7%), darken(@orange, 3%));
+	  }
+	  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15), inset 1px 1px 1px desaturate(lighten(@orange, 25%),10%), inset 0px -1px 3px darken(@orange, 5%);
+	  -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15), inset 1px 1px 1px desaturate(lighten(@orange, 25%),10%), inset 0px -1px 3px darken(@orange, 5%);
+	  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15), inset 1px 1px 1px desaturate(lighten(@orange, 25%),10%), inset 0px -1px 3px darken(@orange, 5%);
+	  }
+
+// Make sure inline links are underlined
+.primary-content-area p a, .secondary-content-area p a, .sidebar p a {
+     text-decoration:underline;
+     &:hover {
+     	text-decoration: none;
+     }
+}
+// Remove button underlines
+.primary-content-area p.button-container a, .secondary-content-area p.button-container a, .sidebar p.button-container a {
+     text-decoration: none;
+}
+.social-media-links {
+  img {
+    width:  16px;
+    height:  16px;
+ /*   .border-radius(2px); */
+    margin-right: 4px;
+    margin-bottom: 1px;
+  }
+}
+
+/*** Lane's adjustments for homepage teasers ***/
+
+.frame.data-thumbnail {
+  position: absolute;
+  top: 0.8333em;
+	  a, a:hover { 
+	  	margin:0; 
+	  	padding:0; 
+	  	border:none;
+	  }
+}
+
+.homepage .primary-content-area .module-container {
+	.data-list li {
+	  	position: relative;
+	}
+	.data-list li h4 {
+		a {
+		  padding-left: 115px;
+		  padding-top:0.83333em;
+		  min-height:7.5em;
+			  &:hover {
+			  	padding-left: 126px;
+			  }
+		}
+	}
+	.in-the-news-list.data-list li h4  {
+	  	a {
+	  		padding-left: 0;
+	  		&:hover {
+	  			padding-left: 11px;
+	  		}
+	  	}
+	}
+}
+
+/* News archive thumbnails */
+
+.news-archive-list {
+	&.image-link-list .list-item-image+.list-item-content {
+		margin-left: 6.87em;
+	}
+	.list-item-image {
+	    width: 5.5em;
+	}
+}
+
+

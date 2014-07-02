@@ -42,8 +42,6 @@ ul.toggles li.current {
   color: #fff;
 }
 
-.prev-next { display:none; }
-
 .direction {
   position:absolute;
   top:0;left:0;bottom:0;right:0;
@@ -131,5 +129,33 @@ ul.toggles li.current {
   ul.toggles {
     top:0.4286em;
   }
+}
+
+// left and right toggles
+
+ul.prev-next {
+    margin: 0;
+    list-style: none;
+}
+.prev-next li {
+    position:absolute;
+    top:50%;
+    z-index:5;
+    margin-top:-1em;
+    font-size:2em;
+    color:#fff;
+    text-shadow: 0 1px 6px #000;
+    opacity:0;
+    cursor: pointer;
+    width:1.25em;
+    .transition(opacity 0.2s ease-in);
+}
+
+.prev-next li + li {
+    right:0.5em
+}
+
+.carousel-container:hover .prev-next li {
+    opacity:0.65;
 }
  

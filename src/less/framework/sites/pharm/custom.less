@@ -1,0 +1,106 @@
+@media (min-width: 43.125em) {
+  .navigation-container {
+    .navigation-inner ul li ul {
+      .nav1 {
+        width: 19%;
+      }
+      .nav2 {
+        width: 20%;
+      }
+      .nav3 {
+        width: 19%;
+      }
+      .nav4 {
+        width: 20%;
+      }
+      .nav5 {
+        width: 22%;
+      }
+    }
+  }
+}
+
+// Add space beneath carousel on DDIC
+
+.ddic {
+	.flexslider {
+		margin-bottom: 3em;
+	}
+}
+
+// Tab box events
+.homepage .tab-content .data-list {
+	margin-bottom: 0.8em;
+}
+.homepage .tab-content h5 {
+	margin-bottom: 0.2em;
+}
+// Big menu image links
+.navigation-inner .section-description a {
+	padding: 0;
+	display: inline;
+	font-family: sans-serif;
+	text-transform: none;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+// Make sure inline links are underlined
+.primary-content-area p a, .secondary-content-area p a, .sidebar p a {
+     text-decoration:underline;
+     &:hover {
+     	text-decoration: none;
+     }
+}
+// Remove button underlines
+.primary-content-area p.button-container a, .secondary-content-area p.button-container a, .sidebar p.button-container a {
+     text-decoration: none;
+}
+.social-media-links {
+  img {
+    width:  16px;
+    height:  16px;
+ /*   .border-radius(2px); */
+    margin-right: 4px;
+    margin-bottom: 1px;
+  }
+}
+
+.btn i.icon-circle-arrow-right {
+	font-size: 1.5em;
+	vertical-align: middle;
+	line-height: 35%;
+	margin-left: 0.2em;
+}
+
+// Add extra space to icons in sidebar promos
+h5.sidebar-title {
+	i {
+		margin-left: 5px;
+	}
+}
+
+// Everything wider than mobile
+@media (min-width: 43.125em) {
+     // Sidebar feature
+     .sidebar-feature {
+     	h5.sidebar-title, .btn {
+     		margin-bottom: 10px;
+     	}
+     }
+}
+
+// Tablet portrait
+@media (min-width: 43.125em) and (max-width: 61.1875em){
+// made the column widths the same in a 2-column subcontainer
+	.row-fluid.secondary .secondary-content-area .module-container {
+		width: 48.61878453038674%;
+	}
+// made the faculty header a smaller font size to avoid line wrap
+	.banner-inner .site-title {
+		font-size: 28px;
+	}
+}
+

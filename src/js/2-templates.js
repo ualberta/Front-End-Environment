@@ -1519,11 +1519,19 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<div class=\"frame\">\n    <div class=\"hover-caption-container\">\n        <a href=\"//www.youtube.com/embed/";
+  buffer += "<div class=\"frame\">\n    <div class=\"image-caption-container hover-caption-container\">\n        <a href=\"//www.youtube.com/embed/";
   if (stack1 = helpers.videoId) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.videoId); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)
-    + "?wmode=transparent&amp;autoplay=1\" class=\"image-shadow video-modal-link\" target=\"_blank\">\n            <img src=\"";
+    + "?wmode=transparent&amp;autoplay=1\" class=\"image-shadow video-modal-link\" data-title=\"";
+  if (stack1 = helpers.videoTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.videoTitle); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" data-url=\"//www.youtube.com/embed/";
+  if (stack1 = helpers.videoId) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = (depth0 && depth0.videoId); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "?wmode=transparent&amp;amp;autoplay=1\" data-modal=\"iframe\" data-target=\"#videoModal\" target=\"_blank\">\n            <img src=\"";
   if (stack1 = helpers.videoThumbnail) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = (depth0 && depth0.videoThumbnail); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
   buffer += escapeExpression(stack1)

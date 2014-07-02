@@ -1,7 +1,7 @@
 module.exports = function(grunt) {
  
   grunt.registerTask('default',[
-    'watch'
+    'http-server:dev', 'watch'
   ]);
 
   grunt.registerTask('buildHome', ['concat:js', 'concat:libs', 'uglify:js'])
@@ -109,6 +109,19 @@ module.exports = function(grunt) {
           'src/js/2-templates.js': "src/templates/**/*.hbs"
         }
       }
+    },
+    'http-server': {
+        'dev': {
+            // the server root directory
+            root: './build',
+            port: 8080,
+            host: "localhost",
+            showDir : true,
+            autoIndex: true,
+            defaultExt: "html",
+            runInBackground: true
+        }
+
     }
   });
  
@@ -118,7 +131,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-copy');
- 
+  grunt.loadNpmTasks('grunt-http-server');
 };
 
 

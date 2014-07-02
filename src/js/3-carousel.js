@@ -1,3 +1,7 @@
+// Carousel
+// Displays a series of panels inside of a frame
+// with navigation controls and auto rotate functionality
+
 (function($){
     $.carousel = function(el, options){
 
@@ -12,12 +16,15 @@
 
         base.currentSlide = 0;
 
+        // goes to the carousel panel at the given index
         base.goToSlide = function(index) {
           base.$el.find('.current').removeClass('current');
           base.$el.find('.toggles li').eq(index).addClass('current');
           base.$el.find('.slide').eq(index).addClass('current');
         };
         
+        // initializing the carousel 
+        // adds toggles, prev / next, auto rotate, and click events
         base.init = function(){
             
             base.options = $.extend({},$.carousel.defaultOptions, options);
@@ -33,8 +40,8 @@
                 base.$el.append(toggleEl);
                 base.$el.append('
                     <ul class="prev-next">
-                        <li><i class="icon-chevron-left"></i></li>
-                        <li><i class="icon-chevron-right"></i></li>
+                        <li class="prev"><i class="icon-chevron-left"></i></li>
+                        <li class="next"><i class="icon-chevron-right"></i></li> 
                     </ul>
                 ');
             }
@@ -50,6 +57,12 @@
               }, base.options.switchTime);
             };
 
+            // go to the first slide on load
+            base.goToSlide(0);
+
+            // EVENTS
+
+            // Bottom toggles click event
             base.$el.on({ 
                 click: function() {
                   base.currentSlide = $(this).index();
@@ -58,7 +71,19 @@
                 }
             },'.toggles li:not(.current)');
 
-            base.goToSlide(0);
+            // Previous / Next click event
+            base.$el.on({ 
+                click: function() {
+                    // if previous
+                    if($(this).index()==0) {
+                        base.currentSlide--;
+                    } else {
+                        base.currentSlide++;
+                    }
+                  base.goToSlide(base.currentSlide);
+                  clearInterval(autoRotate);
+                }
+            },'.prev-next li');
 
         };
 

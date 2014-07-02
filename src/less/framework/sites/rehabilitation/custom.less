@@ -1,0 +1,80 @@
+@media (min-width: 43.125em) {
+
+//*****************************************
+//** NAVIGATION
+//******************************************
+//      Rehab Med Widths:
+//		About us:        60
+//      Programs:  		 60
+//      Departments:     76
+//      Research:        60
+//      Professional Dev:   135
+//      Alumni:          50
+//      ------------------------
+//      TOTAL:           441
+//*****************************************/
+  
+  @totalNavWidth: 441px;
+  
+  .navigation-container {
+    .navigation-inner ul li ul {
+      .nav1 {
+        width: percentage(60/@totalNavWidth);
+      }
+      .nav2 {
+        width: percentage(60/@totalNavWidth);
+      }
+      .nav3 {
+        width: percentage(76/@totalNavWidth);
+      }
+      .nav4 {
+        width: percentage(60/@totalNavWidth);
+      }
+      .nav5 {
+        width: percentage(135/@totalNavWidth);
+      }
+      .nav6 {
+        width: percentage(50/@totalNavWidth);
+      }
+    }
+  }  
+}
+
+// Add space beneath carousel on the subpages
+.dept-csd, .dept-ot, .dept-pt {
+	.flexslider {
+		margin-bottom: 3em;
+	}
+}
+
+// Make sure inline links are underlined
+.primary-content-area p a, .secondary-content-area p a, .sidebar p a {
+     text-decoration:underline;
+     &:hover {
+     	text-decoration: none;
+     }
+}
+// Remove button underlines
+.primary-content-area p.button-container a, .secondary-content-area p.button-container a, .sidebar p.button-container a {
+     text-decoration: none;
+}
+.social-media-links {
+  img {
+    width:  16px;
+    height:  16px;
+ /*   .border-radius(2px); */
+    margin-right: 4px;
+    margin-bottom: 1px;
+  }
+}
+
+// Adjust accordion list so that client can use it for content (but it will break accordion link lists). Removes green bottom border and restores bullets and left margin for lists.
+	.accordion-list li ul {
+		list-style-type: disc;
+		margin-left: 25px;
+		margin-bottom: 1em;
+	}
+	.accordion-list li.expanded ul {
+		border-bottom: none;
+	}
+
