@@ -6,6 +6,38 @@ The UAlberta front-end framework provides a series of styled components and allo
 
   - **CSS (LESS) styles**: All source files are located in the `/src/less` folder, and compiled to `/build/css/framework.min.css`
   - **Front end templating**: Markup templates (handlebars) for components are located in `/src/templates`.  The Javascript for rendering the components with JSON data is located in `/src/js/9-UAlberta.FrontEnd.js` which also requires the handlebars runtime (`/src/js/0-handlebars.runtime.js`), handlebars helpers (`/src/js/1-helpers.js`), and the pre-compiled handlebars templates (`/src/js/2-templates.js`).
+  - **Grunt Tasks**: Grunt tasks (defined in `/GruntFile.js`) for auto-compiling, minifying, and serving static web content.
+  - **Style Guide**: The style guide for the University of Alberta is included, and located at `/src/style-guide.html`
+
+## Requirements
+
+  - node.js
+
+Once you have node.js installed, clone this repository, navgate to the folder you have cloned it to in the terminal and run the following command:
+
+      npm install
+      
+After the install is finished you can run:
+
+      grunt develop
+      
+Which will watch all files in the `/src/` directory and any time a file is changed the following tasks will be performed:
+  
+  - Concatenate and minify all javascript files in `/src/js` to `/build/js/main.min.js`
+  - Compile `/src/less/framework.less` to `/build/css/framework.css`
+  - Compile all handlebars templates in `/src/templates` to `/src/js/2-templates.js`
+  - Copy all files in `/src/assets/` to `/build/assets/`
+  - Copy all html file in `/src/` to `/build/`
+  - Start a web server on port 8080 that serves files from the `/build/` directory. (http://localhost:8080/)
+
+When you are ready to make a production bundle, you can run the following command:
+
+      grunt production
+      
+Which will perform the following tasks:
+
+  - Concatenate and minify all javascript files in `/src/js` to `/build/js/UAlberta.FrontEnd.min.js`
+  - Compile and minify `/src/less/framework.less` to `/build/css/framework.min.css`
 
 ## Usage
 
