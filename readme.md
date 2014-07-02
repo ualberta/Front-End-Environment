@@ -2,6 +2,11 @@
 
 The UAlberta front-end framework provides a series of styled components and allows dynamic creation of modules using JSON data.
 
+## What's Included
+
+  - **CSS (LESS) styles**: All source files are located in the `/src/less` folder, and compiled to `/build/css/framework.min.css`
+  - **Front end templating**: Markup templates (handlebars) for components are located in `/src/templates`.  The Javascript for rendering the components with JSON data is located in `/src/js/9-UAlberta.FrontEnd.js` which also requires the handlebars runtime (`/src/js/0-handlebars.runtime.js`), handlebars helpers (`/src/js/1-helpers.js`), and the pre-compiled handlebars templates (`/src/js/2-templates.js`).
+
 ## Usage
 
 Add `/build/js/main.min.js` (requires jQuery) and `/build/css/framework.css` to your page. 
