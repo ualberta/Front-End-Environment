@@ -9,7 +9,9 @@ The UAlberta front-end framework provides a series of styled components and allo
   - **Grunt Tasks**: Grunt tasks (defined in `/GruntFile.js`) for auto-compiling, minifying, and serving static web content.
   - **Style Guide**: The style guide for the University of Alberta is included, and located at `/src/style-guide.html`
 
-## Requirements
+## Getting Started
+
+### Requirements
 
   - node.js
 
@@ -180,42 +182,6 @@ You can add any of the available modules into a sidebar item by creating the sid
 ### Modals
 
     addModule('modal', data, parent, options)
-
-
-## Contributing
-
-### Getting Started
-
-  - Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-  - Install [Vagrant](http://www.vagrantup.com/downloads.html)
-
-Once you have VirtualBox and Vagrant installed, clone this repository.  Go into the "tools" folder and run `mac-start.command` (Mac/Linux) or `win-start.bat` (Windows).
-
-Running the start command will download the development environment and run it on your machine.  The initial download / setup will only happen the first time.
-
-Once the initial setup is complete, you will see a notification in the terminal window that it is watching files.
-
-If you navigate to `http://localhost:3333/` you should be served the `/build/index.html` file. 
-
-Using the editor of your choice, you can modify the  less, js, or html files in the `/src` folder and see a live preview in your browser.
-
-Run the "stop" command that corresponds to your Operating System to stop the development environment.
-
-The development environment is preconfigured with npm and grunt tasks that will:
-
-  - Serve files from the `/build` directory
-    - auto refresh when there are html, css, or js changes (via [reload](https://www.npmjs.org/package/reload))
-  - Watch `.less` files in `/src/less/` for changes 
-    - compile into `/build/css/framework.css` 
-  - Watch `*.js` files in `/src/js` for changes 
-    - concatenate library scripts in `/src/js/libs`
-    - concatenate author scripts in `/src/js`
-    - uglify
-    - copy to `/build/js`
-  - Watch `.html` files in `/src/` for changes
-    - copy to `/build` when modified
-  - Watch `/src/templates/` for `.hbs` tempate changes 
-    - compiles the templates into `/build/js/templates.js`, which are accessible through `UAlberta.FrontEnd.templates`
 
 
 ### Folder Structure
