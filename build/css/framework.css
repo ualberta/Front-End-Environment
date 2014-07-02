@@ -5252,7 +5252,7 @@ button.close {
   border-radius: 0 0 4px 4px;
 }
 .accordion-list li.expanded a.icon-plus::before {
-  content: '\e80a';
+  content: '\f068';
 }
 /*Content accordion*/
 ul.accordion-list li div {

@@ -75,10 +75,17 @@
             base.$el.on({ 
                 click: function() {
                     // if previous
+                    var currentIndex = $('.current').index();
                     if($(this).index()==0) {
-                        base.currentSlide--;
+                        if(currentIndex!==0)
+                            base.currentSlide--;
+                        else
+                            base.currentSlide = (numSlides-1);
                     } else {
-                        base.currentSlide++;
+                        if(currentIndex!==(numSlides-1))
+                            base.currentSlide++;
+                        else
+                            base.currentSlide = 0;
                     }
                   base.goToSlide(base.currentSlide);
                   clearInterval(autoRotate);
