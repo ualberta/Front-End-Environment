@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
  
-  grunt.registerTask('default',[
+  grunt.registerTask('develop',[
     'http-server:dev', 'watch'
   ]);
 
