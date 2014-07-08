@@ -1,0 +1,765 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.1.63
+3 info using node@v0.8.12
+4 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/package.json
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/Volumes/Seagate Exp/Sites/front-end-framework',
+6 verbose install   [ 'grunt-cli',
+6 verbose install     'grunt-contrib-concat',
+6 verbose install     'grunt-contrib-uglify',
+6 verbose install     'grunt-contrib-less',
+6 verbose install     'grunt-contrib-watch',
+6 verbose install     'grunt-contrib-handlebars',
+6 verbose install     'grunt-contrib-copy',
+6 verbose install     'grunt-http-server' ] ]
+7 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/package.json
+8 info preinstall ualberta-framework@0.0.1
+9 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-cli/package.json
+10 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-concat/package.json
+11 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-copy/package.json
+12 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-handlebars/package.json
+13 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-watch/package.json
+14 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-http-server/package.json
+15 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/package.json
+16 verbose readDependencies using package.json deps
+17 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/.bin/package.json
+18 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-cli/package.json
+19 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-concat/package.json
+20 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-copy/package.json
+21 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-handlebars/package.json
+22 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-watch/package.json
+23 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-http-server/package.json
+24 verbose cache add [ 'grunt-contrib-uglify@latest', null ]
+25 silly cache add name=undefined spec="grunt-contrib-uglify@latest" args=["grunt-contrib-uglify@latest",null]
+26 verbose parsed url { pathname: 'grunt-contrib-uglify@latest',
+26 verbose parsed url   path: 'grunt-contrib-uglify@latest',
+26 verbose parsed url   href: 'grunt-contrib-uglify@latest' }
+27 silly cache add name="grunt-contrib-uglify" spec="latest" args=["grunt-contrib-uglify","latest"]
+28 verbose parsed url { pathname: 'latest', path: 'latest', href: 'latest' }
+29 verbose addNamed [ 'grunt-contrib-uglify', 'latest' ]
+30 verbose addNamed [ null, null ]
+31 silly lockFile 20260ab5-grunt-contrib-uglify-latest grunt-contrib-uglify@latest
+32 verbose lock grunt-contrib-uglify@latest /Users/chowk/.npm/20260ab5-grunt-contrib-uglify-latest.lock
+33 verbose cache add [ 'grunt-contrib-less@latest', null ]
+34 silly cache add name=undefined spec="grunt-contrib-less@latest" args=["grunt-contrib-less@latest",null]
+35 verbose parsed url { pathname: 'grunt-contrib-less@latest',
+35 verbose parsed url   path: 'grunt-contrib-less@latest',
+35 verbose parsed url   href: 'grunt-contrib-less@latest' }
+36 silly cache add name="grunt-contrib-less" spec="latest" args=["grunt-contrib-less","latest"]
+37 verbose parsed url { pathname: 'latest', path: 'latest', href: 'latest' }
+38 verbose addNamed [ 'grunt-contrib-less', 'latest' ]
+39 verbose addNamed [ null, null ]
+40 silly lockFile a8e95fac-grunt-contrib-less-latest grunt-contrib-less@latest
+41 verbose lock grunt-contrib-less@latest /Users/chowk/.npm/a8e95fac-grunt-contrib-less-latest.lock
+42 info addNameTag [ 'grunt-contrib-uglify', 'latest' ]
+43 info addNameTag [ 'grunt-contrib-less', 'latest' ]
+44 verbose cache add [ 'grunt-contrib-watch@latest', null ]
+45 silly cache add name=undefined spec="grunt-contrib-watch@latest" args=["grunt-contrib-watch@latest",null]
+46 verbose parsed url { pathname: 'grunt-contrib-watch@latest',
+46 verbose parsed url   path: 'grunt-contrib-watch@latest',
+46 verbose parsed url   href: 'grunt-contrib-watch@latest' }
+47 silly cache add name="grunt-contrib-watch" spec="latest" args=["grunt-contrib-watch","latest"]
+48 verbose parsed url { pathname: 'latest', path: 'latest', href: 'latest' }
+49 verbose addNamed [ 'grunt-contrib-watch', 'latest' ]
+50 verbose addNamed [ null, null ]
+51 silly lockFile 72016001-grunt-contrib-watch-latest grunt-contrib-watch@latest
+52 verbose lock grunt-contrib-watch@latest /Users/chowk/.npm/72016001-grunt-contrib-watch-latest.lock
+53 verbose url raw grunt-contrib-uglify
+54 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-uglify' ]
+55 verbose url resolved https://registry.npmjs.org/grunt-contrib-uglify
+56 info trying registry request attempt 1 at 13:28:36
+57 verbose etag "9CUSV5EG43WTYS056RG3DC04N"
+58 http GET https://registry.npmjs.org/grunt-contrib-uglify
+59 info addNameTag [ 'grunt-contrib-watch', 'latest' ]
+60 verbose url raw grunt-contrib-less
+61 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-less' ]
+62 verbose url resolved https://registry.npmjs.org/grunt-contrib-less
+63 info trying registry request attempt 1 at 13:28:36
+64 verbose etag "1O4SUFAIICP1TTYIE63OJCE0H"
+65 http GET https://registry.npmjs.org/grunt-contrib-less
+66 verbose cache add [ 'grunt-contrib-handlebars@latest', null ]
+67 silly cache add name=undefined spec="grunt-contrib-handlebars@latest" args=["grunt-contrib-handlebars@latest",null]
+68 verbose parsed url { pathname: 'grunt-contrib-handlebars@latest',
+68 verbose parsed url   path: 'grunt-contrib-handlebars@latest',
+68 verbose parsed url   href: 'grunt-contrib-handlebars@latest' }
+69 silly cache add name="grunt-contrib-handlebars" spec="latest" args=["grunt-contrib-handlebars","latest"]
+70 verbose parsed url { pathname: 'latest', path: 'latest', href: 'latest' }
+71 verbose addNamed [ 'grunt-contrib-handlebars', 'latest' ]
+72 verbose addNamed [ null, null ]
+73 silly lockFile e897fd50-grunt-contrib-handlebars-latest grunt-contrib-handlebars@latest
+74 verbose lock grunt-contrib-handlebars@latest /Users/chowk/.npm/e897fd50-grunt-contrib-handlebars-latest.lock
+75 verbose cache add [ 'grunt-contrib-copy@latest', null ]
+76 silly cache add name=undefined spec="grunt-contrib-copy@latest" args=["grunt-contrib-copy@latest",null]
+77 verbose parsed url { pathname: 'grunt-contrib-copy@latest',
+77 verbose parsed url   path: 'grunt-contrib-copy@latest',
+77 verbose parsed url   href: 'grunt-contrib-copy@latest' }
+78 silly cache add name="grunt-contrib-copy" spec="latest" args=["grunt-contrib-copy","latest"]
+79 verbose parsed url { pathname: 'latest', path: 'latest', href: 'latest' }
+80 verbose addNamed [ 'grunt-contrib-copy', 'latest' ]
+81 verbose addNamed [ null, null ]
+82 silly lockFile 5e7f8a73-grunt-contrib-copy-latest grunt-contrib-copy@latest
+83 verbose lock grunt-contrib-copy@latest /Users/chowk/.npm/5e7f8a73-grunt-contrib-copy-latest.lock
+84 verbose cache add [ 'grunt-http-server@latest', null ]
+85 silly cache add name=undefined spec="grunt-http-server@latest" args=["grunt-http-server@latest",null]
+86 verbose parsed url { pathname: 'grunt-http-server@latest',
+86 verbose parsed url   path: 'grunt-http-server@latest',
+86 verbose parsed url   href: 'grunt-http-server@latest' }
+87 silly cache add name="grunt-http-server" spec="latest" args=["grunt-http-server","latest"]
+88 verbose parsed url { pathname: 'latest', path: 'latest', href: 'latest' }
+89 verbose addNamed [ 'grunt-http-server', 'latest' ]
+90 verbose addNamed [ null, null ]
+91 silly lockFile b9b58d30-grunt-http-server-latest grunt-http-server@latest
+92 verbose lock grunt-http-server@latest /Users/chowk/.npm/b9b58d30-grunt-http-server-latest.lock
+93 verbose cache add [ 'grunt-cli@latest', null ]
+94 silly cache add name=undefined spec="grunt-cli@latest" args=["grunt-cli@latest",null]
+95 verbose parsed url { pathname: 'grunt-cli@latest',
+95 verbose parsed url   path: 'grunt-cli@latest',
+95 verbose parsed url   href: 'grunt-cli@latest' }
+96 silly cache add name="grunt-cli" spec="latest" args=["grunt-cli","latest"]
+97 verbose parsed url { pathname: 'latest', path: 'latest', href: 'latest' }
+98 verbose addNamed [ 'grunt-cli', 'latest' ]
+99 verbose addNamed [ null, null ]
+100 silly lockFile d7e12f40-grunt-cli-latest grunt-cli@latest
+101 verbose lock grunt-cli@latest /Users/chowk/.npm/d7e12f40-grunt-cli-latest.lock
+102 verbose cache add [ 'grunt-contrib-concat@latest', null ]
+103 silly cache add name=undefined spec="grunt-contrib-concat@latest" args=["grunt-contrib-concat@latest",null]
+104 verbose parsed url { pathname: 'grunt-contrib-concat@latest',
+104 verbose parsed url   path: 'grunt-contrib-concat@latest',
+104 verbose parsed url   href: 'grunt-contrib-concat@latest' }
+105 silly cache add name="grunt-contrib-concat" spec="latest" args=["grunt-contrib-concat","latest"]
+106 verbose parsed url { pathname: 'latest', path: 'latest', href: 'latest' }
+107 verbose addNamed [ 'grunt-contrib-concat', 'latest' ]
+108 verbose addNamed [ null, null ]
+109 silly lockFile 7c2c056c-grunt-contrib-concat-latest grunt-contrib-concat@latest
+110 verbose lock grunt-contrib-concat@latest /Users/chowk/.npm/7c2c056c-grunt-contrib-concat-latest.lock
+111 info addNameTag [ 'grunt-contrib-handlebars', 'latest' ]
+112 info addNameTag [ 'grunt-contrib-copy', 'latest' ]
+113 info addNameTag [ 'grunt-http-server', 'latest' ]
+114 info addNameTag [ 'grunt-cli', 'latest' ]
+115 info addNameTag [ 'grunt-contrib-concat', 'latest' ]
+116 verbose url raw grunt-contrib-watch
+117 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-watch' ]
+118 verbose url resolved https://registry.npmjs.org/grunt-contrib-watch
+119 info trying registry request attempt 1 at 13:28:36
+120 verbose etag "CYEPAHD8RPL2P0FZ37OJ6LZST"
+121 http GET https://registry.npmjs.org/grunt-contrib-watch
+122 verbose url raw grunt-contrib-handlebars
+123 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-handlebars' ]
+124 verbose url resolved https://registry.npmjs.org/grunt-contrib-handlebars
+125 info trying registry request attempt 1 at 13:28:36
+126 verbose etag "BYYIJ0Z51MR8Q28ZDBISO1751"
+127 http GET https://registry.npmjs.org/grunt-contrib-handlebars
+128 verbose url raw grunt-contrib-copy
+129 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-copy' ]
+130 verbose url resolved https://registry.npmjs.org/grunt-contrib-copy
+131 info trying registry request attempt 1 at 13:28:36
+132 verbose etag "CDPGQ1SUFZMH5EVR6HX9UU4HC"
+133 http GET https://registry.npmjs.org/grunt-contrib-copy
+134 verbose url raw grunt-http-server
+135 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-http-server' ]
+136 verbose url resolved https://registry.npmjs.org/grunt-http-server
+137 info trying registry request attempt 1 at 13:28:36
+138 verbose etag "CW3JNQTZQ41E2SVUYVDQ3OA3H"
+139 http GET https://registry.npmjs.org/grunt-http-server
+140 verbose url raw grunt-cli
+141 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-cli' ]
+142 verbose url resolved https://registry.npmjs.org/grunt-cli
+143 info trying registry request attempt 1 at 13:28:36
+144 verbose etag "383SAZQG21KE99L5T0LZDX5EE"
+145 http GET https://registry.npmjs.org/grunt-cli
+146 verbose url raw grunt-contrib-concat
+147 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-contrib-concat' ]
+148 verbose url resolved https://registry.npmjs.org/grunt-contrib-concat
+149 info trying registry request attempt 1 at 13:28:36
+150 verbose etag "61RQNP3RQLWOM69Y6ONWQZQG1"
+151 http GET https://registry.npmjs.org/grunt-contrib-concat
+152 http 304 https://registry.npmjs.org/grunt-contrib-copy
+153 silly registry.get cb [ 304,
+153 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:11 GMT',
+153 silly registry.get     server: 'Apache',
+153 silly registry.get     via: '1.1 varnish',
+153 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:06 GMT',
+153 silly registry.get     'cache-control': 'max-age=30',
+153 silly registry.get     etag: '"CDPGQ1SUFZMH5EVR6HX9UU4HC"',
+153 silly registry.get     'x-served-by': 'cache-dfw1834-DFW',
+153 silly registry.get     'x-cache': 'HIT',
+153 silly registry.get     'x-cache-hits': '2',
+153 silly registry.get     'x-timer': 'S1404415631.706778,VS0,VE0',
+153 silly registry.get     vary: 'Accept',
+153 silly registry.get     'content-length': '0',
+153 silly registry.get     'keep-alive': 'timeout=10, max=50',
+153 silly registry.get     connection: 'Keep-Alive' } ]
+154 verbose etag grunt-contrib-copy from cache
+155 verbose addNamed [ 'grunt-contrib-copy', '0.5.0' ]
+156 verbose addNamed [ '0.5.0', '0.5.0' ]
+157 silly lockFile a598d2f8-grunt-contrib-copy-0-5-0 grunt-contrib-copy@0.5.0
+158 verbose lock grunt-contrib-copy@0.5.0 /Users/chowk/.npm/a598d2f8-grunt-contrib-copy-0-5-0.lock
+159 verbose read json /Users/chowk/.npm/grunt-contrib-copy/0.5.0/package/package.json
+160 silly lockFile a598d2f8-grunt-contrib-copy-0-5-0 grunt-contrib-copy@0.5.0
+161 silly lockFile 5e7f8a73-grunt-contrib-copy-latest grunt-contrib-copy@latest
+162 info already installed grunt-contrib-copy@0.5.0
+163 http 304 https://registry.npmjs.org/grunt-contrib-watch
+164 silly registry.get cb [ 304,
+164 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:11 GMT',
+164 silly registry.get     server: 'Apache',
+164 silly registry.get     via: '1.1 varnish',
+164 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:11 GMT',
+164 silly registry.get     'cache-control': 'max-age=30',
+164 silly registry.get     etag: '"CYEPAHD8RPL2P0FZ37OJ6LZST"',
+164 silly registry.get     'x-served-by': 'cache-dfw1821-DFW',
+164 silly registry.get     'x-cache': 'HIT',
+164 silly registry.get     'x-cache-hits': '1',
+164 silly registry.get     'x-timer': 'S1404415631.728025,VS0,VE0',
+164 silly registry.get     vary: 'Accept',
+164 silly registry.get     'content-length': '0',
+164 silly registry.get     'keep-alive': 'timeout=10, max=50',
+164 silly registry.get     connection: 'Keep-Alive' } ]
+165 verbose etag grunt-contrib-watch from cache
+166 verbose addNamed [ 'grunt-contrib-watch', '0.6.1' ]
+167 verbose addNamed [ '0.6.1', '0.6.1' ]
+168 silly lockFile 08049756-grunt-contrib-watch-0-6-1 grunt-contrib-watch@0.6.1
+169 verbose lock grunt-contrib-watch@0.6.1 /Users/chowk/.npm/08049756-grunt-contrib-watch-0-6-1.lock
+170 verbose read json /Users/chowk/.npm/grunt-contrib-watch/0.6.1/package/package.json
+171 silly lockFile 08049756-grunt-contrib-watch-0-6-1 grunt-contrib-watch@0.6.1
+172 silly lockFile 72016001-grunt-contrib-watch-latest grunt-contrib-watch@latest
+173 info already installed grunt-contrib-watch@0.6.1
+174 http 304 https://registry.npmjs.org/grunt-contrib-less
+175 silly registry.get cb [ 304,
+175 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:11 GMT',
+175 silly registry.get     server: 'Apache',
+175 silly registry.get     via: '1.1 varnish',
+175 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:11 GMT',
+175 silly registry.get     'cache-control': 'max-age=30',
+175 silly registry.get     etag: '"1O4SUFAIICP1TTYIE63OJCE0H"',
+175 silly registry.get     'x-served-by': 'cache-dfw1832-DFW',
+175 silly registry.get     'x-cache': 'HIT',
+175 silly registry.get     'x-cache-hits': '1',
+175 silly registry.get     'x-timer': 'S1404415631.741455,VS0,VE0',
+175 silly registry.get     vary: 'Accept',
+175 silly registry.get     'content-length': '0',
+175 silly registry.get     'keep-alive': 'timeout=10, max=50',
+175 silly registry.get     connection: 'Keep-Alive' } ]
+176 verbose etag grunt-contrib-less from cache
+177 verbose addNamed [ 'grunt-contrib-less', '0.11.3' ]
+178 verbose addNamed [ '0.11.3', '0.11.3' ]
+179 silly lockFile 75e59a5e-grunt-contrib-less-0-11-3 grunt-contrib-less@0.11.3
+180 verbose lock grunt-contrib-less@0.11.3 /Users/chowk/.npm/75e59a5e-grunt-contrib-less-0-11-3.lock
+181 verbose read json /Users/chowk/.npm/grunt-contrib-less/0.11.3/package/package.json
+182 silly lockFile 75e59a5e-grunt-contrib-less-0-11-3 grunt-contrib-less@0.11.3
+183 silly lockFile a8e95fac-grunt-contrib-less-latest grunt-contrib-less@latest
+184 http 304 https://registry.npmjs.org/grunt-contrib-handlebars
+185 silly registry.get cb [ 304,
+185 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:11 GMT',
+185 silly registry.get     server: 'Apache',
+185 silly registry.get     via: '1.1 varnish',
+185 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:11 GMT',
+185 silly registry.get     'cache-control': 'max-age=30',
+185 silly registry.get     etag: '"BYYIJ0Z51MR8Q28ZDBISO1751"',
+185 silly registry.get     'x-served-by': 'cache-dfw1822-DFW',
+185 silly registry.get     'x-cache': 'HIT',
+185 silly registry.get     'x-cache-hits': '1',
+185 silly registry.get     'x-timer': 'S1404415631.712271,VS0,VE50',
+185 silly registry.get     vary: 'Accept',
+185 silly registry.get     'content-length': '0',
+185 silly registry.get     'keep-alive': 'timeout=10, max=50',
+185 silly registry.get     connection: 'Keep-Alive' } ]
+186 verbose etag grunt-contrib-handlebars from cache
+187 verbose addNamed [ 'grunt-contrib-handlebars', '0.8.0' ]
+188 verbose addNamed [ '0.8.0', '0.8.0' ]
+189 silly lockFile 0e28918f-grunt-contrib-handlebars-0-8-0 grunt-contrib-handlebars@0.8.0
+190 verbose lock grunt-contrib-handlebars@0.8.0 /Users/chowk/.npm/0e28918f-grunt-contrib-handlebars-0-8-0.lock
+191 verbose read json /Users/chowk/.npm/grunt-contrib-handlebars/0.8.0/package/package.json
+192 silly lockFile 0e28918f-grunt-contrib-handlebars-0-8-0 grunt-contrib-handlebars@0.8.0
+193 silly lockFile e897fd50-grunt-contrib-handlebars-latest grunt-contrib-handlebars@latest
+194 info already installed grunt-contrib-handlebars@0.8.0
+195 http 304 https://registry.npmjs.org/grunt-contrib-uglify
+196 silly registry.get cb [ 304,
+196 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:11 GMT',
+196 silly registry.get     server: 'Apache',
+196 silly registry.get     via: '1.1 varnish',
+196 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:11 GMT',
+196 silly registry.get     'cache-control': 'max-age=30',
+196 silly registry.get     etag: '"9CUSV5EG43WTYS056RG3DC04N"',
+196 silly registry.get     'x-served-by': 'cache-dfw1828-DFW',
+196 silly registry.get     'x-cache': 'HIT',
+196 silly registry.get     'x-cache-hits': '1',
+196 silly registry.get     'x-timer': 'S1404415631.714585,VS0,VE55',
+196 silly registry.get     vary: 'Accept',
+196 silly registry.get     'content-length': '0',
+196 silly registry.get     'keep-alive': 'timeout=10, max=50',
+196 silly registry.get     connection: 'Keep-Alive' } ]
+197 verbose etag grunt-contrib-uglify from cache
+198 verbose addNamed [ 'grunt-contrib-uglify', '0.5.0' ]
+199 verbose addNamed [ '0.5.0', '0.5.0' ]
+200 silly lockFile b72f26dd-grunt-contrib-uglify-0-5-0 grunt-contrib-uglify@0.5.0
+201 verbose lock grunt-contrib-uglify@0.5.0 /Users/chowk/.npm/b72f26dd-grunt-contrib-uglify-0-5-0.lock
+202 verbose read json /Users/chowk/.npm/grunt-contrib-uglify/0.5.0/package/package.json
+203 silly lockFile b72f26dd-grunt-contrib-uglify-0-5-0 grunt-contrib-uglify@0.5.0
+204 silly lockFile 20260ab5-grunt-contrib-uglify-latest grunt-contrib-uglify@latest
+205 http 304 https://registry.npmjs.org/grunt-contrib-concat
+206 silly registry.get cb [ 304,
+206 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:11 GMT',
+206 silly registry.get     server: 'Apache',
+206 silly registry.get     via: '1.1 varnish',
+206 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:11 GMT',
+206 silly registry.get     'cache-control': 'max-age=30',
+206 silly registry.get     etag: '"61RQNP3RQLWOM69Y6ONWQZQG1"',
+206 silly registry.get     'x-served-by': 'cache-dfw1832-DFW',
+206 silly registry.get     'x-cache': 'HIT',
+206 silly registry.get     'x-cache-hits': '1',
+206 silly registry.get     'x-timer': 'S1404415631.832699,VS0,VE0',
+206 silly registry.get     vary: 'Accept',
+206 silly registry.get     'content-length': '0',
+206 silly registry.get     'keep-alive': 'timeout=10, max=49',
+206 silly registry.get     connection: 'Keep-Alive' } ]
+207 verbose etag grunt-contrib-concat from cache
+208 verbose addNamed [ 'grunt-contrib-concat', '0.4.0' ]
+209 verbose addNamed [ '0.4.0', '0.4.0' ]
+210 silly lockFile 6dafb8ea-grunt-contrib-concat-0-4-0 grunt-contrib-concat@0.4.0
+211 verbose lock grunt-contrib-concat@0.4.0 /Users/chowk/.npm/6dafb8ea-grunt-contrib-concat-0-4-0.lock
+212 verbose read json /Users/chowk/.npm/grunt-contrib-concat/0.4.0/package/package.json
+213 silly lockFile 6dafb8ea-grunt-contrib-concat-0-4-0 grunt-contrib-concat@0.4.0
+214 silly lockFile 7c2c056c-grunt-contrib-concat-latest grunt-contrib-concat@latest
+215 info already installed grunt-contrib-concat@0.4.0
+216 http 304 https://registry.npmjs.org/grunt-cli
+217 silly registry.get cb [ 304,
+217 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:11 GMT',
+217 silly registry.get     server: 'Apache',
+217 silly registry.get     via: '1.1 varnish',
+217 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:11 GMT',
+217 silly registry.get     'cache-control': 'max-age=30',
+217 silly registry.get     etag: '"383SAZQG21KE99L5T0LZDX5EE"',
+217 silly registry.get     'x-served-by': 'cache-dfw1821-DFW',
+217 silly registry.get     'x-cache': 'HIT',
+217 silly registry.get     'x-cache-hits': '1',
+217 silly registry.get     'x-timer': 'S1404415631.802261,VS0,VE53',
+217 silly registry.get     vary: 'Accept',
+217 silly registry.get     'content-length': '0',
+217 silly registry.get     'keep-alive': 'timeout=10, max=49',
+217 silly registry.get     connection: 'Keep-Alive' } ]
+218 verbose etag grunt-cli from cache
+219 verbose addNamed [ 'grunt-cli', '0.1.13' ]
+220 verbose addNamed [ '0.1.13', '0.1.13' ]
+221 silly lockFile 28997503-grunt-cli-0-1-13 grunt-cli@0.1.13
+222 verbose lock grunt-cli@0.1.13 /Users/chowk/.npm/28997503-grunt-cli-0-1-13.lock
+223 verbose read json /Users/chowk/.npm/grunt-cli/0.1.13/package/package.json
+224 silly lockFile 28997503-grunt-cli-0-1-13 grunt-cli@0.1.13
+225 silly lockFile d7e12f40-grunt-cli-latest grunt-cli@latest
+226 info already installed grunt-cli@0.1.13
+227 http 304 https://registry.npmjs.org/grunt-http-server
+228 silly registry.get cb [ 304,
+228 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:11 GMT',
+228 silly registry.get     server: 'Apache',
+228 silly registry.get     via: '1.1 varnish',
+228 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:11 GMT',
+228 silly registry.get     'cache-control': 'max-age=30',
+228 silly registry.get     etag: '"CW3JNQTZQ41E2SVUYVDQ3OA3H"',
+228 silly registry.get     'x-served-by': 'cache-dfw1834-DFW',
+228 silly registry.get     'x-cache': 'MISS',
+228 silly registry.get     'x-cache-hits': '0',
+228 silly registry.get     'x-timer': 'S1404415631.781359,VS0,VE77',
+228 silly registry.get     vary: 'Accept',
+228 silly registry.get     'content-length': '0',
+228 silly registry.get     'keep-alive': 'timeout=10, max=49',
+228 silly registry.get     connection: 'Keep-Alive' } ]
+229 verbose etag grunt-http-server from cache
+230 verbose addNamed [ 'grunt-http-server', '0.0.5' ]
+231 verbose addNamed [ '0.0.5', '0.0.5' ]
+232 silly lockFile 107eef42-grunt-http-server-0-0-5 grunt-http-server@0.0.5
+233 verbose lock grunt-http-server@0.0.5 /Users/chowk/.npm/107eef42-grunt-http-server-0-0-5.lock
+234 verbose read json /Users/chowk/.npm/grunt-http-server/0.0.5/package/package.json
+235 silly lockFile 107eef42-grunt-http-server-0-0-5 grunt-http-server@0.0.5
+236 silly lockFile b9b58d30-grunt-http-server-latest grunt-http-server@latest
+237 info already installed grunt-http-server@0.0.5
+238 silly resolved [ { name: 'grunt-contrib-less',
+238 silly resolved     description: 'Compile LESS files to CSS.',
+238 silly resolved     version: '0.11.3',
+238 silly resolved     homepage: 'https://github.com/gruntjs/grunt-contrib-less',
+238 silly resolved     author: { name: 'Grunt Team', url: 'http://gruntjs.com/' },
+238 silly resolved     repository:
+238 silly resolved      { type: 'git',
+238 silly resolved        url: 'git://github.com/gruntjs/grunt-contrib-less.git' },
+238 silly resolved     bugs: { url: 'https://github.com/gruntjs/grunt-contrib-less/issues' },
+238 silly resolved     licenses: [ [Object] ],
+238 silly resolved     engines: { node: '>=0.10.0' },
+238 silly resolved     scripts: { test: 'grunt test' },
+238 silly resolved     dependencies:
+238 silly resolved      { less: '~1.7.2',
+238 silly resolved        chalk: '^0.4.0',
+238 silly resolved        maxmin: '^0.1.0',
+238 silly resolved        lodash: '^2.4.1',
+238 silly resolved        async: '^0.2.10' },
+238 silly resolved     devDependencies:
+238 silly resolved      { 'grunt-contrib-jshint': '^0.9.2',
+238 silly resolved        'grunt-contrib-nodeunit': '^0.3.3',
+238 silly resolved        'grunt-contrib-clean': '^0.5.0',
+238 silly resolved        'grunt-contrib-internal': '^0.4.5',
+238 silly resolved        grunt: '^0.4.4',
+238 silly resolved        'grunt-cli': '^0.1.13' },
+238 silly resolved     peerDependencies: { grunt: '^0.4.0' },
+238 silly resolved     keywords: [ 'gruntplugin' ],
+238 silly resolved     files: [ 'tasks', 'LICENSE-MIT' ],
+238 silly resolved     readme: '# grunt-contrib-less v0.11.3 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-less.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-less) <a href="https://ci.appveyor.com/project/gruntjs/grunt-contrib-less"><img src="https://ci.appveyor.com/api/projects/status/e3aa4d07xe4w4u05/branch/master" alt="Build Status: Windows" height="18" /></a>\n\n> Compile LESS files to CSS.\n\n\n\n## Getting Started\nThis plugin requires Grunt `^0.4.0`\n\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with that process, you may install this plugin with this command:\n\n```shell\nnpm install grunt-contrib-less --save-dev\n```\n\nOnce the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks(\'grunt-contrib-less\');\n```\n\n*This plugin was designed to work with Grunt 0.4.x. If you\'re still using grunt v0.3.x it\'s strongly recommended that [you upgrade](http://gruntjs.com/upgrading-from-0.3-to-0.4), but in case you can\'t please use [v0.3.2](https://github.com/gruntjs/grunt-contrib-less/tree/grunt-0.3-stable).*\n\n\n## Less task\n_Run this task with the `grunt less` command._\n\nTask targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.\n### Options\n\n#### paths\nType: `String` `Array` `Function`\n\nDefault: Directory of input file.\n\nSpecifies directories to scan for @import directives when parsing. Default value is the directory of the source, which is probably what you want.\n\nIf you specify a function the source filepath will be the first argument. You can return either a string or an array of paths to be used.\n\n#### rootpath\nType: `String`\n\nDefault: `""`\n\nA path to add on to the start of every url resource.\n\n#### compress\nType: `Boolean`\n\nDefault: `false`\n\nCompress output by removing some whitespaces.\n\n#### cleancss\nType: `Boolean`\n\nDefault: `false`\n\nCompress output using [clean-css](https://npmjs.org/package/clean-css).\n\n#### ieCompat\nType: `Boolean`\n\nDefault: `true`\n\nEnforce the css output is compatible with Internet Explorer 8.\n\nFor example, the [data-uri](https://github.com/cloudhead/less.js/pull/1086) function encodes a file in base64 encoding and embeds it into the generated CSS files as a data-URI. Because Internet Explorer 8 limits `data-uri`s to 32KB, the [ieCompat](https://github.com/cloudhead/less.js/pull/1190) option prevents `less` from exceeding this.\n\n#### optimization\nType: `Integer`\n\nDefault: `null`\n\nSet the parser\'s optimization level. The lower the number, the less nodes it will create in the tree. This could matter for debugging, or if you want to access the individual nodes in the tree.\n\n#### strictImports\nType: `Boolean`\n\nDefault: `false`\n\nForce evaluation of imports.\n\n#### strictMath\nType: `Boolean`\n\nDefault: `false`\n\nWhen enabled, math is required to be in parenthesis.\n\n#### strictUnits\nType: `Boolean`\n\nDefault: `false`\n\nWhen enabled, less will validate the units used (e.g. 4px/2px = 2, not 2px and 4em/2px throws an error).\n\n#### syncImport\nType: `Boolean`\n\nDefault: `false`\n\nRead @import\'ed files synchronously from disk.\n\n#### dumpLineNumbers\nType: `String`\n\nDefault: `false`\n\nConfigures -sass-debug-info support.\n\nAccepts following values: `comments`, `mediaquery`, `all`.\n\n#### relativeUrls\nType: `Boolean`\n\nDefault: `false`\n\nRewrite urls to be relative. false: do not modify urls.\n\n#### customFunctions\nType: `Object`\n\nDefault: none\n\nDefine custom functions to be available within your LESS stylesheets. The function\'s name must be lowercase.\nIn the definition, the first argument is the less object, and subsequent arguments are from the less function call.\nValues passed to the function are types defined within less, the return value may be either one of them or primitive.\nSee the LESS documentation for more information on the available types.\n\n#### report\nChoices: `\'min\'`, `\'gzip\'`  \nDefault: `\'min\'`\n\nEither report only minification result or report minification and gzip results.\nThis is useful to see exactly how well clean-css is performing but using `\'gzip\'` will make the task take 5-10x longer to complete. [Example output](https://github.com/sindresorhus/maxmin#readme).\n\n#### sourceMap\nType: `Boolean`\n\nDefault: `false`\n\nEnable source maps.\n\n#### sourceMapFilename\nType: `String`\n\nDefault: none\n\nWrite the source map to a separate file with the given filename.\n\n#### sourceMapURL\nType: `String`\n\nDefault: none\n\nOverride the default url that points to the sourcemap from the compiled css file.\n\n#### sourceMapBasepath\nType: `String`\n\nDefault: none\n\nSets the base path for the less file paths in the source map.\n\n#### sourceMapRootpath\nType: `String`\n\nDefault: none\n\nAdds this path onto the less file paths in the source map.\n\n#### outputSourceFiles\nType: `Boolean`\n\nDefault: false\n\nPuts the less files into the map instead of referencing them.\n\n#### modifyVars\nType: `Object`\n\nDefault: none\n\nOverrides global variables. Equivalent to ```--modify-vars=\'VAR=VALUE\'``` option in less.\n\n### Usage Examples\n\n```js\nless: {\n  development: {\n    options: {\n      paths: ["assets/css"]\n    },\n    files: {\n      "path/to/result.css": "path/to/source.less"\n    }\n  },\n  production: {\n    options: {\n      paths: ["assets/css"],\n      cleancss: true,\n      modifyVars: {\n        imgPath: \'"http://mycdn.com/path/to/images"\',\n        bgColor: \'red\'\n      }\n    },\n    files: {\n      "path/to/result.css": "path/to/source.less"\n    }\n  }\n}\n```\n\n\n## Release History\n\n * 2014-06-20   v0.11.3   Update to Less ~1.7.2.\n * 2014-06-01   v0.11.2   Lock to less 1.7.0.\n * 2014-05-26   v0.11.1   Fix `modifyVars` to work when less file ends with a comment.\n * 2014-03-19   v0.11.0   Custom functions can return types defined by less paths option now accepts a function Replaced deprecated grunt.util methods Removes deprecated grunt.lib.contrib\n * 2014-03-01   v0.10.0   sourceMapBasepath accepts a function. Update copyright to 2014. Update .gitattributes. Update less.js to v1.7.0. Prevent CRLF in the repo. Adds modify-vars option. Changed to async stack call. Fixes data-uri test. Normalize line endings on tests.\n * 2014-01-07   v0.9.0   Bump to less 1.6\n * 2013-12-06   v0.8.3   Support sourceMapURL\n * 2013-11-14   v0.8.2   Support outputSourceFiles\n * 2013-10-24   v0.8.1   Support sourceMapFilename, sourceMapBasepath and sourceMapRootpath\n * 2013-10-22   v0.8.0   Upgrade to LESS 1.5 Support strictUnits option Support sourceMap option Add customFunctions option for defining custom functions within LESS Output the source file name on error yuicompress option now cleancss (Less changed underlying dependency)\n * 2013-08-08   v0.7.0   Downgrade no source files warning to only in verbose mode\n * 2013-08-08   v0.6.5   Support strictMath option Support rootpath parse option\n * 2013-07-09   v0.6.4   Support relativeUrls option\n * 2013-07-06   v0.6.3   Add report option for minification and gzip results\n * 2013-07-03   v0.6.2   support syncImport\n * 2013-06-12   v0.6.1   Support ieCompat\n * 2013-06-09   v0.6.0   Bump less to 1.4.0\n * 2013-05-23   v0.5.2   Improve error handling.\n * 2013-04-25   v0.5.1   Gracefully handle configuration without sources.\n * 2013-02-15   v0.5.0   First official release for Grunt 0.4.0.\n * 2013-01-23   v0.5.0rc7   Updating grunt/gruntplugin dependencies to rc7. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions. Remove experimental wildcard destination support. Switching to this.files api.\n * 2012-10-18   v0.3.2   Add support for dumpLineNumbers.\n * 2012-10-12   v0.3.1   Rename grunt-contrib-lib dep to grunt-lib-contrib.\n * 2012-09-24   v0.3.0   Global options depreciated Revert normalize linefeeds.\n * 2012-09-16   v0.2.2   Support all less options Normalize linefeeds Default path to dirname of src file.\n * 2012-09-10   v0.2.0   Refactored from grunt-contrib into individual repo.\n\n---\n\nTask submitted by [Tyler Kellen](http://goingslowly.com/)\n\n*This file was generated on Fri Jun 20 2014 13:09:28.*\n',
+238 silly resolved     _id: 'grunt-contrib-less@0.11.3',
+238 silly resolved     _from: 'grunt-contrib-less@latest' },
+238 silly resolved   { name: 'grunt-contrib-uglify',
+238 silly resolved     description: 'Minify files with UglifyJS.',
+238 silly resolved     version: '0.5.0',
+238 silly resolved     homepage: 'https://github.com/gruntjs/grunt-contrib-uglify',
+238 silly resolved     author: { name: 'Grunt Team', url: 'http://gruntjs.com/' },
+238 silly resolved     repository:
+238 silly resolved      { type: 'git',
+238 silly resolved        url: 'git://github.com/gruntjs/grunt-contrib-uglify.git' },
+238 silly resolved     bugs: { url: 'https://github.com/gruntjs/grunt-contrib-uglify/issues' },
+238 silly resolved     licenses: [ [Object] ],
+238 silly resolved     engines: { node: '>=0.10.0' },
+238 silly resolved     scripts: { test: 'grunt test' },
+238 silly resolved     dependencies:
+238 silly resolved      { 'uglify-js': '^2.4.0',
+238 silly resolved        chalk: '^0.4.0',
+238 silly resolved        maxmin: '^0.1.0',
+238 silly resolved        lodash: '^2.4.1' },
+238 silly resolved     devDependencies:
+238 silly resolved      { 'grunt-contrib-jshint': '^0.10.0',
+238 silly resolved        'grunt-contrib-nodeunit': '^0.3.2',
+238 silly resolved        'grunt-contrib-clean': '^0.5.0',
+238 silly resolved        'grunt-contrib-internal': '^0.4.2',
+238 silly resolved        grunt: '^0.4.2' },
+238 silly resolved     peerDependencies: { grunt: '^0.4.0' },
+238 silly resolved     keywords: [ 'gruntplugin' ],
+238 silly resolved     files: [ 'tasks', 'LICENSE-MIT' ],
+238 silly resolved     readme: '# grunt-contrib-uglify v0.5.0 [![Build Status: Linux](https://travis-ci.org/gruntjs/grunt-contrib-uglify.png?branch=master)](https://travis-ci.org/gruntjs/grunt-contrib-uglify) <a href="https://ci.appveyor.com/project/gruntjs/grunt-contrib-uglify"><img src="https://ci.appveyor.com/api/projects/status/ybtf5vbvtenii561/branch/master" alt="Build Status: Windows" height="18" /></a>\n\n> Minify files with UglifyJS.\n\n\n\n## Getting Started\nThis plugin requires Grunt `^0.4.0`\n\nIf you haven\'t used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you\'re familiar with that process, you may install this plugin with this command:\n\n```shell\nnpm install grunt-contrib-uglify --save-dev\n```\n\nOnce the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:\n\n```js\ngrunt.loadNpmTasks(\'grunt-contrib-uglify\');\n```\n\n\n\n\n## Uglify task\n_Run this task with the `grunt uglify` command._\n\nTask targets, files and options may be specified according to the grunt [Configuring tasks](http://gruntjs.com/configuring-tasks) guide.\n\n### Migrating from 2.x to 3.x\n\nVersion `3.x` introduced changes to configuring source maps. Accordingly, if you don\'t use the source map options you should be able to upgrade seamlessly. If you do use source maps, see below.\n\n#### Removed options\n\n`sourceMapRoot` - The location of your sources is now calculated for you when `sourceMap` is set to `true`  \n`sourceMapPrefix` - No longer necessary for the above reason  \n`sourceMappingURL` - Once again, this is calculated automatically\n\n#### Changed options\n\n`sourceMap` - Only accepts a `Boolean` value. Generates a map with a default name for you  \n\n#### New options\n\n`sourceMapName` - Accepts a string or function to change the location or name of your map\n`sourceMapIncludeSources` - Embed the content of your source files directly into the map\n`expression` - Accepts a `Boolean` value. Parse a single expression (JSON or single functions)\n\n### Options\n\nThis task primarily delegates to [UglifyJS2][], so please consider the [UglifyJS documentation][] as required reading for advanced configuration.\n\n[UglifyJS2]: https://github.com/mishoo/UglifyJS2\n[UglifyJS documentation]: http://lisperator.net/uglifyjs/\n\n#### mangle\nType: `Boolean` `Object`  \nDefault: `{}`\n\nTurn on or off mangling with default options. If an `Object` is specified, it is passed directly to `ast.mangle_names()` *and* `ast.compute_char_frequency()` (mimicking command line behavior).\n\n#### compress\nType: `Boolean` `Object`  \nDefault: `{}`\n\nTurn on or off source compression with default options. If an `Object` is specified, it is passed as options to `UglifyJS.Compressor()`.\n\n#### beautify\nType: `Boolean` `Object`  \nDefault: `false`\n\nTurns on beautification of the generated source code. An `Object` will be merged and passed with the options sent to `UglifyJS.OutputStream()`\n\n###### expression\nType: `Boolean`\nDefault: `false`\n\nParse a single expression, rather than a program (for parsing JSON)\n\n#### report\nChoices: `\'min\'`, `\'gzip\'`  \nDefault: `\'min\'`\n\nEither report only minification result or report minification and gzip results.\nThis is useful to see exactly how well clean-css is performing but using `\'gzip\'` will make the task take 5-10x longer to complete. [Example output](https://github.com/sindresorhus/maxmin#readme).\n\n#### sourceMap\nType: `Boolean`  \nDefault: `false`\n\nIf `true`, a source map file will be generated in the same directory as the `dest` file. By default it will have the same basename as the `dest` file, but with a `.map` extension.\n\n#### sourceMapName\nType: `String`  `Function`  \nDefault: `undefined`\n\nTo customize the name or location of the generated source map, pass a string to indicate where to write the source map to. If a function is provided, the uglify destination is passed as the argument and the return value will be used as the file name.\n\n#### sourceMapIn\nType: `String`  `Function`  \nDefault: `undefined`\n\nThe location of an input source map from an earlier compilation, e.g. from CoffeeScript. If a function is provided, the\nuglify source is passed as the argument and the return value will be used as the sourceMap name. This only makes sense\nwhen there\'s one source file.\n\n#### sourceMapIncludeSources\nType: `Boolean`\nDefault: `false`\n\nPass this flag if you want to include the content of source files in the source map as sourcesContent property.\n\n###### enclose\nType: `Object`  \nDefault: `undefined`\n\nWrap all of the code in a closure with a configurable arguments/parameters list.\nEach key-value pair in the `enclose` object is effectively an argument-parameter pair.\n\n#### wrap\nType: `String`  \nDefault: `undefined`\n\nWrap all of the code in a closure, an easy way to make sure nothing is leaking.\nFor variables that need to be public `exports` and `global` variables are made available.\nThe value of wrap is the global variable exports will be available as.\n\n#### exportAll\nType: `Boolean`  \nDefault: `false`\n\nWhen using `wrap` this will make all global functions and variables available via the export variable.\n\n#### preserveComments\nType: `Boolean` `String` `Function`  \nDefault: `undefined`  \nOptions: `false` `\'all\'` `\'some\'`\n\nTurn on preservation of comments.\n\n- `false` will strip all comments\n- `\'all\'` will preserve all comments in code blocks that have not been squashed or dropped\n- `\'some\'` will preserve all comments that start with a bang (`!`) or include a closure compiler style directive (`@preserve` `@license` `@cc_on`)\n- `Function` specify your own comment preservation function. You will be passed the current node and the current comment and are expected to return either `true` or `false`\n\n#### banner\nType: `String`  \nDefault: empty string\n\nThis string will be prepended to the minified output.  Template strings (e.g. `<%= config.value %>` will be expanded automatically.\n\n#### footer\nType: `String`  \nDefault: empty string\n\nThis string will be appended to the minified output.  Template strings (e.g. `<%= config.value %>` will be expanded automatically.\n\n### Usage examples\n\n#### Basic compression\n\nThis configuration will compress and mangle the input files using the default options.\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  uglify: {\n    my_target: {\n      files: {\n        \'dest/output.min.js\': [\'src/input1.js\', \'src/input2.js\']\n      }\n    }\n  }\n});\n```\n\n#### No mangling\n\nSpecify `mangle: false` to prevent changes to your variable and function names.\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  uglify: {\n    options: {\n      mangle: false\n    },\n    my_target: {\n      files: {\n        \'dest/output.min.js\': [\'src/input.js\']\n      }\n    }\n  }\n});\n```\n\n#### Reserved identifiers\n\nYou can specify identifiers to leave untouched with an `except` array in the `mangle` options.\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  uglify: {\n    options: {\n      mangle: {\n        except: [\'jQuery\', \'Backbone\']\n      }\n    },\n    my_target: {\n      files: {\n        \'dest/output.min.js\': [\'src/input.js\']\n      }\n    }\n  }\n});\n```\n\n#### Source maps\n\nGenerate a source map by setting the `sourceMap` option to `true`. The generated\nsource map will be in the same directory as the destination file. Its name will be the\nbasename of the destination file with a `.map` extension. Override these\ndefaults with the `sourceMapName` attribute.\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  uglify: {\n    my_target: {\n      options: {\n        sourceMap: true,\n        sourceMapName: \'path/to/sourcemap.map\'\n      },\n      files: {\n        \'dest/output.min.js\': [\'src/input.js\']\n      }\n    }\n  }\n});\n```\n\n#### Advanced source maps\n\nSet the `sourceMapIncludeSources` option to `true` to embed your sources directly into the map. To include\na source map from a previous compilation pass it as the value of the `sourceMapIn` option.\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  uglify: {\n    my_target: {\n      options: {\n        sourceMap: true,\n        sourceMapIncludeSources: true,\n        sourceMapIn: \'example/coffeescript-sourcemap.js\', // input sourcemap from a previous compilation\n      },\n      files: {\n        \'dest/output.min.js\': [\'src/input.js\'],\n      },\n    },\n  },\n});\n```\n\nRefer to the [UglifyJS SourceMap Documentation](http://lisperator.net/uglifyjs/codegen#source-map) for more information.\n\n\n#### Discard console.* functions\n\nSpecify `drop_console: true` as part of the `compress` options to discard calls to `console.*` functions.\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  uglify: {\n    options: {\n      compress: {\n        drop_console: true\n      }\n    },\n    my_target: {\n      files: {\n        \'dest/output.min.js\': [\'src/input.js\']\n      }\n    }\n  }\n});\n```\n\n#### Beautify\n\nSpecify `beautify: true` to beautify your code for debugging/troubleshooting purposes.\nPass an object to manually configure any other output options passed directly to `UglifyJS.OutputStream()`.\n\nSee [UglifyJS Codegen documentation](http://lisperator.net/uglifyjs/codegen) for more information.\n\n_Note that manual configuration will require you to explicitly set `beautify: true` if you want traditional, beautified output._\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  uglify: {\n    my_target: {\n      options: {\n        beautify: true\n      },\n      files: {\n        \'dest/output.min.js\': [\'src/input.js\']\n      }\n    },\n    my_advanced_target: {\n      options: {\n        beautify: {\n          width: 80,\n          beautify: true\n        }\n      },\n      files: {\n        \'dest/output.min.js\': [\'src/input.js\']\n      }\n    }\n  }\n});\n```\n\n#### Banner comments\n\nIn this example, running `grunt uglify:my_target` will prepend a banner created by interpolating the `banner` template string with the config object. Here, those properties are the values imported from the `package.json` file (which are available via the `pkg` config property) plus today\'s date.\n\n_Note: you don\'t have to use an external JSON file. It\'s also valid to create the `pkg` object inline in the config. That being said, if you already have a JSON file, you might as well reference it._\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  pkg: grunt.file.readJSON(\'package.json\'),\n  uglify: {\n    options: {\n      banner: \'/*! <%= pkg.name %> - v<%= pkg.version %> - \' +\n        \'<%= grunt.template.today("yyyy-mm-dd") %> */\'\n    },\n    my_target: {\n      files: {\n        \'dest/output.min.js\': [\'src/input.js\']\n      }\n    }\n  }\n});\n```\n\n#### Conditional compilation\n\nYou can also enable UglifyJS conditional compilation. This is commonly used to remove debug code blocks for production builds.\n\nSee [UglifyJS global definitions documentation](http://lisperator.net/uglifyjs/compress#global-defs) for more information.\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  uglify: {\n    options: {\n      compress: {\n        global_defs: {\n          "DEBUG": false\n        },\n        dead_code: true\n      }\n    },\n    my_target: {\n      files: {\n        \'dest/output.min.js\': [\'src/input.js\']\n      }\n    }\n  }\n});\n```\n#### Compiling all files in a folder dynamically\n\nThis configuration will compress and mangle the files dynamically.\n\n```js\n// Project configuration.\ngrunt.initConfig({\n  uglify: {\n    my_target: {\n      files: [{\n          expand: true,\n          cwd: \'src/js\',\n          src: \'**/*.js\',\n          dest: \'dest/js\'\n      }]\n    }\n  }\n});\n```\n\n\n## Release History\n\n * 2014-06-11   v0.5.0   added option "expression" to uglify json and single functions. Removes unnecessary source map function. Simplify default source map naming function. Normalizes header and footer linefeeds. Source map names follow specs. Updates sourcemapin fixture.\n * 2014-03-01   v0.4.0   remove grunt-lib-contrib dependency and add more colors\n * 2014-02-27   v0.3.3   remove unnecessary calls to `grunt.template.process`\n * 2014-01-22   v0.3.2   fix handling of `sourceMapIncludeSources` option.\n * 2014-01-20   v0.3.1   fix relative path issue in sourcemaps\n * 2014-01-16   v0.3.0   refactor sourcemap support\n * 2013-11-09   v0.2.7   prepending banner if sourceMap option not set, addresses\n * 2013-11-08   v0.2.6   merged 45, 53, 85 (105 by way of duping 53) Added support for banners in uglified files with sourcemaps Updated docs\n * 2013-10-28   v0.2.5   Added warning for banners when using sourcemaps\n * 2013-09-02   v0.2.4   updated sourcemap format via /83\n * 2013-06-10   v0.2.3   added footer option\n * 2013-05-31   v0.2.2   Reverted /56 due to /58 until [chrome/239660](https://code.google.com/p/chromium/issues/detail?id=239660&q=sourcemappingurl&colspec=ID%20Pri%20M%20Iteration%20ReleaseBlock%20Cr%20Status%20Owner%20Summary%20OS%20Modified) [firefox/870361](https://bugzilla.mozilla.org/show_bug.cgi?id=870361) drop\n * 2013-05-22   v0.2.1   Bumped uglify to ~2.3.5 /55 /40 Changed sourcemappingUrl syntax /56 Disabled sorting of names for consistent mangling /44 Updated docs for sourceMapRoot /47 /25\n * 2013-03-14   v0.2.0   No longer report gzip results by default. Support `report` option.\n * 2013-01-30   v0.1.2   Added better error reporting Support for dynamic names of multiple sourcemaps\n * 2013-02-15   v0.1.1   First official release for Grunt 0.4.0.\n * 2013-01-18   v0.1.1rc6   Updating grunt/gruntplugin dependencies to rc6. Changing in-development grunt/gruntplugin dependency versions from tilde version ranges to specific versions.\n * 2013-01-09   v0.1.1rc5   Updating to work with grunt v0.4.0rc5. Switching back to this.files api.\n * 2012-11-28   v0.1.0   Work in progress, not yet officially released.\n\n---\n\nTask submitted by ["Cowboy" Ben Alman](http://benalman.com)\n\n*This file was generated on Wed Jun 11 2014 17:27:16.*\n',
+238 silly resolved     _id: 'grunt-contrib-uglify@0.5.0',
+238 silly resolved     _from: 'grunt-contrib-uglify@latest' } ]
+239 info install grunt-contrib-less@0.11.3 into /Volumes/Seagate Exp/Sites/front-end-framework
+240 info install grunt-contrib-uglify@0.5.0 into /Volumes/Seagate Exp/Sites/front-end-framework
+241 info installOne grunt-contrib-less@0.11.3
+242 warn engine grunt-contrib-less@0.11.3: wanted: {"node":">=0.10.0"} (current: {"node":"v0.8.12","npm":"1.1.63"})
+243 info installOne grunt-contrib-uglify@0.5.0
+244 warn engine grunt-contrib-uglify@0.5.0: wanted: {"node":">=0.10.0"} (current: {"node":"v0.8.12","npm":"1.1.63"})
+245 verbose from cache /Users/chowk/.npm/grunt-contrib-less/0.11.3/package/package.json
+246 verbose from cache /Users/chowk/.npm/grunt-contrib-uglify/0.5.0/package/package.json
+247 info /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less unbuild
+248 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less/package.json
+249 info /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify unbuild
+250 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify/package.json
+251 verbose tar unpack /Users/chowk/.npm/grunt-contrib-less/0.11.3/package.tgz
+252 verbose tar unpack /Users/chowk/.npm/grunt-contrib-uglify/0.5.0/package.tgz
+253 silly lockFile 1313347e--node-modules-grunt-contrib-less /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less
+254 verbose lock /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less /Users/chowk/.npm/1313347e--node-modules-grunt-contrib-less.lock
+255 silly lockFile f25b619c-ode-modules-grunt-contrib-uglify /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify
+256 verbose lock /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify /Users/chowk/.npm/f25b619c-ode-modules-grunt-contrib-uglify.lock
+257 silly gunzTarPerm modes [ '755', '644' ]
+258 silly gunzTarPerm modes [ '755', '644' ]
+259 silly gunzTarPerm extractEntry package.json
+260 silly gunzTarPerm extractEntry package.json
+261 silly gunzTarPerm extractEntry README.md
+262 silly gunzTarPerm extractEntry LICENSE-MIT
+263 silly gunzTarPerm extractEntry README.md
+264 silly gunzTarPerm extractEntry LICENSE-MIT
+265 silly gunzTarPerm extractEntry tasks/less.js
+266 silly gunzTarPerm extractEntry tasks/uglify.js
+267 silly gunzTarPerm extractEntry tasks/lib/uglify.js
+268 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less/package.json
+269 silly lockFile 1313347e--node-modules-grunt-contrib-less /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less
+270 info preinstall grunt-contrib-less@0.11.3
+271 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less/package.json
+272 verbose readDependencies using package.json deps
+273 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less/package.json
+274 verbose readDependencies using package.json deps
+275 verbose cache add [ 'less@~1.7.2', null ]
+276 silly cache add name=undefined spec="less@~1.7.2" args=["less@~1.7.2",null]
+277 verbose parsed url { pathname: 'less@~1.7.2',
+277 verbose parsed url   path: 'less@~1.7.2',
+277 verbose parsed url   href: 'less@~1.7.2' }
+278 silly cache add name="less" spec="~1.7.2" args=["less","~1.7.2"]
+279 verbose parsed url { pathname: '~1.7.2', path: '~1.7.2', href: '~1.7.2' }
+280 verbose addNamed [ 'less', '~1.7.2' ]
+281 verbose addNamed [ null, '>=1.7.2- <1.8.0-' ]
+282 silly lockFile 59af489d-less-1-7-2 less@~1.7.2
+283 verbose lock less@~1.7.2 /Users/chowk/.npm/59af489d-less-1-7-2.lock
+284 verbose cache add [ 'chalk@^0.4.0', null ]
+285 silly cache add name=undefined spec="chalk@^0.4.0" args=["chalk@^0.4.0",null]
+286 verbose parsed url { pathname: 'chalk@^0.4.0',
+286 verbose parsed url   path: 'chalk@^0.4.0',
+286 verbose parsed url   href: 'chalk@^0.4.0' }
+287 silly cache add name="chalk" spec="^0.4.0" args=["chalk","^0.4.0"]
+288 verbose parsed url { pathname: '^0.4.0', path: '^0.4.0', href: '^0.4.0' }
+289 verbose addNamed [ 'chalk', '^0.4.0' ]
+290 verbose addNamed [ null, null ]
+291 silly lockFile b2f4396d-chalk-0-4-0 chalk@^0.4.0
+292 verbose lock chalk@^0.4.0 /Users/chowk/.npm/b2f4396d-chalk-0-4-0.lock
+293 silly addNameRange { name: 'less', range: '>=1.7.2- <1.8.0-', hasData: false }
+294 info addNameTag [ 'chalk', '^0.4.0' ]
+295 verbose cache add [ 'maxmin@^0.1.0', null ]
+296 silly cache add name=undefined spec="maxmin@^0.1.0" args=["maxmin@^0.1.0",null]
+297 verbose parsed url { pathname: 'maxmin@^0.1.0',
+297 verbose parsed url   path: 'maxmin@^0.1.0',
+297 verbose parsed url   href: 'maxmin@^0.1.0' }
+298 silly cache add name="maxmin" spec="^0.1.0" args=["maxmin","^0.1.0"]
+299 verbose parsed url { pathname: '^0.1.0', path: '^0.1.0', href: '^0.1.0' }
+300 verbose addNamed [ 'maxmin', '^0.1.0' ]
+301 verbose addNamed [ null, null ]
+302 silly lockFile c75f66b7-maxmin-0-1-0 maxmin@^0.1.0
+303 verbose lock maxmin@^0.1.0 /Users/chowk/.npm/c75f66b7-maxmin-0-1-0.lock
+304 verbose cache add [ 'lodash@^2.4.1', null ]
+305 silly cache add name=undefined spec="lodash@^2.4.1" args=["lodash@^2.4.1",null]
+306 verbose parsed url { pathname: 'lodash@^2.4.1',
+306 verbose parsed url   path: 'lodash@^2.4.1',
+306 verbose parsed url   href: 'lodash@^2.4.1' }
+307 silly cache add name="lodash" spec="^2.4.1" args=["lodash","^2.4.1"]
+308 verbose parsed url { pathname: '^2.4.1', path: '^2.4.1', href: '^2.4.1' }
+309 verbose addNamed [ 'lodash', '^2.4.1' ]
+310 verbose addNamed [ null, null ]
+311 silly lockFile 59759450-lodash-2-4-1 lodash@^2.4.1
+312 verbose lock lodash@^2.4.1 /Users/chowk/.npm/59759450-lodash-2-4-1.lock
+313 info addNameTag [ 'maxmin', '^0.1.0' ]
+314 info addNameTag [ 'lodash', '^2.4.1' ]
+315 verbose url raw less
+316 verbose url resolving [ 'https://registry.npmjs.org/', './less' ]
+317 verbose url resolved https://registry.npmjs.org/less
+318 info trying registry request attempt 1 at 13:28:36
+319 verbose etag "6Y7T89FO484CK2FASCKU184SC"
+320 http GET https://registry.npmjs.org/less
+321 verbose url raw chalk
+322 verbose url resolving [ 'https://registry.npmjs.org/', './chalk' ]
+323 verbose url resolved https://registry.npmjs.org/chalk
+324 info trying registry request attempt 1 at 13:28:36
+325 verbose etag "D39EOKRBX4KIWG5IQSZCMNPF5"
+326 http GET https://registry.npmjs.org/chalk
+327 verbose read json /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify/package.json
+328 verbose url raw maxmin
+329 verbose url resolving [ 'https://registry.npmjs.org/', './maxmin' ]
+330 verbose url resolved https://registry.npmjs.org/maxmin
+331 info trying registry request attempt 1 at 13:28:36
+332 verbose etag "BKCDAJ25CF7UAXNQ3GZ3DFBZ6"
+333 http GET https://registry.npmjs.org/maxmin
+334 verbose url raw lodash
+335 verbose url resolving [ 'https://registry.npmjs.org/', './lodash' ]
+336 verbose url resolved https://registry.npmjs.org/lodash
+337 info trying registry request attempt 1 at 13:28:36
+338 verbose etag "50OX5BTJLKSOA3BQ6URIRHXGF"
+339 http GET https://registry.npmjs.org/lodash
+340 verbose cache add [ 'async@^0.2.10', null ]
+341 silly cache add name=undefined spec="async@^0.2.10" args=["async@^0.2.10",null]
+342 verbose parsed url { pathname: 'async@^0.2.10',
+342 verbose parsed url   path: 'async@^0.2.10',
+342 verbose parsed url   href: 'async@^0.2.10' }
+343 silly cache add name="async" spec="^0.2.10" args=["async","^0.2.10"]
+344 verbose parsed url { pathname: '^0.2.10', path: '^0.2.10', href: '^0.2.10' }
+345 verbose addNamed [ 'async', '^0.2.10' ]
+346 verbose addNamed [ null, null ]
+347 silly lockFile 357d4c64-async-0-2-10 async@^0.2.10
+348 verbose lock async@^0.2.10 /Users/chowk/.npm/357d4c64-async-0-2-10.lock
+349 info addNameTag [ 'async', '^0.2.10' ]
+350 verbose url raw async
+351 verbose url resolving [ 'https://registry.npmjs.org/', './async' ]
+352 verbose url resolved https://registry.npmjs.org/async
+353 info trying registry request attempt 1 at 13:28:36
+354 verbose etag "4WDN4JVCAWI5RDJVVX1V6SS59"
+355 http GET https://registry.npmjs.org/async
+356 silly lockFile f25b619c-ode-modules-grunt-contrib-uglify /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify
+357 info preinstall grunt-contrib-uglify@0.5.0
+358 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify/package.json
+359 verbose readDependencies using package.json deps
+360 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify/package.json
+361 verbose readDependencies using package.json deps
+362 verbose cache add [ 'uglify-js@^2.4.0', null ]
+363 silly cache add name=undefined spec="uglify-js@^2.4.0" args=["uglify-js@^2.4.0",null]
+364 verbose parsed url { pathname: 'uglify-js@^2.4.0',
+364 verbose parsed url   path: 'uglify-js@^2.4.0',
+364 verbose parsed url   href: 'uglify-js@^2.4.0' }
+365 silly cache add name="uglify-js" spec="^2.4.0" args=["uglify-js","^2.4.0"]
+366 verbose parsed url { pathname: '^2.4.0', path: '^2.4.0', href: '^2.4.0' }
+367 verbose addNamed [ 'uglify-js', '^2.4.0' ]
+368 verbose addNamed [ null, null ]
+369 silly lockFile 0517be62-uglify-js-2-4-0 uglify-js@^2.4.0
+370 verbose lock uglify-js@^2.4.0 /Users/chowk/.npm/0517be62-uglify-js-2-4-0.lock
+371 verbose cache add [ 'chalk@^0.4.0', null ]
+372 silly cache add name=undefined spec="chalk@^0.4.0" args=["chalk@^0.4.0",null]
+373 verbose parsed url { pathname: 'chalk@^0.4.0',
+373 verbose parsed url   path: 'chalk@^0.4.0',
+373 verbose parsed url   href: 'chalk@^0.4.0' }
+374 silly cache add name="chalk" spec="^0.4.0" args=["chalk","^0.4.0"]
+375 verbose parsed url { pathname: '^0.4.0', path: '^0.4.0', href: '^0.4.0' }
+376 verbose addNamed [ 'chalk', '^0.4.0' ]
+377 info addNameTag [ 'uglify-js', '^2.4.0' ]
+378 verbose cache add [ 'maxmin@^0.1.0', null ]
+379 silly cache add name=undefined spec="maxmin@^0.1.0" args=["maxmin@^0.1.0",null]
+380 verbose parsed url { pathname: 'maxmin@^0.1.0',
+380 verbose parsed url   path: 'maxmin@^0.1.0',
+380 verbose parsed url   href: 'maxmin@^0.1.0' }
+381 silly cache add name="maxmin" spec="^0.1.0" args=["maxmin","^0.1.0"]
+382 verbose parsed url { pathname: '^0.1.0', path: '^0.1.0', href: '^0.1.0' }
+383 verbose addNamed [ 'maxmin', '^0.1.0' ]
+384 verbose cache add [ 'lodash@^2.4.1', null ]
+385 silly cache add name=undefined spec="lodash@^2.4.1" args=["lodash@^2.4.1",null]
+386 verbose parsed url { pathname: 'lodash@^2.4.1',
+386 verbose parsed url   path: 'lodash@^2.4.1',
+386 verbose parsed url   href: 'lodash@^2.4.1' }
+387 silly cache add name="lodash" spec="^2.4.1" args=["lodash","^2.4.1"]
+388 verbose parsed url { pathname: '^2.4.1', path: '^2.4.1', href: '^2.4.1' }
+389 verbose addNamed [ 'lodash', '^2.4.1' ]
+390 verbose url raw uglify-js
+391 verbose url resolving [ 'https://registry.npmjs.org/', './uglify-js' ]
+392 verbose url resolved https://registry.npmjs.org/uglify-js
+393 info trying registry request attempt 1 at 13:28:36
+394 verbose etag "470OUNH9ZKURDX8IYTUGNOH36"
+395 http GET https://registry.npmjs.org/uglify-js
+396 http 304 https://registry.npmjs.org/less
+397 silly registry.get cb [ 304,
+397 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:12 GMT',
+397 silly registry.get     server: 'Apache',
+397 silly registry.get     via: '1.1 varnish',
+397 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:12 GMT',
+397 silly registry.get     'cache-control': 'max-age=30',
+397 silly registry.get     etag: '"6Y7T89FO484CK2FASCKU184SC"',
+397 silly registry.get     'x-served-by': 'cache-dfw1832-DFW',
+397 silly registry.get     'x-cache': 'HIT',
+397 silly registry.get     'x-cache-hits': '1',
+397 silly registry.get     'x-timer': 'S1404415632.211594,VS0,VE0',
+397 silly registry.get     vary: 'Accept',
+397 silly registry.get     'content-length': '0',
+397 silly registry.get     'keep-alive': 'timeout=10, max=50',
+397 silly registry.get     connection: 'Keep-Alive' } ]
+398 verbose etag less from cache
+399 http 304 https://registry.npmjs.org/maxmin
+400 silly registry.get cb [ 304,
+400 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:12 GMT',
+400 silly registry.get     server: 'Apache',
+400 silly registry.get     via: '1.1 varnish',
+400 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:12 GMT',
+400 silly registry.get     'cache-control': 'max-age=30',
+400 silly registry.get     etag: '"BKCDAJ25CF7UAXNQ3GZ3DFBZ6"',
+400 silly registry.get     'x-served-by': 'cache-dfw1823-DFW',
+400 silly registry.get     'x-cache': 'HIT',
+400 silly registry.get     'x-cache-hits': '1',
+400 silly registry.get     'x-timer': 'S1404415632.215059,VS0,VE0',
+400 silly registry.get     vary: 'Accept',
+400 silly registry.get     'content-length': '0',
+400 silly registry.get     'keep-alive': 'timeout=10, max=50',
+400 silly registry.get     connection: 'Keep-Alive' } ]
+401 verbose etag maxmin from cache
+402 silly addNameRange number 2 { name: 'less', range: '>=1.7.2- <1.8.0-', hasData: true }
+403 silly addNameRange versions [ 'less',
+403 silly addNameRange   [ '1.0.10',
+403 silly addNameRange     '1.0.11',
+403 silly addNameRange     '1.0.14',
+403 silly addNameRange     '1.0.18',
+403 silly addNameRange     '1.0.19',
+403 silly addNameRange     '1.0.21',
+403 silly addNameRange     '1.0.32',
+403 silly addNameRange     '1.0.36',
+403 silly addNameRange     '1.0.5',
+403 silly addNameRange     '1.0.40',
+403 silly addNameRange     '1.0.41',
+403 silly addNameRange     '1.0.44',
+403 silly addNameRange     '1.1.0',
+403 silly addNameRange     '1.1.1',
+403 silly addNameRange     '1.1.2',
+403 silly addNameRange     '1.1.4',
+403 silly addNameRange     '1.1.5',
+403 silly addNameRange     '1.1.6',
+403 silly addNameRange     '1.2.0',
+403 silly addNameRange     '1.2.1',
+403 silly addNameRange     '1.2.2',
+403 silly addNameRange     '1.3.0',
+403 silly addNameRange     '1.3.1',
+403 silly addNameRange     '1.3.2',
+403 silly addNameRange     '1.3.3',
+403 silly addNameRange     '1.4.0-b1',
+403 silly addNameRange     '1.4.0-b2',
+403 silly addNameRange     '1.4.0-b3',
+403 silly addNameRange     '1.4.0-b4',
+403 silly addNameRange     '1.4.0',
+403 silly addNameRange     '1.4.1',
+403 silly addNameRange     '1.4.2',
+403 silly addNameRange     '1.5.0-b1',
+403 silly addNameRange     '1.5.0-b2',
+403 silly addNameRange     '1.5.0-b3',
+403 silly addNameRange     '1.5.0-b4',
+403 silly addNameRange     '1.5.0',
+403 silly addNameRange     '1.5.1',
+403 silly addNameRange     '1.6.0',
+403 silly addNameRange     '1.6.1',
+403 silly addNameRange     '1.6.2',
+403 silly addNameRange     '1.6.3',
+403 silly addNameRange     '1.7.0',
+403 silly addNameRange     '1.7.1',
+403 silly addNameRange     '1.7.3' ] ]
+404 verbose addNamed [ 'less', '1.7.3' ]
+405 verbose addNamed [ '1.7.3', '1.7.3' ]
+406 silly lockFile aea7864b-less-1-7-3 less@1.7.3
+407 verbose lock less@1.7.3 /Users/chowk/.npm/aea7864b-less-1-7-3.lock
+408 silly lockFile c75f66b7-maxmin-0-1-0 maxmin@^0.1.0
+409 verbose read json /Users/chowk/.npm/less/1.7.3/package/package.json
+410 verbose about to build /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less
+411 info /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less unbuild
+412 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-less/package.json
+413 verbose about to build /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify
+414 info /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify unbuild
+415 verbose from cache /Volumes/Seagate Exp/Sites/front-end-framework/node_modules/grunt-contrib-uglify/package.json
+416 info preuninstall grunt-contrib-less@0.11.3
+417 info preuninstall grunt-contrib-uglify@0.5.0
+418 http 304 https://registry.npmjs.org/async
+419 silly registry.get cb [ 304,
+419 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:12 GMT',
+419 silly registry.get     server: 'Apache',
+419 silly registry.get     via: '1.1 varnish',
+419 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:00 GMT',
+419 silly registry.get     'cache-control': 'max-age=30',
+419 silly registry.get     etag: '"4WDN4JVCAWI5RDJVVX1V6SS59"',
+419 silly registry.get     'x-served-by': 'cache-dfw1823-DFW',
+419 silly registry.get     'x-cache': 'HIT',
+419 silly registry.get     'x-cache-hits': '2',
+419 silly registry.get     'x-timer': 'S1404415632.220673,VS0,VE0',
+419 silly registry.get     vary: 'Accept',
+419 silly registry.get     'content-length': '0',
+419 silly registry.get     'keep-alive': 'timeout=10, max=50',
+419 silly registry.get     connection: 'Keep-Alive' } ]
+420 verbose etag async from cache
+421 info uninstall grunt-contrib-less@0.11.3
+422 info uninstall grunt-contrib-uglify@0.5.0
+423 verbose true,/Volumes/Seagate Exp/Sites/front-end-framework/node_modules,/Volumes/Seagate Exp/Sites/front-end-framework/node_modules unbuild grunt-contrib-less@0.11.3
+424 info postuninstall grunt-contrib-less@0.11.3
+425 verbose true,/Volumes/Seagate Exp/Sites/front-end-framework/node_modules,/Volumes/Seagate Exp/Sites/front-end-framework/node_modules unbuild grunt-contrib-uglify@0.5.0
+426 info postuninstall grunt-contrib-uglify@0.5.0
+427 silly lockFile 357d4c64-async-0-2-10 async@^0.2.10
+428 silly lockFile aea7864b-less-1-7-3 less@1.7.3
+429 silly lockFile 59af489d-less-1-7-2 less@~1.7.2
+430 http 304 https://registry.npmjs.org/lodash
+431 silly registry.get cb [ 304,
+431 silly registry.get   { date: 'Thu, 03 Jul 2014 19:27:12 GMT',
+431 silly registry.get     server: 'Apache',
+431 silly registry.get     via: '1.1 varnish',
+431 silly registry.get     'last-modified': 'Thu, 03 Jul 2014 19:27:12 GMT',
+431 silly registry.get     'cache-control': 'max-age=30',
+431 silly registry.get     etag: '"50OX5BTJLKSOA3BQ6URIRHXGF"',
+431 silly registry.get     'x-served-by': 'cache-dfw1826-DFW',
+431 silly registry.get     'x-cache': 'HIT',
+431 silly registry.get     'x-cache-hits': '1',
+431 silly registry.get     'x-timer': 'S1404415632.233247,VS0,VE0',
+431 silly registry.get     vary: 'Accept',
+431 silly registry.get     'content-length': '0',
+431 silly registry.get     'keep-alive': 'timeout=10, max=50',
+431 silly registry.get     connection: 'Keep-Alive' } ]
+432 verbose etag lodash from cache
+433 error Error: No compatible version found: maxmin@'^0.1.0'
+433 error Valid install targets:
+433 error ["0.1.0","0.2.0"]
+433 error     at installTargetsError (/usr/local/lib/node_modules/npm/lib/cache.js:553:10)
+433 error     at /usr/local/lib/node_modules/npm/lib/cache.js:477:15
+433 error     at saved (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/get.js:138:7)
+433 error     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:218:7
+433 error     at Object.oncomplete (fs.js:297:15)
+434 error If you need help, you may report this log at:
+434 error     <http://github.com/isaacs/npm/issues>
+434 error or email it to:
+434 error     <npm-@googlegroups.com>
+435 error System Darwin 13.2.0
+436 error command "node" "/usr/local/bin/npm" "install"
+437 error cwd /Volumes/Seagate Exp/Sites/front-end-framework
+438 error node -v v0.8.12
+439 error npm -v 1.1.63
+440 verbose exit [ 1, true ]
